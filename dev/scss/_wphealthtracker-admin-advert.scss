@@ -1,0 +1,52 @@
+#wphealthtracker-display-advert-site-div img {
+    @extend %wphealthtracker-margin-centered;
+    width: 400px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#wphealthtracker-display-advert-email-me {
+    @extend %wphealthtracker-margin-centered;
+    text-align: center;
+    width: 70%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#wphealthtracker-display-advert-site-div {
+    text-align: center;
+    font-variant: small-caps;
+}
+
+#wphealthtracker-display-advert-visit-me-link {
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+#wphealthtracker-display-advert-visit-me-title {
+    font-variant: small-caps;
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+#wphealthtracker-display-advert-money-container {
+    text-align: center;
+}
+
+#wphealthtracker-display-advert-money-container form {
+    display: inline-block;
+}
+
+#wphealthtracker-patreon-img {
+    width: 100px;
+}
+
+#wphealthtracker-patreon-link {
+    display: inline-block;
+    margin: 10px;
+}

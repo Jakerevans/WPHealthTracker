@@ -1,0 +1,23 @@
+.wphealthtracker-view-search-inner-div {
+	@extend %wphealthtracker-margin-centered;
+	@extend %wphealthtracker-border-bottom-1px-solid;
+    border-color: $purewhite;
+    width: 30%;
+    margin-bottom: 70px;
+}
+
+.wphealthtracker-view-search-inner-title {
+	color: $purewhite;
+    position: relative;
+    bottom: 15px;
+    font-size: 15px;
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+.wphealthtracker-filter-img {
+    width: 20px;
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+}

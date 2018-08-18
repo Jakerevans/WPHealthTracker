@@ -1,0 +1,367 @@
+/*
+ *   BEGIN PLACEHOLDER CLASSES
+*/
+%wphealthtracker-d3-chart-title-actual{
+    font-weight: bold;
+    margin: 0;
+    display: inline-block;
+    position:relative;
+}
+
+%wphealthtracker-d3-chart-lines{
+  stroke-width: 2;
+  fill:none;
+}
+
+%wphealthtracker-d3-chart-bars{
+  fill:$primary-color;
+}
+/*
+ *  END PLACEHOLDER CLASSES
+*/
+
+
+/*
+ *  BEGIN SASS CSS
+*/
+
+.wphealthtracker-diet-span{
+    @extend %wphealthtracker-stats-subtext;
+    bottom: 0px;
+    margin: 0;
+}
+
+.wphealthtracker-d3-chart-title-line{
+  @extend %wphealthtracker-margin-centered;
+  background-color: $pureblack;
+  width: 85%;
+  height: 1px;
+  margin-top: 15px;
+}
+
+#wphealthtracker-stats-actual-inner-d3-1-1 path, #wphealthtracker-stats-actual-inner-d3-1-3 path { 
+  @extend %wphealthtracker-d3-chart-lines;
+  stroke: $primary-color;
+}
+
+#wphealthtracker-stats-actual-inner-d3-1-1 .axis path, #wphealthtracker-stats-actual-inner-d3-1-3 .axis path {
+  @extend %wphealthtracker-d3-chart-lines;
+  stroke: $pureblack;
+}
+
+#wphealthtracker-stats-actual-inner-d3-1-1 .tick line, #wphealthtracker-stats-actual-inner-d3-1-1 .tick line {
+  @extend %wphealthtracker-d3-chart-lines;
+  stroke: $pureblack;
+}
+
+#wphealthtracker-stats-inner-d3-2 path {
+  @extend %wphealthtracker-d3-chart-lines;
+  stroke: $lightgray;
+}
+
+#wphealthtracker-stats-actual-inner-d3-1-1 .axis path,
+#wphealthtracker-stats-actual-inner-d3-1-1 .axis line,
+#wphealthtracker-stats-actual-inner-d3-1-3 .axis path,
+#wphealthtracker-stats-actual-inner-d3-1-3 .axis line{
+  @extend %wphealthtracker-d3-chart-lines;
+  stroke: $lightgray;
+}
+
+.wphealthtracker-d3chart-line{
+  @extend %wphealthtracker-d3-chart-lines;
+}
+
+.wphealthtracker-d3chart-bar{
+  @extend %wphealthtracker-d3-chart-bars;
+}
+
+#wphealthtracker-d3chart-tooltip-fooditems{
+  line-height: 1;
+  font-weight: bold;
+  padding: 6px;
+  padding-bottom:20px;
+  background: rgba(0,0,0,0.7);
+  border: solid 1px #000;
+  color: #fff;
+  border-radius: 2px;
+  position: absolute;
+  top: 356px;
+  left: 58px;
+  width: 428px;
+  margin-left: 7px;
+  margin-right: auto;
+  opacity:0;
+}
+
+#wphealthtracker-d3chart-tooltip-fooditems-item{
+  font-size:14px;
+}
+
+#wphealthtracker-d3chart-sort-fooditems{
+    position: absolute;
+    top: 85px;
+    left: 65px;
+}
+
+.wphealthtracker-d3chart-iconimg-fooditems{
+  width:20px;
+}
+
+#wphealthtracker-d3chart-tooltip-fooditems-category{
+  font-size: 11px;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-left: 3px;
+}
+
+#wphealthtracker-d3chart-consumed1-fooditems, #wphealthtracker-d3chart-consumed2-fooditems, #wphealthtracker-d3chart-consumed3-fooditems{
+  font-size:11px;
+}
+
+.wphealthtracker-d3chart-x-axis-food-items .tick{
+  display:none;
+}
+
+#wphealthtracker-d3chart-tooltip-fooditems p{
+  margin:0px;
+}
+
+.wphealthtracker-chart-hover-message{
+  @extend %wphealthtracker-margin-centered;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 75px;
+  width: 210px;
+  height: 18px;
+}
+
+.wphealthtracker-d3-chart-title-img{
+  @extend %wphealthtracker-margin-centered;
+  width: 30px;
+  display: block;
+  position:relative;
+}
+
+.wphealthtracker-d3-chart-title-actual{
+  @extend %wphealthtracker-d3-chart-title-actual;
+  font-size: 19px;
+}
+
+.wphealthtracker-d3-chart-subtitle-actual{
+  @extend %wphealthtracker-d3-chart-title-actual;
+  font-size: 16px;
+  top:7px;
+}
+
+.wphealthtracker-stats-actual-top-div-d3{
+  @extend %wphealthtracker-stats-actual-top-div;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+}
+
+.wphealthtracker-stats-actual-top-div-d3 .wphealthtracker-no-saved-data-div p, .wphealthtracker-stats-actual-top-div-d3 .wphealthtracker-no-saved-data-div span{
+  color:$pureblack;
+  font-size: 14px;
+  margin-bottom:0px;
+}
+
+.wphealthtracker-stats-actual-top-div-inner-left .tick line {
+  stroke: $lightgray;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 1,3;
+}
+/*
+ *  END SASS CSS
+ */
+
+/*
+ *  BEGIN NON-SASS CSS
+ */
+.wphealthtracker-d3-chart-title-div {
+  position: relative;
+  top: 15px;
+  grid-row: 1;
+  grid-column:1/3;
+}
+
+.wphealthtracker-stats-actual-top-div-inner-left{
+  grid-row: 2;
+  grid-column: 1/2;
+  position:relative;
+}
+
+.wphealthtracker-stats-actual-top-div-inner-right{
+  grid-row: 2;
+  grid-column: 2/2;
+  margin-top:40px;
+}
+
+#wphealthtracker-stats-inner-d3-1 #wphealthtracker-stats-actual-inner-d3-2-1,
+#wphealthtracker-stats-inner-d3-2 #wphealthtracker-stats-actual-inner-d3-2-2,
+#wphealthtracker-stats-inner-d3-3 #wphealthtracker-stats-actual-inner-d3-2-3{
+  position:relative;
+  top:18px;
+}
+
+.wphealthtracker-stats-actual-top-div-inner-right .wphealthtracker-dashboard-row{
+  grid-template-columns: auto;
+}
+
+.wphealthtracker-stats-actual-top-div-d3 .wphealthtracker-dashboard-row-entry{
+  margin-left:0px;
+  margin-top:1px;
+  margin-bottom:1px;
+}
+
+.wphealthtracker-stats-actual-top-div-d3 .wphealthtracker-no-saved-data-div .wphealthtracker-shocked-image{
+  width:40px;
+}
+
+.wphealthtracker-stats-actual-top-div-d3 .wphealthtracker-dashboard-actual-info{
+  text-align:left;
+}
+
+.wphealthtracker-stats-actual-top-div-inner-right .wphealthtracker-d3-chart-title-line{
+  margin-top: 8px;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.wphealthtracker-stats-actual-top-div-inner-right .wphealthtracker-d3-chart-subtitle-actual{
+  width: 85%;
+  right: 7.5%;
+}
+
+.wphealthtracker-stats-actual-top-div-inner-right .wphealthtracker-d3-chart-title-img{
+  right: 7.5%;
+}
+
+.wphealthtracker-stats-actual-top-div-inner-right .wphealthtracker-no-saved-data-div{
+  position: relative;
+  bottom:40px;
+}
+
+.wphealthtracker-stats-actual-top-div-d3 .wphealthtracker-no-saved-data-div{
+  margin-top:25px;
+}
+
+.wphealthtracker-chart-hover-message-hide{
+  opacity:0;
+  pointer-events:none;
+  z-index:-99999;
+}
+
+.wphealthtracker-chart-hover-message p{
+  display: inline-block;
+  margin: 0px;
+  font-style: italic;
+  opacity: 0;
+  -webkit-animation: fadeInOut 3s 3s infinite;
+  -moz-animation: fadeInOut 3s 3s infinite;
+  -ms-animation: fadeInOut 3s 3s infinite;
+  animation: fadeInOut 3s 3s infinite;
+}
+
+#wphealthtracker-bp-svg{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.wphealthtracker-d3chart-topsvg .wphealthtracker-d3chart-line:hover {
+  stroke-width: 4px!important;
+}
+
+#wphealthtracker-stats-inner-d3-2 #chartContainer{
+  position:absolute;
+  top:180px;
+  left:0px;
+}
+
+.wphealthtracker-d3chart-legendContainer{
+  position: absolute;
+  top: 30px;
+  right: 0;
+  overflow: hidden;
+  height: 55px;
+  width: 200px;
+}
+
+#wphealthtracker-d3chart-legend{
+  width:290px;
+  height:1200px;
+}
+
+.wphealthtracker-d3chart-legend{
+  font-size: 12px;
+}
+
+.wphealthtracker-d3chart-legendcheckbox{
+  cursor: pointer;
+}
+
+#wphealthtracker-bp-chart-select-div{
+  position: absolute;
+  top: 37px;
+  left: 50px;
+}
+
+#wphealthtracker-d3chart-legendContainer-ch{
+  right:38px;
+  width:300px;
+}
+
+.wphealthtracker-d3chart2-xaxislabel, .wphealthtracker-d3chart2-xaxislinedetail{
+  font-size: 16px;
+}
+
+@-ms-keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/*
+ *  END NON-SASS CSS
+ */

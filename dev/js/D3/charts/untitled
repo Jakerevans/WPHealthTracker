@@ -1,0 +1,526 @@
+function wphealthtracker_vitals_d3_1(mydataWeight){
+
+	// Set dimensions
+	var margin = {
+		top: 120,
+		right: 40,
+		left: 60,
+		bottom: 100
+	};
+
+	var width = 550 - margin.right - margin.left;
+	var height = 450 - margin.top - margin.bottom;
+
+  	var svgWeight = d3.select("#wphealthtracker-stats-actual-inner-d3-1-1")
+  		.append("svg")
+  			.attr('class','wphealthtracker-d3chart-topsvg')
+  			.attr('id','wphealthtracker-d3chart-topsvg-weight')
+  			.attr("width", width + margin.left + margin.right)
+  			.attr("height", height + margin.top + margin.bottom)
+  				.append("g")
+  					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  	// Text label for the y axis
+	svgWeight.append("text")
+		.attr("transform", "rotate(-90)")
+		.attr("y", -40)
+		.attr("x", 0 - height / 2)
+		.attr("class", "wphealthtracker-d3chart-axislabel")
+		.attr("id", "wphealthtracker-d3chart-axislabel-weight")
+		.style("text-anchor", "middle")
+		.text(wphealthtracker_php_variables.d3trans39);
+
+	// Set the ranges - the domain is specified inside of the function called when we load the data
+	var xRangeWeight = d3.scaleLinear().range([0, width]);
+	var yRangeWeight = d3.scaleLinear().range([height, 0]);
+	var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+	// Set up the X and Y axis
+	var xAxisWeight = d3.axisBottom(xRangeWeight);
+	var yAxisWeight = d3.axisLeft(yRangeWeight).tickSize(-width);
+
+	// Create function to parse dates into date objects
+	var parseDate = d3.timeParse("%Y-%m-%d");
+	var formatDate = d3.timeFormat("%Y-%m-%d");
+	var bisectDate = d3.bisector(function (d) {
+		return d.date;
+	}).left;
+
+
+	// Set the line attributes
+	var line = d3.line().curve(d3.curveLinear).x(function (d) {
+		return xRangeWeight(d.date);
+	}).y(function (d) {
+		return yRangeWeight(d.close);
+	});
+
+	// Get the data
+	d3.csv("", function (error, data) {
+
+		// Using my own data instead of suppling a URL/File path to the first argument in the d3.csv() function above (instead, we just pass an empty string)
+		dataWeight = mydataWeight;
+		dataWeight.forEach(function (d) {
+		 	d.date = parseDate(d.date),
+		 	Pounds = +d.Pounds, 
+		 	Kilograms = +d.Kilograms;
+		});
+
+		// Sort data ascending - needed to get correct bisector results
+		dataWeight.sort(function (a, b) {
+		  return a.date - b.date;
+		});
+
+		// Color domain
+		color.domain(d3.keys(dataWeight[0]).filter(function (key) {
+		  return key !== "date";
+		}));
+
+		// Create Weight array 
+		var weightValues = color.domain().map(function (name) {
+		  return {
+		    name: name,
+		    values: dataWeight.map(function (d) {
+		      return { date: d.date, close: d[name] };
+		    })
+		  };
+		});
+
+		// Add domain ranges to the x and y scales
+		xRangeWeight.domain([d3.min(weightValues, function (c) {
+		  return d3.min(c.values, function (v) {
+		    return v.date;
+		  });
+		}), d3.max(weightValues, function (c) {
+		  return d3.max(c.values, function (v) {
+		    return v.date;
+		  });
+		})]);
+		yRangeWeight.domain([d3.min(weightValues, function (c) {
+		  return d3.min(c.values, function (v) {
+		    return 0;
+		  });
+		}), d3.max(weightValues, function (c) {
+		  return d3.max(c.values, function (v) {
+		    return v.close + v.close * 0.05;
+		  });
+		})]);
+
+		// Add the y axis
+		svgWeight.append("g")
+			.attr("class", "wphealthtracker-d3chart-yaxis-tick-holder")
+			.attr("id", "wphealthtracker-d3chart-yaxis-tick-holder-weight")
+			.attr("class", "y axis").call(yAxisWeight); 
+
+		// Append rectangle for capturing if mouse moves within area
+		svgWeight.append("rect")
+			.attr("class", "wphealthtracker-mousemove-rect-weight")
+			.attr("id", "wphealthtracker-mousemove-rect-weight")
+			.attr("width", width)
+			.attr("height", height)
+			.attr("transform", "translate(0," + height + ")")
+			.style("fill", "none")
+			.style("pointer-events", "all")
+			.on("mouseout", function () {
+			  d3.select("#wphealthtracker-circle1-weight").style("opacity", '0');
+			  d3.select("#wphealthtracker-circle2-weight").style("opacity", '0');
+			  d3.select("#wphealthtracker-circle3-weight").style("opacity", '0');
+			  d3.select("#wphealthtracker-circle4-weight").style("opacity", '0');
+			  d3.select("#wphealthtracker-text1-weight").style("opacity", '0');
+			  d3.select("#wphealthtracker-text2-weight").style("opacity", '0');
+			  d3.select("#wphealthtracker-text3-weight").style("opacity", '0');
+			  d3.select("#wphealthtracker-text4-weight").style("opacity", '0');
+			  d3.select(".wphealthtracker-d3chart-mouse-line-weight").style("opacity", '0');
+			  d3.selectAll(".wphealthtracker-d3chart-legendtextval-weight").text('');
+			  d3.select("#wphealthtracker-d3chart-xaxislabel-top-weight").text('');
+			}).on("mousemove", wpht_helper_d3_weight_mousemove);
+
+		// Add the line groups
+		var weightLines = svgWeight.selectAll(".wphealthtracker-weight-lines-actual")
+			.data(weightValues).enter()
+			.append("g")
+				.attr("class", "wphealthtracker-weight-lines-actual");
+
+		// Add the weight paths
+		weightLines.append("path").attr("id", function (d, i) {
+		  return "wphealthtracker-d3chart-linepath-weight-" + i;
+		}).attr("class", function (d, i) {
+		  return "wphealthtracker-d3chart-line wphealthtracker-d3chart-line-weight wphealthtracker-d3chart-legendrect-weight-" + i;
+		}).attr("d", function (d) {
+		  return line(d.values);
+		}).style("stroke", function (d) {
+		  return color(d.name);
+		}).on("mouseover", function (d, i) {
+
+		  	d3.select(this).style('stroke-width',3);
+
+			// For getting the LDL/HDL/Tri/Total value at associated position on line
+			var mouse = d3.mouse(this);
+			var xDate = xRangeWeight.invert(mouse[0]),
+			  bisect = d3.bisector(function (d) {
+				return d.date;
+			}).right;
+			var beginning = 0,
+			 end = lines[i].getTotalLength(),
+			 target = null;
+
+			while (true) {
+				target = Math.floor((beginning + end) / 2);
+				pos = lines[i].getPointAtLength(target);
+				if ((target === end || target === beginning) && pos.x !== mouse[0]) {
+				  break;
+				}
+				if (pos.x > mouse[0]) end = target;else if (pos.x < mouse[0]) beginning = target;else break; // Position found
+			}
+
+			var displayValue = yRangeWeight.invert(pos.y).toFixed(2)
+
+			// For formatting things for the Text area centered just above the chart
+			xDate = new Date(xDate);
+			xDate = wpht_helper_d3_weight_build_better_date(xDate);
+			xDate = xDate+' - '+displayValue
+			d3.select("#wphealthtracker-d3chart-xaxislabel-top-weight")
+				.style('opacity',1)
+				.text(xDate);
+
+			// Loop through the per-day entries, if we don't match the selected value, hide things, otherwise, display the values
+			for (j = 0; j < 5; j++) {
+				if (i !== j) {
+					d3.select("#wphealthtracker-d3chart-linepath-weight-" + j).style("opacity", 0.1);
+					d3.select("#wphealthtracker-d3chart-legendrect-weight-"+j).style("opacity",0.1);
+					d3.select("#wphealthtracker-d3chart-legendtextval-weight-"+j).text('');
+				} else {
+					d3.select("#wphealthtracker-d3chart-legendtextval-weight-"+j).text(displayValue);
+				}
+			};
+
+		}).on("mouseout", function (d, i) {
+		
+		  d3.select(this).style('stroke-width',2);
+		  for (j = 0; j < 2; j++) {
+		    d3.select("#wphealthtracker-d3chart-linepath-weight-" + j).style("opacity", 1);
+		    d3.select("#wphealthtracker-d3chart-legendrect-weight-"+j).style("opacity",1);
+		  };
+		  d3.selectAll(".wphealthtracker-d3chart-legendtextval-weight").text('');
+		  d3.select("#wphealthtracker-d3chart-xaxislabel-top-weight").text('');
+
+		});
+
+		var mouseGWeight = svgWeight.append("g")
+			.attr("class", "mouse-over-effects-weight");
+
+		mouseGWeight
+			.append("path")
+			.attr("class", "wphealthtracker-d3chart-mouse-line-weight")
+			.attr("id", "wphealthtracker-d3chart-mouse-line-weight")
+			.style("stroke", "black")
+			.style("stroke-width", "1px")
+			.style("opacity", "0");
+
+		lines = document.getElementsByClassName('wphealthtracker-d3chart-line-weight');
+
+		// Appending the 'mouse1, moues2, mouse3...' elements to facilitate the sliding black bar that moves with cursor
+		var mouse1Weight = mouseGWeight
+			.append("g")
+			.attr("class", "wphealthtracker-d3chart-mouse-per-line-weight");
+
+		mouse1Weight
+			.append("text")
+			.attr("id", "wphealthtracker-text1-weight")
+			.attr("transform", "translate(10,3)");
+/*
+		mouse1Weight
+			.append("circle")
+			.attr('class', "wphealthtracker-d3chart-travelling-circle-weight")
+			.attr("id", "wphealthtracker-circle1-weight")
+			.attr("r", 7)
+			.style("fill", "none")
+			.style("stroke-width", "1px")
+			.style("opacity", "0")
+			.style("stroke", "rgb(31, 119, 180)");
+
+		var mouse2 = mouseG
+			.append("g")
+			.attr("class", "wphealthtracker-d3chart-mouse-per-line-ch");
+
+		mouse2.append("text")
+			.attr("id", "wphealthtracker-text2-ch")
+			.attr("transform", "translate(10,3)");
+
+		mouse2.append("circle")
+			.attr('class', "wphealthtracker-d3chart-travelling-circle")
+			.attr("id", "wphealthtracker-circle2-ch")
+			.attr("r", 7)
+			.style("fill", "none")
+			.style("stroke-width", "1px")
+			.style("opacity", "0")
+			.style("stroke", "rgb(255, 127, 14)");
+
+		var mouse3 = mouseG
+			.append("g")
+			.attr("class", "wphealthtracker-d3chart-mouse-per-line-ch");
+
+		mouse3
+			.append("text")
+			.attr("id", "wphealthtracker-text3-ch")
+			.attr("transform", "translate(10,3)");
+
+		mouse3
+			.append("circle")
+			.attr('class', "wphealthtracker-d3chart-travelling-circle")
+			.attr("id", "wphealthtracker-circle3-ch")
+			.attr("r", 7)
+			.style("fill", "none")
+			.style("stroke-width", "1px")
+			.style("opacity", "0")
+			.style("stroke", "rgb(44, 160, 44)");
+
+		var mouse4 = mouseG
+			.append("g")
+			.attr("class", "wphealthtracker-d3chart-mouse-per-line-ch");
+
+		mouse4
+			.append("text")
+			.attr("id", "wphealthtracker-text4-ch")
+			.attr("transform", "translate(10,3)");
+
+		mouse4
+			.append("circle")
+			.attr('class', "wphealthtracker-d3chart-travelling-circle")
+			.attr("id", "wphealthtracker-circle4-ch")
+			.attr("r", 7)
+			.style("fill", "none")
+			.style("stroke-width", "1px")
+			.style("opacity", "0")
+			.style("stroke", "rgb(214, 39, 40)");
+
+		// Add the Legend Text and Rects
+		var legend = d3.select("#wphealthtracker-d3chart-legend-ch");
+
+		// LDL
+		legend.append("text")
+			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-ch")
+			.attr('x',115)
+			.attr('y',20)
+			.text(wphealthtracker_php_variables.d3trans34);
+		// HDL
+		legend.append("text")
+			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-ch")
+			.attr('x',115)
+			.attr('y',43)
+			.text(wphealthtracker_php_variables.d3trans35)
+		// Tri
+		legend.append("text")
+			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-ch")
+			.attr('x',225)
+			.attr('y',20)
+			.text(wphealthtracker_php_variables.d3trans36)
+		// Total
+		legend.append("text")
+			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-ch")
+			.attr('x',225)
+			.attr('y',43)
+			.text(wphealthtracker_php_variables.d3trans37)
+
+		// LDL Rect
+		legend.append("rect")
+			.attr("class", "wphealthtracker-d3chart-legendrect-ch wphealthtracker-d3chart-legendrect-ch-0")
+			.attr("id", "wphealthtracker-d3chart-legendrect-ch-0")
+			.attr('x',95)
+			.attr('y',8)
+			.attr('fill','rgb(31, 119, 180)')
+			.on("mouseover", function (d, i) {
+				for (j = 0; j < 5; j++) {
+					d3.selectAll('.wphealthtracker-d3chart-legendrect-ch-'+j).style('opacity',0)
+				}
+				var tempclass = (d3.select(this).attr('class')).split(' ');
+				d3.selectAll('.'+tempclass[1]).style('opacity',1)
+			}).on("mouseout", function (d, i) {
+				d3.selectAll('.wphealthtracker-d3chart-line-ch, .wphealthtracker-d3chart-legendrect-ch').style('opacity',1)
+			})
+			.style('width', '15')
+			.style('height', '15')
+		// HDL Rect
+		legend.append("rect")
+			.attr("class", "wphealthtracker-d3chart-legendrect-ch wphealthtracker-d3chart-legendrect-ch-1")
+			.attr("id", "wphealthtracker-d3chart-legendrect-ch-1")
+			.attr('x',205)
+			.attr('y',8)
+			.attr('fill','rgb(255, 127, 14)')
+			.on("mouseover", function (d, i) {
+				for (j = 0; j < 5; j++) {
+					d3.selectAll('.wphealthtracker-d3chart-legendrect-ch-'+j).style('opacity',0)
+				}
+				var tempclass = (d3.select(this).attr('class')).split(' ');
+				d3.selectAll('.'+tempclass[1]).style('opacity',1)
+			}).on("mouseout", function (d, i) {
+				d3.selectAll('.wphealthtracker-d3chart-line-ch, .wphealthtracker-d3chart-legendrect-ch').style('opacity',1)
+			})
+			.style('width', '15')
+			.style('height', '15')
+		// Tri Rect
+		legend.append("rect")
+			.attr("class", "wphealthtracker-d3chart-legendrect-ch wphealthtracker-d3chart-legendrect-ch-2")
+			.attr("id", "wphealthtracker-d3chart-legendrect-ch-2")
+			.attr('x',95)
+			.attr('y',30)
+			.attr('fill','rgb(44, 160, 44)')
+			.on("mouseover", function (d, i) {
+				for (j = 0; j < 5; j++) {
+					d3.selectAll('.wphealthtracker-d3chart-legendrect-ch-'+j).style('opacity',0)
+				}
+				var tempclass = (d3.select(this).attr('class')).split(' ');
+				d3.selectAll('.'+tempclass[1]).style('opacity',1)
+			}).on("mouseout", function (d, i) {
+				d3.selectAll('.wphealthtracker-d3chart-line-ch, .wphealthtracker-d3chart-legendrect-ch').style('opacity',1)
+			})
+			.style('width', '15')
+			.style('height', '15')
+		// Total Rect
+		legend.append("rect")
+			.attr("class", "wphealthtracker-d3chart-legendrect-ch wphealthtracker-d3chart-legendrect-ch-3")
+			.attr("id", "wphealthtracker-d3chart-legendrect-ch-3")
+			.attr('x',205)
+			.attr('y',30)
+			.attr('fill','rgb(214, 39, 40)')
+			.on("mouseover", function (d, i) {
+				for (j = 0; j < 5; j++) {
+					d3.selectAll('.wphealthtracker-d3chart-legendrect-ch-'+j).style('opacity',0)
+				}
+				var tempclass = (d3.select(this).attr('class')).split(' ');
+				d3.selectAll('.'+tempclass[1]).style('opacity',1)
+			}).on("mouseout", function (d, i) {
+				d3.selectAll('.wphealthtracker-d3chart-line-ch, .wphealthtracker-d3chart-legendrect-ch').style('opacity',1)
+			})
+			.style('width', '15')
+			.style('height', '15')
+
+		// LDL Value Text
+		legend.append("text")
+			.attr("class", "wphealthtracker-d3chart-legendtextval wphealthtracker-d3chart-legendtextval-ch")
+			.attr("id", "wphealthtracker-d3chart-legendtextval-ch-0")
+			.attr('x',50)
+			.attr('y',20)
+		// HDL Value Text
+		legend.append("text")
+			.attr("class", "wphealthtracker-d3chart-legendtextval wphealthtracker-d3chart-legendtextval-ch")
+			.attr("id", "wphealthtracker-d3chart-legendtextval-ch-1")
+			.attr('x',160)
+			.attr('y',20)
+		// Tri Value Text
+		legend.append("text")
+			.attr("class", "wphealthtracker-d3chart-legendtextval wphealthtracker-d3chart-legendtextval-ch")
+			.attr("id", "wphealthtracker-d3chart-legendtextval-ch-2")
+			.attr('x',50)
+			.attr('y',43)
+		// Total Value Text
+		legend.append("text")
+			.attr("class", "wphealthtracker-d3chart-legendtextval wphealthtracker-d3chart-legendtextval-ch")
+			.attr("id", "wphealthtracker-d3chart-legendtextval-ch-3")
+			.attr('x',160)
+			.attr('y',43)
+
+		// Add the top text area just above the chart to display date/time/avlue
+		svg.append("text")
+			.attr("class", "wphealthtracker-d3chart-xaxislabel-top")
+			.attr("id", "wphealthtracker-d3chart-xaxislabel-top-ch")
+			.attr("transform", "translate(" + width / 2 + " ," + -15 + ")")
+			.style("text-anchor", "middle")
+			.style('opacity',0)
+			.text('fushfshfjdshj')
+*/
+		function wpht_helper_d3_weight_build_better_date(date){
+			/*
+			date = String(date).split(' ');
+			var time = wpht_helper_d3_ch_convert_to_am_pm(date[4]);
+			return date[0]+' '+date[1]+' '+date[2]+' '+date[3]+' '+time;
+			*/
+		}
+/*
+		function wpht_helper_d3_ch_convert_to_am_pm(time) {
+		  var tmpArr = time.split(':'), time12;
+			if(+tmpArr[0] == 12) {
+				time12 = tmpArr[0] + ':' + tmpArr[1] + ' PM';
+			} else {
+				if(+tmpArr[0] == 00) {
+					time12 = '12:' + tmpArr[1] + ' AM';
+				} else {
+					if(+tmpArr[0] > 12) {
+						time12 = (+tmpArr[0]-12) + ':' + tmpArr[1] + ' PM';
+					} else {
+						time12 = (+tmpArr[0]) + ':' + tmpArr[1] + ' AM';
+					}
+				}
+			}
+			return time12;
+		}
+*/
+		// Mousemove function
+		function wpht_helper_d3_weight_mousemove() {
+/*
+			$('#wphealthtracker-chart-hover-message-ch').animate({
+	           opacity:0
+	        }, {
+	           duration: 500,
+	           complete: function() { 
+	           		$(this).css({'pointer-events':'none','z-index':-99999})
+	           } 
+	        });
+
+			var mouse = d3.mouse(this);
+			d3.select("#wphealthtracker-d3chart-mouse-line-ch").attr("d", function (){
+				var d = "M" + mouse[0] + "," + height;
+				d += " " + mouse[0] + "," + 0;
+				return d;
+			});
+
+			d3.selectAll(".wphealthtracker-d3chart-mouse-per-line-ch").attr("transform", function (d, i){
+
+				d3.select("#wphealthtracker-text1-ch").style("opacity", '1');
+				d3.select("#wphealthtracker-text2-ch").style("opacity", '1');
+				d3.select("#wphealthtracker-text3-ch").style("opacity", '1');
+				d3.select("#wphealthtracker-text4-ch").style("opacity", '1');
+				d3.select(".wphealthtracker-d3chart-mouse-line-ch").style("opacity", '1');
+
+				// This if is to ensure we don't go over the number of individual data items contained within a day - without this if, this function would run an amount of times equal to how many days of data there are.
+				if(i < lines.length){
+					var xDate = xRangeCh.invert(mouse[0]),
+					  bisect = d3.bisector(function (d) {
+						return d.date;
+					}).right;
+
+					var beginning = 0,
+					 end = lines[i].getTotalLength(),
+					  target = null;
+
+					while (true) {
+						target = Math.floor((beginning + end) / 2);
+						pos = lines[i].getPointAtLength(target);
+						if ((target === end || target === beginning) && pos.x !== mouse[0]) {
+						  break;
+						}
+						if (pos.x > mouse[0]) end = target;else if (pos.x < mouse[0]) beginning = target;else break; //position found
+					}
+
+					xDate = new Date(xDate);
+					xDate = wpht_helper_d3_ch_build_better_date(xDate);
+					d3.select("#wphealthtracker-d3chart-xaxislabel-top-ch")
+						.style('opacity',1)
+						.text(xDate);
+
+					// Moving the Circles with the black bar
+					d3.select(this).select('circle').style("opacity", '1');
+					var displayValue = yRangeCh.invert(pos.y).toFixed(2);
+					d3.select(this).select('text').text(displayValue);
+					d3.select("#wphealthtracker-d3chart-legendtextval-ch-"+i).text(displayValue);
+
+					return "translate(" + mouse[0] + "," + pos.y + ")";
+				}
+			});
+*/
+		};
+
+		// Hide the the spinner
+    	$('#wphealthtracker-spinner-d3-await-1').animate({'opacity':'0'})
+	});
+
+}
