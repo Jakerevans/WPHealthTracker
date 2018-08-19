@@ -159,7 +159,7 @@ jQuery(document).ready(function($) {
               $("#wphealthtracker-stats-actual-inner-d3-1-1").append(d3One);
             } else {
               // Append any HTML that may be needed for the creation of the charts
-              $('#wphealthtracker-stats-actual-inner-d3-1-1').append('<label id="wphealthtracker-d3chart-sort-fooditems"><input type="checkbox"> Sort values</label><div id="wphealthtracker-d3chart-tooltip-fooditems"><p><span id="wphealthtracker-d3chart-tooltip-fooditems-item"></span><span id="wphealthtracker-d3chart-tooltip-fooditems-category"></span></p><div id="wphealthtracker-d3chart-tooltip-fooditems-number"></div></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-fooditem">'+wphealthtracker_php_variables.d3trans48+'</div>');
+              $('#wphealthtracker-stats-actual-inner-d3-1-1').append('<label id="wphealthtracker-d3chart-sort-fooditems"><input type="checkbox"> Sort values</label><div class="wphealthtracker-d3chart-readout-fooditems"><p><span id="wphealthtracker-d3chart-tooltip-fooditems-item"></span><span id="wphealthtracker-d3chart-tooltip-fooditems-category"></span></p><div id="wphealthtracker-d3chart-tooltip-fooditems-number"></div></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-fooditem">'+wphealthtracker_php_variables.d3trans48+'</div>');
               wphealthtracker_diet_d3_1(d3One);
             }
 

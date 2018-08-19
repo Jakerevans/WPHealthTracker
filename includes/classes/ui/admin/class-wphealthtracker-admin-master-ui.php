@@ -136,12 +136,12 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 		 */
 		private function setup_stats_ui() {
 			$this->tabs = array(
-				'vitalstats'    => __( 'Vital Stats', 'wphealthtracker-textdomain' ),
-				'dietstats'     => __( 'Diet Stats', 'wphealthtracker-textdomain' ),
-				'exercisestats' => __( 'Exercise Stats', 'wphealthtracker-textdomain' ),
-				'medstats'      => __( 'Med Stats', 'wphealthtracker-textdomain' ),
-				'lastats'       => __( 'L & A Stats', 'wphealthtracker-textdomain' ),
-				'goalstats'     => __( 'Goal Stats', 'wphealthtracker-textdomain' ),
+				'vitalstats'    => $this->translations->tab_title_3,
+				'dietstats'     => $this->translations->tab_title_5,
+				'exercisestats' => $this->translations->tab_title_12,
+				'medstats'      => $this->translations->tab_title_13,
+				'lastats'       => $this->translations->tab_title_14,
+				'goalstats'     => $this->translations->tab_title_15,
 			);
 
 			if ( has_filter( 'wphealthtracker_add_tab_tracker' ) ) {
@@ -218,10 +218,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 				}
 			}
 
-			// if($this->tabs[0] == ''){
-			// array_shift($this->tabs);
-			// }
-			if ( $this->activetab == 'default' ) {
+			if ( 'default' === $this->activetab ) {
 				$this->activetab = null;
 			}
 
@@ -229,7 +226,9 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 			$this->output_indiv_tab();
 		}
 
-		// The function that actually generates the tabs on a page
+		/**
+		 * The function that actually generates the tabs on a page
+		 */
 		private function output_tabs_ui() {
 			$current = '';
 			if ( ! empty( $_GET['tab'] ) ) {
@@ -241,14 +240,16 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 
 			$html = '<h2 class="nav-tab-wrapper">';
 			foreach ( $this->tabs as $tab => $name ) {
-				$class = ( $tab == $current ) ? 'nav-tab-active' : '';
+				$class = ( $tab === $current ) ? 'nav-tab-active' : '';
 				$html .= '<a class="nav-tab ' . $class . '" href="?page=' . $this->page . '&tab=' . $tab . '">' . $name . '</a>';
 			}
 			$html .= '</h2>';
 			echo $html;
 		}
 
-		// The function that controls the output for each individual tab
+		/**
+		 * The function that controls the output for each individual tab
+		 */
 		private function output_indiv_tab() {
 			$this->activetab;
 			$this->page;
@@ -258,7 +259,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 			if ( array_key_exists( 1, $page ) ) {
 				$filename = 'class-admin-' . $page[1] . '-' . $this->activetab . '-tab-ui.php';
 			}
-			// Support for Extensions
+			// Support for Extensions.
 			if ( ! file_exists( WPHEALTHTRACKER_CLASSES_UI_ADMIN_DIR . $filename ) ) {
 				$path = $this->build_extension_path();
 				if ( is_dir( $path ) ) {
@@ -273,12 +274,14 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 					require_once $path;
 				}
 			} else {
-				// Look for file in core plugin
+				// Look for file in core plugin.
 				require_once WPHEALTHTRACKER_CLASSES_UI_ADMIN_DIR . $filename;
 			}
 		}
 
-		// The function that builds paths for extensions, both for creating a new submenu page, and tabs that have been added via extensions.
+		/**
+		 * The function that builds paths for extensions, both for creating a new submenu page, and tabs that have been added via extensions.
+		 */
 		private function build_extension_path() {
 			$page = explode( '-', $this->page );
 			foreach ( $this->active_plugins as $plugin ) {

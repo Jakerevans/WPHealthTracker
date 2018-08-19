@@ -94,12 +94,12 @@ function wphealthtracker_diet_d3_1(mydataFoodItems){
 	      	}
 	      	categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
 
-			d3.select("#wphealthtracker-d3chart-tooltip-fooditems")
+			d3.select("#wphealthtracker-d3chart-readout-fooditems")
 				.style("opacity", "1")
 				.select("#wphealthtracker-d3chart-tooltip-fooditems-item")
 				.html(foodName)
 
-			d3.select("#wphealthtracker-d3chart-tooltip-fooditems")
+			d3.select("#wphealthtracker-d3chart-readout-fooditems")
 				.style("opacity", "1")
 				.select("#wphealthtracker-d3chart-tooltip-fooditems-category")
 				.text(categoryName)
@@ -176,7 +176,7 @@ function wphealthtracker_diet_d3_1(mydataFoodItems){
 
 				finalConsumedText = consumedText1+consumedText2+consumedText3+consumedText4+consumedText5;
 
-			d3.select("#wphealthtracker-d3chart-tooltip-fooditems")
+			d3.select("#wphealthtracker-d3chart-readout-fooditems")
 				.select("#wphealthtracker-d3chart-tooltip-fooditems-number")
 				.html(finalConsumedText);
 

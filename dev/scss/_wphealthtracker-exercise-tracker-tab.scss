@@ -127,6 +127,25 @@
     color:$pureblack;
 }
 
+#wphealthtracker-d3chart-exercise-distance-svg .wphealthtracker-d3chart-exercise-distance-line{
+    stroke-width:1px;
+}
+
+#wphealthtracker-d3chart-exercise-distance-svg path{
+    fill: $pureblack;
+}
+
+#wphealthtracker-d3chart-exercise-distance-svg .wphealthtracker-d3chart-exercise-city-dot{
+    stroke: $primary-color;
+    fill: $primary-color;
+}
+
+#sandiego-to-sanfransisco {
+    stroke-dasharray: 165;
+    stroke-dashoffset: 165;
+    stroke: $primary-color;
+}
+
 /*
  *  END SASS CSS
  */

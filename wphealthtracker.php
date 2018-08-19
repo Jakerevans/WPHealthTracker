@@ -113,6 +113,7 @@ global $wpdb;
 	require_once 'includes/exercise/wphealthtracker-exercise-functions.php';
 	require_once 'includes/vitalstats/wphealthtracker-stats-vitals-ajax.php';
 	require_once 'includes/dietstats/class-wphealthtracker-stats-diet-ajax-functions.php';
+	require_once 'includes/exercisestats/class-wphealthtracker-stats-exercise-ajax-functions.php';
 /* END REQUIRE STATEMENTS */
 
 // CONSTANT DEFINITIONS //
@@ -155,6 +156,9 @@ global $wpdb;
 
 	// Root D3 Vitals directory.
 	define( 'WPHEALTHTRACKER_CLASSES_D3_DIET_DIR', WPHEALTHTRACKER_CLASSES_D3_DIR . 'D3_diet/' );
+
+	// Root D3 Vitals directory.
+	define( 'WPHEALTHTRACKER_CLASSES_D3_EXERCISE_DIR', WPHEALTHTRACKER_CLASSES_D3_DIR . 'D3_exercise/' );
 
 	// Root Dashboards directory.
 	define( 'WPHEALTHTRACKER_CLASSES_DASHBOARDS_DIR', WPHEALTHTRACKER_CLASS_DIR . 'dashboards/' );
@@ -256,6 +260,9 @@ global $wpdb;
 
 	// Call the class found in wphealthtracker-stats-diet-ajax.php.
 	$wp_health_tracker_stats_diet_ajax_functions = new WPHealthTracker_Stats_Diet_Ajax_Functions();
+
+	// Call the class found in wphealthtracker-stats-exercise-ajax.php.
+	$wp_health_tracker_stats_exercise_ajax_functions = new WPHealthTracker_Stats_Exercise_Ajax_Functions();
 /* END CLASS INSTANTIATIONS */
 
 
@@ -397,16 +404,30 @@ global $wpdb;
 /* AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-STATS-DIET-AJAX.PHP THAT ARE SPECIFIC TO THE STATS-DIET TAB */
 
 
-	// For populating the 'Dashboard section of the Vital Stats tab.
+	// For populating the 'Dashboard section of the Diet Stats tab.
 	add_action( 'wp_ajax_wphealthtracker_jre_grab_user_data_for_diet_dashboard_action', array( $wp_health_tracker_stats_diet_ajax_functions, 'wphealthtracker_jre_grab_user_data_for_diet_dashboard_action_callback' ) );
 	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_grab_user_data_for_diet_dashboard_action', array( $wp_health_tracker_stats_diet_ajax_functions, 'wphealthtracker_jre_grab_user_data_for_diet_dashboard_action_callback' ) );
 
-	// For populating the D3 charts sections of the Vital Stats tab.
+	// For populating the D3 charts sections of the Diet Stats tab.
 	add_action( 'wp_ajax_wphealthtracker_jre_grab_user_data_for_diet_d3_action', array( $wp_health_tracker_stats_diet_ajax_functions, 'wphealthtracker_jre_grab_user_data_for_diet_d3_action_callback' ) );
 	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_grab_user_data_for_diet_d3_action', array( $wp_health_tracker_stats_diet_ajax_functions, 'wphealthtracker_jre_grab_user_data_for_diet_d3_action_callback' ) );
 
 
 /* END OF AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-DIET-AJAX.PHP THAT ARE SPECIFIC TO THE DIET TAB */
 
+
+/* AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-STATS-EXERCISE-AJAX.PHP THAT ARE SPECIFIC TO THE STATS-EXERCISE TAB */
+
+
+	// For populating the 'Dashboard section of the Exercise Stats tab.
+	add_action( 'wp_ajax_wphealthtracker_jre_grab_user_data_for_exercise_dashboard_action', array( $wp_health_tracker_stats_exercise_ajax_functions, 'wphealthtracker_jre_grab_user_data_for_exercise_dashboard_action_callback' ) );
+	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_grab_user_data_for_exercise_dashboard_action', array( $wp_health_tracker_stats_exercise_ajax_functions, 'wphealthtracker_jre_grab_user_data_for_exercise_dashboard_action_callback' ) );
+
+	// For populating the D3 charts sections of the Exercise Stats tab.
+	add_action( 'wp_ajax_wphealthtracker_jre_grab_user_data_for_exercise_d3_action', array( $wp_health_tracker_stats_exercise_ajax_functions, 'wphealthtracker_jre_grab_user_data_for_exercise_d3_action_callback' ) );
+	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_grab_user_data_for_exercise_d3_action', array( $wp_health_tracker_stats_exercise_ajax_functions, 'wphealthtracker_jre_grab_user_data_for_exercise_d3_action_callback' ) );
+
+
+/* END OF AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-EXERCISE-AJAX.PHP THAT ARE SPECIFIC TO THE EXERCISE TAB */
 
 
