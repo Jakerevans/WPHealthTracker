@@ -251,6 +251,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->common_trans_53 = __( 'Miles', 'wphealthtracker-textdomain' );
 			$this->common_trans_54 = __( 'Meters', 'wphealthtracker-textdomain' );
 			$this->common_trans_55 = __( 'Kilometers', 'wphealthtracker-textdomain' );
+			$this->common_trans_56 = __( 'KMs', 'wphealthtracker-textdomain' );
 
 			return $translation_array1 = array(
 				'commontrans1'  => $this->common_trans_1,
@@ -308,6 +309,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'commontrans53' => $this->common_trans_53,
 				'commontrans54' => $this->common_trans_54,
 				'commontrans55' => $this->common_trans_55,
+				'commontrans56' => $this->common_trans_56,
 			);
 		}
 

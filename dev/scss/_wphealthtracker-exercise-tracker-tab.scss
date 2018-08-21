@@ -129,6 +129,7 @@
 
 #wphealthtracker-d3chart-exercise-distance-svg .wphealthtracker-d3chart-exercise-distance-line{
     stroke-width:1px;
+    pointer-events:none;
 }
 
 #wphealthtracker-d3chart-exercise-distance-svg path{
