@@ -779,6 +779,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->d3_trans_75 = __( 'Complete', 'wphealthtracker-textdomain' );
 			$this->d3_trans_76 = __( 'Hover Over Dots', 'wphealthtracker-textdomain' );
 			$this->d3_trans_77 = __( 'to', 'wphealthtracker-textdomain' );
+			$this->d3_trans_78 = __( 'Play Demo...', 'wphealthtracker-textdomain' );
 
 			return $d3_array1 = array(
 				'd3trans1'  => $this->d3_trans_1,
@@ -858,6 +859,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'd3trans75' => $this->d3_trans_75,
 				'd3trans76' => $this->d3_trans_76,
 				'd3trans77' => $this->d3_trans_77,
+				'd3trans78' => $this->d3_trans_78,
 			);
 
 		}

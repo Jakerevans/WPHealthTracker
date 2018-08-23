@@ -397,7 +397,25 @@
   right: 35px;
 }
 
+#wphealthtracker-chart-hover-distance-demo-exercise{
+  opacity: 1;
+  display: inline-block;
+  position: relative;
+  right: 141px;
+  top: 2px;
+  font-size: 12px;
+  opacity: 0.7;
+  cursor:pointer;
+}
 
+#wphealthtracker-chart-hover-distance-demo-exercise p{
+  font-size: 12px;
+  font-style: italic;
+  -webkit-animation: fadeInOut 3s 3s infinite;
+  -moz-animation: fadeInOut 3s 3s infinite;
+  -ms-animation: fadeInOut 3s 3s infinite;
+  animation: fadeInOut 3s 3s infinite;
+}
 
 
 /*
