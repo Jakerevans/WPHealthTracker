@@ -231,136 +231,127 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 		 */
 		public function build_data_1() {
 
-			// Build array of food items.
-			$food_items_array       = array();
-			$food_calories_array    = array();
-			$food_carbs_array       = array();
-			$food_sugars_array      = array();
-			$food_fiber_array       = array();
-			$food_protein_array     = array();
-			$food_fats_array        = array();
-			$food_satfats_array     = array();
-			$food_monosatfats_array = array();
-			$food_polysatfats_array = array();
+			$this->miles_running_total = 0;
+
 			foreach ( $this->alluserdata as $key => $indiv_day ) {
 
-				// If we have multiple food items per day...
-				if ( stripos( $indiv_day->foodstring, ',' ) !== false ) {
-					$split_day = explode( ',', $indiv_day->foodstring );
-					foreach ( $split_day as $key => $value ) {
-						$split_day_items    = explode( ';', $value );
-						$split_day_items[0] = ucfirst( $split_day_items[0] );
-						array_push( $food_items_array, $split_day_items[0] . ';' . $split_day_items[1] );
-						array_push( $food_calories_array, $split_day_items[3] . ';' . $split_day_items[4] );
-						array_push( $food_carbs_array, $split_day_items[11] );
-						array_push( $food_protein_array, $split_day_items[5] );
-						array_push( $food_fats_array, $split_day_items[7] );
-						array_push( $food_sugars_array, $split_day_items[13] );
-						array_push( $food_fiber_array, $split_day_items[12] );
-						array_push( $food_satfats_array, $split_day_items[8] );
-						array_push( $food_monosatfats_array, $split_day_items[9] );
-						array_push( $food_polysatfats_array, $split_day_items[10] );
+				// If we have multiple exercise for one day...
+				if ( false !== stripos( $indiv_day->exercisestring, ',' ) ) {
 
+					$indiv_exer = explode( ',', $indiv_day->exercisestring );
+
+					foreach ( $indiv_exer as $key => $exercise ) {
+
+						$exercise = explode( ';', $exercise );
+
+						// Convert everything to miles, if we have a value other than null or zero.
+						if ( 0 !== $exercise[5] && null !== $exercise[5] && '' !==  $exercise[5] ) {
+							if ( $this->translations->common_trans_51 === $exercise[6] ) {
+								$this->miles_running_total += $exercise[5] * 0.000189394;
+							}
+
+							if ( $this->translations->common_trans_52 === $exercise[6] ) {
+								$this->miles_running_total += $exercise[5] * 0.000568182;
+							}
+
+							if ( $this->translations->common_trans_53 === $exercise[6] ) {
+								$this->miles_running_total += $exercise[5];
+							}
+
+							if ( $this->translations->common_trans_54 === $exercise[6] ) {
+								$this->miles_running_total += $exercise[5] * 0.000621371;
+							}
+
+							if ( $this->translations->common_trans_55 === $exercise[6] ) {
+								$this->miles_running_total += $exercise[5] * 0.621371;
+							}
+						}
 					}
 				} else {
-					// One food item per day.
-					$split_day_items = explode( ';', $indiv_day->foodstring );
-					array_push( $food_items_array, $split_day_items[0] . ';' . $split_day_items[1] );
-					array_push( $food_calories_array, $split_day_items[3] . ';' . $split_day_items[4] );
-					array_push( $food_carbs_array, $split_day_items[11] );
-					array_push( $food_protein_array, $split_day_items[5] );
-					array_push( $food_fats_array, $split_day_items[7] );
-					array_push( $food_sugars_array, $split_day_items[13] );
-					array_push( $food_fiber_array, $split_day_items[12] );
-					array_push( $food_satfats_array, $split_day_items[8] );
-					array_push( $food_monosatfats_array, $split_day_items[9] );
-					array_push( $food_polysatfats_array, $split_day_items[10] );
-				}
-			}
 
-			// Making copy of food array.
-			$temp_food_items_array   = $food_items_array;
-			$unique_food_items_array = $food_items_array;
-			$occurance_array         = array();
-			$occurance_counter       = 0;
+					$indiv_exer = explode( ';', $indiv_day->exercisestring );
 
-			foreach ( $unique_food_items_array as $key => $value ) {
-				foreach ( $temp_food_items_array as $key2 => $value2 ) {
-					if ( $value2 === $value ) {
-						$occurance_counter++;
+					// Convert everything to miles, if we have a value other than null or zero.
+					if ( 0 !== $indiv_exer[5] && null !== $indiv_exer[5] && '' !==  $indiv_exer[5] ) {
+						if ( $this->translations->common_trans_51 === $indiv_exer[6] ) {
+							$this->miles_running_total += $indiv_exer[5] * 0.000189394;
+						}
+
+						if ( $this->translations->common_trans_52 === $indiv_exer[6] ) {
+							$this->miles_running_total += $indiv_exer[5] * 0.000568182;
+						}
+
+						if ( $this->translations->common_trans_53 === $indiv_exer[6] ) {
+							$this->miles_running_total += $indiv_exer[5];
+						}
+
+						if ( $this->translations->common_trans_54 === $indiv_exer[6] ) {
+							$this->miles_running_total += $indiv_exer[5] * 0.000621371;
+						}
+
+						if ( $this->translations->common_trans_55 === $indiv_exer[6] ) {
+							$this->miles_running_total += $indiv_exer[5] * 0.621371;
+						}
 					}
 				}
-
-				// Record how many times that food item occurred, then reset counter.
-				array_push( $occurance_array, $occurance_counter );
-				$occurance_counter = 0;
-
 			}
 
-			// Now let's convert our energy to calories, kcals, and kJs.
-			foreach ( $food_calories_array as $key => $value ) {
+			// Now convert to other values.
+			$this->feet_running_total       = number_format( ( $this->miles_running_total * 5280 ), 2 );
+			$this->yards_running_total      = number_format( ( $this->miles_running_total * 1760 ), 2 );
+			$this->meters_running_total     = number_format( ( $this->miles_running_total * 1609.34 ), 2 );
+			$this->kilometers_running_total = number_format( ( $this->miles_running_total * 1.60934 ), 2 );
 
-				$value    = explode( ';', $value );
-				$calories = 0;
-				$kcals    = 0;
-				$kjs      = 0;
+			$this->perc_around_world = number_format( ( ( $this->miles_running_total / 24901 ) * 100 ), 6 ) . '%';
 
-				if ( 'Calories' === $value[1] ) {
-					$calories = $value[0];
-					$kcals    = $value[0];
-					$kjs      = round( ( $value[0] * 4.184 ), 2 );
+			// Determine at what signifigant digit to format around the world to.
+			$sig_dig = 2;
+			for ( $i = 4; $i <= 7; $i++ ) {
+				if ( 0 < $this->perc_around_world[ $i ] ) {
+					$sig_dig = $i - 1;
+					break;
 				}
-
-				if ( 'kcal' === $value[1] ) {
-					$calories = $value[0];
-					$kcals    = $value[0];
-					$kjs      = round( ( $value[0] * 4.184 ), 2 );
-				}
-
-				if ( 'kJ' === $value[1] ) {
-					$calories = round( ( $value[0] / 4.184 ), 2 );
-					$kcals    = round( ( $value[0] / 4.184 ), 2 );
-					$kjs      = $value[0];
-				}
-
-				$food_calories_array[ $key ] = number_format( $calories, 2 ) . ';' . number_format( $kcals, 2 ) . ';' . number_format( $kjs, 2 );
 			}
 
-			// Sort alphabetically, and keeping corresponding values if subsequent arrays matched up with their food item.
-			array_multisort( $unique_food_items_array, $occurance_array, $food_calories_array, $food_carbs_array, $food_protein_array, $food_fats_array, $food_satfats_array, $food_monosatfats_array, $food_polysatfats_array, $food_sugars_array, $food_fiber_array );
-
-			foreach ( $unique_food_items_array as $key => $value ) {
-				array_push( $this->data_1_array, array(
-					'letter'      => $value,
-					'frequency'   => $occurance_array[ $key ],
-					'calories'    => $food_calories_array[ $key ],
-					'carbs'       => $food_carbs_array[ $key ],
-					'protein'     => $food_protein_array[ $key ],
-					'fats'        => $food_fats_array[ $key ],
-					'satfats'     => $food_satfats_array[ $key ],
-					'monosatfats' => $food_monosatfats_array[ $key ],
-					'polysatfats' => $food_polysatfats_array[ $key ],
-					'sugars'      => $food_sugars_array[ $key ],
-					'fiber'       => $food_fiber_array[ $key ],
-				));
+			// If we've travelled around the world at least once, just display 100%.
+			if ( 100 <= $this->perc_around_world ) {
+				$this->perc_around_world = '100%';
+			} else {
+				$this->perc_around_world = number_format( $this->perc_around_world, $sig_dig ) . '%';
 			}
 
-			// Set some class-wide variables to use in the build_stats_data_1() function.
-			$this->unique_food_items_array = $unique_food_items_array;
+			$this->perc_to_moon = number_format( ( ( $this->miles_running_total / 238900 ) * 100 ), 2 ) . '%';
 
-			// If there was no saved Exercise data at all, return an array holding the 'No Data Found' Html.
-			if ( count( $this->data_1_array ) === 0 ) {
+			// Determine at what signifigant digit to format from earth to moon to.
+			$sig_dig = 2;
+			for ( $i = 4; $i <= 7; $i++ ) {
+				if ( 0 < $this->perc_to_moon[ $i ] ) {
+					$sig_dig = $i - 1;
+					break;
+				}
+			}
+
+			// If we've travelled from the earth to the moon at least once, just display 100%.
+			if ( 100 <= $this->perc_to_moon ) {
+				$this->perc_to_moon = '100%';
+			} else {
+				$this->perc_to_moon = number_format( $this->perc_to_moon, $sig_dig ) . '%';
+			}
+
+			// If there was no saved distance data at all, return an array holding the 'No Data Found' Html.
+			if ( 0 >= $this->miles_running_total ) {
 				return '<div class="wphealthtracker-no-saved-data-div">
 				<p>
 					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
-					' . $this->translations->d3_trans_58 . '
-					<br>' . $this->translations->d3_trans_60 . '
+					' . $this->translations->d3_trans_85 . '
+					<br>' . $this->translations->d3_trans_86 . '
 				</p>
 			</div>';
 			} else {
-				return $this->data_1_array;
+				$this->miles_running_total = (string) $this->miles_running_total;
+				return $this->miles_running_total;
 			}
 		}
 
@@ -1161,10 +1152,14 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 
 			// If there is more than 1 day of Exercise data saved...
 			$stats_1 = '';
-			if ( count( $this->alluserdata ) > 0 ) {
+			(float) $this->miles_running_total;
+			if ( 0 < $this->miles_running_total ) {
+
+				$this->miles_running_total = number_format( $this->miles_running_total, 2 );
+
 				$stats_1 = '
 			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'computer.svg"/>		
-			<p class="wphealthtracker-d3-chart-subtitle-actual">' . $this->translations->tab_title_5 . '</p>
+			<p class="wphealthtracker-d3-chart-subtitle-actual">' . $this->translations->d3_trans_84 . '</p>
 			<div class="wphealthtracker-d3-chart-title-line"></div>
 			<div class="wphealthtracker-dashboard-actual-info">
 				<div class="wphealthtracker-dashboard-row">
@@ -1178,104 +1173,70 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
 							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_55 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->unique_foods_count . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_79 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->miles_running_total . ' ' . $this->translations->common_trans_53 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
 							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_56 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->top_five_food_items . ' </span>
+							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_80 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->kilometers_running_total . ' ' . $this->translations->common_trans_55 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
 							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_57 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_cals . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_81 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->meters_running_total . ' ' . $this->translations->common_trans_54 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
 							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_61 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_kjoules . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_82 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->yards_running_total . ' ' . $this->translations->common_trans_52 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
 							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_35 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_protein . ' ' . $this->translations->dashboard_trans_40 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_83 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->feet_running_total . ' ' . $this->translations->common_trans_51 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
 							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_36 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_carbs . ' ' . $this->translations->dashboard_trans_40 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_88 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->perc_around_world . ' ' . $this->translations->d3_trans_75 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
 							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_37 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_sugars . ' ' . $this->translations->dashboard_trans_40 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_89 . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->perc_to_moon . ' ' . $this->translations->d3_trans_75 . '</span>
 						</p>
 					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_39 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_fiber . ' ' . $this->translations->dashboard_trans_40 . '</span>
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_38 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_fats . ' ' . $this->translations->dashboard_trans_40 . '</span>
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_44 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_satfats . ' ' . $this->translations->dashboard_trans_40 . '</span>
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_45 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_monounsatfats . ' ' . $this->translations->dashboard_trans_40 . '</span>
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_46 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_polyunsatfats . ' ' . $this->translations->dashboard_trans_40 . '</span>
-						</p>
-					</div>
+					
+					
 				</div>
 			</div>';
 
-			}
-
-			// If there's no exercise data saved, display the 'No Data' message.
-			if ( count( $this->alluserdata ) === 0 ) {
+			} else {
 				$stats_1 = '<div class="wphealthtracker-no-saved-data-div">
 				<p>
 					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
-					' . $this->translations->d3_trans_58 . '
-					<br>' . $this->translations->d3_trans_59 . '
+					' . $this->translations->d3_trans_85 . '
+					<br>' . $this->translations->d3_trans_87 . '
 				</p>
 			</div>';
 			}
+
+		
 
 			// If there is 1 or more day of Food data with Calories data saved...
 			$stats_2 = '';

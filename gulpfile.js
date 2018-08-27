@@ -10,11 +10,6 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     babel = require('gulp-babel');
 
-// Define default task
-gulp.task('default', function() {
-  console.log("Hello, world!");
-});
-
 // Define file sources
 var sassMain = ['dev/scss/wphealthtracker-admin-ui.scss'];
 var sassSources = ['dev/scss/*.scss'];

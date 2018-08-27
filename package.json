@@ -1,0 +1,42 @@
+{
+  "name": "wphealthtracker",
+  "version": "0.0.1",
+  "description": "The Ultimate Health, Fitness, Diet, and Goal-Tracking Plugin for WordPress!",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.3.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jakerevans/WPHealthTracker.git"
+  },
+  "keywords": [
+    "WPHealthtracker",
+    "WordPress",
+    "Plugin",
+    "WordPress",
+    "Plugin"
+  ],
+  "author": "Jake Evans",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Jakerevans/WPHealthTracker/issues"
+  },
+  "homepage": "https://github.com/Jakerevans/WPHealthTracker#readme"
+}

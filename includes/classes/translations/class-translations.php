@@ -780,6 +780,17 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->d3_trans_76 = __( 'Hover Over Dots', 'wphealthtracker-textdomain' );
 			$this->d3_trans_77 = __( 'to', 'wphealthtracker-textdomain' );
 			$this->d3_trans_78 = __( 'Play Demo...', 'wphealthtracker-textdomain' );
+			$this->d3_trans_79 = __( 'Total Miles Travelled', 'wphealthtracker-textdomain' );
+			$this->d3_trans_80 = __( 'Total Kilometers Travelled', 'wphealthtracker-textdomain' );
+			$this->d3_trans_81 = __( 'Total Meters Travelled', 'wphealthtracker-textdomain' );
+			$this->d3_trans_82 = __( 'Total Yards Travelled', 'wphealthtracker-textdomain' );
+			$this->d3_trans_83 = __( 'Total Feet Travelled', 'wphealthtracker-textdomain' );
+			$this->d3_trans_84 = __( 'Distance Stats', 'wphealthtracker-textdomain' );
+			$this->d3_trans_85 = __( "Looks like you haven't travelled any distance at all!", 'wphealthtracker-textdomain' );
+			$this->d3_trans_86 = __( 'Once you have, this area will display a map showing how far you\'ve travelled to various locations.', 'wphealthtracker-textdomain' );
+			$this->d3_trans_87 = __( 'Once you have, this area will display some statistics about your distance travelled.', 'wphealthtracker-textdomain' );
+			$this->d3_trans_88 = __( 'Around The World' );
+			$this->d3_trans_89 = __( 'From Earth To The Moon' );
 
 			return $d3_array1 = array(
 				'd3trans1'  => $this->d3_trans_1,

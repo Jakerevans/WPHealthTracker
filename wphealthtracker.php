@@ -117,6 +117,10 @@ global $wpdb;
 /* END REQUIRE STATEMENTS */
 
 // CONSTANT DEFINITIONS //
+
+	// Plugin Version Number.
+	define( 'WPHEALTHTRACKER_VERSION_NUM', '0.0.1' );
+
 	// Root plugin folder URL of this plugin.
 	define( 'WPHEALTHTRACKER_ROOT_URL', plugins_url() . '/wphealthtracker/' );
 

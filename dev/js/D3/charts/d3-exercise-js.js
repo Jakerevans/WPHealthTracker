@@ -9,9 +9,12 @@
 
 "use strict";
 
-function wphealthtracker_exercise_d3_1(mydataFoodItems){
+function wphealthtracker_exercise_d3_1(milesTravelledData, $){
 
-	var milesTravelled = 200000;
+	var milesTravelled = parseFloat( milesTravelledData );
+
+      console.log('milesTravelled')
+      console.log(milesTravelled)
 
         	// San Diego to...
         	var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
@@ -25,7 +28,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             newLine.setAttribute('data-straightlinedistance',1065);
             newLine.setAttribute('data-destcity', 'Seattle');
             newLine.setAttribute('stroke-width',1);
-            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+            jQuery(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-sandiego-portland');
@@ -2185,7 +2188,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-saltlakecity');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L91 96');
+            newLine.setAttribute('d','M255 87.5 L91 96');
             newLine.setAttribute('stroke-dasharray',164);
             newLine.setAttribute('stroke-dashoffset',164);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2199,7 +2202,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-seattle');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L39 14');
+            newLine.setAttribute('d','M255 87.5 L39 14');
             newLine.setAttribute('stroke-dasharray',227);
             newLine.setAttribute('stroke-dashoffset',227);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2212,7 +2215,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-portland');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L32 33');
+            newLine.setAttribute('d','M255 87.5 L32 33');
             newLine.setAttribute('stroke-dasharray',230);
             newLine.setAttribute('stroke-dashoffset',230);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2225,7 +2228,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-la');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L30.5 143');
+            newLine.setAttribute('d','M255 87.5 L30.5 143');
             newLine.setAttribute('stroke-dasharray',231);
             newLine.setAttribute('stroke-dashoffset',231);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2238,7 +2241,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-sandiego');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L40 158');
+            newLine.setAttribute('d','M255 87.5 L40 158');
             newLine.setAttribute('stroke-dasharray',226);
             newLine.setAttribute('stroke-dashoffset',226);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2251,7 +2254,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-denver');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L138 109.5');
+            newLine.setAttribute('d','M255 87.5 L138 109.5');
             newLine.setAttribute('stroke-dasharray',119);
             newLine.setAttribute('stroke-dashoffset',119);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2277,7 +2280,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-phoenix');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L74 155');
+            newLine.setAttribute('d','M255 87.5 L74 155');
             newLine.setAttribute('stroke-dasharray',193);
             newLine.setAttribute('stroke-dashoffset',193);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2290,7 +2293,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-dallas');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L194.5 176');
+            newLine.setAttribute('d','M255 87.5 L194.5 176');
             newLine.setAttribute('stroke-dasharray',105);
             newLine.setAttribute('stroke-dashoffset',105);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2303,7 +2306,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-houston');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L209.5 200');
+            newLine.setAttribute('d','M255 87.5 L209.5 200');
             newLine.setAttribute('stroke-dasharray',124);
             newLine.setAttribute('stroke-dashoffset',124);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2316,7 +2319,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-minneapolis');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L216 60.5');
+            newLine.setAttribute('d','M255 87.5 L216 60.5');
             newLine.setAttribute('stroke-dasharray',47);
             newLine.setAttribute('stroke-dashoffset',47);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2342,7 +2345,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-miami');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L330 226');
+            newLine.setAttribute('d','M255 87.5 L330 226');
             newLine.setAttribute('stroke-dasharray',157);
             newLine.setAttribute('stroke-dashoffset',157);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2355,7 +2358,7 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-newyork');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L350 80');
+            newLine.setAttribute('d','M255 87.5 L350 80');
             newLine.setAttribute('stroke-dasharray',97);
             newLine.setAttribute('stroke-dashoffset',97);
             newLine.setAttribute('data-offsettoanimateto',0);
@@ -2368,12 +2371,603 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
             var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
             newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-chicago-washingtondc');
             newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromchicago');
-            newLine.setAttribute('d','M255 88 L335 107.5');
+            newLine.setAttribute('d','M255 87.5 L335 107.5');
             newLine.setAttribute('stroke-dasharray',81);
             newLine.setAttribute('stroke-dashoffset',81);
             newLine.setAttribute('data-offsettoanimateto',0);
             newLine.setAttribute('data-offsettoreturnto',81);
             newLine.setAttribute('data-straightlinedistance',594);
+            newLine.setAttribute('data-destcity', 'Washington D.C.');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            // Chicago to...
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-saltlakecity');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L91 96');
+            newLine.setAttribute('stroke-dasharray',195);
+            newLine.setAttribute('stroke-dashoffset',195);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',195);
+            newLine.setAttribute('data-straightlinedistance',1490);
+
+            newLine.setAttribute('data-destcity', 'Salt Lake City');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-seattle');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L39 14');
+            newLine.setAttribute('stroke-dasharray',255);
+            newLine.setAttribute('stroke-dashoffset',255);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',255);
+            newLine.setAttribute('data-straightlinedistance',1935);
+            newLine.setAttribute('data-destcity', 'Seattle');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-portland');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L32 33');
+            newLine.setAttribute('stroke-dasharray',260);
+            newLine.setAttribute('stroke-dashoffset',260);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',260);
+            newLine.setAttribute('data-straightlinedistance',1971);
+            newLine.setAttribute('data-destcity', 'Portland');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-la');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L30.5 143');
+            newLine.setAttribute('stroke-dasharray',262);
+            newLine.setAttribute('stroke-dashoffset',262);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',262);
+            newLine.setAttribute('data-straightlinedistance',1982);
+            newLine.setAttribute('data-destcity', 'Los Angeles');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-sandiego');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L40 158');
+            newLine.setAttribute('stroke-dasharray',257);
+            newLine.setAttribute('stroke-dashoffset',257);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',257);
+            newLine.setAttribute('data-straightlinedistance',1971);
+            newLine.setAttribute('data-destcity', 'San Diego');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-denver');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L138 109.5');
+            newLine.setAttribute('stroke-dasharray',150);
+            newLine.setAttribute('stroke-dashoffset',150);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',150);
+            newLine.setAttribute('data-straightlinedistance',1156);
+            newLine.setAttribute('data-destcity', 'Denver');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-sanfrancisco');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L13 102.5');
+            newLine.setAttribute('stroke-dasharray',273);
+            newLine.setAttribute('stroke-dashoffset',273);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',273);
+            newLine.setAttribute('data-straightlinedistance',2089);
+            newLine.setAttribute('data-destcity', 'San Francisco');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-phoenix');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L74 155');
+            newLine.setAttribute('stroke-dasharray',223);
+            newLine.setAttribute('stroke-dashoffset',223);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',223);
+            newLine.setAttribute('data-straightlinedistance',1689);
+            newLine.setAttribute('data-destcity', 'Phoenix');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-dallas');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L194.5 176');
+            newLine.setAttribute('stroke-dasharray',128);
+            newLine.setAttribute('stroke-dashoffset',128);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',128);
+            newLine.setAttribute('data-straightlinedistance',1000);
+            newLine.setAttribute('data-destcity', 'Dallas');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-houston');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L210 200');
+            newLine.setAttribute('stroke-dasharray',142);
+            newLine.setAttribute('stroke-dashoffset',142);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',142);
+            newLine.setAttribute('data-straightlinedistance',1107);
+            newLine.setAttribute('data-destcity', 'Houston');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-minneapolis');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L216 60.5');
+            newLine.setAttribute('stroke-dasharray',73);
+            newLine.setAttribute('stroke-dashoffset',73);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',73);
+            newLine.setAttribute('data-straightlinedistance',543);
+            newLine.setAttribute('data-destcity', 'Minneapolis');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-chicago');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L255 87.5');
+            newLine.setAttribute('stroke-dasharray',32);
+            newLine.setAttribute('stroke-dashoffset',32);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',32);
+            newLine.setAttribute('data-straightlinedistance',237);
+            newLine.setAttribute('data-destcity', 'Chicago');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-miami');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L330 226');
+            newLine.setAttribute('stroke-dasharray',149);
+            newLine.setAttribute('stroke-dashoffset',149);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',149);
+            newLine.setAttribute('data-straightlinedistance',1158);
+            newLine.setAttribute('data-destcity', 'Miami');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-newyork');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L350 80');
+            newLine.setAttribute('stroke-dasharray',66);
+            newLine.setAttribute('stroke-dashoffset',66);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',66);
+            newLine.setAttribute('data-straightlinedistance',481);
+            newLine.setAttribute('data-destcity', 'New York');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-washingtondc');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
+            newLine.setAttribute('d','M286 84 L335 107.5');
+            newLine.setAttribute('stroke-dasharray',53);
+            newLine.setAttribute('stroke-dashoffset',53);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',53);
+            newLine.setAttribute('data-straightlinedistance',394);
+            newLine.setAttribute('data-destcity', 'Washington D.C.');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            // Miami to...
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-saltlakecity');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L91 96');
+            newLine.setAttribute('stroke-dasharray',272);
+            newLine.setAttribute('stroke-dashoffset',272);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',272);
+            newLine.setAttribute('data-straightlinedistance',2090);
+
+            newLine.setAttribute('data-destcity', 'Salt Lake City');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-seattle');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L39 14');
+            newLine.setAttribute('stroke-dasharray',358);
+            newLine.setAttribute('stroke-dashoffset',358);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',358);
+            newLine.setAttribute('data-straightlinedistance',2735);
+            newLine.setAttribute('data-destcity', 'Seattle');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-portland');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L32 33');
+            newLine.setAttribute('stroke-dasharray',356);
+            newLine.setAttribute('stroke-dashoffset',356);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',356);
+            newLine.setAttribute('data-straightlinedistance',2707);
+            newLine.setAttribute('data-destcity', 'Portland');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-la');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L30.5 143');
+            newLine.setAttribute('stroke-dasharray',311);
+            newLine.setAttribute('stroke-dashoffset',311);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',311);
+            newLine.setAttribute('data-straightlinedistance',2338);
+            newLine.setAttribute('data-destcity', 'Los Angeles');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-sandiego');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L40 158');
+            newLine.setAttribute('stroke-dasharray',298);
+            newLine.setAttribute('stroke-dashoffset',298);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',298);
+            newLine.setAttribute('data-straightlinedistance',2271);
+            newLine.setAttribute('data-destcity', 'San Diego');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-denver');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L138 109.5');
+            newLine.setAttribute('stroke-dasharray',225);
+            newLine.setAttribute('stroke-dashoffset',225);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',225);
+            newLine.setAttribute('data-straightlinedistance',1727);
+            newLine.setAttribute('data-destcity', 'Denver');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-sanfrancisco');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L13 102.5');
+            newLine.setAttribute('stroke-dasharray',340);
+            newLine.setAttribute('stroke-dashoffset',340);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',340);
+            newLine.setAttribute('data-straightlinedistance',2594);
+            newLine.setAttribute('data-destcity', 'San Francisco');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-phoenix');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L74 155');
+            newLine.setAttribute('stroke-dasharray',267);
+            newLine.setAttribute('stroke-dashoffset',267);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',267);
+            newLine.setAttribute('data-straightlinedistance',1981);
+            newLine.setAttribute('data-destcity', 'Phoenix');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-dallas');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L194.5 173.5');
+            newLine.setAttribute('stroke-dasharray',143);
+            newLine.setAttribute('stroke-dashoffset',143);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',143);
+            newLine.setAttribute('data-straightlinedistance',1111);
+            newLine.setAttribute('data-destcity', 'Dallas');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-houston');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L210 202');
+            newLine.setAttribute('stroke-dasharray',124);
+            newLine.setAttribute('stroke-dashoffset',124);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',124);
+            newLine.setAttribute('data-straightlinedistance',968);
+            newLine.setAttribute('data-destcity', 'Houston');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-minneapolis');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L216 60.5');
+            newLine.setAttribute('stroke-dasharray',200);
+            newLine.setAttribute('stroke-dashoffset',200);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',200);
+            newLine.setAttribute('data-straightlinedistance',1516);
+            newLine.setAttribute('data-destcity', 'Minneapolis');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-chicago');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L255 87.5');
+            newLine.setAttribute('stroke-dasharray',156);
+            newLine.setAttribute('stroke-dashoffset',156);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',156);
+            newLine.setAttribute('data-straightlinedistance',1193);
+            newLine.setAttribute('data-destcity', 'Chicago');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-detroit');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L286.5 84');
+            newLine.setAttribute('stroke-dasharray',149);
+            newLine.setAttribute('stroke-dashoffset',149);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',149);
+            newLine.setAttribute('data-straightlinedistance',1158);
+            newLine.setAttribute('data-destcity', 'Detroit');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-newyork');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L352 80');
+            newLine.setAttribute('stroke-dasharray',146);
+            newLine.setAttribute('stroke-dashoffset',146);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',146);
+            newLine.setAttribute('data-straightlinedistance',1094);
+            newLine.setAttribute('data-destcity', 'New York');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-miami-washingtondc');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-frommiami');
+            newLine.setAttribute('d','M330.5 225 L333.5 106');
+            newLine.setAttribute('stroke-dasharray',118);
+            newLine.setAttribute('stroke-dashoffset',118);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',118);
+            newLine.setAttribute('data-straightlinedistance',928);
+            newLine.setAttribute('data-destcity', 'Washington D.C.');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            // New York to...
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-saltlakecity');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L91 96');
+            newLine.setAttribute('stroke-dasharray',259);
+            newLine.setAttribute('stroke-dashoffset',259);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',259);
+            newLine.setAttribute('data-straightlinedistance',1970);
+
+            newLine.setAttribute('data-destcity', 'Salt Lake City');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-seattle');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L39 14');
+            newLine.setAttribute('stroke-dasharray',317);
+            newLine.setAttribute('stroke-dashoffset',317);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',317);
+            newLine.setAttribute('data-straightlinedistance',2405);
+            newLine.setAttribute('data-destcity', 'Seattle');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-portland');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L32 33');
+            newLine.setAttribute('stroke-dasharray',322);
+            newLine.setAttribute('stroke-dashoffset',322);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',322);
+            newLine.setAttribute('data-straightlinedistance',2441);
+            newLine.setAttribute('data-destcity', 'Portland');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-la');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L30.5 143');
+            newLine.setAttribute('stroke-dasharray',326);
+            newLine.setAttribute('stroke-dashoffset',326);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',326);
+            newLine.setAttribute('data-straightlinedistance',2448);
+            newLine.setAttribute('data-destcity', 'Los Angeles');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-sandiego');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L40 158');
+            newLine.setAttribute('stroke-dasharray',319);
+            newLine.setAttribute('stroke-dashoffset',319);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',319);
+            newLine.setAttribute('data-straightlinedistance',2431);
+            newLine.setAttribute('data-destcity', 'San Diego');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-denver');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L138 109.5');
+            newLine.setAttribute('stroke-dasharray',225);
+            newLine.setAttribute('stroke-dashoffset',225);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',225);
+            newLine.setAttribute('data-straightlinedistance',1629);
+            newLine.setAttribute('data-destcity', 'Denver');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-sanfrancisco');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L13 102.5');
+            newLine.setAttribute('stroke-dasharray',338);
+            newLine.setAttribute('stroke-dashoffset',338);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',338);
+            newLine.setAttribute('data-straightlinedistance',2569);
+            newLine.setAttribute('data-destcity', 'San Francisco');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-phoenix');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L74 155');
+            newLine.setAttribute('stroke-dasharray',285);
+            newLine.setAttribute('stroke-dashoffset',285);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',285);
+            newLine.setAttribute('data-straightlinedistance',2142);
+            newLine.setAttribute('data-destcity', 'Phoenix');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-dallas');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L194.5 173.5');
+            newLine.setAttribute('stroke-dasharray',180);
+            newLine.setAttribute('stroke-dashoffset',180);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',180);
+            newLine.setAttribute('data-straightlinedistance',1372);
+            newLine.setAttribute('data-destcity', 'Dallas');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-houston');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M351 81 L210 202');
+            newLine.setAttribute('stroke-dasharray',187);
+            newLine.setAttribute('stroke-dashoffset',187);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',187);
+            newLine.setAttribute('data-straightlinedistance',1419);
+            newLine.setAttribute('data-destcity', 'Houston');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-minneapolis');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 80 L216 60.5');
+            newLine.setAttribute('stroke-dasharray',135);
+            newLine.setAttribute('stroke-dashoffset',135);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',135);
+            newLine.setAttribute('data-straightlinedistance',1017);
+            newLine.setAttribute('data-destcity', 'Minneapolis');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-chicago');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L255 87.5');
+            newLine.setAttribute('stroke-dasharray',95);
+            newLine.setAttribute('stroke-dashoffset',95);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',95);
+            newLine.setAttribute('data-straightlinedistance',712);
+            newLine.setAttribute('data-destcity', 'Chicago');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-detroit');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M350 81 L286.5 84');
+            newLine.setAttribute('stroke-dasharray',64);
+            newLine.setAttribute('stroke-dashoffset',64);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',64);
+            newLine.setAttribute('data-straightlinedistance',481);
+            newLine.setAttribute('data-destcity', 'Detroit');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-miami');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M352 81 L331 225');
+            newLine.setAttribute('stroke-dasharray',147);
+            newLine.setAttribute('stroke-dashoffset',147);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',147);
+            newLine.setAttribute('data-straightlinedistance',1094);
+            newLine.setAttribute('data-destcity', 'Miami');
+            newLine.setAttribute('stroke-width',1);
+            $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+            var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+            newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-newyork-washingtondc');
+            newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromnewyork');
+            newLine.setAttribute('d','M352 81 L334 106');
+            newLine.setAttribute('stroke-dasharray',29);
+            newLine.setAttribute('stroke-dashoffset',29);
+            newLine.setAttribute('data-offsettoanimateto',0);
+            newLine.setAttribute('data-offsettoreturnto',29);
+            newLine.setAttribute('data-straightlinedistance',204);
             newLine.setAttribute('data-destcity', 'Washington D.C.');
             newLine.setAttribute('stroke-width',1);
             $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
@@ -2384,203 +2978,209 @@ function wphealthtracker_exercise_d3_1(mydataFoodItems){
 
 
 
-// Detroit to...
+
+
+
+
+
+
+
+// Washington D.C. to...
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-saltlakecity');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L91 96');
-newLine.setAttribute('stroke-dasharray',164);
-newLine.setAttribute('stroke-dashoffset',164);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-saltlakecity');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L91 96');
+newLine.setAttribute('stroke-dasharray',242);
+newLine.setAttribute('stroke-dashoffset',242);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',164);
-newLine.setAttribute('data-straightlinedistance',1259);
+newLine.setAttribute('data-offsettoreturnto',242);
+newLine.setAttribute('data-straightlinedistance',1844);
 
 newLine.setAttribute('data-destcity', 'Salt Lake City');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-seattle');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L39 14');
-newLine.setAttribute('stroke-dasharray',227);
-newLine.setAttribute('stroke-dashoffset',227);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-seattle');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L39 14');
+newLine.setAttribute('stroke-dasharray',308);
+newLine.setAttribute('stroke-dashoffset',308);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',227);
-newLine.setAttribute('data-straightlinedistance',1735);
+newLine.setAttribute('data-offsettoreturnto',308);
+newLine.setAttribute('data-straightlinedistance',2324);
 newLine.setAttribute('data-destcity', 'Seattle');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-portland');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L32 33');
-newLine.setAttribute('stroke-dasharray',230);
-newLine.setAttribute('stroke-dashoffset',230);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-portland');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L32 33');
+newLine.setAttribute('stroke-dasharray',311);
+newLine.setAttribute('stroke-dashoffset',311);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',230);
-newLine.setAttribute('data-straightlinedistance',1756);
+newLine.setAttribute('data-offsettoreturnto',311);
+newLine.setAttribute('data-straightlinedistance',2349);
 newLine.setAttribute('data-destcity', 'Portland');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-la');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L30.5 143');
-newLine.setAttribute('stroke-dasharray',231);
-newLine.setAttribute('stroke-dashoffset',231);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-la');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L30.5 143');
+newLine.setAttribute('stroke-dasharray',305);
+newLine.setAttribute('stroke-dashoffset',305);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',231);
-newLine.setAttribute('data-straightlinedistance',1744);
+newLine.setAttribute('data-offsettoreturnto',305);
+newLine.setAttribute('data-straightlinedistance',2297);
 newLine.setAttribute('data-destcity', 'Los Angeles');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-sandiego');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L40 158');
-newLine.setAttribute('stroke-dasharray',226);
-newLine.setAttribute('stroke-dashoffset',226);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-sandiego');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L40 158');
+newLine.setAttribute('stroke-dasharray',297);
+newLine.setAttribute('stroke-dashoffset',297);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',226);
-newLine.setAttribute('data-straightlinedistance',1733);
+newLine.setAttribute('data-offsettoreturnto',297);
+newLine.setAttribute('data-straightlinedistance',2272);
 newLine.setAttribute('data-destcity', 'San Diego');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-denver');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L138 109.5');
-newLine.setAttribute('stroke-dasharray',119);
-newLine.setAttribute('stroke-dashoffset',119);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-denver');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L138 109.5');
+newLine.setAttribute('stroke-dasharray',195);
+newLine.setAttribute('stroke-dashoffset',195);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',119);
-newLine.setAttribute('data-straightlinedistance',919);
+newLine.setAttribute('data-offsettoreturnto',195);
+newLine.setAttribute('data-straightlinedistance',1491);
 newLine.setAttribute('data-destcity', 'Denver');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-sanfrancisco');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 87.5 L13 102.5');
-newLine.setAttribute('stroke-dasharray',243);
-newLine.setAttribute('stroke-dashoffset',243);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-sanfrancisco');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L13 102.5');
+newLine.setAttribute('stroke-dasharray',320);
+newLine.setAttribute('stroke-dashoffset',320);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',243);
-newLine.setAttribute('data-straightlinedistance',1857);
+newLine.setAttribute('data-offsettoreturnto',320);
+newLine.setAttribute('data-straightlinedistance',2438);
 newLine.setAttribute('data-destcity', 'San Francisco');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-phoenix');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L74 155');
-newLine.setAttribute('stroke-dasharray',193);
-newLine.setAttribute('stroke-dashoffset',193);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-phoenix');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L74 155');
+newLine.setAttribute('stroke-dasharray',263);
+newLine.setAttribute('stroke-dashoffset',263);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',193);
-newLine.setAttribute('data-straightlinedistance',1453);
+newLine.setAttribute('data-offsettoreturnto',263);
+newLine.setAttribute('data-straightlinedistance',1980);
 newLine.setAttribute('data-destcity', 'Phoenix');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-dallas');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L194.5 176');
-newLine.setAttribute('stroke-dasharray',105);
-newLine.setAttribute('stroke-dashoffset',105);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-dallas');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L194.5 173.5');
+newLine.setAttribute('stroke-dasharray',153);
+newLine.setAttribute('stroke-dashoffset',153);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',105);
-newLine.setAttribute('data-straightlinedistance',806);
+newLine.setAttribute('data-offsettoreturnto',153);
+newLine.setAttribute('data-straightlinedistance',1183);
 newLine.setAttribute('data-destcity', 'Dallas');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-houston');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L209.5 200');
-newLine.setAttribute('stroke-dasharray',124);
-newLine.setAttribute('stroke-dashoffset',124);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-houston');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L210 202');
+newLine.setAttribute('stroke-dasharray',157);
+newLine.setAttribute('stroke-dashoffset',157);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',124);
-newLine.setAttribute('data-straightlinedistance',943);
+newLine.setAttribute('data-offsettoreturnto',157);
+newLine.setAttribute('data-straightlinedistance',1220);
 newLine.setAttribute('data-destcity', 'Houston');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-minneapolis');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L216 60.5');
-newLine.setAttribute('stroke-dasharray',47);
-newLine.setAttribute('stroke-dashoffset',47);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-minneapolis');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L216 60.5');
+newLine.setAttribute('stroke-dasharray',125);
+newLine.setAttribute('stroke-dashoffset',125);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',47);
-newLine.setAttribute('data-straightlinedistance',355);
+newLine.setAttribute('data-offsettoreturnto',125);
+newLine.setAttribute('data-straightlinedistance',1012);
 newLine.setAttribute('data-destcity', 'Minneapolis');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-chicago');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 87.5 L286.5 83.5');
-newLine.setAttribute('stroke-dasharray',32);
-newLine.setAttribute('stroke-dashoffset',32);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-chicago');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L255 87.5');
+newLine.setAttribute('stroke-dasharray',80);
+newLine.setAttribute('stroke-dashoffset',80);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',32);
-newLine.setAttribute('data-straightlinedistance',237);
+newLine.setAttribute('data-offsettoreturnto',80);
+newLine.setAttribute('data-straightlinedistance',594);
 newLine.setAttribute('data-destcity', 'Chicago');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-miami');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L330 226');
-newLine.setAttribute('stroke-dasharray',157);
-newLine.setAttribute('stroke-dashoffset',157);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-detroit');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L286.5 84');
+newLine.setAttribute('stroke-dasharray',52);
+newLine.setAttribute('stroke-dashoffset',52);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',157);
-newLine.setAttribute('data-straightlinedistance',1193);
+newLine.setAttribute('data-offsettoreturnto',52);
+newLine.setAttribute('data-straightlinedistance',394);
+newLine.setAttribute('data-destcity', 'Detroit');
+newLine.setAttribute('stroke-width',1);
+$(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
+
+var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-miami');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L331 225');
+newLine.setAttribute('stroke-dasharray',118);
+newLine.setAttribute('stroke-dashoffset',118);
+newLine.setAttribute('data-offsettoanimateto',0);
+newLine.setAttribute('data-offsettoreturnto',118);
+newLine.setAttribute('data-straightlinedistance',928);
 newLine.setAttribute('data-destcity', 'Miami');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
 
 var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-newyork');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L350 80');
-newLine.setAttribute('stroke-dasharray',97);
-newLine.setAttribute('stroke-dashoffset',97);
+newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-washingtondc-newyork');
+newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc');
+newLine.setAttribute('d','M333 107 L352 81');
+newLine.setAttribute('stroke-dasharray',33);
+newLine.setAttribute('stroke-dashoffset',33);
 newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',97);
-newLine.setAttribute('data-straightlinedistance',712);
+newLine.setAttribute('data-offsettoreturnto',33);
+newLine.setAttribute('data-straightlinedistance',204);
 newLine.setAttribute('data-destcity', 'New York');
 newLine.setAttribute('stroke-width',1);
 $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
-
-var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
-newLine.setAttribute('id','wphealthtracker-d3chart-exercise-line-detroit-washingtondc');
-newLine.setAttribute('class','wphealthtracker-d3chart-exercise-distance-line wphealthtracker-d3chart-exercise-distance-line-fromdetroit');
-newLine.setAttribute('d','M255 88 L335 107.5');
-newLine.setAttribute('stroke-dasharray',81);
-newLine.setAttribute('stroke-dashoffset',81);
-newLine.setAttribute('data-offsettoanimateto',0);
-newLine.setAttribute('data-offsettoreturnto',81);
-newLine.setAttribute('data-straightlinedistance',594);
-newLine.setAttribute('data-destcity', 'Washington D.C.');
-newLine.setAttribute('stroke-width',1);
-$(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
-
 
 
 
@@ -2965,7 +3565,7 @@ $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
         }
 
         // Now build HTML for distance/dest. report
-        var reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'route.svg"/><p>Seattle '+wphealthtracker_php_variables.d3trans77+'...</p></div>'+rowHtml+'<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+        var reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'route.svg"/><p>Portland '+wphealthtracker_php_variables.d3trans77+'...</p></div>'+rowHtml+'<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
         $('.wphealthtracker-d3chart-readout-exercise').append(reportHtml).animate({'opacity':'1'}, 1000);
     });
 
@@ -3290,6 +3890,170 @@ $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
         $('.wphealthtracker-d3chart-readout-exercise').append(reportHtml).animate({'opacity':'1'}, 1000);
     });
 
+    $('#wphealthtracker-d3chart-exercise-city-dot-miami').mouseenter(function(){
+
+        $(this).animate({'stroke-width':'5'}, 100)
+
+        $('.wphealthtracker-d3chart-readout-exercise').html('')
+        var distanceArray = [];
+        var cityArray = [];
+        var percArray = [];
+        $('.wphealthtracker-d3chart-exercise-distance-line-frommiami').each(function(){
+            var offsettoanimateto = $(this).attr('data-offsettoanimateto')
+            var offsettoreturnto = $(this).attr('data-offsettoreturnto')
+            var straightlinedistance = $(this).attr('data-straightlinedistance')
+            var destcity = $(this).attr('data-destcity')
+            var temp1 = (offsettoreturnto * milesTravelled) / straightlinedistance;
+            temp1 = offsettoreturnto - temp1;
+
+            if(milesTravelled >=  straightlinedistance){
+                temp1 = offsettoanimateto;
+                percentage = 100;
+            } else {
+                percentage = ((milesTravelled/straightlinedistance) * 100).toFixed(2);
+            }
+
+            $(this).animate({'stroke-dashoffset':temp1},2000);
+
+            // Add to distance & city array
+            distanceArray.push(straightlinedistance)
+            cityArray.push(destcity)
+            percArray.push(percentage)
+        })
+
+        var rowHtml = '';
+        for (var i = cityArray.length - 1; i >= 0; i--) {
+
+            var congratsHtml = '';
+            if(percArray[i] == 100){
+                congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg"/>'
+            } else {
+                congratsHtml = '';
+            }
+
+            // Calculate distances
+            var miles = distanceArray[i];
+            var kilometers = (miles * 1.60934).toFixed(0);
+
+            rowHtml += '<div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p>'+cityArray[i]+'</p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>'+miles+' '+wphealthtracker_php_variables.commontrans53+' / '+kilometers+' '+wphealthtracker_php_variables.commontrans56+'</p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>'+percArray[i]+'% '+wphealthtracker_php_variables.d3trans75+' '+congratsHtml+'</p></div></div>'
+        }
+
+        // Now build HTML for distance/dest. report
+        var reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'route.svg"/><p>Miami '+wphealthtracker_php_variables.d3trans77+'...</p></div>'+rowHtml+'<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+        $('.wphealthtracker-d3chart-readout-exercise').append(reportHtml).animate({'opacity':'1'}, 1000);
+    });
+
+    $('#wphealthtracker-d3chart-exercise-city-dot-newyork').mouseenter(function(){
+
+        $(this).animate({'stroke-width':'5'}, 100)
+
+        $('.wphealthtracker-d3chart-readout-exercise').html('')
+        var distanceArray = [];
+        var cityArray = [];
+        var percArray = [];
+        $('.wphealthtracker-d3chart-exercise-distance-line-fromnewyork').each(function(){
+            var offsettoanimateto = $(this).attr('data-offsettoanimateto')
+            var offsettoreturnto = $(this).attr('data-offsettoreturnto')
+            var straightlinedistance = $(this).attr('data-straightlinedistance')
+            var destcity = $(this).attr('data-destcity')
+            var temp1 = (offsettoreturnto * milesTravelled) / straightlinedistance;
+            temp1 = offsettoreturnto - temp1;
+
+            if(milesTravelled >=  straightlinedistance){
+                temp1 = offsettoanimateto;
+                percentage = 100;
+            } else {
+                percentage = ((milesTravelled/straightlinedistance) * 100).toFixed(2);
+            }
+
+            $(this).animate({'stroke-dashoffset':temp1},2000);
+
+            // Add to distance & city array
+            distanceArray.push(straightlinedistance)
+            cityArray.push(destcity)
+            percArray.push(percentage)
+        })
+
+        var rowHtml = '';
+        for (var i = cityArray.length - 1; i >= 0; i--) {
+
+            var congratsHtml = '';
+            if(percArray[i] == 100){
+                congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg"/>'
+            } else {
+                congratsHtml = '';
+            }
+
+            // Calculate distances
+            var miles = distanceArray[i];
+            var kilometers = (miles * 1.60934).toFixed(0);
+
+            rowHtml += '<div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p>'+cityArray[i]+'</p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>'+miles+' '+wphealthtracker_php_variables.commontrans53+' / '+kilometers+' '+wphealthtracker_php_variables.commontrans56+'</p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>'+percArray[i]+'% '+wphealthtracker_php_variables.d3trans75+' '+congratsHtml+'</p></div></div>'
+        }
+
+        // Now build HTML for distance/dest. report
+        var reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'route.svg"/><p>New York '+wphealthtracker_php_variables.d3trans77+'...</p></div>'+rowHtml+'<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+        $('.wphealthtracker-d3chart-readout-exercise').append(reportHtml).animate({'opacity':'1'}, 1000);
+    });
+
+    $('#wphealthtracker-d3chart-exercise-city-dot-washingtondc').mouseenter(function(){
+
+        $(this).animate({'stroke-width':'5'}, 100)
+
+        $('.wphealthtracker-d3chart-readout-exercise').html('')
+        var distanceArray = [];
+        var cityArray = [];
+        var percArray = [];
+        $('.wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc').each(function(){
+            var offsettoanimateto = $(this).attr('data-offsettoanimateto')
+            var offsettoreturnto = $(this).attr('data-offsettoreturnto')
+            var straightlinedistance = $(this).attr('data-straightlinedistance')
+            var destcity = $(this).attr('data-destcity')
+            var temp1 = (offsettoreturnto * milesTravelled) / straightlinedistance;
+            temp1 = offsettoreturnto - temp1;
+
+            if(milesTravelled >=  straightlinedistance){
+                temp1 = offsettoanimateto;
+                percentage = 100;
+            } else {
+                percentage = ((milesTravelled/straightlinedistance) * 100).toFixed(2);
+            }
+
+            $(this).animate({'stroke-dashoffset':temp1},2000);
+
+            // Add to distance & city array
+            distanceArray.push(straightlinedistance)
+            cityArray.push(destcity)
+            percArray.push(percentage)
+        })
+
+        var rowHtml = '';
+        for (var i = cityArray.length - 1; i >= 0; i--) {
+
+            var congratsHtml = '';
+            if(percArray[i] == 100){
+                congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg"/>'
+            } else {
+                congratsHtml = '';
+            }
+
+            // Calculate distances
+            var miles = distanceArray[i];
+            var kilometers = (miles * 1.60934).toFixed(0);
+
+            rowHtml += '<div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p>'+cityArray[i]+'</p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>'+miles+' '+wphealthtracker_php_variables.commontrans53+' / '+kilometers+' '+wphealthtracker_php_variables.commontrans56+'</p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>'+percArray[i]+'% '+wphealthtracker_php_variables.d3trans75+' '+congratsHtml+'</p></div></div>'
+        }
+
+        // Now build HTML for distance/dest. report
+        var reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'route.svg"/><p>Washington D.C. '+wphealthtracker_php_variables.d3trans77+'...</p></div>'+rowHtml+'<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+        $('.wphealthtracker-d3chart-readout-exercise').append(reportHtml).animate({'opacity':'1'}, 1000);
+    });
+
+
+
+
+    
+
 
 
 	$('#wphealthtracker-d3chart-exercise-city-dot-sandiego').mouseleave(function(){
@@ -3434,6 +4198,41 @@ $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
         })
     });
 
+    $('#wphealthtracker-d3chart-exercise-city-dot-miami').mouseleave(function(){
+
+        $(this).animate({'stroke-width':'2'}, 100)
+
+        $('.wphealthtracker-d3chart-exercise-distance-line-frommiami').each(function(){
+
+            var offsettoreturnto = $(this).attr('data-offsettoreturnto')
+            $(this).animate().stop().css({'stroke-dashoffset':offsettoreturnto},2000);
+        })
+    });
+
+    $('#wphealthtracker-d3chart-exercise-city-dot-newyork').mouseleave(function(){
+
+        $(this).animate({'stroke-width':'2'}, 100)
+
+        $('.wphealthtracker-d3chart-exercise-distance-line-fromnewyork').each(function(){
+
+            var offsettoreturnto = $(this).attr('data-offsettoreturnto')
+            $(this).animate().stop().css({'stroke-dashoffset':offsettoreturnto},2000);
+        })
+    });
+
+    $('#wphealthtracker-d3chart-exercise-city-dot-washingtondc').mouseleave(function(){
+
+        $(this).animate({'stroke-width':'2'}, 100)
+
+        $('.wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc').each(function(){
+
+            var offsettoreturnto = $(this).attr('data-offsettoreturnto')
+            $(this).animate().stop().css({'stroke-dashoffset':offsettoreturnto},2000);
+        })
+    });
+
+
+
 	
 	// Hide the the spinner
       $('#wphealthtracker-spinner-d3-await-1').animate({'opacity':'0'}) 
@@ -3485,8 +4284,71 @@ $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
             }, 21000) )
             timeouts.push( setTimeout(function(){
                   $('#wphealthtracker-d3chart-exercise-city-dot-seattle').trigger('mouseleave');
-                  wphealthtracker_travel_demo();
             }, 24000) )
+
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-newyork').trigger('mouseenter');
+            }, 25000) )
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-newyork').trigger('mouseleave');
+            }, 28000) )
+
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-miami').trigger('mouseenter');
+            }, 29000) )
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-miami').trigger('mouseleave');
+            }, 32000) )
+
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-phoenix').trigger('mouseenter');
+            }, 33000) )
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-phoenix').trigger('mouseleave');
+            }, 36000) )
+
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-minneaspolis').trigger('mouseenter');
+            }, 37000) )
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-minneapolis').trigger('mouseleave');
+            }, 40000) )
+
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-washingtondc').trigger('mouseenter');
+            }, 37000) )
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-washingtondc').trigger('mouseleave');
+            }, 40000) )
+
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-chicago').trigger('mouseenter');
+            }, 41000) )
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-chicago').trigger('mouseleave');
+            }, 44000) )
+
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-saltlakecity').trigger('mouseenter');
+            }, 45000) )
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-saltlakecity').trigger('mouseleave');
+            }, 48000) )
+
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-dallas').trigger('mouseenter');
+            }, 49000) )
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-dallas').trigger('mouseleave');
+            }, 52000) )
+
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-detroit').trigger('mouseenter');
+            }, 53000) )
+            timeouts.push( setTimeout(function(){
+                  $('#wphealthtracker-d3chart-exercise-city-dot-detroit').trigger('mouseleave');
+                  wphealthtracker_travel_demo();
+            }, 56000) )
       }
 
       $('#wphealthtracker-chart-hover-distance-demo-exercise').mouseenter(function(){
@@ -3513,11 +4375,11 @@ $(newLine).insertAfter("#wphealthtracker-d3chart-exercise-city-dot-sandiego");
                   $(this).css({'stroke-width':2});
             })
 
-            //milesTravelled = disatncefromphpajax!!!!!!!!!!!!!!!!!!!!
+            milesTravelled = parseFloat( milesTravelledData );
       })
 }
 
-function wphealthtracker_exercise_d3_2(mydataEnergy) {
+function wphealthtracker_exercise_d3_2(mydataEnergy, $) {
 
 	// Set dimensions
 	var margin = {
@@ -3953,7 +4815,7 @@ function wphealthtracker_exercise_d3_2(mydataEnergy) {
 
 }
 
-function wphealthtracker_exercise_d3_3(d3Three){
+function wphealthtracker_exercise_d3_3(d3Three, $){
 
 	var donutData = d3Three;
 

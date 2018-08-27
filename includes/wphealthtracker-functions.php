@@ -102,7 +102,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 			if ( stripos( $hook, 'health-tracker' ) !== false ) {
 
 				// First just register the script
-				wp_register_script( 'wphealthtracker_jre_admin_js', WPHEALTHTRACKER_ROOT_JS_URL . 'wphealthtracker-admin-min.js', array( 'jquery' ) );
+				wp_register_script( 'wphealthtracker_jre_admin_js', WPHEALTHTRACKER_ROOT_JS_URL . 'wphealthtracker-admin-min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
 
 				// Next 4-5 lines are required to allow translations of strings that would otherwise live in the wphealthtracker-admin-js.js JavaScript File
 				require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
@@ -147,7 +147,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 			if ( stripos( $hook, 'WPHealthTracker-stats' ) !== false ) {
 
 				// First just register the script
-				wp_register_script( 'wphealthtracker_jre_d3_js', WPHEALTHTRACKER_ROOT_JS_URL . 'd3.min.js', array( 'jquery' ) );
+				wp_register_script( 'wphealthtracker_jre_d3_js', WPHEALTHTRACKER_ROOT_JS_URL . 'd3.min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
 
 				// Enqueued script.
 				wp_enqueue_script( 'wphealthtracker_jre_d3_js' );

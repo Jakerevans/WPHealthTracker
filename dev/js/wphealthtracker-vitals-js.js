@@ -13,30 +13,30 @@ jQuery(document).ready(function($) {
   /* BEGINNING SECTION TO CALL ALL FUNCTIONS IN FILE... */
 
     // For populating the 'Enter' container with the selected user's saved data and/or the blank form
-    wphealthtracker_jre_vitals_selecteduser_vitals_enter();
+    wphealthtracker_jre_vitals_selecteduser_vitals_enter($);
 
     // For populating the 'View' container with the selected user's saved data and/or the blank form
-    wphealthtracker_jre_vitals_selecteduser_vitals_view();
+    wphealthtracker_jre_vitals_selecteduser_vitals_view($);
 
     // For deleting a row of data
-    wphealthtracker_jre_vitals_delete_row_of_data();
+    wphealthtracker_jre_vitals_delete_row_of_data($);
 
     // For adding a row of data
-    wphealthtracker_jre_vitals_add_row_of_data()
+    wphealthtracker_jre_vitals_add_row_of_data($)
 
     // For expanding the previous days' saved data entries
-    wphealthtracker_jre_vitals_expand_all_previous_data()
+    wphealthtracker_jre_vitals_expand_all_previous_data($)
 
     // For saving the Vitals data
-    wphealthtracker_jre_vitals_save_vitals_data();
+    wphealthtracker_jre_vitals_save_vitals_data($);
 
     // For grabbing and outputting data when the 'Filter' button is clicked...
-    wphealthtracker_jre_vitals_selecteduser_vitals_filter_data();
+    wphealthtracker_jre_vitals_selecteduser_vitals_filter_data($);
 
   /* ENDING SECTION TO CALL ALL FUNCTIONS IN FILE... */
 
 
-  function wphealthtracker_jre_vitals_delete_row_of_data(){
+  function wphealthtracker_jre_vitals_delete_row_of_data($){
     $(document).on("click",".wphealthtracker-response-form-row-removal-div", function(event){
 
       // The ID to remove
@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
 
   }
 
-  function wphealthtracker_jre_vitals_add_row_of_data(){
+  function wphealthtracker_jre_vitals_add_row_of_data($){
     $(document).on("click",".wphealthtracker-response-form-row-addition-div", function(event){
 
       // ID of element to add row of data after
@@ -144,7 +144,7 @@ jQuery(document).ready(function($) {
 
 
   // For populating the tab with the selected user's saved data and/or the blank form
-  function wphealthtracker_jre_vitals_selecteduser_vitals_enter(){
+  function wphealthtracker_jre_vitals_selecteduser_vitals_enter($){
     $(document).on("change","#wphealthtracker-user-dropdown-select-vitals", function(event){
 
         // The div that holds the form for the user to fill out and/or add data to
@@ -251,7 +251,7 @@ jQuery(document).ready(function($) {
 
 
   // For populating the tab with the selected user's saved data and/or the blank form
-  function wphealthtracker_jre_vitals_selecteduser_vitals_view(){
+  function wphealthtracker_jre_vitals_selecteduser_vitals_view($){
     $(document).on("change","#wphealthtracker-user-dropdown-select-vitals", function(event){
 
         // The div that holds the form for the user to fill out and/or add data to
@@ -364,7 +364,7 @@ jQuery(document).ready(function($) {
 });
 
   // For grabbing and outputting data when the 'Filter' button is clicked...
-  function wphealthtracker_jre_vitals_selecteduser_vitals_filter_data(){
+  function wphealthtracker_jre_vitals_selecteduser_vitals_filter_data($){
     $(document).on("click","#wphealthtracker-view-filter-button-vitals-id", function(event){
 
       // Animate the spinner
@@ -428,7 +428,7 @@ jQuery(document).ready(function($) {
   }
 
 // For expanding the previous days' saved data entries
-function wphealthtracker_jre_vitals_expand_all_previous_data(){
+function wphealthtracker_jre_vitals_expand_all_previous_data($){
   $(document).on("click",".wphealthtracker-response-form-all-data-row", function(event){
 
     // Modify the removal image attribute to ensure that when the user deletes a row, the correct one gets deleted.
@@ -519,7 +519,7 @@ function wphealthtracker_jre_vitals_expand_all_previous_data(){
 }
 
 // Function to check for, and alert user to, incomplete data when trying to save/update
-function wphealthtracker_jre_vitals_incomplete_data(iteratorNum){
+function wphealthtracker_jre_vitals_incomplete_data(iteratorNum, $){
   // Resetting any possible alert classes
   $('.wphealthtracker-response-form-input-number, .wphealthtracker-response-form-input-time').each(function(){
     $(this).prev().removeClass('wphealthtracker-missing-data-animation')
@@ -788,13 +788,13 @@ function wphealthtracker_jre_vitals_incomplete_data(iteratorNum){
 }
 
 
-function wphealthtracker_jre_vitals_save_vitals_data(){
+function wphealthtracker_jre_vitals_save_vitals_data($){
   $(document).on("click",".wphealthtracker-save-stuff-button", function(event){
 
     var iteratorNum = $(this).attr('data-parent-id-num');
 
     // Check for incomplete data
-    var proceed = wphealthtracker_jre_vitals_incomplete_data(iteratorNum);
+    var proceed = wphealthtracker_jre_vitals_incomplete_data(iteratorNum, $);
 
     // If no errors were encountered in wphealthtracker_jre_vitals_incomplete_data(iteratorNum), proceed...
     if(proceed){
