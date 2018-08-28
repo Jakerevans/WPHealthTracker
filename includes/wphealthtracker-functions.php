@@ -130,8 +130,8 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				// Adding some other individual values we may need
 				$final_array_of_php_values['WPHEALTHTRACKER_ROOT_IMG_ICONS_URL'] = WPHEALTHTRACKER_ROOT_IMG_ICONS_URL;
 
-				// Now registering/localizing our JavaScript file, passing all the PHP variables we'll need in our $final_array_of_php_values array, to be accessed from 'wphealthtracker_php_variables' object (like wphealthtracker_php_variables.nameofkey, like any other JavaScript object)
-				wp_localize_script( 'wphealthtracker_jre_admin_js', 'wphealthtracker_php_variables', $final_array_of_php_values );
+				// Now registering/localizing our JavaScript file, passing all the PHP variables we'll need in our $final_array_of_php_values array, to be accessed from 'wphealthtrackerPhpVariables' object (like wphealthtrackerPhpVariables.nameofkey, like any other JavaScript object).
+				wp_localize_script( 'wphealthtracker_jre_admin_js', 'wphealthtrackerPhpVariables', $final_array_of_php_values );
 
 				// Enqueued script with localized data.
 				wp_enqueue_script( 'wphealthtracker_jre_admin_js' );

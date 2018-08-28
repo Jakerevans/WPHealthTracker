@@ -77,85 +77,85 @@ jQuery(document).ready(function($) {
     // Build the Exercise Type <select> <options>
     var exerciseType = '';
     switch(data[8]) {
-      case wphealthtracker_php_variables.exercisetrans9:
-          exerciseType = '<option selected>'+wphealthtracker_php_variables.exercisetrans9+'</option><option>'+wphealthtracker_php_variables.exercisetrans10+'</option><option>'+wphealthtracker_php_variables.exercisetrans11+'</option><option>'+wphealthtracker_php_variables.exercisetrans12+'</option><option>'+wphealthtracker_php_variables.commontrans37+'</option><option>'+wphealthtracker_php_variables.commontrans47+'</option>'
+      case wphealthtrackerPhpVariables.exercisetrans9:
+          exerciseType = '<option selected>'+wphealthtrackerPhpVariables.exercisetrans9+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans10+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans11+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans12+'</option><option>'+wphealthtrackerPhpVariables.commontrans37+'</option><option>'+wphealthtrackerPhpVariables.commontrans47+'</option>'
         break;
-      case wphealthtracker_php_variables.exercisetrans10:
-          exerciseType = '<option>'+wphealthtracker_php_variables.exercisetrans9+'</option><option selected>'+wphealthtracker_php_variables.exercisetrans10+'</option><option>'+wphealthtracker_php_variables.exercisetrans11+'</option><option>'+wphealthtracker_php_variables.exercisetrans12+'</option><option>'+wphealthtracker_php_variables.commontrans37+'</option><option>'+wphealthtracker_php_variables.commontrans47+'</option>';
+      case wphealthtrackerPhpVariables.exercisetrans10:
+          exerciseType = '<option>'+wphealthtrackerPhpVariables.exercisetrans9+'</option><option selected>'+wphealthtrackerPhpVariables.exercisetrans10+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans11+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans12+'</option><option>'+wphealthtrackerPhpVariables.commontrans37+'</option><option>'+wphealthtrackerPhpVariables.commontrans47+'</option>';
         break;
-      case wphealthtracker_php_variables.exercisetrans11:
-          exerciseType = '<option>'+wphealthtracker_php_variables.exercisetrans9+'</option><option>'+wphealthtracker_php_variables.exercisetrans10+'</option><option selected>'+wphealthtracker_php_variables.exercisetrans11+'</option><option>'+wphealthtracker_php_variables.exercisetrans12+'</option><option>'+wphealthtracker_php_variables.commontrans37+'</option><option>'+wphealthtracker_php_variables.commontrans47+'</option>';
+      case wphealthtrackerPhpVariables.exercisetrans11:
+          exerciseType = '<option>'+wphealthtrackerPhpVariables.exercisetrans9+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans10+'</option><option selected>'+wphealthtrackerPhpVariables.exercisetrans11+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans12+'</option><option>'+wphealthtrackerPhpVariables.commontrans37+'</option><option>'+wphealthtrackerPhpVariables.commontrans47+'</option>';
         break;
-      case wphealthtracker_php_variables.exercisetrans12:
-          exerciseType = '<option>'+wphealthtracker_php_variables.exercisetrans9+'</option><option>'+wphealthtracker_php_variables.exercisetrans10+'</option><option>'+wphealthtracker_php_variables.exercisetrans11+'</option><option selected>'+wphealthtracker_php_variables.exercisetrans12+'</option><option>'+wphealthtracker_php_variables.commontrans37+'</option><option>'+wphealthtracker_php_variables.commontrans47+'</option>';
+      case wphealthtrackerPhpVariables.exercisetrans12:
+          exerciseType = '<option>'+wphealthtrackerPhpVariables.exercisetrans9+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans10+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans11+'</option><option selected>'+wphealthtrackerPhpVariables.exercisetrans12+'</option><option>'+wphealthtrackerPhpVariables.commontrans37+'</option><option>'+wphealthtrackerPhpVariables.commontrans47+'</option>';
         break;
-      case wphealthtracker_php_variables.commontrans37:
-          exerciseType = '<option>'+wphealthtracker_php_variables.exercisetrans9+'</option><option>'+wphealthtracker_php_variables.exercisetrans10+'</option><option>'+wphealthtracker_php_variables.exercisetrans11+'</option><option>'+wphealthtracker_php_variables.exercisetrans12+'</option><option selected>'+wphealthtracker_php_variables.commontrans37+'</option><option>'+wphealthtracker_php_variables.commontrans47+'</option>';
+      case wphealthtrackerPhpVariables.commontrans37:
+          exerciseType = '<option>'+wphealthtrackerPhpVariables.exercisetrans9+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans10+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans11+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans12+'</option><option selected>'+wphealthtrackerPhpVariables.commontrans37+'</option><option>'+wphealthtrackerPhpVariables.commontrans47+'</option>';
         break;
-      case wphealthtracker_php_variables.commontrans47:
-          exerciseType = '<option>'+wphealthtracker_php_variables.exercisetrans9+'</option><option>'+wphealthtracker_php_variables.exercisetrans10+'</option><option>'+wphealthtracker_php_variables.exercisetrans11+'</option><option>'+wphealthtracker_php_variables.exercisetrans12+'</option><option>'+wphealthtracker_php_variables.commontrans37+'</option><option selected>'+wphealthtracker_php_variables.commontrans47+'</option>';
+      case wphealthtrackerPhpVariables.commontrans47:
+          exerciseType = '<option>'+wphealthtrackerPhpVariables.exercisetrans9+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans10+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans11+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans12+'</option><option>'+wphealthtrackerPhpVariables.commontrans37+'</option><option selected>'+wphealthtrackerPhpVariables.commontrans47+'</option>';
         break;
       default:
-        exerciseType = '<option>'+wphealthtracker_php_variables.exercisetrans9+'</option><option>'+wphealthtracker_php_variables.exercisetrans10+'</option><option>'+wphealthtracker_php_variables.exercisetrans11+'</option><option>'+wphealthtracker_php_variables.exercisetrans12+'</option><option>'+wphealthtracker_php_variables.commontrans37+'</option><option>'+wphealthtracker_php_variables.commontrans47+'</option>';
+        exerciseType = '<option>'+wphealthtrackerPhpVariables.exercisetrans9+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans10+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans11+'</option><option>'+wphealthtrackerPhpVariables.exercisetrans12+'</option><option>'+wphealthtrackerPhpVariables.commontrans37+'</option><option>'+wphealthtrackerPhpVariables.commontrans47+'</option>';
     }
 
     var exerDurMeasure = '';
     switch(data[9]) {
-      case wphealthtracker_php_variables.commontrans48:
-          exerDurMeasure = '<option selected>'+wphealthtracker_php_variables.commontrans48+'</option><option>'+wphealthtracker_php_variables.commontrans49+'</option><option>'+wphealthtracker_php_variables.commontrans50+'</option>';
+      case wphealthtrackerPhpVariables.commontrans48:
+          exerDurMeasure = '<option selected>'+wphealthtrackerPhpVariables.commontrans48+'</option><option>'+wphealthtrackerPhpVariables.commontrans49+'</option><option>'+wphealthtrackerPhpVariables.commontrans50+'</option>';
         break;
-      case wphealthtracker_php_variables.commontrans49:
-          exerDurMeasure = '<option>'+wphealthtracker_php_variables.commontrans48+'</option><option selected>'+wphealthtracker_php_variables.commontrans49+'</option><option>'+wphealthtracker_php_variables.commontrans50+'</option>';
+      case wphealthtrackerPhpVariables.commontrans49:
+          exerDurMeasure = '<option>'+wphealthtrackerPhpVariables.commontrans48+'</option><option selected>'+wphealthtrackerPhpVariables.commontrans49+'</option><option>'+wphealthtrackerPhpVariables.commontrans50+'</option>';
         break;
-      case wphealthtracker_php_variables.commontrans50:
-          exerDurMeasure = '<option>'+wphealthtracker_php_variables.commontrans48+'</option><option>'+wphealthtracker_php_variables.commontrans49+'</option><option selected>'+wphealthtracker_php_variables.commontrans50+'</option>';
+      case wphealthtrackerPhpVariables.commontrans50:
+          exerDurMeasure = '<option>'+wphealthtrackerPhpVariables.commontrans48+'</option><option>'+wphealthtrackerPhpVariables.commontrans49+'</option><option selected>'+wphealthtrackerPhpVariables.commontrans50+'</option>';
         break;
       default:
-        exerDurMeasure = '<option>'+wphealthtracker_php_variables.commontrans48+'</option><option>'+wphealthtracker_php_variables.commontrans49+'</option><option>'+wphealthtracker_php_variables.commontrans50+'</option>';
+        exerDurMeasure = '<option>'+wphealthtrackerPhpVariables.commontrans48+'</option><option>'+wphealthtrackerPhpVariables.commontrans49+'</option><option>'+wphealthtrackerPhpVariables.commontrans50+'</option>';
     }
 
     var distanceMeasure = '';
     switch(data[10]) {
-      case wphealthtracker_php_variables.commontrans51:
-          distanceMeasure = '<option selected>'+wphealthtracker_php_variables.commontrans51+'</option><option>'+wphealthtracker_php_variables.commontrans52+'</option><option>'+wphealthtracker_php_variables.commontrans53+'</option><option>'+wphealthtracker_php_variables.commontrans54+'</option><option>'+wphealthtracker_php_variables.commontrans55+'</option>';
+      case wphealthtrackerPhpVariables.commontrans51:
+          distanceMeasure = '<option selected>'+wphealthtrackerPhpVariables.commontrans51+'</option><option>'+wphealthtrackerPhpVariables.commontrans52+'</option><option>'+wphealthtrackerPhpVariables.commontrans53+'</option><option>'+wphealthtrackerPhpVariables.commontrans54+'</option><option>'+wphealthtrackerPhpVariables.commontrans55+'</option>';
         break;
-      case wphealthtracker_php_variables.commontrans52:
-           distanceMeasure = '<option>'+wphealthtracker_php_variables.commontrans51+'</option><option selected>'+wphealthtracker_php_variables.commontrans52+'</option><option>'+wphealthtracker_php_variables.commontrans53+'</option><option>'+wphealthtracker_php_variables.commontrans54+'</option><option>'+wphealthtracker_php_variables.commontrans55+'</option>';
+      case wphealthtrackerPhpVariables.commontrans52:
+           distanceMeasure = '<option>'+wphealthtrackerPhpVariables.commontrans51+'</option><option selected>'+wphealthtrackerPhpVariables.commontrans52+'</option><option>'+wphealthtrackerPhpVariables.commontrans53+'</option><option>'+wphealthtrackerPhpVariables.commontrans54+'</option><option>'+wphealthtrackerPhpVariables.commontrans55+'</option>';
         break;
-      case wphealthtracker_php_variables.commontrans53:
-          distanceMeasure = '<option>'+wphealthtracker_php_variables.commontrans51+'</option><option>'+wphealthtracker_php_variables.commontrans52+'</option><option selected>'+wphealthtracker_php_variables.commontrans53+'</option><option>'+wphealthtracker_php_variables.commontrans54+'</option><option>'+wphealthtracker_php_variables.commontrans55+'</option>';
+      case wphealthtrackerPhpVariables.commontrans53:
+          distanceMeasure = '<option>'+wphealthtrackerPhpVariables.commontrans51+'</option><option>'+wphealthtrackerPhpVariables.commontrans52+'</option><option selected>'+wphealthtrackerPhpVariables.commontrans53+'</option><option>'+wphealthtrackerPhpVariables.commontrans54+'</option><option>'+wphealthtrackerPhpVariables.commontrans55+'</option>';
         break;
-       case wphealthtracker_php_variables.commontrans54:
-          distanceMeasure = '<option>'+wphealthtracker_php_variables.commontrans51+'</option><option>'+wphealthtracker_php_variables.commontrans52+'</option><option selected>'+wphealthtracker_php_variables.commontrans53+'</option><option selected>'+wphealthtracker_php_variables.commontrans54+'</option><option>'+wphealthtracker_php_variables.commontrans55+'</option>';
+       case wphealthtrackerPhpVariables.commontrans54:
+          distanceMeasure = '<option>'+wphealthtrackerPhpVariables.commontrans51+'</option><option>'+wphealthtrackerPhpVariables.commontrans52+'</option><option selected>'+wphealthtrackerPhpVariables.commontrans53+'</option><option selected>'+wphealthtrackerPhpVariables.commontrans54+'</option><option>'+wphealthtrackerPhpVariables.commontrans55+'</option>';
         break;
-       case wphealthtracker_php_variables.commontrans55:
-          distanceMeasure = '<option>'+wphealthtracker_php_variables.commontrans51+'</option><option>'+wphealthtracker_php_variables.commontrans52+'</option><option>'+wphealthtracker_php_variables.commontrans53+'</option><option >'+wphealthtracker_php_variables.commontrans54+'</option><option selected>'+wphealthtracker_php_variables.commontrans55+'</option>';
+       case wphealthtrackerPhpVariables.commontrans55:
+          distanceMeasure = '<option>'+wphealthtrackerPhpVariables.commontrans51+'</option><option>'+wphealthtrackerPhpVariables.commontrans52+'</option><option>'+wphealthtrackerPhpVariables.commontrans53+'</option><option >'+wphealthtrackerPhpVariables.commontrans54+'</option><option selected>'+wphealthtrackerPhpVariables.commontrans55+'</option>';
         break;
       default:
-         distanceMeasure = '<option>'+wphealthtracker_php_variables.commontrans51+'</option><option>'+wphealthtracker_php_variables.commontrans52+'</option><option>'+wphealthtracker_php_variables.commontrans53+'</option><option>'+wphealthtracker_php_variables.commontrans54+'</option><option>'+wphealthtracker_php_variables.commontrans55+'</option>';
+         distanceMeasure = '<option>'+wphealthtrackerPhpVariables.commontrans51+'</option><option>'+wphealthtrackerPhpVariables.commontrans52+'</option><option>'+wphealthtrackerPhpVariables.commontrans53+'</option><option>'+wphealthtrackerPhpVariables.commontrans54+'</option><option>'+wphealthtrackerPhpVariables.commontrans55+'</option>';
     }
 
     var muscles = '';
 
     var muscleTranslationsArray = [
-      wphealthtracker_php_variables.exercisetrans20,
-      wphealthtracker_php_variables.exercisetrans21,
-      wphealthtracker_php_variables.exercisetrans22,
-      wphealthtracker_php_variables.exercisetrans23,
-      wphealthtracker_php_variables.exercisetrans24,
-      wphealthtracker_php_variables.exercisetrans25,
-      wphealthtracker_php_variables.exercisetrans26,
-      wphealthtracker_php_variables.exercisetrans27,
-      wphealthtracker_php_variables.exercisetrans28,
-      wphealthtracker_php_variables.exercisetrans29,
-      wphealthtracker_php_variables.exercisetrans30,
-      wphealthtracker_php_variables.exercisetrans31,
-      wphealthtracker_php_variables.exercisetrans32,
-      wphealthtracker_php_variables.exercisetrans33,
-      wphealthtracker_php_variables.exercisetrans34,
-      wphealthtracker_php_variables.exercisetrans35,
-      wphealthtracker_php_variables.exercisetrans36,
-      wphealthtracker_php_variables.exercisetrans37,
+      wphealthtrackerPhpVariables.exercisetrans20,
+      wphealthtrackerPhpVariables.exercisetrans21,
+      wphealthtrackerPhpVariables.exercisetrans22,
+      wphealthtrackerPhpVariables.exercisetrans23,
+      wphealthtrackerPhpVariables.exercisetrans24,
+      wphealthtrackerPhpVariables.exercisetrans25,
+      wphealthtrackerPhpVariables.exercisetrans26,
+      wphealthtrackerPhpVariables.exercisetrans27,
+      wphealthtrackerPhpVariables.exercisetrans28,
+      wphealthtrackerPhpVariables.exercisetrans29,
+      wphealthtrackerPhpVariables.exercisetrans30,
+      wphealthtrackerPhpVariables.exercisetrans31,
+      wphealthtrackerPhpVariables.exercisetrans32,
+      wphealthtrackerPhpVariables.exercisetrans33,
+      wphealthtrackerPhpVariables.exercisetrans34,
+      wphealthtrackerPhpVariables.exercisetrans35,
+      wphealthtrackerPhpVariables.exercisetrans36,
+      wphealthtrackerPhpVariables.exercisetrans37,
     ];
 
     // Modify the Select2 array of muscle groups
@@ -237,27 +237,27 @@ jQuery(document).ready(function($) {
           // Now make sure we set the MEasurement select correctly
           var setRepsMeasureString = '';
           switch(indivSelectValues[i]) {
-            case wphealthtracker_php_variables.d3trans19:
-                setRepsMeasureString = '<option selected>'+wphealthtracker_php_variables.d3trans19+'</option><option>'+wphealthtracker_php_variables.d3trans18+'</option>';
+            case wphealthtrackerPhpVariables.d3trans19:
+                setRepsMeasureString = '<option selected>'+wphealthtrackerPhpVariables.d3trans19+'</option><option>'+wphealthtrackerPhpVariables.d3trans18+'</option>';
               break;
-            case wphealthtracker_php_variables.d3trans18:
-                setRepsMeasureString = '<option>'+wphealthtracker_php_variables.d3trans19+'</option><option selected>'+wphealthtracker_php_variables.d3trans18+'</option>';
+            case wphealthtrackerPhpVariables.d3trans18:
+                setRepsMeasureString = '<option>'+wphealthtrackerPhpVariables.d3trans19+'</option><option selected>'+wphealthtrackerPhpVariables.d3trans18+'</option>';
               break;
             default:
-              setRepsMeasureString = '<option>'+wphealthtracker_php_variables.d3trans19+'</option><option>'+wphealthtracker_php_variables.d3trans18+'</option>';
+              setRepsMeasureString = '<option>'+wphealthtrackerPhpVariables.d3trans19+'</option><option>'+wphealthtrackerPhpVariables.d3trans18+'</option>';
           }
 
-          setsHtml = setsHtml+'<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">'+wphealthtracker_php_variables.exercisetrans17+' #'+forSetNumberDisplay+'</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.d3trans40+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+indivValues[0]+'"/><div class="wphealthtracker-response-form-input-checkbox-div"><input '+checked+' type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><label style="margin-left:3px;">'+wphealthtracker_php_variables.exercisetrans38+'</label></div></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.exercisetrans17+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221); margin-left:5px; margin-right:5px;" value="'+indivValues[2]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-'+key+'-'+loopNum+'">'+setRepsMeasureString+'</select></div></div>';
+          setsHtml = setsHtml+'<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">'+wphealthtrackerPhpVariables.exercisetrans17+' #'+forSetNumberDisplay+'</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.d3trans40+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+indivValues[0]+'"/><div class="wphealthtracker-response-form-input-checkbox-div"><input '+checked+' type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><label style="margin-left:3px;">'+wphealthtrackerPhpVariables.exercisetrans38+'</label></div></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.exercisetrans17+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221); margin-left:5px; margin-right:5px;" value="'+indivValues[2]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-'+key+'-'+loopNum+'">'+setRepsMeasureString+'</select></div></div>';
         }
       }
     } else {
-      setsHtml = '<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">'+wphealthtracker_php_variables.exercisetrans17+' #1</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.d3trans40+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><div class="wphealthtracker-response-form-input-checkbox-div"><input type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><label style="margin-left:3px;">'+wphealthtracker_php_variables.exercisetrans38+'</label></div></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.exercisetrans17+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221); margin-left:5px; margin-right:5px;"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-'+key+'-'+loopNum+'"><option>'+wphealthtracker_php_variables.d3trans19+'</option><option>'+wphealthtracker_php_variables.d3trans18+'</option></select></div></div>';
+      setsHtml = '<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">'+wphealthtrackerPhpVariables.exercisetrans17+' #1</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.d3trans40+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><div class="wphealthtracker-response-form-input-checkbox-div"><input type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><label style="margin-left:3px;">'+wphealthtrackerPhpVariables.exercisetrans38+'</label></div></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.exercisetrans17+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221); margin-left:5px; margin-right:5px;"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-'+key+'-'+loopNum+'"><option>'+wphealthtrackerPhpVariables.d3trans19+'</option><option>'+wphealthtrackerPhpVariables.d3trans18+'</option></select></div></div>';
     }
 
     // Now add in the 'Add Set' button/div
-    setsHtml = setsHtml+'<div class="wphealthtracker-response-form-exercise-set-addition-div" id="wphealthtracker-response-form-exercise-set-addition-div-'+loopNum+'" data-date="'+date+'" data-key="'+key+'" data-setkey="'+forSetNumberDisplay+'" data-setkey="'+forSetNumberDisplay+'" data-loopnum="'+loopNum+'" data-exercisenum="0" data-idnum="'+loopNum+'" data-id-to-add-after="wphealthtracker-response-form-exercise-shaded-container-'+key+'-'+loopNum+'"><p class="wphealthtracker-response-form-exercise-set-addition-p">'+wphealthtracker_php_variables.exercisetrans18+'</p><img class="wphealthtracker-response-form-row-add-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'web-site.svg" /></div>'
+    setsHtml = setsHtml+'<div class="wphealthtracker-response-form-exercise-set-addition-div" id="wphealthtracker-response-form-exercise-set-addition-div-'+loopNum+'" data-date="'+date+'" data-key="'+key+'" data-setkey="'+forSetNumberDisplay+'" data-setkey="'+forSetNumberDisplay+'" data-loopnum="'+loopNum+'" data-exercisenum="0" data-idnum="'+loopNum+'" data-id-to-add-after="wphealthtracker-response-form-exercise-shaded-container-'+key+'-'+loopNum+'"><p class="wphealthtracker-response-form-exercise-set-addition-p">'+wphealthtrackerPhpVariables.exercisetrans18+'</p><img class="wphealthtracker-response-form-row-add-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'web-site.svg" /></div>'
 
-    return '<div class="wphealthtracker-response-form-all-data-row-parent" id="wphealthtracker-response-form-all-data-row-parent-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-all-data-row" '+dataSection+' id="wphealthtracker-response-form-all-data-row-1" data-open="true" style="opacity: 1;"><div class="wphealthtracker-response-form-exercise-shaded-container-title"><h3><img class="wphealthtracker-icon-h2-image-exercise" data-label="exercise-weight" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'exercise.svg"> '+wphealthtracker_php_variables.tabtitle6+' #<span class="wphealthtracker-exercise-item-span">'+key+'</span> - '+date+'</h3></div><div class="wphealthtracker-expand-minimize-div-all-data"><p class="wphealthtracker-expand-minimize-p" id="wphealthtracker-expand-minimize-p-enter" style="opacity: 1;">'+wphealthtracker_php_variables.commontrans1+'</p><img src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter"></div></div><div class="wphealthtracker-response-form-exercise-shaded-container" id="wphealthtracker-response-form-exercise-shaded-container-'+key+'-'+loopNum+'" style="height: 638px;"><div class="wphealthtracker-response-form-data-row-exercise-inner-cont"><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.exercisetrans7+'</p><input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-exercise" id="wphealthtracker-response-form-input-text-exercise-name-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+data[0]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.exercisetrans8+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-'+key+'-'+loopNum+'">'+exerciseType+'</select></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.exercisetrans13+'</p><input type="time" class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-exercise" id="wphealthtracker-response-form-input-time-exercise-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+data[1]+'" /></div></div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.exercisetrans14+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+data[2]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-'+key+'-'+loopNum+'">'+exerDurMeasure+'</select></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.exercisetrans15+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+data[3]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-'+key+'-'+loopNum+'">'+distanceMeasure+'</select></div></div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-protein-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-select-2"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.exercisetrans19+'</p><select class="wphealthtracker-response-form-select select2-input" id="select2-upsells" name="musclegroups[]" multiple="multiple">'+muscles+'</select></div></div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-calories-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro">'+setsHtml+'</div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-image-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.commontrans28+'</p><input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" placeholder="'+wphealthtracker_php_variables.commontrans28+'" value="'+data[4]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.commontrans29+'</p><button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-'+key+'-'+loopNum+'">'+wphealthtracker_php_variables.commontrans30+'</button></div></div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-file-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.commontrans32+'</p><input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"placeholder="'+wphealthtracker_php_variables.commontrans32+'" value="'+data[5]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.commontrans33+'</p><button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-'+key+'-'+loopNum+'">'+wphealthtracker_php_variables.commontrans34+'</button></div></div></div><div class="wphealthtracker-response-form-exercise-row-duplicate-div" data-date="'+date+'" data-key="'+key+'" data-loopnum="'+loopNum+'" data-idnum="'+loopNum+'" data-id-to-update="'+loopNum+'" data-id-to-add-after="wphealthtracker-response-form-all-data-row-parent-'+key+'-'+loopNum+'"><p>'+wphealthtracker_php_variables.commontrans40+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'duplicate.svg" /></div><div class="wphealthtracker-response-form-exercise-row-removal-div" data-id-to-update="'+loopNum+'" data-id-to-remove="wphealthtracker-response-form-all-data-row-parent-'+key+'-'+loopNum+'"><p>'+wphealthtracker_php_variables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div></div>';
+    return '<div class="wphealthtracker-response-form-all-data-row-parent" id="wphealthtracker-response-form-all-data-row-parent-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-all-data-row" '+dataSection+' id="wphealthtracker-response-form-all-data-row-1" data-open="true" style="opacity: 1;"><div class="wphealthtracker-response-form-exercise-shaded-container-title"><h3><img class="wphealthtracker-icon-h2-image-exercise" data-label="exercise-weight" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'exercise.svg"> '+wphealthtrackerPhpVariables.tabtitle6+' #<span class="wphealthtracker-exercise-item-span">'+key+'</span> - '+date+'</h3></div><div class="wphealthtracker-expand-minimize-div-all-data"><p class="wphealthtracker-expand-minimize-p" id="wphealthtracker-expand-minimize-p-enter" style="opacity: 1;">'+wphealthtrackerPhpVariables.commontrans1+'</p><img src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter"></div></div><div class="wphealthtracker-response-form-exercise-shaded-container" id="wphealthtracker-response-form-exercise-shaded-container-'+key+'-'+loopNum+'" style="height: 638px;"><div class="wphealthtracker-response-form-data-row-exercise-inner-cont"><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.exercisetrans7+'</p><input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-exercise" id="wphealthtracker-response-form-input-text-exercise-name-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+data[0]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.exercisetrans8+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-'+key+'-'+loopNum+'">'+exerciseType+'</select></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.exercisetrans13+'</p><input type="time" class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-exercise" id="wphealthtracker-response-form-input-time-exercise-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+data[1]+'" /></div></div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.exercisetrans14+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+data[2]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-'+key+'-'+loopNum+'">'+exerDurMeasure+'</select></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.exercisetrans15+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" value="'+data[3]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-'+key+'-'+loopNum+'">'+distanceMeasure+'</select></div></div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-protein-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-select-2"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.exercisetrans19+'</p><select class="wphealthtracker-response-form-select select2-input" id="select2-upsells" name="musclegroups[]" multiple="multiple">'+muscles+'</select></div></div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-calories-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro">'+setsHtml+'</div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-image-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.commontrans28+'</p><input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);" placeholder="'+wphealthtrackerPhpVariables.commontrans28+'" value="'+data[4]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.commontrans29+'</p><button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-'+key+'-'+loopNum+'">'+wphealthtrackerPhpVariables.commontrans30+'</button></div></div></div><div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-file-row-div-'+key+'-'+loopNum+'"><div class="wphealthtracker-response-form-exercise-row-div-cal-pro"><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.commontrans32+'</p><input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"placeholder="'+wphealthtrackerPhpVariables.commontrans32+'" value="'+data[5]+'"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.commontrans33+'</p><button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-'+key+'-'+loopNum+'">'+wphealthtrackerPhpVariables.commontrans34+'</button></div></div></div><div class="wphealthtracker-response-form-exercise-row-duplicate-div" data-date="'+date+'" data-key="'+key+'" data-loopnum="'+loopNum+'" data-idnum="'+loopNum+'" data-id-to-update="'+loopNum+'" data-id-to-add-after="wphealthtracker-response-form-all-data-row-parent-'+key+'-'+loopNum+'"><p>'+wphealthtrackerPhpVariables.commontrans40+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'duplicate.svg" /></div><div class="wphealthtracker-response-form-exercise-row-removal-div" data-id-to-update="'+loopNum+'" data-id-to-remove="wphealthtracker-response-form-all-data-row-parent-'+key+'-'+loopNum+'"><p>'+wphealthtrackerPhpVariables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div></div>';
   }
 
   function wphealthtracker_jre_exercise_add_row_of_data(){
@@ -378,7 +378,7 @@ jQuery(document).ready(function($) {
       inputValues.push(setRepMeasurementString);
       inputValues = inputValues.concat(selectValues);
 
-      //wphealthtracker_php_variables.exercisetrans20
+      //wphealthtrackerPhpVariables.exercisetrans20
 
       newRow = wphealthtracker_jre_exercise_get_row_of_data_html(key, loopNum, date, idNum, '', inputValues);
 
@@ -546,7 +546,7 @@ jQuery(document).ready(function($) {
 
         var data = {
           'action': 'wphealthtracker_jre_selecteduser_exercise_enter_action',
-          'security': wphealthtracker_php_variables.exercisenonce1,
+          'security': wphealthtrackerPhpVariables.exercisenonce1,
           'wpuserid':wpuserid,
           'offset':offset
         };
@@ -670,7 +670,7 @@ jQuery(document).ready(function($) {
 
         var data = {
           'action': 'wphealthtracker_jre_selecteduser_exercise_view_action',
-          'security': wphealthtracker_php_variables.exercisenonce2,
+          'security': wphealthtrackerPhpVariables.exercisenonce2,
           'wpuserid':wpuserid,
           'offset':offset
         };
@@ -773,64 +773,64 @@ jQuery(document).ready(function($) {
                 // Build the Select value for Exercise Type
                 var exerciseType = '';
                 switch(splittedData[0]) {
-                  case wphealthtracker_php_variables.exercisetrans9:
-                      exerciseType = wphealthtracker_php_variables.exercisetrans9
+                  case wphealthtrackerPhpVariables.exercisetrans9:
+                      exerciseType = wphealthtrackerPhpVariables.exercisetrans9
                     break;
-                  case wphealthtracker_php_variables.exercisetrans10:
-                      exerciseType = wphealthtracker_php_variables.exercisetrans10
+                  case wphealthtrackerPhpVariables.exercisetrans10:
+                      exerciseType = wphealthtrackerPhpVariables.exercisetrans10
                     break;
-                  case wphealthtracker_php_variables.exercisetrans11:
-                      exerciseType = wphealthtracker_php_variables.exercisetrans11;
+                  case wphealthtrackerPhpVariables.exercisetrans11:
+                      exerciseType = wphealthtrackerPhpVariables.exercisetrans11;
                     break;
-                  case wphealthtracker_php_variables.exercisetrans12:
-                      exerciseType = wphealthtracker_php_variables.exercisetrans12;
+                  case wphealthtrackerPhpVariables.exercisetrans12:
+                      exerciseType = wphealthtrackerPhpVariables.exercisetrans12;
                     break;
-                  case wphealthtracker_php_variables.commontrans37:
-                      exerciseType = wphealthtracker_php_variables.commontrans37;
+                  case wphealthtrackerPhpVariables.commontrans37:
+                      exerciseType = wphealthtrackerPhpVariables.commontrans37;
                     break;
-                  case wphealthtracker_php_variables.commontrans47:
-                      exerciseType = wphealthtracker_php_variables.commontrans47;
+                  case wphealthtrackerPhpVariables.commontrans47:
+                      exerciseType = wphealthtrackerPhpVariables.commontrans47;
                     break;
                   default:
-                    exerciseType = wphealthtracker_php_variables.exercisetrans9;
+                    exerciseType = wphealthtrackerPhpVariables.exercisetrans9;
                 }
 
                 // Build the Select value for Exercise Duration Measure
                 var exerDurMeasure = '';
                 switch(splittedData[3]) {
-                  case wphealthtracker_php_variables.commontrans48:
-                      exerDurMeasure = wphealthtracker_php_variables.commontrans48;
+                  case wphealthtrackerPhpVariables.commontrans48:
+                      exerDurMeasure = wphealthtrackerPhpVariables.commontrans48;
                     break;
-                  case wphealthtracker_php_variables.commontrans49:
-                      exerDurMeasure = wphealthtracker_php_variables.commontrans49;
+                  case wphealthtrackerPhpVariables.commontrans49:
+                      exerDurMeasure = wphealthtrackerPhpVariables.commontrans49;
                     break;
-                  case wphealthtracker_php_variables.commontrans50:
-                      exerDurMeasure = wphealthtracker_php_variables.commontrans50;
+                  case wphealthtrackerPhpVariables.commontrans50:
+                      exerDurMeasure = wphealthtrackerPhpVariables.commontrans50;
                     break;
                   default:
-                    exerDurMeasure = wphealthtracker_php_variables.commontrans48;
+                    exerDurMeasure = wphealthtrackerPhpVariables.commontrans48;
                 }
 
                 // Build the Select value for Distance Travelled Measure
                 var distanceMeasure = '';
                 switch(splittedData[5]) {
-                  case wphealthtracker_php_variables.commontrans51:
-                      distanceMeasure = wphealthtracker_php_variables.commontrans51;
+                  case wphealthtrackerPhpVariables.commontrans51:
+                      distanceMeasure = wphealthtrackerPhpVariables.commontrans51;
                     break;
-                  case wphealthtracker_php_variables.commontrans52:
-                       distanceMeasure = wphealthtracker_php_variables.commontrans52;
+                  case wphealthtrackerPhpVariables.commontrans52:
+                       distanceMeasure = wphealthtrackerPhpVariables.commontrans52;
                     break;
-                  case wphealthtracker_php_variables.commontrans53:
-                      distanceMeasure = wphealthtracker_php_variables.commontrans53;
+                  case wphealthtrackerPhpVariables.commontrans53:
+                      distanceMeasure = wphealthtrackerPhpVariables.commontrans53;
                     break;
-                   case wphealthtracker_php_variables.commontrans54:
-                      distanceMeasure = wphealthtracker_php_variables.commontrans54;
+                   case wphealthtrackerPhpVariables.commontrans54:
+                      distanceMeasure = wphealthtrackerPhpVariables.commontrans54;
                     break;
-                   case wphealthtracker_php_variables.commontrans55:
-                      distanceMeasure = wphealthtracker_php_variables.commontrans55;
+                   case wphealthtrackerPhpVariables.commontrans55:
+                      distanceMeasure = wphealthtrackerPhpVariables.commontrans55;
                     break;
                   default:
-                     distanceMeasure = wphealthtracker_php_variables.commontrans51;
+                     distanceMeasure = wphealthtrackerPhpVariables.commontrans51;
                 }
 
                 // Build value for the Muscle Groups Trained Select
@@ -939,7 +939,7 @@ jQuery(document).ready(function($) {
 
       var data = {
         'action': 'wphealthtracker_jre_selecteduser_exercise_filter_data_action',
-        'security': wphealthtracker_php_variables.exercisenonce4,
+        'security': wphealthtrackerPhpVariables.exercisenonce4,
         'wpuserid':wpuserid,
         'filterval':filterVal
       };
@@ -1162,7 +1162,7 @@ jQuery(document).ready(function($) {
 
         // Checking for incomplete Food name/cat/time entries
         if(inputArray[0] == ''){
-          alert(wphealthtracker_php_variables.commontrans4)
+          alert(wphealthtrackerPhpVariables.commontrans4)
 
           // Expand if needed
           if($(this).css('height') == '0px'){
@@ -1176,7 +1176,7 @@ jQuery(document).ready(function($) {
         }
 
         if(inputArray[1] == ''){
-          alert(wphealthtracker_php_variables.commontrans4)
+          alert(wphealthtrackerPhpVariables.commontrans4)
 
           // Expand if needed
           if($(this).css('height') == '0px'){
@@ -1312,7 +1312,7 @@ jQuery(document).ready(function($) {
         var lastName = $(this).attr('data-lastname');
         var data = {
             'action': 'wphealthtracker_jre_save_exercise_data_action',
-            'security': wphealthtracker_php_variables.exercisenonce3,
+            'security': wphealthtrackerPhpVariables.exercisenonce3,
             'wpUserId':wpUserId,
             'firstName':firstName,
             'lastName':lastName,
@@ -1349,15 +1349,15 @@ jQuery(document).ready(function($) {
                 // Modify the response based on type of query
                 var responseHtml = '';
                 if(response[1] == 'insert'){
-                  responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg" /><p class="wphealthtracker-success-title">'+wphealthtracker_php_variables.ajaxreturn1+'</p><p class="wphealthtracker-success-description">'+wphealthtracker_php_variables.ajaxreturn3+' <span class="wphealthtracker-success-humandate">'+humanDate+'</span>.</p><p class="wphealthtracker-success-advert">'+wphealthtracker_php_variables.ajaxreturn4+' <a href="">'+wphealthtracker_php_variables.ajaxreturn5+'</a> '+wphealthtracker_php_variables.ajaxreturn6+'</p><p class="wphealthtracker-success-reviews">'+wphealthtracker_php_variables.ajaxreturn7+' <a href="">'+wphealthtracker_php_variables.ajaxreturn8+'</a> '+wphealthtracker_php_variables.ajaxreturn9+' <a href="">'+wphealthtracker_php_variables.ajaxreturn10+'</a>!</p>';
+                  responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg" /><p class="wphealthtracker-success-title">'+wphealthtrackerPhpVariables.ajaxreturn1+'</p><p class="wphealthtracker-success-description">'+wphealthtrackerPhpVariables.ajaxreturn3+' <span class="wphealthtracker-success-humandate">'+humanDate+'</span>.</p><p class="wphealthtracker-success-advert">'+wphealthtrackerPhpVariables.ajaxreturn4+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn5+'</a> '+wphealthtrackerPhpVariables.ajaxreturn6+'</p><p class="wphealthtracker-success-reviews">'+wphealthtrackerPhpVariables.ajaxreturn7+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn8+'</a> '+wphealthtrackerPhpVariables.ajaxreturn9+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn10+'</a>!</p>';
                 }
 
                 if(response[1] == 'update'){
-                  responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg" /><p class="wphealthtracker-success-title">'+wphealthtracker_php_variables.ajaxreturn1+'</p><p class="wphealthtracker-success-description">'+wphealthtracker_php_variables.ajaxreturn2+' <span class="wphealthtracker-success-humandate">'+humanDate+'</span>.</p><p class="wphealthtracker-success-advert">'+wphealthtracker_php_variables.ajaxreturn4+' <a href="">'+wphealthtracker_php_variables.ajaxreturn5+'</a> '+wphealthtracker_php_variables.ajaxreturn6+'</p><p class="wphealthtracker-success-reviews">'+wphealthtracker_php_variables.ajaxreturn7+' <a href="">'+wphealthtracker_php_variables.ajaxreturn8+'</a> '+wphealthtracker_php_variables.ajaxreturn9+' <a href="">'+wphealthtracker_php_variables.ajaxreturn10+'</a>!</p>';
+                  responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg" /><p class="wphealthtracker-success-title">'+wphealthtrackerPhpVariables.ajaxreturn1+'</p><p class="wphealthtracker-success-description">'+wphealthtrackerPhpVariables.ajaxreturn2+' <span class="wphealthtracker-success-humandate">'+humanDate+'</span>.</p><p class="wphealthtracker-success-advert">'+wphealthtrackerPhpVariables.ajaxreturn4+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn5+'</a> '+wphealthtrackerPhpVariables.ajaxreturn6+'</p><p class="wphealthtracker-success-reviews">'+wphealthtrackerPhpVariables.ajaxreturn7+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn8+'</a> '+wphealthtrackerPhpVariables.ajaxreturn9+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn10+'</a>!</p>';
                 }
               } else {
                 // Create the Error messaging here - print out the mysql error for user to report back with
-                responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'shocked.svg" /><p class="wphealthtracker-success-title">'+wphealthtracker_php_variables.ajaxreturn11+'</p><p class="wphealthtracker-success-description">'+wphealthtracker_php_variables.ajaxreturn12+'...</p><p class="wphealthtracker-success-advert">'+wphealthtracker_php_variables.ajaxreturn13+' <a href="mailto:techsupport@wphealthtracker.com">TechSupport@WPHealthTracker.com</a>:  <textarea class="wphealthtracker-ajax-error-textarea">'+response[0]+'</textarea></p><p class="wphealthtracker-success-reviews">'+wphealthtracker_php_variables.ajaxreturn14+'!</p>';
+                responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'shocked.svg" /><p class="wphealthtracker-success-title">'+wphealthtrackerPhpVariables.ajaxreturn11+'</p><p class="wphealthtracker-success-description">'+wphealthtrackerPhpVariables.ajaxreturn12+'...</p><p class="wphealthtracker-success-advert">'+wphealthtrackerPhpVariables.ajaxreturn13+' <a href="mailto:techsupport@wphealthtracker.com">TechSupport@WPHealthTracker.com</a>:  <textarea class="wphealthtracker-ajax-error-textarea">'+response[0]+'</textarea></p><p class="wphealthtracker-success-reviews">'+wphealthtrackerPhpVariables.ajaxreturn14+'!</p>';
               }
 
               // Add the response HTML and animate the height...
@@ -1401,7 +1401,7 @@ jQuery(document).ready(function($) {
       setKey = parseInt(setKey)+1;
       newIdToAddAfter = 'wphealthtracker-response-form-addexercise-row-div-'+key+'-'+loopNum;
 
-      $('<div class="wphealthtracker-response-form-exercise-set-div" style="height:0px;"><p class="wphealthtracker-response-form-exercise-set-label">'+wphealthtracker_php_variables.exercisetrans17+' #'+setKey+'</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.d3trans40+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><div class="wphealthtracker-response-form-input-checkbox-div"><input type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><label style="margin-left:3px;">'+wphealthtracker_php_variables.exercisetrans38+'</label></div></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.exercisetrans16+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221); margin-left:5px; margin-right:5px;"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtracker_php_variables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-'+key+'-'+loopNum+'"><option>'+wphealthtracker_php_variables.d3trans19+'</option><option>'+wphealthtracker_php_variables.d3trans18+'</option></select></div><div class="wphealthtracker-response-form-exercise-set-removal-div"><p>'+wphealthtracker_php_variables.commontrans41+'</p><img class="wphealthtracker-response-form-set-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div>').insertBefore($(this))
+      $('<div class="wphealthtracker-response-form-exercise-set-div" style="height:0px;"><p class="wphealthtracker-response-form-exercise-set-label">'+wphealthtrackerPhpVariables.exercisetrans17+' #'+setKey+'</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.d3trans40+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><div class="wphealthtracker-response-form-input-checkbox-div"><input type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221);"/><label style="margin-left:3px;">'+wphealthtrackerPhpVariables.exercisetrans38+'</label></div></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.exercisetrans16+'</p><input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-'+key+'-'+loopNum+'" style="border: 1px solid rgb(221, 221, 221); margin-left:5px; margin-right:5px;"/></div><div class="wphealthtracker-response-form-exercise-innerrow-div"><p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'question-black.svg">'+wphealthtrackerPhpVariables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-'+key+'-'+loopNum+'"><option>'+wphealthtrackerPhpVariables.d3trans19+'</option><option>'+wphealthtrackerPhpVariables.d3trans18+'</option></select></div><div class="wphealthtracker-response-form-exercise-set-removal-div"><p>'+wphealthtrackerPhpVariables.commontrans41+'</p><img class="wphealthtracker-response-form-set-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div>').insertBefore($(this))
 
       // Animate the new set row in
       $(this).prev().animate({
@@ -1459,7 +1459,7 @@ jQuery(document).ready(function($) {
             duration: 500,
             complete: function() { 
               for (var i =  0; i < setTextsTotal; i++) {
-                setTexts.eq( i ).text(wphealthtracker_php_variables.exercisetrans17+' #'+(i+1))
+                setTexts.eq( i ).text(wphealthtrackerPhpVariables.exercisetrans17+' #'+(i+1))
               }
               setTexts.animate({'opacity':'1'}, 500)
             }

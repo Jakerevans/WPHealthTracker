@@ -74,49 +74,49 @@ jQuery(document).ready(function($) {
               key = parseInt(key)+1;
               newIdToAddAfter = 'wphealthtracker-response-form-bp-row-div-'+key+'-'+loopNum;
 
-              newRow = '<div style="overflow:hidden; height:0px; opacity:0;" class="wphealthtracker-response-form-data-row-bp" id="wphealthtracker-response-form-bp-row-div-'+key+'-'+loopNum+'"><div style="right:3px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.vitalstrans9+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bp-sys-'+key+'-'+loopNum+'"></input></div><div class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.vitalstrans10+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bp-dis-'+key+'-'+loopNum+'"></input></div><div style="left:4px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-bp" id="wphealthtracker-response-form-input-time-bp-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-bp-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtracker_php_variables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
+              newRow = '<div style="overflow:hidden; height:0px; opacity:0;" class="wphealthtracker-response-form-data-row-bp" id="wphealthtracker-response-form-bp-row-div-'+key+'-'+loopNum+'"><div style="right:3px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.vitalstrans9+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bp-sys-'+key+'-'+loopNum+'"></input></div><div class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.vitalstrans10+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bp-dis-'+key+'-'+loopNum+'"></input></div><div style="left:4px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-bp" id="wphealthtracker-response-form-input-time-bp-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-bp-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtrackerPhpVariables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
           break;
           case 'wphealthtracker-response-form-bs-row-div-'+key+'-'+loopNum:
 
               key = parseInt(key)+1;
               newIdToAddAfter = 'wphealthtracker-response-form-bs-row-div-'+key+'-'+loopNum;
 
-              newRow = '<div class="wphealthtracker-response-form-data-row-bs" id="wphealthtracker-response-form-bs-row-div-'+key+'-'+loopNum+'"><div style="right:3px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.vitalstrans12+'</p><input type="number" step="0.1" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bs-'+key+'-'+loopNum+'"></input></div><div class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-select-bs-'+key+'-'+loopNum+'">"><option>'+wphealthtracker_php_variables.vitalstrans13+'</option><option>'+wphealthtracker_php_variables.vitalstrans14+'</option></select></div><div style="left:4px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time" id="wphealthtracker-response-form-input-time-bs-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-bs-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtracker_php_variables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
+              newRow = '<div class="wphealthtracker-response-form-data-row-bs" id="wphealthtracker-response-form-bs-row-div-'+key+'-'+loopNum+'"><div style="right:3px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.vitalstrans12+'</p><input type="number" step="0.1" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bs-'+key+'-'+loopNum+'"></input></div><div class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans23+'</p><select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-select-bs-'+key+'-'+loopNum+'">"><option>'+wphealthtrackerPhpVariables.vitalstrans13+'</option><option>'+wphealthtrackerPhpVariables.vitalstrans14+'</option></select></div><div style="left:4px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time" id="wphealthtracker-response-form-input-time-bs-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-bs-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtrackerPhpVariables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
           break;
           case 'wphealthtracker-response-form-bo-row-div-'+key+'-'+loopNum:
 
               key = parseInt(key)+1;
               newIdToAddAfter = 'wphealthtracker-response-form-bo-row-div-'+key+'-'+loopNum;
 
-              newRow = '<div class="wphealthtracker-response-form-data-row-bo" id="wphealthtracker-response-form-bo-row-div-'+key+'-'+loopNum+'"><div style="right:3px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.vitalstrans16+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bo-'+key+'-'+loopNum+'"></input></div><div class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans23+'</p><select class="wphealthtracker-response-form-select wphealthtracker-response-form-select-bo" id="wphealthtracker-response-form-select-bo-'+key+'-'+loopNum+'"><option>'+wphealthtracker_php_variables.commontrans26+'</option><option>'+wphealthtracker_php_variables.vitalstrans17+'</option></select></div><div style="left:4px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time" id="wphealthtracker-response-form-input-time-bo-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-bo-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtracker_php_variables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
+              newRow = '<div class="wphealthtracker-response-form-data-row-bo" id="wphealthtracker-response-form-bo-row-div-'+key+'-'+loopNum+'"><div style="right:3px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.vitalstrans16+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bo-'+key+'-'+loopNum+'"></input></div><div class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans23+'</p><select class="wphealthtracker-response-form-select wphealthtracker-response-form-select-bo" id="wphealthtracker-response-form-select-bo-'+key+'-'+loopNum+'"><option>'+wphealthtrackerPhpVariables.commontrans26+'</option><option>'+wphealthtrackerPhpVariables.vitalstrans17+'</option></select></div><div style="left:4px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time" id="wphealthtracker-response-form-input-time-bo-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-bo-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtrackerPhpVariables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
           break;
           case 'wphealthtracker-response-form-bt-row-div-'+key+'-'+loopNum:
 
               key = parseInt(key)+1;
               newIdToAddAfter = 'wphealthtracker-response-form-bt-row-div-'+key+'-'+loopNum;
 
-              newRow = '<div class="wphealthtracker-response-form-data-row-bt" id="wphealthtracker-response-form-bt-row-div-'+key+'-'+loopNum+'"><div style="right:3px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.vitalstrans19+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bt-'+key+'-'+loopNum+'"></input></div><div class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans23+'</p><select class="wphealthtracker-response-form-select wphealthtracker-response-form-select-bt" id="wphealthtracker-response-form-select-bt-'+key+'-'+loopNum+'"><option>'+wphealthtracker_php_variables.vitalstrans20+'</option><option>'+wphealthtracker_php_variables.vitalstrans21+'</option></select></div><div style="left:4px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time" id="wphealthtracker-response-form-input-time-bt-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-bt-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtracker_php_variables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
+              newRow = '<div class="wphealthtracker-response-form-data-row-bt" id="wphealthtracker-response-form-bt-row-div-'+key+'-'+loopNum+'"><div style="right:3px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.vitalstrans19+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-bt-'+key+'-'+loopNum+'"></input></div><div class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans23+'</p><select class="wphealthtracker-response-form-select wphealthtracker-response-form-select-bt" id="wphealthtracker-response-form-select-bt-'+key+'-'+loopNum+'"><option>'+wphealthtrackerPhpVariables.vitalstrans20+'</option><option>'+wphealthtrackerPhpVariables.vitalstrans21+'</option></select></div><div style="left:4px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time" id="wphealthtracker-response-form-input-time-bt-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-bt-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtrackerPhpVariables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
           break;
           case 'wphealthtracker-response-form-hr-row-div-'+key+'-'+loopNum:
 
               key = parseInt(key)+1;
               newIdToAddAfter = 'wphealthtracker-response-form-hr-row-div-'+key+'-'+loopNum;
 
-              newRow = '<div class="wphealthtracker-response-form-data-row-hr" id="wphealthtracker-response-form-hr-row-div-'+key+'-'+loopNum+'"><div style="right:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.vitalstrans23+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-hr-'+key+'-'+loopNum+'"></input></div><div style="left:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-hr" id="wphealthtracker-response-form-input-time-hr-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-hr-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtracker_php_variables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
+              newRow = '<div class="wphealthtracker-response-form-data-row-hr" id="wphealthtracker-response-form-hr-row-div-'+key+'-'+loopNum+'"><div style="right:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.vitalstrans23+'</p><input type="number" class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-number-hr-'+key+'-'+loopNum+'"></input></div><div style="left:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans25+'</p><input type="time" class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-hr" id="wphealthtracker-response-form-input-time-hr-'+key+'-'+loopNum+'"></input><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-hr-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtrackerPhpVariables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
           break;
           case 'wphealthtracker-response-form-img-row-div-'+key+'-'+loopNum:
 
               key = parseInt(key)+1;
               newIdToAddAfter = 'wphealthtracker-response-form-img-row-div-'+key+'-'+loopNum;
 
-              newRow = '<div class="wphealthtracker-response-form-data-row-img" id="wphealthtracker-response-form-img-row-div-'+key+'-'+loopNum+'"><div style="right:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans28+'</p><input type="text" placeholder="'+wphealthtracker_php_variables.commontrans28+'" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-image-upload" id="wphealthtracker-response-form-input-text-image-upload-'+key+'-'+loopNum+'"></input></div><div style="left:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans29+'</p><button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-'+key+'-'+loopNum+'">'+wphealthtracker_php_variables.commontrans30+'</button><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-img-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtracker_php_variables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
+              newRow = '<div class="wphealthtracker-response-form-data-row-img" id="wphealthtracker-response-form-img-row-div-'+key+'-'+loopNum+'"><div style="right:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans28+'</p><input type="text" placeholder="'+wphealthtrackerPhpVariables.commontrans28+'" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-image-upload" id="wphealthtracker-response-form-input-text-image-upload-'+key+'-'+loopNum+'"></input></div><div style="left:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans29+'</p><button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-'+key+'-'+loopNum+'">'+wphealthtrackerPhpVariables.commontrans30+'</button><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-img-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtrackerPhpVariables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
           break;
           case 'wphealthtracker-response-form-file-row-div-'+key+'-'+loopNum:
 
               key = parseInt(key)+1;
               newIdToAddAfter = 'wphealthtracker-response-form-file-row-div-'+key+'-'+loopNum;
 
-              newRow = '<div class="wphealthtracker-response-form-data-row-file" id="wphealthtracker-response-form-file-row-div-'+key+'-'+loopNum+'"><div style="right:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans31+'</p><input type="text" placeholder="'+wphealthtracker_php_variables.commontrans32+'" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-file-upload" id="wphealthtracker-response-form-input-text-file-upload-'+key+'-'+loopNum+'"></input></div><div style="left:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtracker_php_variables.commontrans33+'</p><button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-'+key+'-'+loopNum+'">'+wphealthtracker_php_variables.commontrans34+'</button><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-file-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtracker_php_variables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
+              newRow = '<div class="wphealthtracker-response-form-data-row-file" id="wphealthtracker-response-form-file-row-div-'+key+'-'+loopNum+'"><div style="right:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans31+'</p><input type="text" placeholder="'+wphealthtrackerPhpVariables.commontrans32+'" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-file-upload" id="wphealthtracker-response-form-input-text-file-upload-'+key+'-'+loopNum+'"></input></div><div style="left:2px;" class="wphealthtracker-response-form-div-row"><p>'+wphealthtrackerPhpVariables.commontrans33+'</p><button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-'+key+'-'+loopNum+'">'+wphealthtrackerPhpVariables.commontrans34+'</button><div class="wphealthtracker-response-form-row-removal-div" data-id-to-remove="wphealthtracker-response-form-file-row-div-'+key+'-'+loopNum+'"><p>'+wphealthtrackerPhpVariables.commontrans41+'</p><img class="wphealthtracker-response-form-row-removal-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'garbage.svg" /></div></div></div>';
           break;
       }
 
@@ -195,7 +195,7 @@ jQuery(document).ready(function($) {
 
         var data = {
           'action': 'wphealthtracker_jre_selecteduser_vitals_enter_action',
-          'security': wphealthtracker_php_variables.vitalsnonce1,
+          'security': wphealthtrackerPhpVariables.vitalsnonce1,
           'wpuserid':wpuserid,
           'offset':offset
         };
@@ -316,7 +316,7 @@ jQuery(document).ready(function($) {
 
         var data = {
           'action': 'wphealthtracker_jre_selecteduser_vitals_view_action',
-          'security': wphealthtracker_php_variables.vitalsnonce2,
+          'security': wphealthtrackerPhpVariables.vitalsnonce2,
           'wpuserid':wpuserid,
           'offset':offset
         };
@@ -382,7 +382,7 @@ jQuery(document).ready(function($) {
 
       var data = {
         'action': 'wphealthtracker_jre_selecteduser_vitals_filter_data_action',
-        'security': wphealthtracker_php_variables.vitalsnonce4,
+        'security': wphealthtrackerPhpVariables.vitalsnonce4,
         'wpuserid':wpuserid,
         'filterval':filterVal
       };
@@ -588,7 +588,7 @@ function wphealthtracker_jre_vitals_incomplete_data(iteratorNum, $){
       for (var i = explodedIds.length - 1; i >= 0; i--) {
         $(explodedIds[i]).prev().addClass('wphealthtracker-missing-data-animation')
       };
-      alert(wphealthtracker_php_variables.commontrans4)
+      alert(wphealthtrackerPhpVariables.commontrans4)
       $("html, body").animate({ scrollTop: $(explodedIds[1]).offset().top-150 }, 1000);
       returnFlag = true;
       return false;
@@ -625,7 +625,7 @@ function wphealthtracker_jre_vitals_incomplete_data(iteratorNum, $){
       for (var i = explodedIds.length - 1; i >= 0; i--) {
         $(explodedIds[i]).prev().addClass('wphealthtracker-missing-data-animation')
       };
-      alert(wphealthtracker_php_variables.commontrans4)
+      alert(wphealthtrackerPhpVariables.commontrans4)
       $("html, body").animate({ scrollTop: $(explodedIds[1]).offset().top-150 }, 1000);
       returnFlag = true;
       return false;
@@ -662,7 +662,7 @@ function wphealthtracker_jre_vitals_incomplete_data(iteratorNum, $){
       for (var i = explodedIds.length - 1; i >= 0; i--) {
         $(explodedIds[i]).prev().addClass('wphealthtracker-missing-data-animation')
       };
-      alert(wphealthtracker_php_variables.commontrans4)
+      alert(wphealthtrackerPhpVariables.commontrans4)
       $("html, body").animate({ scrollTop: $(explodedIds[1]).offset().top-150 }, 1000);
       returnFlag = true;
       return false;
@@ -698,7 +698,7 @@ function wphealthtracker_jre_vitals_incomplete_data(iteratorNum, $){
       for (var i = explodedIds.length - 1; i >= 0; i--) {
         $(explodedIds[i]).prev().addClass('wphealthtracker-missing-data-animation')
       };
-      alert(wphealthtracker_php_variables.commontrans4)
+      alert(wphealthtrackerPhpVariables.commontrans4)
       $("html, body").animate({ scrollTop: $(explodedIds[1]).offset().top-150 }, 1000);
       returnFlag = true;
       return false;
@@ -735,7 +735,7 @@ function wphealthtracker_jre_vitals_incomplete_data(iteratorNum, $){
       for (var i = explodedIds.length - 1; i >= 0; i--) {
         $(explodedIds[i]).prev().addClass('wphealthtracker-missing-data-animation')
       };
-      alert(wphealthtracker_php_variables.commontrans4)
+      alert(wphealthtrackerPhpVariables.commontrans4)
       $("html, body").animate({ scrollTop: $(explodedIds[1]).offset().top-150 }, 1000);
       returnFlag = true;
       return false;
@@ -771,7 +771,7 @@ function wphealthtracker_jre_vitals_incomplete_data(iteratorNum, $){
       for (var i = explodedIds.length - 1; i >= 0; i--) {
         $(explodedIds[i]).prev().addClass('wphealthtracker-missing-data-animation')
       };
-      alert(wphealthtracker_php_variables.commontrans4)
+      alert(wphealthtrackerPhpVariables.commontrans4)
       $("html, body").animate({ scrollTop: $(explodedIds[1]).offset().top-150 }, 1000);
       returnFlag = true;
       return false;
@@ -950,7 +950,7 @@ function wphealthtracker_jre_vitals_save_vitals_data($){
       var lastName = $(this).attr('data-lastname');
       var data = {
           'action': 'wphealthtracker_jre_save_vitals_data_action',
-          'security': wphealthtracker_php_variables.vitalsnonce3,
+          'security': wphealthtrackerPhpVariables.vitalsnonce3,
           'wpUserId':wpUserId,
           'firstName':firstName,
           'lastName':lastName,
@@ -994,15 +994,15 @@ function wphealthtracker_jre_vitals_save_vitals_data($){
 
               // Modify the response based on type of query
               if(response[1] == 'insert'){
-                responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg" /><p class="wphealthtracker-success-title">'+wphealthtracker_php_variables.ajaxreturn1+'</p><p class="wphealthtracker-success-description">'+wphealthtracker_php_variables.ajaxreturn3+' <span class="wphealthtracker-success-humandate">'+humanDate+'</span>.</p><p class="wphealthtracker-success-advert">'+wphealthtracker_php_variables.ajaxreturn4+' <a href="">'+wphealthtracker_php_variables.ajaxreturn5+'</a> '+wphealthtracker_php_variables.ajaxreturn6+'</p><p class="wphealthtracker-success-reviews">'+wphealthtracker_php_variables.ajaxreturn7+' <a href="">'+wphealthtracker_php_variables.ajaxreturn8+'</a> '+wphealthtracker_php_variables.ajaxreturn9+' <a href="">'+wphealthtracker_php_variables.ajaxreturn10+'</a>!</p>';
+                responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg" /><p class="wphealthtracker-success-title">'+wphealthtrackerPhpVariables.ajaxreturn1+'</p><p class="wphealthtracker-success-description">'+wphealthtrackerPhpVariables.ajaxreturn3+' <span class="wphealthtracker-success-humandate">'+humanDate+'</span>.</p><p class="wphealthtracker-success-advert">'+wphealthtrackerPhpVariables.ajaxreturn4+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn5+'</a> '+wphealthtrackerPhpVariables.ajaxreturn6+'</p><p class="wphealthtracker-success-reviews">'+wphealthtrackerPhpVariables.ajaxreturn7+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn8+'</a> '+wphealthtrackerPhpVariables.ajaxreturn9+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn10+'</a>!</p>';
               }
 
               if(response[1] == 'update'){
-                responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg" /><p class="wphealthtracker-success-title">'+wphealthtracker_php_variables.ajaxreturn1+'</p><p class="wphealthtracker-success-description">'+wphealthtracker_php_variables.ajaxreturn2+' <span class="wphealthtracker-success-humandate">'+humanDate+'</span>.</p><p class="wphealthtracker-success-advert">'+wphealthtracker_php_variables.ajaxreturn4+' <a href="">'+wphealthtracker_php_variables.ajaxreturn5+'</a> '+wphealthtracker_php_variables.ajaxreturn6+'</p><p class="wphealthtracker-success-reviews">'+wphealthtracker_php_variables.ajaxreturn7+' <a href="">'+wphealthtracker_php_variables.ajaxreturn8+'</a> '+wphealthtracker_php_variables.ajaxreturn9+' <a href="">'+wphealthtracker_php_variables.ajaxreturn10+'</a>!</p>';
+                responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'happy.svg" /><p class="wphealthtracker-success-title">'+wphealthtrackerPhpVariables.ajaxreturn1+'</p><p class="wphealthtracker-success-description">'+wphealthtrackerPhpVariables.ajaxreturn2+' <span class="wphealthtracker-success-humandate">'+humanDate+'</span>.</p><p class="wphealthtracker-success-advert">'+wphealthtrackerPhpVariables.ajaxreturn4+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn5+'</a> '+wphealthtrackerPhpVariables.ajaxreturn6+'</p><p class="wphealthtracker-success-reviews">'+wphealthtrackerPhpVariables.ajaxreturn7+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn8+'</a> '+wphealthtrackerPhpVariables.ajaxreturn9+' <a href="">'+wphealthtrackerPhpVariables.ajaxreturn10+'</a>!</p>';
               }
             } else {
               // Create the Error messaging here - print out the mysql error for user to report back with
-              responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'shocked.svg" /><p class="wphealthtracker-success-title">'+wphealthtracker_php_variables.ajaxreturn11+'</p><p class="wphealthtracker-success-description">'+wphealthtracker_php_variables.ajaxreturn12+'...</p><p class="wphealthtracker-success-advert">'+wphealthtracker_php_variables.ajaxreturn13+' <a href="mailto:techsupport@wphealthtracker.com">TechSupport@WPHealthTracker.com</a>:  <textarea class="wphealthtracker-ajax-error-textarea">'+response[0]+'</textarea></p><p class="wphealthtracker-success-reviews">'+wphealthtracker_php_variables.ajaxreturn14+'!</p>';
+              responseHtml = '<img class="wphealthtracker-ajax-return-img" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'shocked.svg" /><p class="wphealthtracker-success-title">'+wphealthtrackerPhpVariables.ajaxreturn11+'</p><p class="wphealthtracker-success-description">'+wphealthtrackerPhpVariables.ajaxreturn12+'...</p><p class="wphealthtracker-success-advert">'+wphealthtrackerPhpVariables.ajaxreturn13+' <a href="mailto:techsupport@wphealthtracker.com">TechSupport@WPHealthTracker.com</a>:  <textarea class="wphealthtracker-ajax-error-textarea">'+response[0]+'</textarea></p><p class="wphealthtracker-success-reviews">'+wphealthtrackerPhpVariables.ajaxreturn14+'!</p>';
             }
 
             // Add the response HTML and animate the height...

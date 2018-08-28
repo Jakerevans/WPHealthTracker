@@ -39,9 +39,9 @@ function wphealthtracker_boilerplate_action_javascript() {
 					console.log(response);
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
-					console.log(errorThrown);
-					console.log(textStatus);
-					console.log(jqXHR);
+					console.log( errorThrown );
+					console.log( textStatus );
+					console.log( jqXHR );
 				}
 			});
 

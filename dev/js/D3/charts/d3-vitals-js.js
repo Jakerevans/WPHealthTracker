@@ -39,7 +39,7 @@ function wphealthtracker_vitals_d3_1(mydataWeight){
 		.attr("class", "wphealthtracker-d3chart-axislabel")
 		.attr("id", "wphealthtracker-d3chart-axislabel-weight")
 		.style("text-anchor", "middle")
-		.text(wphealthtracker_php_variables.d3trans40);
+		.text(wphealthtrackerPhpVariables.d3trans40);
 
 	// Set the ranges - the domain is specified inside of the function called when we load the data
 	var xRangeWeight = d3.scaleLinear().range([0, width]);
@@ -276,13 +276,13 @@ function wphealthtracker_vitals_d3_1(mydataWeight){
 			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-weight")
 			.attr('x',80)
 			.attr('y',20)
-			.text(wphealthtracker_php_variables.d3trans19);
+			.text(wphealthtrackerPhpVariables.d3trans19);
 		// Kilograms
 		legend.append("text")
 			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-weight")
 			.attr('x',80)
 			.attr('y',43)
-			.text(wphealthtracker_php_variables.d3trans18)
+			.text(wphealthtrackerPhpVariables.d3trans18)
 		
 
 		// Pounds Rect
@@ -356,7 +356,7 @@ function wphealthtracker_vitals_d3_1(mydataWeight){
 			if(+tmpArr[0] == 12) {
 				time12 = tmpArr[0] + ':' + tmpArr[1] + ' PM';
 			} else {
-				if(+tmpArr[0] == 00) {
+				if(+tmpArr[0] == '00') {
 					time12 = '12:' + tmpArr[1] + ' AM';
 				} else {
 					if(+tmpArr[0] > 12) {
@@ -437,7 +437,7 @@ function wphealthtracker_vitals_d3_1(mydataWeight){
 		// Hide the the spinner
     	$('#wphealthtracker-spinner-d3-await-1').animate({'opacity':'0'})
 
-    	$('#wphealthtracker-chart-hover-message-weight').html('<p>'+wphealthtracker_php_variables.d3trans20+'</p>');
+    	$('#wphealthtracker-chart-hover-message-weight').html('<p>'+wphealthtrackerPhpVariables.d3trans20+'</p>');
 	});
 
 }
@@ -929,7 +929,7 @@ function wphealthtracker_vitals_d3_2(mydata) {
 		// Hide the the spinner
         $('#wphealthtracker-spinner-d3-await-2').animate({'opacity':'0'})
 
-        $('#wphealthtracker-chart-hover-message-bp').html('<p>'+wphealthtracker_php_variables.d3trans20+'</p>');
+        $('#wphealthtracker-chart-hover-message-bp').html('<p>'+wphealthtrackerPhpVariables.d3trans20+'</p>');
 
 	} // END wpht_helper_d3_bp_update_graph
 
@@ -1026,7 +1026,7 @@ function wphealthtracker_vitals_d3_2(mydata) {
 		if(+tmpArr[0] == 12) {
 			time12 = tmpArr[0] + ':' + tmpArr[1] + ' PM';
 		} else {
-			if(+tmpArr[0] == 00) {
+			if(+tmpArr[0] == '00') {
 				time12 = '12:' + tmpArr[1] + ' AM';
 			} else {
 				if(+tmpArr[0] > 12) {
@@ -1168,7 +1168,7 @@ function wphealthtracker_vitals_d3_3(mydataCh){
 		.attr("class", "wphealthtracker-d3chart2-axislabel")
 		.attr("id", "wphealthtracker-d3chart2-axislabel-ch")
 		.style("text-anchor", "middle")
-		.text(wphealthtracker_php_variables.d3trans39);
+		.text(wphealthtrackerPhpVariables.d3trans39);
 
 	// Set the ranges - the domain is specified inside of the function called when we load the data
 	var xRangeCh = d3.scaleLinear().range([0, width]);
@@ -1440,25 +1440,25 @@ function wphealthtracker_vitals_d3_3(mydataCh){
 			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-ch")
 			.attr('x',115)
 			.attr('y',20)
-			.text(wphealthtracker_php_variables.d3trans34);
+			.text(wphealthtrackerPhpVariables.d3trans34);
 		// HDL
 		legend.append("text")
 			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-ch")
 			.attr('x',115)
 			.attr('y',43)
-			.text(wphealthtracker_php_variables.d3trans35)
+			.text(wphealthtrackerPhpVariables.d3trans35)
 		// Tri
 		legend.append("text")
 			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-ch")
 			.attr('x',225)
 			.attr('y',20)
-			.text(wphealthtracker_php_variables.d3trans36)
+			.text(wphealthtrackerPhpVariables.d3trans36)
 		// Total
 		legend.append("text")
 			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-ch")
 			.attr('x',225)
 			.attr('y',43)
-			.text(wphealthtracker_php_variables.d3trans37)
+			.text(wphealthtrackerPhpVariables.d3trans37)
 
 		// LDL Rect
 		legend.append("rect")
@@ -1578,7 +1578,7 @@ function wphealthtracker_vitals_d3_3(mydataCh){
 			if(+tmpArr[0] == 12) {
 				time12 = tmpArr[0] + ':' + tmpArr[1] + ' PM';
 			} else {
-				if(+tmpArr[0] == 00) {
+				if(+tmpArr[0] == '00') {
 					time12 = '12:' + tmpArr[1] + ' AM';
 				} else {
 					if(+tmpArr[0] > 12) {
@@ -1658,6 +1658,6 @@ function wphealthtracker_vitals_d3_3(mydataCh){
 		// Hide the the spinner
     	$('#wphealthtracker-spinner-d3-await-3').animate({'opacity':'0'})
 
-    	$('#wphealthtracker-chart-hover-message-ch').html('<p>'+wphealthtracker_php_variables.d3trans20+'</p>');
+    	$('#wphealthtracker-chart-hover-message-ch').html('<p>'+wphealthtrackerPhpVariables.d3trans20+'</p>');
 	});
 }

@@ -159,13 +159,13 @@ function wphealthtracker_vitals_d3_1(mydata) {
       return { name: d.name, value: d.values[maxLen - 1] };
     }).attr("transform", function (d) {
 
-      if (d.name == wphealthtracker_php_variables.d3trans19) {
+      if (d.name == wphealthtrackerPhpVariables.d3trans19) {
         return "translate(" + xScale(d.value.date) + "," + yScale(d.value.close) + ")";
       } else {
         return "translate(" + xScale(d.value.date) + "," + yScale(d.value.close) + ")";
       }
     }).style({ "font-size": "15px", "font-weight": "bold" }).style("fill", function (d) {
-      if (d.name == wphealthtracker_php_variables.d3trans19) {
+      if (d.name == wphealthtrackerPhpVariables.d3trans19) {
         return "rgb(31, 119, 180)";
       } else {
         return "rgb(255, 127, 14)";

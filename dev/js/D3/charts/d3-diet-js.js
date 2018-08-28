@@ -86,9 +86,9 @@ function wphealthtracker_diet_d3_1(mydataFoodItems){
 
 	      	// Modify the Food Name
 	      	var categoryName = d.letter.split(';');
-	      	var foodName = '<img class="wphealthtracker-d3chart-iconimg-fooditems" src="'+wphealthtracker_php_variables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'groceries.svg" />'+categoryName[0].charAt(0).toUpperCase() + categoryName[0].slice(1);
+	      	var foodName = '<img class="wphealthtracker-d3chart-iconimg-fooditems" src="'+wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL+'groceries.svg" />'+categoryName[0].charAt(0).toUpperCase() + categoryName[0].slice(1);
 	      	if ( categoryName[1] !== ''){
-	      		categoryName = '      ('+wphealthtracker_php_variables.commontrans35+': '+categoryName[1]+')'
+	      		categoryName = '      ('+wphealthtrackerPhpVariables.commontrans35+': '+categoryName[1]+')'
 	      	} else {
 	      		categoryName = '';
 	      	}
@@ -108,20 +108,20 @@ function wphealthtracker_diet_d3_1(mydataFoodItems){
 				var consumedText2 = '';
 				var finalConsumedText = '';
 				if(d.frequency == 1){
-					consumedText1 = consumedText1+wphealthtracker_php_variables.diettrans32+' '+d.frequency+' '+wphealthtracker_php_variables.commontrans44;
+					consumedText1 = consumedText1+wphealthtrackerPhpVariables.diettrans32+' '+d.frequency+' '+wphealthtrackerPhpVariables.commontrans44;
 				} else {
-					consumedText1 = consumedText1+wphealthtracker_php_variables.diettrans32+' '+d.frequency+' '+wphealthtracker_php_variables.commontrans43;
+					consumedText1 = consumedText1+wphealthtrackerPhpVariables.diettrans32+' '+d.frequency+' '+wphealthtrackerPhpVariables.commontrans43;
 				}
 				consumedText1 = consumedText1+'</p>';
 
 				var energies = d.calories.split(';');
 
-				consumedText2 = '<p id="wphealthtracker-d3chart-consumed2-fooditems">'+wphealthtracker_php_variables.diettrans9+': '+energies[0]+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtracker_php_variables.diettrans33+': '+energies[1]+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtracker_php_variables.diettrans34+': '+energies[2]+'</p>';
+				consumedText2 = '<p id="wphealthtracker-d3chart-consumed2-fooditems">'+wphealthtrackerPhpVariables.diettrans9+': '+energies[0]+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtrackerPhpVariables.diettrans33+': '+energies[1]+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtrackerPhpVariables.diettrans34+': '+energies[2]+'</p>';
 
 				// Now build the MacroNutrients String
-				var carbs = wphealthtracker_php_variables.commontrans45;
-				var protein = wphealthtracker_php_variables.commontrans45;
-				var fats = wphealthtracker_php_variables.commontrans45;
+				var carbs = wphealthtrackerPhpVariables.commontrans45;
+				var protein = wphealthtrackerPhpVariables.commontrans45;
+				var fats = wphealthtrackerPhpVariables.commontrans45;
 
 				if(d.carbs != ''){
 					carbs = d.carbs;
@@ -135,13 +135,13 @@ function wphealthtracker_diet_d3_1(mydataFoodItems){
 					fats = d.fats;
 				}
 
-				consumedText3 = '<p id="wphealthtracker-d3chart-consumed3-fooditems">'+wphealthtracker_php_variables.diettrans35+': '+carbs+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtracker_php_variables.diettrans12+': '+protein+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtracker_php_variables.diettrans36+': '+fats+'</p>';
+				consumedText3 = '<p id="wphealthtracker-d3chart-consumed3-fooditems">'+wphealthtrackerPhpVariables.diettrans35+': '+carbs+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtrackerPhpVariables.diettrans12+': '+protein+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtrackerPhpVariables.diettrans36+': '+fats+'</p>';
 
 
 				// Now build the Fats String
-				var satfats = wphealthtracker_php_variables.commontrans45;
-				var monosatfats = wphealthtracker_php_variables.commontrans45;
-				var polysatfats = wphealthtracker_php_variables.commontrans45;
+				var satfats = wphealthtrackerPhpVariables.commontrans45;
+				var monosatfats = wphealthtrackerPhpVariables.commontrans45;
+				var polysatfats = wphealthtrackerPhpVariables.commontrans45;
 
 				if(d.satfats != ''){
 					satfats = d.satfats;
@@ -155,11 +155,11 @@ function wphealthtracker_diet_d3_1(mydataFoodItems){
 					polysatfats = d.polysatfats;
 				}
 
-				consumedText4 = '<p id="wphealthtracker-d3chart-consumed3-fooditems">'+wphealthtracker_php_variables.diettrans5+': '+satfats+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtracker_php_variables.diettrans37+': '+monosatfats+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtracker_php_variables.diettrans38+': '+polysatfats+'</p>';
+				consumedText4 = '<p id="wphealthtracker-d3chart-consumed3-fooditems">'+wphealthtrackerPhpVariables.diettrans5+': '+satfats+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtrackerPhpVariables.diettrans37+': '+monosatfats+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtrackerPhpVariables.diettrans38+': '+polysatfats+'</p>';
 
 				// Now build the Carbs String
-				var sugars = wphealthtracker_php_variables.commontrans45;
-				var fiber = wphealthtracker_php_variables.commontrans45;
+				var sugars = wphealthtrackerPhpVariables.commontrans45;
+				var fiber = wphealthtrackerPhpVariables.commontrans45;
 
 				if(d.sugars != ''){
 					sugars = d.sugars;
@@ -169,7 +169,7 @@ function wphealthtracker_diet_d3_1(mydataFoodItems){
 					fiber = d.fiber;
 				}
 
-				consumedText5 = '<p id="wphealthtracker-d3chart-consumed3-fooditems">'+wphealthtracker_php_variables.diettrans39+': '+sugars+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtracker_php_variables.diettrans40+': '+fiber+'</p>';
+				consumedText5 = '<p id="wphealthtracker-d3chart-consumed3-fooditems">'+wphealthtrackerPhpVariables.diettrans39+': '+sugars+'&nbsp;&nbsp;&nbsp;&nbsp;'+wphealthtrackerPhpVariables.diettrans40+': '+fiber+'</p>';
 
 
 
@@ -193,7 +193,7 @@ function wphealthtracker_diet_d3_1(mydataFoodItems){
 	      	// Hide the spinner.
 	      	$('#wphealthtracker-stats-actual-inner-d3-1-1 svg').animate({'opacity':'1'}, 2000)
     		$('#wphealthtracker-spinner-d3-await-1').animate({'opacity':'0'})
-    		$('#wphealthtracker-chart-hover-message-fooditem').html('<p>'+wphealthtracker_php_variables.d3trans54+'</p>');
+    		$('#wphealthtracker-chart-hover-message-fooditem').html('<p>'+wphealthtrackerPhpVariables.d3trans54+'</p>');
 		    d3.select("input").property("checked", true).each(wpht_helper_d3_fooditem_change);
 		  }, 2000);
 
@@ -261,7 +261,7 @@ function wphealthtracker_diet_d3_2(mydataEnergy) {
 		.attr("class", "wphealthtracker-d3chart-axislabel")
 		.attr("id", "wphealthtracker-d3chart-axislabel-energy")
 		.style("text-anchor", "middle")
-		.text(wphealthtracker_php_variables.d3trans69);
+		.text(wphealthtrackerPhpVariables.d3trans69);
 
 	// Set the ranges - the domain is specified inside of the function called when we load the data
 	var xRangeEnergy = d3.scaleLinear().range([0, width]);
@@ -501,13 +501,13 @@ function wphealthtracker_diet_d3_2(mydataEnergy) {
 			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-energy")
 			.attr('x',80)
 			.attr('y',20)
-			.text(wphealthtracker_php_variables.diettrans34);
+			.text(wphealthtrackerPhpVariables.diettrans34);
 		// Calories
 		legend.append("text")
 			.attr("class", "wphealthtracker-d3chart-legend wphealthtracker-d3chart-legend-energy")
 			.attr('x',80)
 			.attr('y',43)
-			.text(wphealthtracker_php_variables.diettrans8)
+			.text(wphealthtrackerPhpVariables.diettrans8)
 		
 
 		// Kilojoules Rect
@@ -581,7 +581,7 @@ function wphealthtracker_diet_d3_2(mydataEnergy) {
 			if(+tmpArr[0] == 12) {
 				time12 = tmpArr[0] + ':' + tmpArr[1] + ' PM';
 			} else {
-				if(+tmpArr[0] == 00) {
+				if(+tmpArr[0] == '00') {
 					time12 = '12:' + tmpArr[1] + ' AM';
 				} else {
 					if(+tmpArr[0] > 12) {
@@ -662,7 +662,7 @@ function wphealthtracker_diet_d3_2(mydataEnergy) {
 		// Hide the the spinner
     	$('#wphealthtracker-spinner-d3-await-2').animate({'opacity':'0'})
 
-    	$('#wphealthtracker-chart-hover-message-energy').html('<p>'+wphealthtracker_php_variables.d3trans20+'</p>');
+    	$('#wphealthtracker-chart-hover-message-energy').html('<p>'+wphealthtrackerPhpVariables.d3trans20+'</p>');
 	});
 
 }
@@ -1015,6 +1015,6 @@ function wphealthtracker_diet_d3_3(d3Three){
 	// Hide the the spinner
 	$('#wphealthtracker-spinner-d3-await-3').animate({'opacity':'0'})
 
-	$('#wphealthtracker-chart-hover-message-macro').html('<p>'+wphealthtracker_php_variables.d3trans72+'</p>');
+	$('#wphealthtracker-chart-hover-message-macro').html('<p>'+wphealthtrackerPhpVariables.d3trans72+'</p>');
 
 }

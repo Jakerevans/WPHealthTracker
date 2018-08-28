@@ -8,7 +8,7 @@
  */
 
 console.log('This is the JavaScript Object that holds all PHP Variables for use in JavaScript')
-console.log(wphealthtracker_php_variables)
+console.log(wphealthtrackerPhpVariables)
 
 
 // All functions wrapped in jQuery(document).ready()...
@@ -72,7 +72,7 @@ jQuery(document).ready(function($) {
           }, {
              duration: 500,
              complete: function() { 
-              $(this).text(wphealthtracker_php_variables.adminjstransstring10);
+              $(this).text(wphealthtrackerPhpVariables.adminjstransstring10);
               $(this).animate({'opacity':'1'});
              } 
           });
@@ -107,7 +107,7 @@ jQuery(document).ready(function($) {
           }, {
              duration: 500,
              complete: function() { 
-              $(this).text(wphealthtracker_php_variables.adminjstransstring9);
+              $(this).text(wphealthtrackerPhpVariables.adminjstransstring9);
               $(this).animate({'opacity':'1'});
              } 
           });
@@ -139,7 +139,7 @@ jQuery(document).ready(function($) {
           }, {
              duration: 500,
              complete: function() { 
-              $(this).text(wphealthtracker_php_variables.adminjstransstring10);
+              $(this).text(wphealthtrackerPhpVariables.adminjstransstring10);
               $(this).animate({'opacity':'1'});
              } 
           });
@@ -176,7 +176,7 @@ jQuery(document).ready(function($) {
           }, {
              duration: 500,
              complete: function() { 
-              $(this).text(wphealthtracker_php_variables.adminjstransstring9);
+              $(this).text(wphealthtrackerPhpVariables.adminjstransstring9);
               $(this).animate({'opacity':'1'});
              } 
           });
@@ -209,7 +209,7 @@ jQuery(document).ready(function($) {
       switch(label) {
         case 'selectauser':
             pointer = $(this).pointer({
-              content: '<h3>'+wphealthtracker_php_variables.adminjstransstring1+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtracker_php_variables.adminjstransstring2+'</p>',
+              content: '<h3>'+wphealthtrackerPhpVariables.adminjstransstring1+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtrackerPhpVariables.adminjstransstring2+'</p>',
               position: {
                   edge: 'right',
                   align: 'right',
@@ -221,7 +221,7 @@ jQuery(document).ready(function($) {
             break;
         case 'vitals-weight':
             pointer = $(this).pointer({
-              content: '<h3>'+wphealthtracker_php_variables.adminjstransstring3+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtracker_php_variables.adminjstransstring4+'</p>',
+              content: '<h3>'+wphealthtrackerPhpVariables.adminjstransstring3+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtrackerPhpVariables.adminjstransstring4+'</p>',
               position: {
                   edge: 'right',
                   align: 'right',
@@ -233,7 +233,7 @@ jQuery(document).ready(function($) {
             break;
         case 'vitals-bp':
             pointer = $(this).pointer({
-              content: '<h3>'+wphealthtracker_php_variables.adminjstransstring5+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtracker_php_variables.adminjstransstring6+'</p>',
+              content: '<h3>'+wphealthtrackerPhpVariables.adminjstransstring5+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtrackerPhpVariables.adminjstransstring6+'</p>',
               position: {
                   edge: 'right',
                   align: 'right',
@@ -245,7 +245,7 @@ jQuery(document).ready(function($) {
             break;
         case 'vitals-bo':
             pointer = $(this).pointer({
-              content: '<h3>'+wphealthtracker_php_variables.adminjstransstring7+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtracker_php_variables.adminjstransstring8+'</p>',
+              content: '<h3>'+wphealthtrackerPhpVariables.adminjstransstring7+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtrackerPhpVariables.adminjstransstring8+'</p>',
               position: {
                   edge: 'right',
                   align: 'right',
@@ -257,7 +257,7 @@ jQuery(document).ready(function($) {
             break;
         case 'dash-daystracked':
             pointer = $(this).pointer({
-              content: '<h3>'+wphealthtracker_php_variables.adminjstransstring7+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtracker_php_variables.adminjstransstring8+'</p>',
+              content: '<h3>'+wphealthtrackerPhpVariables.adminjstransstring7+'</h3><p class="wphealthtracker-admin-pointer">'+wphealthtrackerPhpVariables.adminjstransstring8+'</p>',
               position: {
                   edge: 'left',
                   align: 'left',

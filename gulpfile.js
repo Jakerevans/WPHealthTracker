@@ -45,11 +45,11 @@ gulp.task('d3-uglify', function() {
         .pipe(gulp.dest('assets/js')); // The destination for the renamed and uglified file
 });
 
-
 // Task to concatenate and uglify js files
 gulp.task('concat', function() {
     gulp.src(jsSources) // use jsSources
         .pipe(concat('wphealthtracker-admin-min.js')) // Concat to a file named 'script.js'
+        .pipe(babel({presets: ['es2015']}))
         .pipe(uglify()) // Uglify concatenated file
         .pipe(gulp.dest('assets/js')); // The destination for the concatenated and uglified file
 });

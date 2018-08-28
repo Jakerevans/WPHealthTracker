@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 
         var data = {
           'action': 'wphealthtracker_jre_grab_user_data_for_diet_dashboard_action',
-          'security': wphealthtracker_php_variables.statsdietnonce1,
+          'security': wphealthtrackerPhpVariables.statsdietnonce1,
           'wpuserid':wpuserid,
         };
 
@@ -118,7 +118,7 @@ jQuery(document).ready(function($) {
 
         var data = {
           'action': 'wphealthtracker_jre_grab_user_data_for_diet_d3_action',
-          'security': wphealthtracker_php_variables.statsdietnonce2,
+          'security': wphealthtrackerPhpVariables.statsdietnonce2,
           'wpuserid':wpuserid,
         };
 
@@ -159,7 +159,7 @@ jQuery(document).ready(function($) {
               $("#wphealthtracker-stats-actual-inner-d3-1-1").append(d3One);
             } else {
               // Append any HTML that may be needed for the creation of the charts
-              $('#wphealthtracker-stats-actual-inner-d3-1-1').append('<label id="wphealthtracker-d3chart-sort-fooditems"><input type="checkbox"> Sort values</label><div class="wphealthtracker-d3chart-readout-fooditems"><p><span id="wphealthtracker-d3chart-tooltip-fooditems-item"></span><span id="wphealthtracker-d3chart-tooltip-fooditems-category"></span></p><div id="wphealthtracker-d3chart-tooltip-fooditems-number"></div></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-fooditem">'+wphealthtracker_php_variables.d3trans48+'</div>');
+              $('#wphealthtracker-stats-actual-inner-d3-1-1').append('<label id="wphealthtracker-d3chart-sort-fooditems"><input type="checkbox"> Sort values</label><div class="wphealthtracker-d3chart-readout-fooditems"><p><span id="wphealthtracker-d3chart-tooltip-fooditems-item"></span><span id="wphealthtracker-d3chart-tooltip-fooditems-category"></span></p><div id="wphealthtracker-d3chart-tooltip-fooditems-number"></div></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-fooditem">'+wphealthtrackerPhpVariables.d3trans48+'</div>');
               wphealthtracker_diet_d3_1(d3One);
             }
 
@@ -171,7 +171,7 @@ jQuery(document).ready(function($) {
               // Modify the CSS of the right-side container to match the height of the left - a one-off modification specific to this chart
               $('#wphealthtracker-stats-inner-d3-2 #wphealthtracker-stats-actual-inner-d3-2-2').css({'top':'0px'});
             } else {
-              $('#wphealthtracker-stats-actual-inner-d3-1-2').append('<div id="wphealthtracker-energy-chart-select-div"></div><div id="wphealthtracker-d3chart-legendContainer-energy" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-energy"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-energy">'+wphealthtracker_php_variables.d3trans48+'</div>');
+              $('#wphealthtracker-stats-actual-inner-d3-1-2').append('<div id="wphealthtracker-energy-chart-select-div"></div><div id="wphealthtracker-d3chart-legendContainer-energy" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-energy"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-energy">'+wphealthtrackerPhpVariables.d3trans48+'</div>');
               wphealthtracker_diet_d3_2(d3Two);
             }
 
@@ -182,7 +182,7 @@ jQuery(document).ready(function($) {
               $("#wphealthtracker-stats-actual-inner-d3-1-3").append(d3Three);
             } else {
               // Append any HTML that may be needed for the creation of the charts
-              $('#wphealthtracker-stats-actual-inner-d3-1-3').append('<div id="wphealthtracker-d3chart-legendContainer-macro" class="wphealthtracker-d3chart-legendContainer"></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-macro">'+wphealthtracker_php_variables.d3trans48+'</div>');
+              $('#wphealthtracker-stats-actual-inner-d3-1-3').append('<div id="wphealthtracker-d3chart-legendContainer-macro" class="wphealthtracker-d3chart-legendContainer"></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-macro">'+wphealthtrackerPhpVariables.d3trans48+'</div>');
 
               // Now split up the D3 data into two seperate arrays
               var arrayOne = [];

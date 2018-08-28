@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 
         var data = {
           'action': 'wphealthtracker_jre_grab_user_data_for_vitals_dashboard_action',
-          'security': wphealthtracker_php_variables.statsvitalsnonce1,
+          'security': wphealthtrackerPhpVariables.statsvitalsnonce1,
           'wpuserid':wpuserid,
         };
 
@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
 
         var data = {
           'action': 'wphealthtracker_jre_grab_user_data_for_vitals_d3_action',
-          'security': wphealthtracker_php_variables.statsvitalsnonce2,
+          'security': wphealthtrackerPhpVariables.statsvitalsnonce2,
           'wpuserid':wpuserid,
         };
 
@@ -150,7 +150,7 @@ jQuery(document).ready(function($) {
               $("#wphealthtracker-stats-actual-inner-d3-1-1").append(d3One);
             } else {
               // Append any HTML that may be needed for the creation of the charts
-              $('#wphealthtracker-stats-actual-inner-d3-1-1').append('<div id="wphealthtracker-d3chart-legendContainer-weight" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-weight"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-weight">'+wphealthtracker_php_variables.d3trans48+'</div>');
+              $('#wphealthtracker-stats-actual-inner-d3-1-1').append('<div id="wphealthtracker-d3chart-legendContainer-weight" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-weight"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-weight">'+wphealthtrackerPhpVariables.d3trans48+'</div>');
               wphealthtracker_vitals_d3_1(d3One);
             }
 
@@ -163,7 +163,7 @@ jQuery(document).ready(function($) {
               $('#wphealthtracker-stats-inner-d3-2 #wphealthtracker-stats-actual-inner-d3-2-2').css({'top':'0px'});
             } else {
               // Append any HTML that may be needed for the creation of the charts
-              $('#wphealthtracker-stats-actual-inner-d3-1-2').append('<div id="wphealthtracker-bp-chart-select-div"></div><div id="wphealthtracker-d3chart-legendContainer-bp" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-bp"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-bp">'+wphealthtracker_php_variables.d3trans48+'</div>');
+              $('#wphealthtracker-stats-actual-inner-d3-1-2').append('<div id="wphealthtracker-bp-chart-select-div"></div><div id="wphealthtracker-d3chart-legendContainer-bp" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-bp"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-bp">'+wphealthtrackerPhpVariables.d3trans48+'</div>');
               wphealthtracker_vitals_d3_2(d3Two);
             }
 
@@ -174,7 +174,7 @@ jQuery(document).ready(function($) {
               $("#wphealthtracker-stats-actual-inner-d3-1-3").append(d3Three);
             } else {
               // Append any HTML that may be needed for the creation of the charts
-              $('#wphealthtracker-stats-actual-inner-d3-1-3').append('<div id="wphealthtracker-d3chart-legendContainer-ch" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-ch"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-ch">'+wphealthtracker_php_variables.d3trans48+'</div>');
+              $('#wphealthtracker-stats-actual-inner-d3-1-3').append('<div id="wphealthtracker-d3chart-legendContainer-ch" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-ch"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-ch">'+wphealthtrackerPhpVariables.d3trans48+'</div>');
               wphealthtracker_vitals_d3_3(d3Three);
             }
 
