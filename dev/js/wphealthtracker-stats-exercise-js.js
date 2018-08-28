@@ -47,6 +47,7 @@ jQuery( document ).ready( function( $ ) {
 					// Turn off spinner
 					$( '#wphealthtracker-spinner-1' ).animate({'opacity': '0'});
 
+					// Unescape the HTML
 					e.innerHTML = response;
 					response = 0 === e.childNodes.length ? '' : e.childNodes[0].nodeValue;
 

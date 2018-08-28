@@ -9,9 +9,9 @@
 
 "use strict";
 
-function wphealthtracker_diet_d3_1(mydataFoodItems){
+function wphealthtrackerDietD3One(mydataFoodItems, $){
 
-	// Set dimensions
+	// Set dimensions.
 	var margin = {
 		top: 120,
 		right: 40,
@@ -231,7 +231,7 @@ function wphealthtracker_diet_d3_1(mydataFoodItems){
 	}
 }
 
-function wphealthtracker_diet_d3_2(mydataEnergy) {
+function wphealthtrackerDietD3Two(mydataEnergy, $) {
 
 	// Set dimensions
 	var margin = {
@@ -294,7 +294,7 @@ function wphealthtracker_diet_d3_2(mydataEnergy) {
 		console.log(mydataEnergy)
 
 		// Using my own data instead of suppling a URL/File path to the first argument in the d3.csv() function above (instead, we just pass an empty string)
-		dataEnergy = mydataEnergy;
+		var dataEnergy = mydataEnergy;
 		dataEnergy.forEach(function (d) {
 		 	d.date = parseDate(d.date),
 		 	Kilojoules = +d.Kilojoules, 
@@ -667,7 +667,7 @@ function wphealthtracker_diet_d3_2(mydataEnergy) {
 
 }
 
-function wphealthtracker_diet_d3_3(d3Three){
+function wphealthtrackerDietD3Three(d3Three, $){
 
 	var donutData = d3Three;
 
