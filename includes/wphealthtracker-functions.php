@@ -72,6 +72,12 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 			return $result;
 		}
 
+		// Adding the jQuery Effects Library that ships with WordPress.
+		function wphealthtracker_jre_add_jquery_effects_library() {
+			wp_enqueue_script( 'jquery-effects-core' );
+		}
+
+
 		// Function that adds the Ajax Library into the head of the doc: <script type="text/javascript">var ajaxurl = "http://localhost:8888/local/wp-admin/admin-ajax.php"</script>
 		function wphealthtracker_jre_add_ajax_library() {
 

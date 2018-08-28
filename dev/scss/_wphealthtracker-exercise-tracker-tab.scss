@@ -281,7 +281,132 @@
     min-width: 155px;
 }
 
+.wphealthtracker-exercise-muscle-groups-legend-text{
+    font-size: 12px;
+    opacity: 0.5;
+    width: 43px;
+    text-align: center;
+    line-height: 1;
+    font-variant: all-small-caps;
+}
 
+#wphealthtracker-exercise-muscle-groups-legend-div{
+    position: relative;
+    top: 22px;
+    left: 69px;
+    text-align: left;
+}
+
+.wphealthtracker-exercise-muscle-groups-legend-colorbox{
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    position: relative;
+    top: 2px;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox1{
+    background-color: #f8d3de;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox2{
+    background-color: #ee91ad;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox3{
+    background-color: #e34f7b;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox4{
+    background-color: #c71f51;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox5{
+    background-color: #841536;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-inner-div div{
+    display:inline-block;
+}
+
+$black: #333;
+$white: #eee;
+$color-1: #00BCD4;
+$label-z: 200;
+$svg-z: 100;
+
+
+
+.wphealthtracker-muscle-groups {
+    position: relative;
+    left: 15px;
+    top: 15px;
+    height: 500px;
+    text-align: left;
+    width: 320px;
+    h2 {
+        margin: 0px;
+        margin-bottom: 3px;
+        margin-top: 12px;
+        font-size: .8rem;
+        letter-spacing: -.03em;
+        text-transform: uppercase;
+    }
+    label + h2 { margin-top: 1rem; }
+    label {
+        width: 50px;
+        display: block;
+        cursor: pointer;
+        font-size: .7rem;
+        opacity: .5;
+        position: relative;
+        z-index: $label-z;
+        border-left: 5px solid transparent;
+        padding-left: 6px;
+        margin-left: -11px;
+        &:hover, &.hover {
+          opacity: 1;
+          border-color: rgba($pureblack, .75);
+        }
+    }
+    input:checked + label {
+        opacity: 1;
+        font-weight: bold;
+        color: $primary-color;
+    }
+    svg {
+        position: absolute;
+        left: 70px;
+        top: 12px;
+        height: 350px;
+        z-index: $svg-z;
+    }
+    svg g[id] path {
+        stroke: $lightgray!important;
+        stroke-width: 0.5px!important;
+        transition: opacity .25s ease-in-out;
+    }
+    svg g g[id]:hover path {
+        cursor: pointer;
+        opacity: .5;
+        fill: $primary-color !important;
+    }
+    .wphealthtracker-muscles-helper {
+        display: none;
+    }
+
+    $groups: wphealthtracker-obliques, wphealthtracker-abs, wphealthtracker-quads, wphealthtracker-biceps, wphealthtracker-adductors, wphealthtracker-pectorals, wphealthtracker-deltoids, wphealthtracker-hamstrings, wphealthtracker-quads, wphealthtracker-forearms, wphealthtracker-calves, wphealthtracker-triceps, wphealthtracker-glutes, wphealthtracker-lats, wphealthtracker-trapezius;
+    @each $muscle in $groups {
+        $upper: to-upper-case(str-slice($muscle, 1, 1)) + str-slice($muscle, 2);
+        label[for="#{$muscle}"]:hover ~ svg ##{$upper} path {
+          opacity: .75;
+        }
+        .#{$muscle}:checked ~ svg ##{$upper} path {
+          opacity: .8;
+          fill: $color-1 !important;
+        }
+    }
+}
 
     /*
      *   BEGIN SELECT2 CSS

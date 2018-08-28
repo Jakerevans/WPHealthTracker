@@ -536,6 +536,15 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->exercise_trans_37 = __( 'Adductors', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_38 = __( 'Bodyweight', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_39 = __( 'Exercises for', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_40 = __( 'Arms', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_41 = __( 'Biceps', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_43 = __( 'Forearms', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_44 = __( 'Back', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_45 = __( 'Trapezius', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_46 = __( 'Core', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_47 = __( 'Pectorals', 'wphealthtracker-textdomain' );
+
+			
 
 			return $translation_array2 = array(
 				'exercisetrans1' => $this->exercise_trans_1,
@@ -576,6 +585,15 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'exercisetrans36' => $this->exercise_trans_36,
 				'exercisetrans37' => $this->exercise_trans_37,
 				'exercisetrans38' => $this->exercise_trans_38,
+				'exercisetrans39' => $this->exercise_trans_39,
+				'exercisetrans40' => $this->exercise_trans_40,
+				'exercisetrans41' => $this->exercise_trans_41,
+				'exercisetrans42' => $this->exercise_trans_42,
+				'exercisetrans43' => $this->exercise_trans_43,
+				'exercisetrans44' => $this->exercise_trans_44,
+				'exercisetrans45' => $this->exercise_trans_45,
+				'exercisetrans46' => $this->exercise_trans_46,
+				'exercisetrans47' => $this->exercise_trans_47,
 			);
 		}
 
@@ -791,6 +809,8 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->d3_trans_87 = __( 'Once you have, this area will display some statistics about your distance travelled.', 'wphealthtracker-textdomain' );
 			$this->d3_trans_88 = __( 'Around The World' );
 			$this->d3_trans_89 = __( 'From Earth To The Moon' );
+			$this->d3_trans_90 = __( 'Muscle Groups Chart & Stats:' );
+			$this->d3_trans_91 = __( 'Muscle Group Stats' );
 
 			return $d3_array1 = array(
 				'd3trans1'  => $this->d3_trans_1,

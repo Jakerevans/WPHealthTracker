@@ -280,6 +280,9 @@ global $wpdb;
 	// Adding AJAX JavaScript.
 	add_action( 'wp_head', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_add_ajax_library' ) );
 
+	// Adding jQuery Effects Library that ships with WordPress.
+	add_action( 'admin_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_add_jquery_effects_library' ) );
+
 	// Adding the admin js file.
 	add_action( 'admin_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_admin_js' ) );
 

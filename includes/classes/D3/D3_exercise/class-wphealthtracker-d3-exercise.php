@@ -245,7 +245,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 						$exercise = explode( ';', $exercise );
 
 						// Convert everything to miles, if we have a value other than null or zero.
-						if ( 0 !== $exercise[5] && null !== $exercise[5] && '' !==  $exercise[5] ) {
+						if ( 0 !== $exercise[5] && null !== $exercise[5] && '' !== $exercise[5] ) {
 							if ( $this->translations->common_trans_51 === $exercise[6] ) {
 								$this->miles_running_total += $exercise[5] * 0.000189394;
 							}
@@ -272,7 +272,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 					$indiv_exer = explode( ';', $indiv_day->exercisestring );
 
 					// Convert everything to miles, if we have a value other than null or zero.
-					if ( 0 !== $indiv_exer[5] && null !== $indiv_exer[5] && '' !==  $indiv_exer[5] ) {
+					if ( 0 !== $indiv_exer[5] && null !== $indiv_exer[5] && '' !== $indiv_exer[5] ) {
 						if ( $this->translations->common_trans_51 === $indiv_exer[6] ) {
 							$this->miles_running_total += $indiv_exer[5] * 0.000189394;
 						}
@@ -420,9 +420,9 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 
 					// Now push total calorie per day data into array.
 					$temp_array = array(
-						'date'                             => $date,
+						'date' => $date,
 						$this->translations->exercise_trans_34 => $total_cals,
-						$this->translations->exercise_trans_9  => $total_kjs,
+						$this->translations->exercise_trans_9 => $total_kjs,
 					);
 
 					// Push into final return array.
@@ -477,9 +477,9 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 
 					// Now push total calorie per day data into array.
 					$temp_array = array(
-						'date'                             => $date,
+						'date' => $date,
 						$this->translations->exercise_trans_34 => $total_cals,
-						$this->translations->exercise_trans_9  => $total_kjs,
+						$this->translations->exercise_trans_9 => $total_kjs,
 					);
 
 					// Push into final return array.
@@ -632,7 +632,6 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 				'total' => round( $this->average_daily_carbs + $this->average_daily_protein + $this->average_daily_fats, 2 ),
 			);
 
-
 			$carb_array2 = array(
 				'cat' => $this->translations->exercise_trans_35,
 				'val' => $this->carbs_total,
@@ -679,8 +678,8 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			<div class="wphealthtracker-d3-chart-title-line"></div>';
 
 			$title_2 = '
-			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'bolt.svg"/>		
-			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="selectauser" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_62 . '</p>
+			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'strong.svg"/>		
+			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="selectauser" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_90 . '</p>
 			<div class="wphealthtracker-d3-chart-title-line"></div>';
 
 			$title_3 = '
@@ -893,8 +892,8 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			$this->average_daily_fiber = round( ( $fiber / $fiber_counter ), 2 );
 
 			// Building average fats per day.
-			$this->fats_total        = 0;
-			$fats_counter = 0;
+			$this->fats_total = 0;
+			$fats_counter     = 0;
 			foreach ( $this->alluserdata as $key => $value ) {
 				// If we have saved data...
 				if ( '' !== $value->foodstring ) {
@@ -907,18 +906,18 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 
 							$indiv_day2 = explode( ';', $value2 );
 							if ( '' !== $indiv_day2[7] ) {
-								$this->fats_total+= $indiv_day2[7];
+								$this->fats_total += $indiv_day2[7];
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->foodstring );
 						if ( '' !== $indiv_day[7] ) {
-							$this->fats_total+= $indiv_day[7];
+							$this->fats_total += $indiv_day[7];
 						}
 					}
 				}
 			}
-			$this->average_daily_fats = round( ( $this->fats_total/ $fats_counter ), 2 );
+			$this->average_daily_fats = round( ( $this->fats_total / $fats_counter ), 2 );
 
 			// Building average satfats per day.
 			$satfats         = 0;
@@ -1009,122 +1008,6 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 		 *  Builds the stats data variables to be later used in the Stats HTML for the second section
 		 */
 		public function build_stats_data_2() {
-
-			//avg daily cals
-			//aver daily kilojoules
-			//highest calories on one day
-			//lowest cals on one day
-			//highest calorie food item
-			//totla comsnumed
-			//total consumd
-			// consequtive decrease
-			// consequtive increase
-
-			// Building average calories per day.
-			$calories                    = 0;
-			$calories_counter            = 0;
-			$highest_caloric_food        = '';
-			$highest_calories_counter    = 0;
-			$daily_cal_total           = 0;
-			$daily_cal_array = array();
-			$conseq_increase_array = array();
-			$conseq_decrease_array = array();
-			$conseq_increase_counter          = 0;
-			$conseq_decrease_counter          = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$calories_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[3] ) {
-								$calories += $indiv_day2[3];
-
-								$energy = 0;
-								if ( 'kJ' === $indiv_day2[4] ) {
-									$energy = round( ( $indiv_day2[3] / 4.184 ), 2 );
-								} else {
-									$energy = $indiv_day2[3];
-								}
-								if ( $energy > $highest_calories_counter ) {
-									$highest_calories_counter = $energy;
-									$highest_caloric_food     = $indiv_day2[0] . ';' . $indiv_day2[1];
-								}
-
-								$daily_cal_total += $energy;
-
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[3] ) {
-							$calories += $indiv_day[3];
-
-							$energy = 0;
-							if ( 'kJ' === $indiv_day[4] ) {
-								$energy = round( ( $indiv_day[3] / 4.184 ), 2 );
-							} else {
-								$energy = $indiv_day[3];
-							}
-							if ( $energy > $highest_calories_counter ) {
-								$highest_calories_counter = $energy;
-								$highest_caloric_food     = $indiv_day[0] . ';' . $indiv_day[1];
-							}
-
-							$daily_cal_total += $energy;
-
-						}
-					}
-
-					if ( 0 !== $key ) {
-
-						if ( $daily_cal_total > $daily_cal_array[ count( $daily_cal_array ) -1 ] ) {
-							$conseq_increase_counter++;
-							array_push($conseq_increase_array, $conseq_increase_counter);
-							$conseq_decrease_counter = 0;
-						}
-
-						if ( $daily_cal_total < $daily_cal_array[ count( $daily_cal_array ) -1 ] ) {
-							$conseq_decrease_counter++;
-							array_push($conseq_decrease_array, $conseq_decrease_counter);
-							$conseq_increase_counter = 0;
-						}
-
-						array_push($daily_cal_array, $daily_cal_total);
-						
-					} else {
-						array_push( $daily_cal_array, $daily_cal_total );
-					}
-
-					$daily_cal_total = 0;
-				}
-			}
-
-			rsort($conseq_increase_array);
-			rsort($conseq_decrease_array);
-
-			// Calculating final averages.
-			$this->average_daily_calories   = round( ( $calories / $calories_counter ), 2 );
-			$this->average_daily_kilojoules = round( ( $this->average_daily_calories * 4.184 ), 2 );
-			$this->highest_caloric_item     = explode( ';', $highest_caloric_food );
-			$this->highest_caloric_item     = $this->highest_caloric_item[0] . ' <span class="wphealthtracker-exercise-span">(' . $highest_calories_counter . ' ' . $this->translations->exercise_trans_41 . '/' . ( round( ( $highest_calories_counter * 4.184 ), 0 ) ) . ' ' . $this->translations->exercise_trans_42 . ')</span>';
-
-			if ( count( $conseq_increase_array ) === 0 ) {
-				$this->conseq_caloric_increase = 0;
-			} else {
-				$this->conseq_caloric_increase = $conseq_increase_array[0];
-			}
-
-			if ( count( $conseq_decrease_array ) === 0 ) {
-				$this->conseq_caloric_decrease = 0;
-			} else {
-				$this->conseq_caloric_decrease = $conseq_decrease_array[0];
-			}
 
 		}
 
@@ -1236,14 +1119,12 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			</div>';
 			}
 
-		
-
 			// If there is 1 or more day of Food data with Calories data saved...
 			$stats_2 = '';
 			if ( $this->energy_day_counter > 0 ) {
 				$stats_2 = '
 			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'computer.svg"/>		
-			<p class="wphealthtracker-d3-chart-subtitle-actual">' . $this->translations->d3_trans_66 . '</p>
+			<p class="wphealthtracker-d3-chart-subtitle-actual">' . $this->translations->d3_trans_91 . '</p>
 			<div class="wphealthtracker-d3-chart-title-line"></div>
 			<div class="wphealthtracker-dashboard-actual-info">
 				<div class="wphealthtracker-dashboard-row">

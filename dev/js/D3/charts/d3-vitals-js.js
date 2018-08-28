@@ -69,7 +69,7 @@ function wphealthtracker_vitals_d3_1(mydataWeight){
 	d3.csv("", function (error, data) {
 
 		// Using my own data instead of suppling a URL/File path to the first argument in the d3.csv() function above (instead, we just pass an empty string)
-		dataWeight = mydataWeight;
+		var dataWeight = mydataWeight;
 		dataWeight.forEach(function (d) {
 		 	d.date = parseDate(d.date),
 		 	Pounds = +d.Pounds, 
@@ -1198,7 +1198,7 @@ function wphealthtracker_vitals_d3_3(mydataCh){
 	d3.csv("", function (error, data) {
 
 		// Using my own data instead of suppling a URL/File path to the first argument in the d3.csv() function above (instead, we just pass an empty string)
-		dataCh = mydataCh;
+		var dataCh = mydataCh;
 		dataCh.forEach(function (d) {
 		 	d.date = parseDate(d.date),
 		 	HDL = +d.HDL, 

@@ -58,9 +58,9 @@ jQuery( document ).ready( function( $ ) {
 					$( '#wphealthtracker-stats-actual-inner-div-1' ).html( response );
 
 					// For animating the container's height, from 0 to auto
-					let enterViewCont = $( '#wphealthtracker-stats-actual-top-div-1' );
-					let curHeight = enterViewCont.height();
-					let autoHeight = enterViewCont.css( 'height', 'auto' ).height();
+					var enterViewCont = $( '#wphealthtracker-stats-actual-top-div-1' );
+					var curHeight = enterViewCont.height();
+					var autoHeight = enterViewCont.css( 'height', 'auto' ).height();
 					enterViewCont.height( curHeight );
 					enterViewCont.stop().animate({
 						height: autoHeight,

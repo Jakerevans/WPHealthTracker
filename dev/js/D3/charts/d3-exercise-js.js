@@ -3217,7 +3217,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3277,7 +3277,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3337,7 +3337,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3397,7 +3397,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3457,7 +3457,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3517,7 +3517,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3578,7 +3578,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3638,7 +3638,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3698,7 +3698,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3758,7 +3758,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3818,7 +3818,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3878,7 +3878,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3938,7 +3938,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -3998,7 +3998,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -4058,7 +4058,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -4118,7 +4118,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 			percArray.push( percentage );
 		});
 
-		for ( let i = cityArray.length - 1; 0 <= i; i-- ) {
+		for ( var i = cityArray.length - 1; 0 <= i; i-- ) {
 
 			if ( 100 === percArray[i]) {
 				congratsHtml = '<img class="wphealhttracker-d3chart-exercise-readout-congrats" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg"/>';
@@ -4439,7 +4439,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).find( 'p' ).css({'animation': 'fadeInOut 3s 3s infinite', '-webkit-animation': 'fadeInOut 3s 3s infinite', '-moz-animation': 'fadeInOut 3s 3s infinite', '-ms-animation': 'fadeInOut 3s 3s infinite'});
 
-		for ( let i = 0; i < timeouts.length; i++ ) {
+		for ( var i = 0; i < timeouts.length; i++ ) {
 			clearTimeout( timeouts[i]);
 		}
 
@@ -4458,7 +4458,223 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 
+	// Let's set the color of each muscle sgroup based on how often they're worked out. The darker the color, the more it's worked out.
 
+	var freqArray = [
+		{
+			'name': 'Biceps',
+			'frequency': 0
+		},
+		{
+			'name': 'Deltoids',
+			'frequency': 0
+		},
+		{
+			'name': 'Forearms',
+			'frequency': 1
+		},
+		{
+			'name': 'Triceps',
+			'frequency': 0
+		},
+		{
+			'name': 'Trapezius',
+			'frequency': 0
+		},
+
+		{
+			'name': 'Lats',
+			'frequency': 4
+		},
+		{
+			'name': 'Abs',
+			'frequency': 3
+		},
+		{
+			'name': 'Obliques',
+			'frequency': 0
+		},
+		{
+			'name': 'Pectorals',
+			'frequency': 10
+		},
+		{
+			'name': 'Adductors',
+			'frequency': 0
+		},
+		{
+			'name': 'Calves',
+			'frequency': 0
+		},
+		{
+			'name': 'Hamstrings',
+			'frequency': 0
+		},
+		{
+			'name': 'Glutes',
+			'frequency': 0
+		},
+		{
+			'name': 'Quads',
+			'frequency': 0
+		}
+	];
+
+	var highestFreq = 0;
+	var highestFreqName = 0;
+	var lowestFreq = 10000000;
+	var lowestFreqName = '';
+	var bottomColor = '';
+	var topColor = '';
+	var totalFreq = 0;
+	var freqAve = 0;
+	var percArray = [];
+	var percNameArray = [];
+	var perc = 0;
+	var diff = 0;
+	var color = '';
+
+	for ( var i = freqArray.length - 1; 0 <= i; i-- ) {
+
+		if ( highestFreq < freqArray[i].frequency ) {
+			highestFreq = freqArray[i].frequency;
+			highestFreqName = freqArray[i].name;
+		}
+
+		if ( lowestFreq > freqArray[i].frequency ) {
+			lowestFreq = freqArray[i].frequency;
+			lowestFreqName = freqArray[i].name;
+		}
+
+		totalFreq += freqArray[i].frequency;
+	}
+
+	freqAve = totalFreq / 14;
+
+	// Build percentage array
+	for ( var i = freqArray.length - 1; 0 <= i; i-- ) {
+
+		if ( freqArray[i].frequency >= freqAve ) {
+
+			diff = freqArray[i].frequency - freqAve;
+
+			if ( 0 !== diff ) {
+				perc = '-' + ( ( freqArray[i].frequency / totalFreq ) * 100 ) ;
+			} else {
+				perc = 0;
+			}
+		}
+
+		if ( freqArray[i].frequency <= freqAve ) {
+
+			diff = freqAve - freqArray[i].frequency;
+
+			if ( 0 !== diff ) {
+
+				if ( 0 === freqArray[i].frequency ) {
+					perc = 100;
+				} else {
+					perc = ( freqArray[i].frequency / totalFreq ) * 100;
+				}
+			} else {
+				perc = 0;
+			}
+		}
+
+		percArray.push( perc );
+		percNameArray.push( freqArray[i].name );
+	}
+
+	for ( var i = percArray.length - 1; 0 <= i; i-- ) {
+
+		color = wphealthtrackerShadeColorizer( '#f8d3de', parseFloat( percArray[i]) );
+		$( '#wphealthtracker-' + percNameArray[i] + ' path' ).css({'fill': color});
+	}
+
+	function wphealthtrackerShadeColorizer(  color, percent ) {
+
+		var R = parseInt( color.substring( 1, 3 ), 16 );
+		var G = parseInt( color.substring( 3, 5 ), 16 );
+		var B = parseInt( color.substring( 5, 7 ), 16 );
+		var RR = '';
+		var GG = '';
+		var BB = '';
+
+		R = parseInt( R * ( 100 + percent ) / 100 );
+		G = parseInt( G * ( 100 + percent ) / 100 );
+		B = parseInt( B * ( 100 + percent ) / 100 );
+
+		R = ( 255 > R ) ? R : 255;
+		G = ( 255 > G ) ? G : 255;
+		B = ( 255 > B ) ? B : 255;
+
+		RR = ( ( 1 === R.toString( 16 ).length ) ? '0' + R.toString( 16 ) : R.toString( 16 ) );
+		GG = ( ( 1 === G.toString( 16 ).length ) ? '0' + G.toString( 16 ) : G.toString( 16 ) );
+		BB = ( ( 1 === B.toString( 16 ).length ) ? '0' + B.toString( 16 ) : B.toString( 16 ) );
+
+		return '#' + RR + GG + BB;
+	}
+
+	// The hover/ Click effects for each muscle group on diagram.
+	document.querySelectorAll( '.wphealthtracker-muscle-groups svg g g[id]' ).forEach( function( group ) {
+
+		// For the hover
+		group.addEventListener( 'mouseover', function( el ) {
+
+			var	id = el.path[1].id.toLowerCase();
+			var	label = '';
+
+			if ( ! id ) {
+				id = el.path[2].id.toLowerCase();
+			}
+
+			label = document.querySelectorAll( 'label[for=' + id + ']' )[0];
+
+			if ( label.classList ) {
+				label.classList.add( 'hover' );
+			} else {
+				label.className += ' ' + 'hover';
+			}
+
+		});
+		group.addEventListener( 'mouseout', function( el ) {
+
+			var	id = el.path[1].id.toLowerCase();
+			var	clss = 'hover';
+			var	label = '';
+
+			if ( ! id ) {
+				id = el.path[2].id.toLowerCase();
+			}
+
+			label = document.querySelectorAll( 'label[for=' + id + ']' )[0];
+
+			if ( label.classList ) {
+				label.classList.remove( clss );
+			} else {
+				label.className = label.className.replace( new RegExp( '(^|\\b)' + clss.split( ' ' ).join( '|' ) + '(\\b|$)', 'gi' ), ' ' );
+			}
+		});
+
+		// For the click
+		group.addEventListener( 'click', function( el ) {
+
+			var	id = el.path[1].id.toLowerCase();
+			var input = '';
+
+			if ( ! id ) {
+				id = el.path[2].id.toLowerCase();
+			}
+
+			input = document.getElementById( id );
+
+			if ( input.checked ) {
+				input.checked = false;
+			} else {
+				input.checked = true;
+			}
+		});
+	});
 }
 
 function wphealthtrackerExerciseD3Three( d3Three, $ ) {

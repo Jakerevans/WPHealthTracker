@@ -75,7 +75,7 @@ if ( ! class_exists( 'WPHealthTracker_Stats_Vitals_Ajax_Functions', false ) ) :
 			}
 
 			// Require the D3 Vitals class
-			require_once WPHEALTHTRACKER_CLASSES_D3_VITALS_DIR . 'class-d3-vitals.php';
+			require_once WPHEALTHTRACKER_CLASSES_D3_VITALS_DIR . 'class-wphealthtracker-d3-vitals.php';
 			$d3 = new WPHealthTracker_D3_Vitals( $userdata );
 
 			// Getting all the data we'll need from the WPHealthTracker_D3_Vitals class - could have split up nito 3 or 4 functions, but then we'd have at least 3 or 4 transient calls, which still impact performance even though they're transients, so this is better.
