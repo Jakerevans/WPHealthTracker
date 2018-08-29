@@ -3190,7 +3190,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromsandiego' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3234,7 +3234,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report...
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>San Diego ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-la' ).mouseenter( function() {
@@ -3250,7 +3250,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromla' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3294,7 +3294,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Los Angeles ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-sanfrancisco' ).mouseenter( function() {
@@ -3310,7 +3310,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromsanfrancisco' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3354,7 +3354,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>San Francisco ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-denver' ).mouseenter( function() {
@@ -3370,7 +3370,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromdenver' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3414,7 +3414,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Denver ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-saltlakecity' ).mouseenter( function() {
@@ -3430,7 +3430,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromsaltlakecity' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3474,7 +3474,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Salt Lake City ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-seattle' ).mouseenter( function() {
@@ -3490,7 +3490,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromseattle' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3534,7 +3534,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Seattle ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-portland' ).mouseenter( function() {
@@ -3550,7 +3550,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromportland' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3595,7 +3595,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Portland ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-phoenix' ).mouseenter( function() {
@@ -3611,7 +3611,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromphoenix' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3655,7 +3655,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Phoenix ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-dallas' ).mouseenter( function() {
@@ -3671,7 +3671,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromdallas' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3715,7 +3715,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Dallas ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-houston' ).mouseenter( function() {
@@ -3731,7 +3731,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromhouston' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3775,7 +3775,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>San Diego ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-minneapolis' ).mouseenter( function() {
@@ -3791,7 +3791,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromminneapolis' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3835,7 +3835,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Minneapolis ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-chicago' ).mouseenter( function() {
@@ -3851,7 +3851,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromchicago' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3895,7 +3895,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Chicago ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-detroit' ).mouseenter( function() {
@@ -3911,7 +3911,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromdetroit' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -3955,7 +3955,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Detroit ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-miami' ).mouseenter( function() {
@@ -3971,7 +3971,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-frommiami' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -4015,7 +4015,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>San Diego ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-newyork' ).mouseenter( function() {
@@ -4031,7 +4031,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromnewyork' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -4075,7 +4075,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>New York ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-washingtondc' ).mouseenter( function() {
@@ -4091,7 +4091,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		$( this ).animate({'stroke-width': '5'}, 100 );
 
-		$( '.wphealthtracker-d3chart-readout-exercise' ).html( '' );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).html( '' );
 
 		$( '.wphealthtracker-d3chart-exercise-distance-line-fromwashingtondc' ).each( function() {
 			var offsettoanimateto = $( this ).attr( 'data-offsettoanimateto' );
@@ -4135,7 +4135,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 
 		// Now build HTML for distance/dest. report.
 		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Washington D.C. ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
-		$( '.wphealthtracker-d3chart-readout-exercise' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
 	$( '#wphealthtracker-d3chart-exercise-city-dot-sandiego' ).mouseleave( function() {
@@ -4460,10 +4460,15 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 
 	// Let's set the color of each muscle sgroup based on how often they're worked out. The darker the color, the more it's worked out.
 
+	//Running;Endurance/Cardio;01:00;30;Minutes;20;Miles;Forearm/Chest/Biceps;;;,Cycling;Endurance/Cardio;14:01;3;Hours;43;Miles;;;;
+
 	var freqArray = [
 		{
 			'name': 'Biceps',
-			'frequency': 0
+			'frequency': 0,
+			'first': '08-21-2018',
+			'last': '08-23-2018',
+			'exers': 'Bicep Curl, Flat-Bench Barbell Press'
 		},
 		{
 			'name': 'Deltoids',
@@ -4615,6 +4620,279 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 		return '#' + RR + GG + BB;
 	}
 
+	// Now let's append info to the dom that will be used to create the readout details.
+	for ( var i = freqArray.length - 1; i >= 0; i-- ) {
+
+		switch ( freqArray[i].name ) {
+		case 'Biceps':
+
+			var label = $( 'label[for="wphealthtracker-biceps"]' );
+			var path = $( '#wphealthtracker-Biceps path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Biceps' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Biceps' );
+
+			break;
+		case 'Deltoids':
+
+			var label = $( 'label[for="wphealthtracker-deltoids"]' );
+			var path = $( '#wphealthtracker-Deltoids path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Deltoids' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Deltoids' );
+
+			break;
+		case 'Forearms':
+
+			var label = $( 'label[for="wphealthtracker-forearms"]' );
+			var path = $( '#wphealthtracker-Forearms path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Forearms' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Forearms' );
+
+			break;
+		case 'Triceps':
+
+			var label = $( 'label[for="wphealthtracker-triceps"]' );
+			var path = $( '#wphealthtracker-Triceps path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Triceps' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Triceps' );
+
+			break;
+		case 'Trapezius':
+
+			var label = $( 'label[for="wphealthtracker-trapezius"]' );
+			var path = $( '#wphealthtracker-Trapezius path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Trapezius' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Trapezius' );
+
+			break;
+		case 'Lats':
+
+			var label = $( 'label[for="wphealthtracker-lats"]' );
+			var path = $( '#wphealthtracker-Lats path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Lats' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Lats' );
+
+			break;
+		case 'Abs':
+
+			var label = $( 'label[for="wphealthtracker-abs"]' );
+			var path = $( '#wphealthtracker-Abs path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Abs' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Abs' );
+
+			break;
+		case 'Obliques':
+
+			var label = $( 'label[for="wphealthtracker-obliques"]' );
+			var path = $( '#wphealthtracker-Obliques path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Obliques' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Obliques' );
+
+			break;
+		case 'Pectorals':
+
+			var label = $( 'label[for="wphealthtracker-pectorals"]' );
+			var path = $( '#wphealthtracker-Pectorals path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Pectorals' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Pectorals' );
+
+			break;
+		case 'Adductors':
+
+			var label = $( 'label[for="wphealthtracker-adductors"]' );
+			var path = $( '#wphealthtracker-Adductors path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Adductors' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Adductors' );
+
+			break;
+		case 'Calves':
+
+			var label = $( 'label[for="wphealthtracker-calves"]' );
+			var path = $( '#wphealthtracker-Calves path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Calves' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Calves' );
+
+			break;
+		case 'Hamstrings':
+
+			var label = $( 'label[for="wphealthtracker-hamstrings"]' );
+			var path = $( '#wphealthtracker-Hamstrings path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Hamstrings' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Hamstrings' );
+
+			break;
+		case 'Glutes':
+
+			var label = $( 'label[for="wphealthtracker-glutes"]' );
+			var path = $( '#wphealthtracker-Glutes path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Glutes' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Glutes' );
+
+			break;
+		case 'Quads':
+
+			var label = $( 'label[for="wphealthtracker-quads"]' );
+			var path = $( '#wphealthtracker-Quads path' );
+
+			label.attr( 'data-freq', freqArray[i].frequency );
+			label.attr( 'data-first', freqArray[i].first );
+			label.attr( 'data-last', freqArray[i].last );
+			label.attr( 'data-exers', freqArray[i].exers );
+			label.attr( 'data-name', 'Quads' );
+
+			path.attr( 'data-freq', freqArray[i].frequency );
+			path.attr( 'data-first', freqArray[i].first );
+			path.attr( 'data-last', freqArray[i].last );
+			path.attr( 'data-exers', freqArray[i].exers );
+			path.attr( 'data-name', 'Quads' );
+
+			break;
+		default:
+
+		}
+
+	}
+
+	// Hide the hover message once any of the dots are hovered over
+	$( '.wphealthtracker-muscle-groups svg g g[id], .wphealthtracker-muscle-groups label' ).mouseenter( function() {
+		$( '#wphealthtracker-chart-hover-message-exercise-muscle-groups' ).animate({
+			opacity: 0,
+			'z-index': -99999,
+			'pointer-events': 'none'
+		}, {
+			duration: 100
+		});
+	});
+
 	// The hover/ Click effects for each muscle group on diagram.
 	document.querySelectorAll( '.wphealthtracker-muscle-groups svg g g[id]' ).forEach( function( group ) {
 
@@ -4623,6 +4901,14 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 
 			var	id = el.path[1].id.toLowerCase();
 			var	label = '';
+			var path = $( this ).children( ':first' );
+			var name = path.attr( 'data-name' );
+			var freq = path.attr( 'data-freq' );
+			var first = path.attr( 'data-first' );
+			var last = path.attr( 'data-last' );
+			var exercises = path.attr( 'data-exers' );
+
+			$( '#wphealthtracker-d3chart-readout-exercise-muscle-groups' ).html( '' );
 
 			if ( ! id ) {
 				id = el.path[2].id.toLowerCase();
@@ -4635,6 +4921,11 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 			} else {
 				label.className += ' ' + 'hover';
 			}
+
+			// Now build HTML for distance/dest. report...
+			reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'weightlifting.svg"/><p>' + name + '...</p></div><div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans48 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + freq + ' ' + wphealthtrackerPhpVariables.commontrans43 + '</p></div></div>        <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans49 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>     <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans50 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>    <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans51 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + exercises + ' </p></div></div><div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+
+			$( '#wphealthtracker-d3chart-readout-exercise-muscle-groups' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 
 		});
 		group.addEventListener( 'mouseout', function( el ) {
@@ -4674,6 +4965,53 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 				input.checked = true;
 			}
 		});
+	});
+
+	// The hover/ Click effects for each muscle group label.
+	document.querySelectorAll( '.wphealthtracker-muscle-groups label' ).forEach( function( group ) {
+
+		// For the hover
+		group.addEventListener( 'mouseover', function( el ) {
+
+			var name = $( this ).attr( 'data-name' );
+			var freq = $( this ).attr( 'data-freq' );
+			var first = $( this ).attr( 'data-first' );
+			var last = $( this ).attr( 'data-last' );
+			var exercises = $( this ).attr( 'data-exers' );
+
+			// Outline the muscle
+			$( '#wphealthtracker-' + name + ' path' ).css({'stroke': '#DE235A', 'stroke-width': '2px'});
+
+			// Reset the readout HTML
+			$( '#wphealthtracker-d3chart-readout-exercise-muscle-groups' ).html( '' );
+
+			// Now build HTML for distance/dest. report...
+			reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'weightlifting.svg"/><p>' + name + '...</p></div><div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans48 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + freq + ' ' + wphealthtrackerPhpVariables.commontrans43 + '</p></div></div>        <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans49 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>     <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans50 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>    <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans51 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + exercises + ' </p></div></div><div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+
+			$( '#wphealthtracker-d3chart-readout-exercise-muscle-groups' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
+
+		});
+
+		// For the hover
+		group.addEventListener( 'mouseout', function( el ) {
+
+			var name = $( this ).attr( 'data-name' );
+
+			// Outline the muscle
+			$( '#wphealthtracker-' + name + ' path' ).css({'stroke': '#ccc', 'stroke-width': '0.5px'});
+		});
+
+	});
+
+	// Hide spinner, reveal SVG, and change hover text
+	$( '#wphealthtracker-spinner-d3-await-2' ).animate({
+		opacity: 0
+	}, {
+		duration: 1000,
+		complete: function() {
+			$( '.wphealthtracker-muscle-groups svg' ).animate({ opacity: 1 });
+			$( '#wphealthtracker-chart-hover-message-exercise-muscle-groups' ).html( '<p>' + wphealthtrackerPhpVariables.d3trans92 + '</p>' );
+		}
 	});
 }
 

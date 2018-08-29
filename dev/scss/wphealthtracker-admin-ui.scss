@@ -402,6 +402,16 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     left: 25%;
 }
 
+.wphealthtracker-spinner-primary-d3-await-muscle-groups{
+    @extend %wphealthtracker-spinner-dimensions;
+    @extend %wphealthtracker-spinner-color-primary;
+    @extend %wphealthtracker-spinner-animation;
+    opacity:1;
+    position: absolute;
+    top: 35%;
+    left: 21%;
+}
+
 .wphealthtracker-response-form-all-data-row-actual{
     @extend %wphealthtracker-hidden-row;
     @extend %wphealthtracker-margin-centered;

@@ -329,6 +329,11 @@
     display:inline-block;
 }
 
+#wphealthtracker-chart-hover-message-exercise-muscle-groups{
+    left: -61px;
+    bottom: 120px;
+}
+
 $black: #333;
 $white: #eee;
 $color-1: #00BCD4;
@@ -337,7 +342,7 @@ $svg-z: 100;
 
 
 
-.wphealthtracker-muscle-groups {
+#wphealthtracker-exercise-stats-muscle-groups-main .wphealthtracker-muscle-groups {
     position: relative;
     left: 15px;
     top: 15px;
@@ -380,10 +385,11 @@ $svg-z: 100;
         top: 12px;
         height: 350px;
         z-index: $svg-z;
+        opacity: 0;
     }
     svg g[id] path {
-        stroke: $lightgray!important;
-        stroke-width: 0.5px!important;
+        stroke: $lightgray;
+        stroke-width: 0.5px;
         transition: opacity .25s ease-in-out;
     }
     svg g g[id]:hover path {

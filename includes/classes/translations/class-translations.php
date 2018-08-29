@@ -543,6 +543,10 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->exercise_trans_45 = __( 'Trapezius', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_46 = __( 'Core', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_47 = __( 'Pectorals', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_48 = __( 'Times Exercised', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_49 = __( 'First Exercised On', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_50 = __( 'Last Exercised On', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_51 = __( 'Used In These Exercises', 'wphealthtracker-textdomain' );
 
 			
 
@@ -594,6 +598,10 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'exercisetrans45' => $this->exercise_trans_45,
 				'exercisetrans46' => $this->exercise_trans_46,
 				'exercisetrans47' => $this->exercise_trans_47,
+				'exercisetrans48' => $this->exercise_trans_48,
+				'exercisetrans49' => $this->exercise_trans_49,
+				'exercisetrans50' => $this->exercise_trans_50,
+				'exercisetrans51' => $this->exercise_trans_51,
 			);
 		}
 
@@ -811,6 +819,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->d3_trans_89 = __( 'From Earth To The Moon' );
 			$this->d3_trans_90 = __( 'Muscle Groups Chart & Stats:' );
 			$this->d3_trans_91 = __( 'Muscle Group Stats' );
+			$this->d3_trans_92 = __( 'Hover Over Muscles', 'wphealthtracker-textdomain' );
 
 			return $d3_array1 = array(
 				'd3trans1'  => $this->d3_trans_1,
@@ -891,6 +900,20 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'd3trans76' => $this->d3_trans_76,
 				'd3trans77' => $this->d3_trans_77,
 				'd3trans78' => $this->d3_trans_78,
+				'd3trans79' => $this->d3_trans_79,
+				'd3trans80' => $this->d3_trans_80,
+				'd3trans81' => $this->d3_trans_81,
+				'd3trans82' => $this->d3_trans_82,
+				'd3trans83' => $this->d3_trans_83,
+				'd3trans84' => $this->d3_trans_84,
+				'd3trans85' => $this->d3_trans_85,
+				'd3trans86' => $this->d3_trans_86,
+				'd3trans87' => $this->d3_trans_87,
+				'd3trans88' => $this->d3_trans_88,
+				'd3trans89' => $this->d3_trans_89,
+				'd3trans90' => $this->d3_trans_90,
+				'd3trans91' => $this->d3_trans_91,
+				'd3trans92' => $this->d3_trans_92,
 			);
 
 		}
