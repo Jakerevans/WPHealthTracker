@@ -325,6 +325,36 @@
     background-color: #841536;
 }
 
+
+
+
+
+
+#wphealthtracker-exercise-times-legend-colorbox1{
+    background-color: #F6ED53;
+}
+
+#wphealthtracker-exercise-times-legend-colorbox2{
+    background-color: #F5E150;
+}
+
+#wphealthtracker-exercise-times-legend-colorbox3{
+    background-color: #F5CD4C;
+}
+
+#wphealthtracker-exercise-times-legend-colorbox4{
+    background-color: #F4B648;
+}
+
+#wphealthtracker-exercise-times-legend-colorbox5{
+    background-color: #F39D44;
+}
+
+
+
+
+
+
 #wphealthtracker-exercise-muscle-groups-legend-inner-div div{
     display:inline-block;
 }
@@ -341,15 +371,15 @@
     top: 4px;
 }
 
-rect.bordered {
-        stroke: #E6E6E6;
-        stroke-width:1px;   
-      }
+.wphealthtracker-exercise-times-rects{
+    stroke: #E6E6E6;
+    stroke-width:1px;   
+}
 
-      text.mono {
-        font-size: 9px;
-        opacity: 0.5
-      }
+text.mono {
+font-size: 9px;
+opacity: 0.5
+}
 
 
 

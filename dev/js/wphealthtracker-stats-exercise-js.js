@@ -192,14 +192,16 @@ jQuery( document ).ready( function( $ ) {
 
 					// If no data was found for the creation of the D3 chart, output returned 'No Data' HTML, else, display chart
 					if ( -1 !== d3Three.indexOf( 'wphealthtracker-no-saved-data-div' ) ) {
-console.log('fjdskfda')
-						// Hide the the spinner
+
+						// Hide the the spinner.
 						$( '#wphealthtracker-spinner-d3-await-3' ).animate({'opacity': '0'});
 						$( '#wphealthtracker-stats-actual-inner-d3-1-3' ).append( d3Three );
 					} else {
 
+						$( '#wphealthtracker-stats-actual-inner-d3-1-3' ).css({'top': '24px'});
+
 						// Append any HTML that may be needed for the creation of the charts
-						$( '#wphealthtracker-stats-actual-inner-d3-1-3' ).append( '<div id="chart"></div><div id="dataset-picker"></div><div id="wphealthtracker-d3chart-legendContainer-macro" class="wphealthtracker-d3chart-legendContainer"></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-macro">' + wphealthtrackerPhpVariables.d3trans48 + '</div>' );
+						$( '#wphealthtracker-stats-actual-inner-d3-1-3' ).append( '<img style="display:none;" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'calendar.svg"/><div id="wphealthtracker-exercise-time-tooltip-div"></div><div id="wphealthtracker-exercise-muscle-groups-legend-div"><div id="wphealthtracker-exercise-muscle-groups-legend-inner-div"><div class="wphealthtracker-exercise-muscle-groups-legend-text">Less Often</div><div class="wphealthtracker-exercise-muscle-groups-legend-colorbox" id="wphealthtracker-exercise-times-legend-colorbox1"></div><div class="wphealthtracker-exercise-muscle-groups-legend-colorbox" id="wphealthtracker-exercise-times-legend-colorbox2"></div><div class="wphealthtracker-exercise-muscle-groups-legend-colorbox" id="wphealthtracker-exercise-times-legend-colorbox3"></div><div class="wphealthtracker-exercise-muscle-groups-legend-colorbox" id="wphealthtracker-exercise-times-legend-colorbox4"></div><div class="wphealthtracker-exercise-muscle-groups-legend-colorbox" id="wphealthtracker-exercise-times-legend-colorbox5"></div><div class="wphealthtracker-exercise-muscle-groups-legend-text">More Often</div><div id="wphealthtracker-exercise-muscle-groups-legend-text"></div></div></div><div id="wphealthtracker-exercise-time-svg-chart"><div id="wphealthtracker-exercise-time-am-pm-labels-div"><p><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'sun.svg"/>AM</p><p><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'moon.svg"/>PM</p></div></div><div id="dataset-picker"></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-macro">' + wphealthtrackerPhpVariables.d3trans48 + '</div>' );
 
 						// Now split up the D3 data into two seperate arrays
 						arrayOne.push( d3Three[0]);

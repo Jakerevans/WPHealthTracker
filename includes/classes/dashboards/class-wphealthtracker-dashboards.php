@@ -735,18 +735,17 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 					}
 				}
 			}
-			// Convert the hours to seconds.
-			$total_seconds = $total_seconds + ( $total_hours * 3600 );
 
-			// Convert the minutes to seconds.
-			$this->total_seconds = number_format( $total_seconds + ( $total_minutes * 60 ), 2 );
+			// Convert everything into seconds.
+			$total_seconds       = $total_seconds + ( $total_hours * 3600 );
+			$this->total_seconds = $total_seconds + ( $total_minutes * 60 );
 
-			// Now build that actual final total minutes.
-			$this->total_minutes = number_format( ( $total_seconds / 60 ), 2 );
+			// Now take those total seconds and create our minutes and hours values.
+			$this->total_minutes = number_format( ( $this->total_seconds / 60 ), 2 );
+			$this->total_hours   = number_format( ( $this->total_seconds / 3600 ), 2 );
 
-			// Now build that actual final total hours.
-			$this->total_hours = number_format( ( $total_seconds / 3600 ), 2 );
-
+			// Now format total seconds.
+			$this->total_seconds = number_format( $this->total_seconds, 2 );
 
 			// Calculating some final exercises item values.
 			$orig_unique_exercises        = $unique_exercises;

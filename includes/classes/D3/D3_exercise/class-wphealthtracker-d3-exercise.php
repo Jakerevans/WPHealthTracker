@@ -754,13 +754,14 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 
 			$temp_array = array();
 
+			$data_flag = 0;
 			foreach ( $this->alluserdata as $key => $indiv_day ) {
-								
+			/*
 				$t = strtotime('24-8-2014');
 				$day = date( 'N', $t );
 						error_log('$day');
 						error_log($t);
-
+*/
 				// If we have multiple exercises for one day...
 				if ( false !== stripos( $indiv_day->exercisestring, ',' ) ) {
 
@@ -779,6 +780,18 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 						$hour = explode( ':', $exercise[2] );
 						$hour = $hour[0];
 						$hour = ltrim( $hour, '0' );
+
+						// If we've saved data at 12:00 AM.
+						if ( '' === $hour || null === $hour || 0 === $hour || '0' === $hour ){
+							$hour = '24';
+						}
+
+						$hour = (int) $hour + 1;
+						$hour = (string) $hour;
+
+						if ( $hour == '25' ) {
+							$hour = '1';
+						}
 
 						$temp = array(
 							'day'  => $day,
@@ -801,6 +814,18 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 					$hour = $hour[0];
 					$hour = ltrim( $hour, '0' );
 
+					// If we've saved data at 12:00 AM.
+					if ( '' === $hour || null === $hour || 0 === $hour || '0' === $hour ){
+						$hour = '24';
+					}
+
+					$hour = (int) $hour + 1;
+					$hour = (string) $hour;
+
+					if ( $hour == '25' ) {
+						$hour = '1';
+					}
+
 					$temp = array(
 						'day'  => $day,
 						'hour' => $hour,
@@ -815,19 +840,14 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			$counter         = 0;
 
 			foreach ( $temp_array_copy as $key => $value ) {
-
-				
-
 				foreach ( $temp_array as $key2 => $value2 ) {
-
-
 					if ( $value['day'] === $value2['day'] && $value['hour'] === $value2['hour'] ) {
 						$counter++;
 					}
 				}
 
 				$temp_array[ $key ]['value'] = $counter;
-				$counter                   = 0;
+				$counter                     = 0;
 			}
 
 			foreach ( $temp_array as $key => $value ) {
@@ -837,41 +857,54 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			}
 
 			foreach ( $temp_array as $key => $value ) {
-				array_push($this->data_3_array, $value);
+				array_push( $this->data_3_array, $value );
 			}
 
+			error_log('$this->data_3_array');
+			error_log(print_r($this->data_3_array,true));
 
-			for ($day=1; $day <= 7 ; $day++) { 
-				
-				for ($hour=1; $hour <= 24 ; $hour++) { 
+			// Only run this if we've actually geenrated data by this point.
+			if ( count( $this->data_3_array ) > 0 ) {
+				for ( $day = 1; $day <= 7; $day++ ) {
 
-					$add_entry = true;
-					foreach ($this->data_3_array as $key => $value) {
-						if ( (string) $day === $value['day'] && (string) $hour === $value['hour']  ) {
-							$add_entry = false;
-							break;
+					for ( $hour = 1; $hour <= 24; $hour++ ) {
+
+						$add_entry = true;
+						foreach ( $this->data_3_array as $key => $value ) {
+							if ( (string) $day === $value['day'] && (string) $hour === $value['hour'] ) {
+								$add_entry = false;
+								break;
+							}
+						}
+
+						if ( $add_entry ) {
+
+							$temp = array(
+								'day'   => (string) $day,
+								'hour'  => (string) $hour,
+								'value' => 0,
+							);
+
+							array_push( $this->data_3_array, $temp );
 						}
 					}
-
-					if ( $add_entry ){
-
-						$temp = array(
-							'day'  => (string) $day,
-							'hour' => (string) $hour,
-							'value' => 0,
-						);
-						
-						array_push($this->data_3_array, $temp);
-					}
-
-
 				}
-
-
 			}
 
-			return $this->data_3_array;
-
+			// If there was no saved Exercise data at all, return an array holding the 'No Data Found' Html.
+			if ( count( $this->data_3_array ) === 0 ) {
+				return '<div class="wphealthtracker-no-saved-data-div">
+					<p>
+						<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+						<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
+						<br>
+						' . $this->translations->d3_trans_95 . '
+						<br>' . $this->translations->d3_trans_96 . '
+					</p>
+				</div>';
+			} else {
+				return $this->data_3_array;
+			}
 		}
 
 		/**
@@ -890,8 +923,8 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			<div class="wphealthtracker-d3-chart-title-line"></div>';
 
 			$title_3 = '
-			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'scales.svg"/>		
-			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="selectauser" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_63 . '</p>
+			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'stopwatch.svg"/>		
+			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="selectauser" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_99 . '</p>
 			<div class="wphealthtracker-d3-chart-title-line"></div>';
 
 			array_push( $this->titles_array, $title_1 );
@@ -1048,6 +1081,200 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 		 *  Builds the stats data variables to be later used in the Stats HTML for the third section
 		 */
 		public function build_stats_data_3() {
+
+			// Building # of total exercises performed.
+			$total_exercises           = array();
+			$this->first_exercise_date = '';
+			foreach ( $this->alluserdata as $key => $value ) {
+				// If we have saved data...
+				if ( '' !== $value->exercisestring ) {
+
+					if ( '' === $this->first_exercise_date ) {
+						$this->first_exercise_date = $value->humandate;
+					}
+
+					if ( stripos( $value->exercisestring, ',' ) !== false ) {
+
+						$indiv_day = explode( ',', $value->exercisestring );
+						foreach ( $indiv_day as $key2 => $value2 ) {
+
+							$indiv_day2 = explode( ';', $value2 );
+							if ( '' !== $indiv_day2[0] ) {
+								array_push( $total_exercises, $indiv_day2[0] );
+							}
+						}
+					} else {
+						$indiv_day = explode( ';', $value->exercisestring );
+						if ( '' !== $indiv_day[0] ) {
+							array_push( $total_exercises, $indiv_day[0] );
+						}
+					}
+				}
+			}
+
+			// Vars for calculating longest single exercise 
+			$longest_hours   = 0;
+			$longest_minutes = 0;
+			$longest_seconds = 0;
+			$total_average_seconds = 0;
+
+			// Now calculate total time spent exercising
+			foreach ( $this->alluserdata as $key => $value ) {
+
+
+
+				// If we have saved data...
+				if ( $value->exercisestring != '' ) {
+					if ( stripos( $value->exercisestring, ',' ) !== false ) {
+						$indiv_day = explode( ',', $value->exercisestring );
+						foreach ( $indiv_day as $key2 => $value2 ) {
+							$indiv_day2 = explode( ';', $value2 );
+							if ( '' !== $indiv_day2[3] ) {
+								if ( $this->translations->common_trans_48 === $indiv_day2[4] ) {
+									$total_seconds += $indiv_day2[3];
+
+									if ( $longest_seconds < $indiv_day2[3] ) {
+										$longest_seconds = $indiv_day2[3];
+									}
+								}
+
+								if ( $this->translations->common_trans_49 === $indiv_day2[4] ) {
+									$total_minutes += $indiv_day2[3];
+
+									if ( $longest_minutes < $indiv_day2[3] ) {
+										$longest_minutes = $indiv_day2[3];
+									}
+								}
+
+								if ( $this->translations->common_trans_50 === $indiv_day2[4] ) {
+									$total_hours += $indiv_day2[3];
+
+									if ( $longest_hours < $indiv_day2[3] ) {
+										$longest_hours = $indiv_day2[3];
+									}
+								}
+
+								// Convert time to hour of day.
+								$hour = explode( ':', $indiv_day2[2] );
+								$hour[0] = ltrim( $hour[0], '0' );
+
+								if ( '00' === $hour[1] ) {
+									$hour[1] = '0';
+								} else {
+									$hour[1] = ltrim( $hour[1], '0' );
+								}
+
+								// If we've saved data at 12:00 AM.
+								if ( '' === $hour[0] || null === $hour[0] || 0 === $hour[0] || '0' === $hour[0] ){
+									$hour[0] = 24;
+								}
+
+								$average_seconds = $hour[0] * 3600;
+								$total_average_seconds = $total_average_seconds + $average_seconds + ( $hour[1] * 60 );
+
+							}
+						}
+					} else {
+						$indiv_day = explode( ';', $value->exercisestring );
+						if ( $indiv_day[0] != '' ) {
+
+							if ( '' !== $indiv_day[3] ) {
+								if ( $this->translations->common_trans_48 === $indiv_day[4] ) {
+									$total_seconds += $indiv_day[3];
+
+									if ( $longest_seconds < $indiv_day[3] ) {
+										$longest_seconds = $indiv_day[3];
+									}
+								}
+
+								if ( $this->translations->common_trans_49 === $indiv_day[4] ) {
+									$total_minutes += $indiv_day[3];
+
+									if ( $longest_minutes < $indiv_day[3] ) {
+										$longest_minutes = $indiv_day[3];
+									}
+								}
+
+								if ( $this->translations->common_trans_50 === $indiv_day[4] ) {
+									$total_hours += $indiv_day[3];
+
+									if ( $longest_hours < $indiv_day[3] ) {
+										$longest_hours = $indiv_day[3];
+									}
+								}
+
+									// Convert time to hour of day.
+									$hour = explode( ':', $indiv_day[2] );
+									$hour[0] = ltrim( $hour[0], '0' );
+									if ( '00' === $hour[1] ) {
+										$hour[1] = '0';
+									} else {
+										$hour[1] = ltrim( $hour[1], '0' );
+									}
+
+
+									// If we've saved data at 12:00 AM.
+									if ( '' === $hour[0] || null === $hour[0] || 0 === $hour[0] || '0' === $hour[0] ){
+										$hour[0] = 24;
+									}
+
+									$average_seconds = $hour[0] * 3600;
+									$total_average_seconds = $total_average_seconds + $average_seconds + ( $hour[1] * 60 );
+							}
+						}
+					}
+				}
+			}
+
+			// Build longest single exercise - first convert everything to seconds.
+			$longest_seconds = $longest_seconds + ( $longest_hours * 3600 );
+			$this->longest_seconds = $longest_seconds + ( $longest_minutes * 60 );
+			$this->longest_minutes = number_format( ( $this->longest_seconds / 60 ), 2 );
+			$this->longest_hours   = number_format( ( $this->longest_seconds / 3600 ), 2 );
+
+			// Convert everything into seconds.
+			$total_seconds       = $total_seconds + ( $total_hours * 3600 );
+			$this->total_seconds = $total_seconds + ( $total_minutes * 60 );
+
+			// Now take those total seconds and create our minutes and hours values.
+			$this->total_minutes = number_format( ( $this->total_seconds / 60 ), 2 );
+			$this->total_hours   = number_format( ( $this->total_seconds / 3600 ), 2 );
+
+			// Now format total seconds.
+			$this->total_seconds = number_format( $this->total_seconds, 2 );
+
+			$this->total_exercises = count( $total_exercises );
+
+			$temp1 = intval( ( ($total_average_seconds / $this->total_exercises) / 3600 )      );
+			$temp2 = intval( ( ($total_average_seconds / $this->total_exercises) % 3600 ) );
+			$temp2 = intval( ( $temp2 / 60 ) );
+
+
+
+			if($temp2 == 0){
+				$temp2 = '00';
+			}
+
+			if( $temp1 >= 12 ){
+				$temp1 = $temp1 - 11;
+				$meridiem = $this->translations->common_trans_66;
+			} else {
+				$meridiem = $this->translations->common_trans_65;
+			}
+
+			$this->human_average_time = $temp1 . ':' . $temp2 . ' ' . $meridiem;
+
+
+
+error_log('total_average_seconds');
+error_log($total_average_seconds);
+
+error_log('total_average_seconds divided');
+error_log($total_average_seconds / $this->total_exercises);
+
+error_log('final time');
+error_log($human_average_time);
+
 
 		}
 
@@ -1212,8 +1439,8 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 						<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
 						<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 						<br>
-						' . $this->translations->d3_trans_64 . '
-						<br>' . $this->translations->d3_trans_65 . '
+						' . $this->translations->d3_trans_93 . '
+						<br>' . $this->translations->d3_trans_97 . '
 					</p>
 				</div>';
 			}
@@ -1221,7 +1448,76 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			// If there is 1 or more days of Exercise data saved...
 			$stats_3 = '';
 			if ( count( $this->alluserdata ) > 0 ) {
-				$stats_3 = '';
+				$stats_3 = '<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'computer.svg"/>		
+				<p class="wphealthtracker-d3-chart-subtitle-actual">' . $this->translations->d3_trans_101 . '</p>
+				<div class="wphealthtracker-d3-chart-title-line"></div>
+				<div class="wphealthtracker-dashboard-actual-info">
+					<div class="wphealthtracker-dashboard-row">
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_3 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->first_exercise_date . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_61 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_exercises . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_55 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_hours  . ' ' . $this->translations->common_trans_50 . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_54 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_minutes . ' ' . $this->translations->common_trans_49 . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_53 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_seconds . ' ' . $this->translations->common_trans_48 . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_62 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->longest_hours  . ' ' . $this->translations->common_trans_50 . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_63 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->longest_minutes . ' ' . $this->translations->common_trans_49 . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_64 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->longest_seconds . ' ' . $this->translations->common_trans_48 . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_65 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->human_average_time .
+							'</p>
+						</div>
+					</div>
+				</div>';
 
 			}
 
@@ -1232,8 +1528,8 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
-					' . $this->translations->d3_trans_51 . '
-					<br>' . $this->translations->d3_trans_52 . '
+					' . $this->translations->d3_trans_95 . '
+					<br>' . $this->translations->d3_trans_98 . '
 				</p>
 			</div>';
 			}

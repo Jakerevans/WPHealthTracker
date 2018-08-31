@@ -101,6 +101,10 @@
   @extend %wphealthtracker-d3chart-tooltip-readout-container;
 }
 
+#wphealthtracker-exercise-time-tooltip-div{
+  @extend %wphealthtracker-d3chart-tooltip-readout-container;
+}
+
 #wphealthtracker-d3chart-tooltip-fooditems-item{
   font-size:14px;
 }
@@ -381,8 +385,7 @@
 }
 
 .wphealhttracker-d3chart-exercise-readout-title{
-    margin-left: auto;
-    margin-right: auto;
+    @extend %wphealthtracker-margin-centered;
     width: 50%;
     border: solid 1px black;
     border-top: 0;
@@ -412,6 +415,48 @@
   cursor:pointer;
 }
 
+#wphealthtracker-exercise-time-tooltip-div{
+    padding: 5px;
+    margin: 0;
+    width: initial;
+    display:table;
+    z-index:1;
+}
+
+#wphealthtracker-exercise-time-tooltip-div div{
+  display: inline-block;
+  text-align:left;
+  vertical-align:top;
+}
+
+#wphealthtracker-exercise-time-tooltip-div .wphealthtracker-exercise-time-readout-title{
+    @extend %wphealthtracker-margin-centered;
+    margin-bottom: 5px;
+    width: 100%;
+    border: solid 1px black;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    display: inline-block;
+}
+
+#wphealthtracker-exercise-time-tooltip-div .wphealthtracker-exercise-time-readout-subtitle{
+  font-weight: normal;
+  font-size: 10px;
+  margin-right: 8px
+}
+
+.wphealthtracker-exercise-time-readout-img-div{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+#wphealthtracker-exercise-time-tooltip-div .wphealthtracker-exercise-time-readout-icon-img{
+  width: 40px;
+  display: inline-block;
+}
+
 #wphealthtracker-chart-hover-distance-demo-exercise p{
   font-size: 12px;
   font-style: italic;
@@ -427,6 +472,34 @@
 
 #wphealthtracker-d3chart-readout-exercise-muscle-groups{
   top: -88px;
+}
+
+#wphealthtracker-exercise-time-am-pm-labels-div{
+    position: relative;
+    top: 32px;
+    left: 10px;
+    width: 360px;
+    display: inline-block;
+}
+
+#wphealthtracker-exercise-time-am-pm-labels-div p{
+    display: inline-block;
+    margin: 0;
+    font-size: 10px;
+    opacitY: 0.5;
+    width: 50%;
+}
+
+#wphealthtracker-exercise-time-am-pm-labels-div p img{
+    width: 13px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    right: 2px;
+}
+
+#wphealthtracker-exercise-time-tooltip-div p{
+    margin: 0;
 }
 
 
