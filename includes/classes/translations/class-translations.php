@@ -252,6 +252,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->common_trans_54 = __( 'Meters', 'wphealthtracker-textdomain' );
 			$this->common_trans_55 = __( 'Kilometers', 'wphealthtracker-textdomain' );
 			$this->common_trans_56 = __( 'KMs', 'wphealthtracker-textdomain' );
+			$this->common_trans_57 = __( 'Categories', 'wphealthtracker-textdomain' );
 
 			return $translation_array1 = array(
 				'commontrans1'  => $this->common_trans_1,
@@ -310,6 +311,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'commontrans54' => $this->common_trans_54,
 				'commontrans55' => $this->common_trans_55,
 				'commontrans56' => $this->common_trans_56,
+				'commontrans57' => $this->common_trans_57,
 			);
 		}
 
@@ -520,7 +522,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->exercise_trans_21 = __( 'Biceps', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_22 = __( 'Calves', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_23 = __( 'Chest', 'wphealthtracker-textdomain' );
-			$this->exercise_trans_24 = __( 'Forearm', 'wphealthtracker-textdomain' );
+			$this->exercise_trans_24 = __( 'Forearms', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_25 = __( 'Glutes', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_26 = __( 'Hamstrings', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_27 = __( 'Lats', 'wphealthtracker-textdomain' );
@@ -658,11 +660,11 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->dashboard_trans_49 = __( 'Total Fats Consumed', 'wphealthtracker-textdomain' );
 			$this->dashboard_trans_50 = __( 'Total Unique Exercises', 'wphealthtracker-textdomain' );
 			$this->dashboard_trans_51 = __( 'Exercises', 'wphealthtracker-textdomain' );
-			$this->dashboard_trans_52 = __( 'Top 3 Exercises', 'wphealthtracker-textdomain' );
+			$this->dashboard_trans_52 = __( 'Top Exercise', 'wphealthtracker-textdomain' );
 			$this->dashboard_trans_53 = __( 'Total Seconds Exercised', 'wphealthtracker-textdomain' );
 			$this->dashboard_trans_54 = __( 'Total Minutes Exercised', 'wphealthtracker-textdomain' );
 			$this->dashboard_trans_55 = __( 'Total Hours Exercised', 'wphealthtracker-textdomain' );
-			$this->dashboard_trans_56 = __( 'Top 3 Exercise Categories', 'wphealthtracker-textdomain' );
+			$this->dashboard_trans_56 = __( 'Top Exercise Category', 'wphealthtracker-textdomain' );
 			$this->dashboard_trans_57 = __( 'Total Exercise Categories', 'wphealthtracker-textdomain' );
 			$this->dashboard_trans_58 = __( 'Total Muscle Groups Exercised', 'wphealthtracker-textdomain' );
 			$this->dashboard_trans_59 = __( 'Top 3 Muscle Groups', 'wphealthtracker-textdomain' );
@@ -820,6 +822,8 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->d3_trans_90 = __( 'Muscle Groups Chart & Stats:' );
 			$this->d3_trans_91 = __( 'Muscle Group Stats' );
 			$this->d3_trans_92 = __( 'Hover Over Muscles', 'wphealthtracker-textdomain' );
+			$this->d3_trans_93 = __( "Looks like there's no Muscle Group Data!", 'wphealthtracker-textdomain' );
+			$this->d3_trans_94 = __( 'Once there is, this area will display a diagram showing info on the Muscles Groups Exercised.', 'wphealthtracker-textdomain' );
 
 			return $d3_array1 = array(
 				'd3trans1'  => $this->d3_trans_1,

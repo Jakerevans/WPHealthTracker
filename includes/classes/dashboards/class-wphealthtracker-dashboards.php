@@ -600,19 +600,19 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			$unique_exercises = array();
 			foreach ( $this->allsavedusersdata as $key => $value ) {
 				// If we have saved data...
-				if ( $value->exercisestring != '' ) {
+				if ( '' !== $value->exercisestring ) {
 					if ( stripos( $value->exercisestring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->exercisestring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
 
 							$indiv_day2 = explode( ';', $value2 );
-							if ( $indiv_day2[0] != '' ) {
+							if ( '' !== $indiv_day2[0] ) {
 								array_push( $unique_exercises, $indiv_day2[0] );
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->exercisestring );
-						if ( $indiv_day[0] != '' ) {
+						if ( '' !== $indiv_day[0] ) {
 							array_push( $unique_exercises, $indiv_day[0] );
 						}
 					}
@@ -623,19 +623,19 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			$exercise_categories = array();
 			foreach ( $this->allsavedusersdata as $key => $value ) {
 				// If we have saved data...
-				if ( $value->exercisestring != '' ) {
+				if ( '' !== $value->exercisestring ) {
 					if ( stripos( $value->exercisestring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->exercisestring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
 
 							$indiv_day2 = explode( ';', $value2 );
-							if ( $indiv_day2[1] != '' ) {
+							if ( '' !== $indiv_day2[1] ) {
 								array_push( $exercise_categories, $indiv_day2[1] );
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->exercisestring );
-						if ( $indiv_day[1] != '' ) {
+						if ( '' !== $indiv_day[1] ) {
 							array_push( $exercise_categories, $indiv_day[1] );
 						}
 					}
@@ -646,18 +646,18 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			$exercise_muscles = array();
 			foreach ( $this->allsavedusersdata as $key => $value ) {
 				// If we have saved data...
-				if ( $value->exercisestring != '' ) {
+				if ( '' !== $value->exercisestring ) {
 					if ( stripos( $value->exercisestring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->exercisestring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
 
 							$indiv_day2 = explode( ';', $value2 );
-							if ( $indiv_day2[7] != '' ) {
+							if ( '' !== $indiv_day2[7] ) {
 
 								if ( stripos( $indiv_day2[7], '/' ) !== false ) {
 									$temp = explode( '/', $indiv_day2[7] );
 
-									foreach ($temp as $key => $muscle_indiv) {
+									foreach ( $temp as $key => $muscle_indiv ) {
 										array_push( $exercise_muscles, $muscle_indiv );
 									}
 								} else {
@@ -667,14 +667,14 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 						}
 					} else {
 						$indiv_day = explode( ';', $value->exercisestring );
-						if ( $indiv_day[7] != '' ) {
+						if ( '' !== $indiv_day[7] ) {
 
-							if ( $indiv_day2[7] != '' ) {
+							if ( '' !== $indiv_day2[7] ) {
 
 								if ( stripos( $indiv_day2[7], '/' ) !== false ) {
 									$temp = explode( '/', $indiv_day2[7] );
 
-									foreach ($temp as $key => $muscle_indiv) {
+									foreach ( $temp as $key => $muscle_indiv ) {
 										array_push( $exercise_muscles, $muscle_indiv );
 									}
 								} else {
@@ -685,7 +685,6 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 					}
 				}
 			}
-
 
 
 
@@ -753,30 +752,23 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			$orig_unique_exercises        = $unique_exercises;
 			$final_unique_exercises       = array_unique( $unique_exercises );
 			$this->unique_exercises_count = count( $final_unique_exercises );
-			$values                   = array_count_values( $orig_unique_exercises );
+			$values                       = array_count_values( $orig_unique_exercises );
 			arsort( $values );
 			$this->top_five_exercise_items = array_slice( array_keys( $values ), 0, 5, true );
-
 
 			$orig_exercise_categories        = $exercise_categories;
 			$final_exercise_categories       = array_unique( $exercise_categories );
 			$this->exercise_categories_count = count( $final_exercise_categories );
-			$values                   = array_count_values( $orig_exercise_categories );
+			$values                          = array_count_values( $orig_exercise_categories );
 			arsort( $values );
 			$this->top_five_exercise_categories = array_slice( array_keys( $values ), 0, 5, true );
 
 			$orig_exercise_muscles        = $exercise_muscles;
 			$final_exercise_muscles       = array_unique( $exercise_muscles );
 			$this->exercise_muscles_count = count( $final_exercise_muscles );
-			$values                   = array_count_values( $orig_exercise_muscles );
+			$values                       = array_count_values( $orig_exercise_muscles );
 			arsort( $values );
 			$this->top_five_exercise_muscles = array_slice( array_keys( $values ), 0, 5, true );
-
-
-error_log($this->exercise_muscles_count);
-error_log(print_r($this->top_five_exercise_muscles,true));
-
-			//Flat-Bench Barbell Press;Balance;11:31;98;Hours;2;Yards;Forearm/Calves/Biceps;/true/4/Kilograms//;www.i.com;www.j.com,Flat-Bench Barbell Press;Mixed;12:32;20;Hours;21;Meters;Abs;101/false/102/Kilograms//201/false/202/Pounds//;www.google2.com;www.ign2.com
 
 
 		}
@@ -1068,36 +1060,20 @@ error_log(print_r($this->top_five_exercise_muscles,true));
 			// Getting the title area
 			$this->output_title_area();
 
-			// Building top 3 exercise item string
-			if ( count( $this->top_five_exercise_items ) > 2 ) {
-				$top_3_exercise_items = $this->top_five_exercise_items[0] . ', ' . $this->top_five_exercise_items[1] . ', ' . $this->top_five_exercise_items[2];
-			}
-			if ( count( $this->top_five_exercise_items ) == 2 ) {
-				$top_3_exercise_items = $this->top_five_exercise_items[0] . ', ' . $this->top_five_exercise_items[1];
-			}
-			if ( count( $this->top_five_exercise_items ) == 1 ) {
-				$top_3_exercise_items = $this->top_five_exercise_items[0];
-			}
+			// Building top exercise item string.
+			$top_3_exercise_items = $this->top_five_exercise_items[0];
 
-			// Building top 3 exercise categories string
-			if ( count( $this->top_five_exercise_categories ) > 2 ) {
-				$top_3_exercise_categories = $this->top_five_exercise_categories[0] . ', ' . $this->top_five_exercise_categories[1] . ', ' . $this->top_five_exercise_categories[2];
-			}
-			if ( count( $this->top_five_exercise_categories ) == 2 ) {
-				$top_3_exercise_categories = $this->top_five_exercise_categories[0] . ', ' . $this->top_five_exercise_categories[1];
-			}
-			if ( count( $this->top_five_exercise_categories ) == 1 ) {
-				$top_3_exercise_categories = $this->top_five_exercise_categories[0];
-			}
+			// Building top exercise categories string.
+			$top_3_exercise_categories = $this->top_five_exercise_categories[0];
 
-			// Building top 3 exercise  muscles groups string
+			// Building top 3 exercise muscles groups string.
 			if ( count( $this->top_five_exercise_muscles ) > 2 ) {
 				$top_3_exercise_muscles = $this->top_five_exercise_muscles[0] . ', ' . $this->top_five_exercise_muscles[1] . ', ' . $this->top_five_exercise_muscles[2];
 			}
-			if ( count( $this->top_five_exercise_muscles ) == 2 ) {
+			if ( count( $this->top_five_exercise_muscles ) === 2 ) {
 				$top_3_exercise_muscles = $this->top_five_exercise_muscles[0] . ', ' . $this->top_five_exercise_muscles[1];
 			}
-			if ( count( $this->top_five_exercise_muscles ) == 1 ) {
+			if ( count( $this->top_five_exercise_muscles ) === 1 ) {
 				$top_3_exercise_muscles = $this->top_five_exercise_muscles[0];
 			}
 
@@ -1167,7 +1143,7 @@ error_log(print_r($this->top_five_exercise_muscles,true));
 						<p>
 							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_57 . '</span><br/>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->exercise_categories_count . '</span>
+							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->exercise_categories_count . ' ' . $this->translations->common_trans_57 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">

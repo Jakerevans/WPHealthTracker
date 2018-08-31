@@ -60,153 +60,17 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 		 */
 		public $stats_array = array();
 
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
+		/** Member variables that return d3 data
 		 *
-		 *  @var array $unique_food_items_array;
+		 *  @var array $muscle_name_array
 		 */
-		public $unique_food_items_array = array();
+		public $muscle_name_array = array();
 
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
+		/** Member variables that return d3 data
 		 *
-		 *  @var array $top_five_food_items;
+		 *  @var string $muscle_name_array
 		 */
-		public $top_five_food_items = array();
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $unique_foods_count;
-		 */
-		public $unique_foods_count = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $total_cals;
-		 */
-		public $total_cals = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $total_kcals;
-		 */
-		public $total_kcals = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $total_kjoules;
-		 */
-		public $total_kjoules = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_protein;
-		 */
-		public $average_daily_protein = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $protein_total;
-		 */
-		public $protein_total = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_carbs;
-		 */
-		public $average_daily_carbs = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $this->carbs_total_total;
-		 */
-		public $carbs_total = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_sugars;
-		 */
-		public $average_daily_sugars = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_fiber;
-		 */
-		public $average_daily_fiber = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_fats;
-		 */
-		public $average_daily_fats = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $fats_total;
-		 */
-		public $fats_total = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_satfats;
-		 */
-		public $average_daily_satfats = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_monounsatfats;
-		 */
-		public $average_daily_monounsatfats = 0;
-
-		/** Member variables for use between the build_data_1(), build_stats_data_1(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_polyunsatfats;
-		 */
-		public $average_daily_polyunsatfats = 0;
-
-		/** Member variables for use between the build_data_2(), build_stats_data_2(), and get_stats_area_html() functions
-		 *
-		 *  @var int $energy_day_counter;
-		 */
-		public $energy_day_counter = 0;
-
-		/** Member variables for use between the build_data_2(), build_stats_data_2(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_calories;
-		 */
-		public $average_daily_calories = 0.00;
-
-		/** Member variables for use between the build_data_2(), build_stats_data_2(), and get_stats_area_html() functions
-		 *
-		 *  @var float $average_daily_kilojoules;
-		 */
-		public $average_daily_kilojoules = 0.00;
-
-		/** Member variables for use between the build_data_2(), build_stats_data_2(), and get_stats_area_html() functions
-		 *
-		 *  @var string $average_daily_calories;
-		 */
-		public $first_energy_date = '';
-
-		/** Member variables for use between the build_data_2(), build_stats_data_2(), and get_stats_area_html() functions
-		 *
-		 *  @var string $highest_caloric_item
-		 */
-		public $highest_caloric_item = '';
-
-		/** Member variables for use between the build_data_2(), build_stats_data_2(), and get_stats_area_html() functions
-		 *
-		 *  @var int $conseq_caloric_increase
-		 */
-		public $conseq_caloric_increase = '';
-
-		/** Member variables for use between the build_data_2(), build_stats_data_2(), and get_stats_area_html() functions
-		 *
-		 *  @var int $conseq_caloric_decrease
-		 */
-		public $conseq_caloric_decrease = '';
-
-
-
-
+		public $first_muscle_date = '';
 
 		/** Class Constructor
 		 *
@@ -360,156 +224,524 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 		 */
 		public function build_data_2() {
 
-			// Build energy array of arrays.
-			$temp_array = array();
-			foreach ( $this->alluserdata as $key => $value ) {
+			$this->muscle_name_array = array();
+			$exers_array             = array();
 
-				$this->energy_day_counter++;
+			foreach ( $this->alluserdata as $key => $indiv_day ) {
 
-				// If we have multiple food items per day...
-				if ( stripos( $value->foodstring, ',' ) !== false ) {
-					// Split up energy from it's measurement.
-					$indiv_day = explode( ',', $value->foodstring );
+				// If we have multiple exercises for one day...
+				if ( false !== stripos( $indiv_day->exercisestring, ',' ) ) {
 
-					$total_cals = 0.00;
-					$total_kjs  = 0.00;
-					foreach ( $indiv_day as $key => $day ) {
+					$indiv_exer = explode( ',', $indiv_day->exercisestring );
 
-						$day    = explode( ';', $day );
-						$energy = $day[3];
+					foreach ( $indiv_exer as $key => $exercise ) {
 
-						// If a energy has been recorded for this loop iteration...
-						if ( '' !== $energy ) {
+						$exercise = explode( ';', $exercise );
 
-							if ( '' === $this->first_energy_date ) {
-								$this->first_energy_date = $value->humandate;
+						// If we have muscle groups saved at all...
+						if ( null !== $exercise[7] && '' !== $exercise[7] ) {
+
+							// Set first date.
+							if ( '' === $this->first_muscle_date ) {
+								$this->first_muscle_date = $indiv_day->humandate;
 							}
 
-							// split up and format date.
-							$date = explode( '-', $value->humandate );
+							// If we have multiple muscle groups saved.
+							if ( false !== stripos( $exercise[7], '/' ) ) {
 
-							// Build final formatted date.
-							$date = $date[2] . '-' . $date[0] . '-' . $date[1];
+								$indiv_muscle = explode( '/', $exercise[7] );
 
-							// Build Energy.
-							$energy_measurement = $day[4];
+								foreach ( $indiv_muscle as $key => $value ) {
 
-							// Build both Calories and Kilojoules.
-							if ( $energy_measurement === $this->translations->d3_trans_9 ) {
-								$energy_calories   = (float) $energy;
-								$energy_kilojoules = '';
+									$temp_array = array(
+										'name'  => $value,
+										'exers' => $exercise[0],
+										'date'  => $indiv_day->humandate,
+									);
+
+									array_push( $this->muscle_name_array, $temp_array );
+								};
+
 							} else {
-								$energy_calories   = '';
-								$energy_kilojoules = (float) $energy;
-							}
 
-							// Now convert Pounds to Kilograms.
-							if ( '' !== $energy_calories ) {
-								$energy_kilojoules = round( ( $energy / 4.184 ), 2 );
-							}
+								$temp_array = array(
+									'name'  => $exercise[7],
+									'exers' => $exercise[0],
+									'date'  => $indiv_day->humandate,
+								);
 
-							// Now convert Kilograms to Pounds.
-							if ( '' !== $energy_kilojoules ) {
-								$energy_calories = round( ( $energy * 4.184 ), 2 );
-							}
+								array_push( $this->muscle_name_array, $temp_array );
+							};
 
-							$total_cals += round( $energy_calories, 2 );
-							$total_kjs  += round( $energy_kilojoules, 2 );
-						}
+						};
 					}
-
-					// Now push total calorie per day data into array.
-					$temp_array = array(
-						'date' => $date,
-						$this->translations->exercise_trans_34 => $total_cals,
-						$this->translations->exercise_trans_9 => $total_kjs,
-					);
-
-					// Push into final return array.
-					array_push( $this->data_2_array, $temp_array );
-					$total_cals = 0.00;
-					$total_kjs  = 0.00;
-
 				} else {
 
-					$day    = explode( ';', $value->foodstring );
-					$energy = $day[3];
+					$exercise = explode( ';', $indiv_day->exercisestring );
 
-					// If a energy has been recorded for this loop iteration...
-					if ( '' !== $energy ) {
+					// If we have muscle groups saved at all...
+					if ( null !== $exercise[7] && '' !== $exercise[7] ) {
 
-						if ( '' === $this->first_energy_date ) {
-							$this->first_energy_date = $value->humandate;
+						// Set first date.
+						if ( '' === $this->first_muscle_date ) {
+							$this->first_muscle_date = $indiv_day->humandate;
 						}
 
-						// split up and format date.
-						$date = explode( '-', $value->humandate );
+						// If we have multiple muscle groups saved.
+						if ( false !== stripos( $exercise[7], '/' ) ) {
 
-						// Build final formatted date.
-						$date = $date[2] . '-' . $date[0] . '-' . $date[1];
+							$indiv_muscle = explode( '/', $exercise[7] );
 
-						// Build Energy.
-						$energy_measurement = $day[4];
+							foreach ( $indiv_muscle as $key => $value ) {
 
-						// Build both Calories and Kilojoules.
-						if ( $energy_measurement === $this->translations->d3_trans_9 ) {
-							$energy_calories   = (float) $energy;
-							$energy_kilojoules = '';
+								$temp_array = array(
+									'name'  => $value,
+									'exers' => $exercise[0],
+									'date'  => $indiv_day->humandate,
+								);
+
+								array_push( $this->muscle_name_array, $temp_array );
+							};
+
 						} else {
-							$energy_calories   = '';
-							$energy_kilojoules = (float) $energy;
-						}
 
-						// Now convert Pounds to Kilograms.
-						if ( '' !== $energy_calories ) {
-							$energy_kilojoules = round( ( $energy / 4.184 ), 2 );
-						}
+							$temp_array = array(
+								'name'  => $exercise[7],
+								'exers' => $exercise[0],
+								'date'  => $indiv_day->humandate,
+							);
 
-						// Now convert Kilograms to Pounds.
-						if ( '' !== $energy_kilojoules ) {
-							$energy_calories = round( ( $energy * 4.184 ), 2 );
-						}
+							array_push( $this->muscle_name_array, $temp_array );
+						};
 
-						$total_cals += round( $energy_calories, 2 );
-						$total_kjs  += round( $energy_kilojoules, 2 );
-
-					}
-
-					// Now push total calorie per day data into array.
-					$temp_array = array(
-						'date' => $date,
-						$this->translations->exercise_trans_34 => $total_cals,
-						$this->translations->exercise_trans_9 => $total_kjs,
-					);
-
-					// Push into final return array.
-					array_push( $this->data_2_array, $temp_array );
-					$total_cals = 0.00;
-					$total_kjs  = 0.00;
+					};
 				}
 			}
 
+			$biceps_counter = 0;
+			$biceps_exers   = '';
+			$biceps_first   = '';
+			$biceps_last    = '';
+
+			$deltoids_counter = 0;
+			$deltoids_exers   = '';
+			$deltoids_first   = '';
+			$deltoids_last    = '';
+
+			$forearms_counter = 0;
+			$forearms_exers   = '';
+			$forearms_first   = '';
+			$forearms_last    = '';
+
+			$triceps_counter = 0;
+			$triceps_exers   = '';
+			$triceps_first   = '';
+			$triceps_last    = '';
+
+			$trapezius_counter = 0;
+			$trapezius_exers   = '';
+			$trapezius_first   = '';
+			$trapezius_last    = '';
+
+			$lats_counter = 0;
+			$lats_exers   = '';
+			$lats_first   = '';
+			$lats_last    = '';
+
+			$abs_counter = 0;
+			$abs_exers   = '';
+			$abs_first   = '';
+			$abs_last    = '';
+
+			$obliques_counter = 0;
+			$obliques_exers   = '';
+			$obliques_first   = '';
+			$obliques_last    = '';
+
+			$pectorals_counter = 0;
+			$pectorals_exers   = '';
+			$pectorals_first   = '';
+			$pectorals_last    = '';
+
+			$adductors_counter = 0;
+			$adductors_exers   = '';
+			$adductors_first   = '';
+			$adductors_last    = '';
+
+			$calves_counter = 0;
+			$calves_exers   = '';
+			$calves_first   = '';
+			$calves_last    = '';
+
+			$hamstrings_counter = 0;
+			$hamstrings_exers   = '';
+			$hamstrings_first   = '';
+			$hamstrings_last    = '';
+
+			$glutes_counter = 0;
+			$glutes_exers   = '';
+			$glutes_first   = '';
+			$glutes_last    = '';
+
+			$quads_counter = 0;
+			$quads_exers   = '';
+			$quads_first   = '';
+			$quads_last    = '';
+
+			foreach ( $this->muscle_name_array as $key => $value ) {
+				switch ( $value['name'] ) {
+					case 'Biceps':
+						if ( 0 === $biceps_counter ) {
+							$biceps_last = $value['date'];
+						} else {
+							$biceps_first = $value['date'];
+						}
+
+						$biceps_counter++;
+
+						if ( false === stripos( $biceps_exers, $value['exers'] ) ) {
+							$biceps_exers .= ', ' . $value['exers'];
+							$biceps_exers  = ltrim( $biceps_exers, ',' );
+							$biceps_exers  = ltrim( $biceps_exers, ' ' );
+						}
+						break;
+					case 'Deltoids':
+						if ( 0 === $deltoids_counter ) {
+							$deltoids_last = $value['date'];
+						} else {
+							$deltoids_first = $value['date'];
+						}
+
+						$deltoids_counter++;
+
+						if ( false === stripos( $deltoids_exers, $value['exers'] ) ) {
+							$deltoids_exers .= ', ' . $value['exers'];
+							$deltoids_exers  = ltrim( $deltoids_exers, ',' );
+							$deltoids_exers  = ltrim( $deltoids_exers, ' ' );
+						}
+						break;
+					case 'Forearms':
+						if ( 0 === $forearms_counter ) {
+							$forearms_last = $value['date'];
+						} else {
+							$forearms_first = $value['date'];
+						}
+
+						$forearms_counter++;
+
+						if ( false === stripos( $forearms_exers, $value['exers'] ) ) {
+							$forearms_exers .= ', ' . $value['exers'];
+							$forearms_exers  = ltrim( $forearms_exers, ',' );
+							$forearms_exers  = ltrim( $forearms_exers, ' ' );
+						}
+						break;
+					case 'Triceps':
+						if ( 0 === $triceps_counter ) {
+							$triceps_last = $value['date'];
+						} else {
+							$triceps_first = $value['date'];
+						}
+
+						$triceps_counter++;
+
+						if ( false === stripos( $triceps_exers, $value['exers'] ) ) {
+							$triceps_exers .= ', ' . $value['exers'];
+							$triceps_exers  = ltrim( $triceps_exers, ',' );
+							$triceps_exers  = ltrim( $triceps_exers, ' ' );
+						}
+						break;
+					case 'Trapezius':
+						if ( 0 === $trapezius_counter ) {
+							$trapezius_last = $value['date'];
+						} else {
+							$trapezius_first = $value['date'];
+						}
+
+						$trapezius_counter++;
+
+						if ( false === stripos( $trapezius_exers, $value['exers'] ) ) {
+							$trapezius_exers .= ', ' . $value['exers'];
+							$trapezius_exers  = ltrim( $trapezius_exers, ',' );
+							$trapezius_exers  = ltrim( $trapezius_exers, ' ' );
+						}
+						break;
+					case 'Lats':
+						if ( 0 === $lats_counter ) {
+							$lats_last = $value['date'];
+						} else {
+							$lats_first = $value['date'];
+						}
+
+						$lats_counter++;
+
+						if ( false === stripos( $lats_exers, $value['exers'] ) ) {
+							$lats_exers .= ', ' . $value['exers'];
+							$lats_exers  = ltrim( $lats_exers, ',' );
+							$lats_exers  = ltrim( $lats_exers, ' ' );
+						}
+						break;
+					case 'Abs':
+						if ( 0 === $abs_counter ) {
+							$abs_last = $value['date'];
+						} else {
+							$abs_first = $value['date'];
+						}
+
+						$abs_counter++;
+
+						if ( false === stripos( $abs_exers, $value['exers'] ) ) {
+							$abs_exers .= ', ' . $value['exers'];
+							$abs_exers  = ltrim( $abs_exers, ',' );
+							$abs_exers  = ltrim( $abs_exers, ' ' );
+						}
+						break;
+					case 'Obliques':
+						if ( 0 === $obliques_counter ) {
+							$obliques_last = $value['date'];
+						} else {
+							$obliques_first = $value['date'];
+						}
+
+						$obliques_counter++;
+
+						if ( false === stripos( $obliques_exers, $value['exers'] ) ) {
+							$obliques_exers .= ', ' . $value['exers'];
+							$obliques_exers  = ltrim( $obliques_exers, ',' );
+							$obliques_exers  = ltrim( $obliques_exers, ' ' );
+						}
+						break;
+					case 'Chest':
+						if ( 0 === $pectorals_counter ) {
+							$pectorals_last = $value['date'];
+						} else {
+							$pectorals_first = $value['date'];
+						}
+
+						$pectorals_counter++;
+
+						if ( false === stripos( $pectorals_exers, $value['exers'] ) ) {
+							$pectorals_exers .= ', ' . $value['exers'];
+							$pectorals_exers  = ltrim( $pectorals_exers, ',' );
+							$pectorals_exers  = ltrim( $pectorals_exers, ' ' );
+						}
+						break;
+					case 'Adductors':
+						if ( 0 === $adductors_counter ) {
+							$adductors_last = $value['date'];
+						} else {
+							$adductors_first = $value['date'];
+						}
+
+						$adductors_counter++;
+
+						if ( false === stripos( $adductors_exers, $value['exers'] ) ) {
+							$adductors_exers .= ', ' . $value['exers'];
+							$adductors_exers  = ltrim( $adductors_exers, ',' );
+							$adductors_exers  = ltrim( $adductors_exers, ' ' );
+						}
+						break;
+					case 'Calves':
+						if ( 0 === $calves_counter ) {
+							$calves_last = $value['date'];
+						} else {
+							$calves_first = $value['date'];
+						}
+
+						$calves_counter++;
+
+						if ( false === stripos( $calves_exers, $value['exers'] ) ) {
+							$calves_exers .= ', ' . $value['exers'];
+							$calves_exers  = ltrim( $calves_exers, ',' );
+							$calves_exers  = ltrim( $calves_exers, ' ' );
+						}
+						break;
+					case 'Hamstrings':
+						if ( 0 === $hamstrings_counter ) {
+							$hamstrings_last = $value['date'];
+						} else {
+							$hamstrings_first = $value['date'];
+						}
+
+						$hamstrings_counter++;
+
+						if ( false === stripos( $hamstrings_exers, $value['exers'] ) ) {
+							$hamstrings_exers .= ', ' . $value['exers'];
+							$hamstrings_exers  = ltrim( $hamstrings_exers, ',' );
+							$hamstrings_exers  = ltrim( $hamstrings_exers, ' ' );
+						}
+						break;
+					case 'Glutes':
+						if ( 0 === $glutes_counter ) {
+							$glutes_last = $value['date'];
+						} else {
+							$glutes_first = $value['date'];
+						}
+
+						$glutes_counter++;
+
+						if ( false === stripos( $glutes_exers, $value['exers'] ) ) {
+							$glutes_exers .= ', ' . $value['exers'];
+							$glutes_exers  = ltrim( $glutes_exers, ',' );
+							$glutes_exers  = ltrim( $glutes_exers, ' ' );
+						}
+						break;
+					case 'Quads':
+						if ( 0 === $quads_counter ) {
+							$quads_last = $value['date'];
+						} else {
+							$quads_first = $value['date'];
+						}
+
+						$quads_counter++;
+
+						if ( false === stripos( $quads_exers, $value['exers'] ) ) {
+							$quads_exers .= ', ' . $value['exers'];
+							$quads_exers  = ltrim( $quads_exers, ',' );
+							$quads_exers  = ltrim( $quads_exers, ' ' );
+						}
+						break;
+					default:
+						break;
+				}
+			}
+
+			$temp = array(
+				'name'      => 'Biceps',
+				'frequency' => $biceps_counter,
+				'first'     => $biceps_first,
+				'last'      => $biceps_last,
+				'exers'     => $biceps_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Deltoids',
+				'frequency' => $deltoids_counter,
+				'first'     => $deltoids_first,
+				'last'      => $deltoids_last,
+				'exers'     => $deltoids_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Forearms',
+				'frequency' => $forearms_counter,
+				'first'     => $forearms_first,
+				'last'      => $forearms_last,
+				'exers'     => $forearms_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Triceps',
+				'frequency' => $triceps_counter,
+				'first'     => $triceps_first,
+				'last'      => $triceps_last,
+				'exers'     => $triceps_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Trapezius',
+				'frequency' => $trapezius_counter,
+				'first'     => $trapezius_first,
+				'last'      => $trapezius_last,
+				'exers'     => $trapezius_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Lats',
+				'frequency' => $lats_counter,
+				'first'     => $lats_first,
+				'last'      => $lats_last,
+				'exers'     => $lats_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Abs',
+				'frequency' => $abs_counter,
+				'first'     => $abs_first,
+				'last'      => $abs_last,
+				'exers'     => $abs_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Obliques',
+				'frequency' => $obliques_counter,
+				'first'     => $obliques_first,
+				'last'      => $obliques_last,
+				'exers'     => $obliques_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Pectorals',
+				'frequency' => $pectorals_counter,
+				'first'     => $pectorals_first,
+				'last'      => $pectorals_last,
+				'exers'     => $pectorals_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Adductors',
+				'frequency' => $adductors_counter,
+				'first'     => $adductors_first,
+				'last'      => $adductors_last,
+				'exers'     => $adductors_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Calves',
+				'frequency' => $calves_counter,
+				'first'     => $calves_first,
+				'last'      => $calves_last,
+				'exers'     => $calves_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Hamstrings',
+				'frequency' => $hamstrings_counter,
+				'first'     => $hamstrings_first,
+				'last'      => $hamstrings_last,
+				'exers'     => $hamstrings_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Glutes',
+				'frequency' => $glutes_counter,
+				'first'     => $glutes_first,
+				'last'      => $glutes_last,
+				'exers'     => $glutes_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
+			$temp = array(
+				'name'      => 'Quads',
+				'frequency' => $quads_counter,
+				'first'     => $quads_first,
+				'last'      => $quads_last,
+				'exers'     => $quads_exers,
+			);
+			array_push( $this->data_2_array, $temp );
+
 			// If there was no saved Exercise data at all, return an array holding the 'No Data Found' Html.
-			if ( count( $this->data_2_array ) === 0 ) {
+			if ( count( $this->muscle_name_array ) === 0 ) {
 				return '<div class="wphealthtracker-no-saved-data-div">
-				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
-					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
-					<br>
-					' . $this->translations->d3_trans_64 . '
-					<br>' . $this->translations->d3_trans_67 . '
-				</p>
-			</div>';
-			} elseif ( count( $this->data_2_array ) === 1 ) {
-				return '<div class="wphealthtracker-no-saved-data-div">
-				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
-					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
-					<br>
-					' . $this->translations->d3_trans_68 . '
-					<br>' . $this->translations->d3_trans_67 . '
-				</p>
-			</div>';
+					<p>
+						<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+						<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
+						<br>
+						' . $this->translations->d3_trans_93 . '
+						<br>' . $this->translations->d3_trans_94 . '
+					</p>
+				</div>';
 			} else {
 				return $this->data_2_array;
 			}
@@ -520,148 +752,123 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 		 */
 		public function build_data_3() {
 
-			// Building average protein per day.
-			$this->protein_total = 0;
-			$protein_counter     = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$protein_counter++;
+			$temp_array = array();
 
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
+			foreach ( $this->alluserdata as $key => $indiv_day ) {
+								
+				$t = strtotime('24-8-2014');
+				$day = date( 'N', $t );
+						error_log('$day');
+						error_log($t);
 
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[5] ) {
-								$this->protein_total += $indiv_day2[5];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[5] ) {
-							$this->protein_total += $indiv_day[5];
-						}
+				// If we have multiple exercises for one day...
+				if ( false !== stripos( $indiv_day->exercisestring, ',' ) ) {
+
+					$indiv_exer = explode( ',', $indiv_day->exercisestring );
+
+					foreach ( $indiv_exer as $key2 => $exercise ) {
+
+						$exercise = explode( ';', $exercise );
+
+						// Convert humandate to day of week.
+						$t   = explode( '-', $this->alluserdata[ $key ]->humandate );
+						$t   = $t[1] . '-' . $t[0] . '-' . $t[2];
+						$day = date( 'N', strtotime( $t ) );
+
+						// Convert time to hour of day.
+						$hour = explode( ':', $exercise[2] );
+						$hour = $hour[0];
+						$hour = ltrim( $hour, '0' );
+
+						$temp = array(
+							'day'  => $day,
+							'hour' => $hour,
+						);
+
+						array_push( $temp_array, $temp );
 					}
+				} else {
+
+					$exercise = explode( ';', $indiv_day->exercisestring );
+
+					// Convert humandate to day of week.
+					$t   = explode( '-', $this->alluserdata[ $key ]->humandate );
+					$t   = $t[1] . '-' . $t[0] . '-' . $t[2];
+					$day = date( 'N', strtotime( $t ) );
+
+					// Convert time to hour of day.
+					$hour = explode( ':', $exercise[2] );
+					$hour = $hour[0];
+					$hour = ltrim( $hour, '0' );
+
+					$temp = array(
+						'day'  => $day,
+						'hour' => $hour,
+					);
+
+					array_push( $temp_array, $temp );
 				}
 			}
-			$this->average_daily_protein = round( ( $this->protein_total / $protein_counter ), 2 );
 
-			// Building average carbs per day.
-			$this->carbs_total         = 0;
-			$this->carbs_total_counter = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$this->carbs_total_counter++;
+			$temp_array_copy = $temp_array;
+			$temp_array_copy = array_unique( $temp_array_copy, SORT_REGULAR );
+			$counter         = 0;
 
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
+			foreach ( $temp_array_copy as $key => $value ) {
 
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[11] ) {
-								$this->carbs_total += $indiv_day2[11];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[11] ) {
-							$this->carbs_total += $indiv_day[11];
-						}
+				
+
+				foreach ( $temp_array as $key2 => $value2 ) {
+
+
+					if ( $value['day'] === $value2['day'] && $value['hour'] === $value2['hour'] ) {
+						$counter++;
 					}
 				}
+
+				$temp_array[ $key ]['value'] = $counter;
+				$counter                   = 0;
 			}
-			$this->average_daily_carbs = round( ( $this->carbs_total / $this->carbs_total_counter ), 2 );
 
-			// Building average fats per day.
-			$this->fats_total = 0;
-			$fats_counter     = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$fats_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[7] ) {
-								$this->fats_total += $indiv_day2[7];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[7] ) {
-							$this->fats_total += $indiv_day[7];
-						}
-					}
+			foreach ( $temp_array as $key => $value ) {
+				if ( ! isset( $value['value'] ) ) {
+					unset( $temp_array[ $key ] );
 				}
 			}
-			$this->average_daily_fats = round( ( $this->fats_total / $fats_counter ), 2 );
 
-			$carb_array1 = array(
-				'cat' => $this->translations->exercise_trans_35,
-				'val' => $this->average_daily_carbs,
-			);
+			foreach ( $temp_array as $key => $value ) {
+				array_push($this->data_3_array, $value);
+			}
 
-			$protein_array1 = array(
-				'cat' => $this->translations->exercise_trans_12,
-				'val' => $this->average_daily_protein,
-			);
 
-			$fats_array1 = array(
-				'cat' => $this->translations->exercise_trans_36,
-				'val' => $this->average_daily_fats,
-			);
+			for ($day=1; $day <= 7 ; $day++) { 
+				
+				for ($hour=1; $hour <= 24 ; $hour++) { 
 
-			$macro_array1 = array();
-			array_push( $macro_array1, $carb_array1 );
-			array_push( $macro_array1, $protein_array1 );
-			array_push( $macro_array1, $fats_array1 );
+					$add_entry = true;
+					foreach ($this->data_3_array as $key => $value) {
+						if ( (string) $day === $value['day'] && (string) $hour === $value['hour']  ) {
+							$add_entry = false;
+							break;
+						}
+					}
 
-			// Now push total calorie per day data into array.
-			$temp_array1 = array(
-				'type'  => $this->translations->d3_trans_71,
-				'unit'  => $this->translations->dashboard_trans_40,
-				'data'  => $macro_array1,
-				'total' => round( $this->average_daily_carbs + $this->average_daily_protein + $this->average_daily_fats, 2 ),
-			);
+					if ( $add_entry ){
 
-			$carb_array2 = array(
-				'cat' => $this->translations->exercise_trans_35,
-				'val' => $this->carbs_total,
-			);
+						$temp = array(
+							'day'  => (string) $day,
+							'hour' => (string) $hour,
+							'value' => 0,
+						);
+						
+						array_push($this->data_3_array, $temp);
+					}
 
-			$protein_array2 = array(
-				'cat' => $this->translations->exercise_trans_12,
-				'val' => $this->protein_total,
-			);
 
-			$fats_array2 = array(
-				'cat' => $this->translations->exercise_trans_36,
-				'val' => $this->fats_total,
-			);
+				}
 
-			$macro_array2 = array();
-			array_push( $macro_array2, $carb_array2 );
-			array_push( $macro_array2, $protein_array2 );
-			array_push( $macro_array2, $fats_array2 );
 
-			// Now push total calorie per day data into array.
-			$temp_array2 = array(
-				'type'  => $this->translations->d3_trans_70,
-				'unit'  => $this->translations->dashboard_trans_40,
-				'data'  => $macro_array2,
-				'total' => round( $this->carbs_total + $this->protein_total + $this->fats_total, 2 ),
-			);
-
-			array_push( $this->data_3_array, $temp_array1 );
-			array_push( $this->data_3_array, $temp_array2 );
+			}
 
 			return $this->data_3_array;
 
@@ -700,308 +907,6 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 		 */
 		public function build_stats_data_1() {
 
-			// Build total Unique Food Items and most eaten food.
-			$orig_unique_foods        = $this->unique_food_items_array;
-			$final_unique_foods       = array_unique( $this->unique_food_items_array );
-			$this->unique_foods_count = count( $final_unique_foods );
-			$values                   = array_count_values( $orig_unique_foods );
-			arsort( $values );
-			$this->top_five_food_items = array_slice( array_keys( $values ), 0, 5, true );
-			$temp_top_food_item        = explode( ';', $this->top_five_food_items[0] );
-			$this->top_five_food_items = $temp_top_food_item[0];
-
-			$total_cals = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have multiple food items per day...
-				if ( stripos( $value->foodstring, ',' ) !== false ) {
-					$split_day = explode( ',', $value->foodstring );
-					foreach ( $split_day as $key2 => $value2 ) {
-						$split_day_items = explode( ';', $value2 );
-
-						// Now convert energy.
-						$calories = 0;
-						$kcals    = 0;
-						$kjs      = 0;
-
-						if ( 'Calories' === $split_day_items[4] ) {
-							$calories = $split_day_items[3];
-							$kcals    = $split_day_items[3];
-							$kjs      = round( ( $split_day_items[3] * 4.184 ), 2 );
-						}
-
-						if ( 'kcal' === $split_day_items[4] ) {
-							$calories = $split_day_items[3];
-							$kcals    = $split_day_items[3];
-							$kjs      = round( ( $split_day_items[3] * 4.184 ), 2 );
-						}
-
-						if ( 'kJ' === $split_day_items[4] ) {
-							$calories = round( ( $split_day_items[3] / 4.184 ), 2 );
-							$kcals    = round( ( $split_day_items[3] / 4.184 ), 2 );
-							$kjs      = $split_day_items[3];
-						}
-
-						$this->total_cals    += $calories;
-						$this->total_kcals   += $kcals;
-						$this->total_kjoules += $kjs;
-					}
-				} else {
-					// One food item per day.
-					$split_day_items = explode( ';', $value->foodstring );
-
-					// Now convert energy.
-					$calories = 0;
-					$kcals    = 0;
-					$kjs      = 0;
-
-					if ( 'Calories' === $split_day_items[4] ) {
-						$calories = $split_day_items[3];
-						$kcals    = $split_day_items[3];
-						$kjs      = round( ( $split_day_items[3] * 4.184 ), 2 );
-					}
-
-					if ( 'kcal' === $split_day_items[4] ) {
-						$calories = $split_day_items[3];
-						$kcals    = $split_day_items[3];
-						$kjs      = round( ( $split_day_items[3] * 4.184 ), 2 );
-					}
-
-					if ( 'kJ' === $split_day_items[4] ) {
-						$calories = round( ( $split_day_items[3] / 4.184 ), 2 );
-						$kcals    = round( ( $split_day_items[3] / 4.184 ), 2 );
-						$kjs      = $split_day_items[3];
-					}
-
-					$this->total_cals    += $calories;
-					$this->total_kcals   += $kcals;
-					$this->total_kjoules += $kjs;
-				}
-			}
-			$this->total_cals = number_format( round( $this->total_cals, 2 ), 2 );
-
-			// Building average protein per day.
-			$protein         = 0;
-			$protein_counter = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$protein_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[5] ) {
-								$protein += $indiv_day2[5];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[5] ) {
-							$protein += $indiv_day[5];
-						}
-					}
-				}
-			}
-			$this->average_daily_protein = round( ( $protein / $protein_counter ), 2 );
-
-			// Building average carbs per day.
-			$this->carbs_total         = 0;
-			$this->carbs_total_counter = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$this->carbs_total_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[11] ) {
-								$this->carbs_total += $indiv_day2[11];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[11] ) {
-							$this->carbs_total += $indiv_day[11];
-						}
-					}
-				}
-			}
-			$this->average_daily_carbs = round( ( $this->carbs_total / $this->carbs_total_counter ), 2 );
-
-			// Building average sugars per day.
-			$sugars         = 0;
-			$sugars_counter = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$sugars_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[13] ) {
-								$sugars += $indiv_day2[13];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[13] ) {
-							$sugars += $indiv_day[13];
-						}
-					}
-				}
-			}
-			$this->average_daily_sugars = round( ( $sugars / $sugars_counter ), 2 );
-
-			// Building average fiber per day.
-			$fiber         = 0;
-			$fiber_counter = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$fiber_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[12] ) {
-								$fiber += $indiv_day2[12];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[12] ) {
-							$fiber += $indiv_day[12];
-						}
-					}
-				}
-			}
-			$this->average_daily_fiber = round( ( $fiber / $fiber_counter ), 2 );
-
-			// Building average fats per day.
-			$this->fats_total = 0;
-			$fats_counter     = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$fats_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[7] ) {
-								$this->fats_total += $indiv_day2[7];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[7] ) {
-							$this->fats_total += $indiv_day[7];
-						}
-					}
-				}
-			}
-			$this->average_daily_fats = round( ( $this->fats_total / $fats_counter ), 2 );
-
-			// Building average satfats per day.
-			$satfats         = 0;
-			$satfats_counter = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$satfats_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[8] ) {
-								$satfats += $indiv_day2[8];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[8] ) {
-							$satfats += $indiv_day[8];
-						}
-					}
-				}
-			}
-			$this->average_daily_satfats = round( ( $satfats / $satfats_counter ), 2 );
-
-			// Building average monounsatfats per day.
-			$monounsatfats         = 0;
-			$monounsatfats_counter = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$monounsatfats_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[9] ) {
-								$monounsatfats += $indiv_day2[9];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[9] ) {
-							$monounsatfats += $indiv_day[9];
-						}
-					}
-				}
-			}
-			$this->average_daily_monounsatfats = round( ( $monounsatfats / $monounsatfats_counter ), 2 );
-
-			// Building average polyunsatfats per day.
-			$polyunsatfats         = 0;
-			$polyunsatfats_counter = 0;
-			foreach ( $this->alluserdata as $key => $value ) {
-				// If we have saved data...
-				if ( '' !== $value->foodstring ) {
-					// Increment counter for averages and whatnot.
-					$polyunsatfats_counter++;
-
-					if ( stripos( $value->foodstring, ',' ) !== false ) {
-						$indiv_day = explode( ',', $value->foodstring );
-						foreach ( $indiv_day as $key2 => $value2 ) {
-
-							$indiv_day2 = explode( ';', $value2 );
-							if ( '' !== $indiv_day2[10] ) {
-								$polyunsatfats += $indiv_day2[10];
-							}
-						}
-					} else {
-						$indiv_day = explode( ';', $value->foodstring );
-						if ( '' !== $indiv_day[10] ) {
-							$polyunsatfats += $indiv_day[10];
-						}
-					}
-				}
-			}
-			$this->average_daily_polyunsatfats = round( ( $polyunsatfats / $polyunsatfats_counter ), 2 );
 		}
 
 		/**
@@ -1009,6 +914,134 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 		 */
 		public function build_stats_data_2() {
 
+			// Building # of unique exercise items.
+			$unique_exercises = array();
+			foreach ( $this->alluserdata as $key => $value ) {
+				// If we have saved data...
+				if ( '' !== $value->exercisestring ) {
+					if ( stripos( $value->exercisestring, ',' ) !== false ) {
+						$indiv_day = explode( ',', $value->exercisestring );
+						foreach ( $indiv_day as $key2 => $value2 ) {
+
+							$indiv_day2 = explode( ';', $value2 );
+							if ( '' !== $indiv_day2[0] ) {
+								array_push( $unique_exercises, $indiv_day2[0] );
+							}
+						}
+					} else {
+						$indiv_day = explode( ';', $value->exercisestring );
+						if ( '' !== $indiv_day[0] ) {
+							array_push( $unique_exercises, $indiv_day[0] );
+						}
+					}
+				}
+			}
+
+			// Building # of unique exercise categories.
+			$exercise_categories = array();
+			foreach ( $this->alluserdata as $key => $value ) {
+				// If we have saved data...
+				if ( '' !== $value->exercisestring ) {
+					if ( stripos( $value->exercisestring, ',' ) !== false ) {
+						$indiv_day = explode( ',', $value->exercisestring );
+						foreach ( $indiv_day as $key2 => $value2 ) {
+
+							$indiv_day2 = explode( ';', $value2 );
+							if ( '' !== $indiv_day2[1] ) {
+								array_push( $exercise_categories, $indiv_day2[1] );
+							}
+						}
+					} else {
+						$indiv_day = explode( ';', $value->exercisestring );
+						if ( '' !== $indiv_day[1] ) {
+							array_push( $exercise_categories, $indiv_day[1] );
+						}
+					}
+				}
+			}
+
+			// Building # of unique Muscles Groups.
+			$exercise_muscles = array();
+			foreach ( $this->alluserdata as $key => $value ) {
+				// If we have saved data...
+				if ( '' !== $value->exercisestring ) {
+					if ( stripos( $value->exercisestring, ',' ) !== false ) {
+						$indiv_day = explode( ',', $value->exercisestring );
+						foreach ( $indiv_day as $key2 => $value2 ) {
+
+							$indiv_day2 = explode( ';', $value2 );
+							if ( '' !== $indiv_day2[7] ) {
+
+								if ( stripos( $indiv_day2[7], '/' ) !== false ) {
+									$temp = explode( '/', $indiv_day2[7] );
+
+									foreach ( $temp as $key => $muscle_indiv ) {
+										array_push( $exercise_muscles, $muscle_indiv );
+									}
+								} else {
+									array_push( $exercise_muscles, $indiv_day2[7] );
+								}
+							}
+						}
+					} else {
+						$indiv_day = explode( ';', $value->exercisestring );
+						if ( '' !== $indiv_day[7] ) {
+
+							if ( '' !== $indiv_day2[7] ) {
+
+								if ( stripos( $indiv_day2[7], '/' ) !== false ) {
+									$temp = explode( '/', $indiv_day2[7] );
+
+									foreach ( $temp as $key => $muscle_indiv ) {
+										array_push( $exercise_muscles, $muscle_indiv );
+									}
+								} else {
+									array_push( $exercise_muscles, $indiv_day2[7] );
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// Calculating some final exercises item values.
+			$orig_unique_exercises        = $unique_exercises;
+			$final_unique_exercises       = array_unique( $unique_exercises );
+			$this->unique_exercises_count = count( $final_unique_exercises );
+			$values                       = array_count_values( $orig_unique_exercises );
+			arsort( $values );
+			$top_five_exercise_items = array_slice( array_keys( $values ), 0, 5, true );
+
+			$orig_exercise_categories        = $exercise_categories;
+			$final_exercise_categories       = array_unique( $exercise_categories );
+			$this->exercise_categories_count = count( $final_exercise_categories );
+			$values                          = array_count_values( $orig_exercise_categories );
+			arsort( $values );
+			$top_five_exercise_categories = array_slice( array_keys( $values ), 0, 5, true );
+
+			$orig_exercise_muscles  = $exercise_muscles;
+			$final_exercise_muscles = array_unique( $exercise_muscles );
+			$exercise_muscles_count = count( $final_exercise_muscles );
+			$values                 = array_count_values( $orig_exercise_muscles );
+			arsort( $values );
+			$top_five_exercise_muscles = array_slice( array_keys( $values ), 0, 5, true );
+
+			// Building top exercise item string.
+			$this->top_3_exercise_items = $top_five_exercise_items[0];
+
+			// Building top exercise categories string.
+			$this->top_3_exercise_categories = $top_five_exercise_categories[0];
+
+			// Building top 3 exercise muscles groups string.
+			if ( count( $top_five_exercise_muscles ) > 2 ) {
+				$this->top_3_exercise_muscles = $top_five_exercise_muscles[0] . ', ' . $top_five_exercise_muscles[1] . ', ' . $top_five_exercise_muscles[2];
+			}
+			if ( count( $top_five_exercise_muscles ) === 2 ) {
+				$this->top_3_exercise_muscles = $top_five_exercise_muscles[0] . ', ' . $top_five_exercise_muscles[1];
+			}
+			if ( count( $top_five_exercise_muscles ) === 1 ) {
+				$this->top_3_exercise_muscles = $top_five_exercise_muscles[0];
+			}
 		}
 
 		/**
@@ -1119,149 +1152,76 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			</div>';
 			}
 
-			// If there is 1 or more day of Food data with Calories data saved...
+			// If there is 1 or more day of Muscle Group data saved...
 			$stats_2 = '';
-			if ( $this->energy_day_counter > 0 ) {
+			if ( count( $this->muscle_name_array ) > 0 ) {
 				$stats_2 = '
-			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'computer.svg"/>		
-			<p class="wphealthtracker-d3-chart-subtitle-actual">' . $this->translations->d3_trans_91 . '</p>
-			<div class="wphealthtracker-d3-chart-title-line"></div>
-			<div class="wphealthtracker-dashboard-actual-info">
-				<div class="wphealthtracker-dashboard-row">
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_3 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->first_energy_date . '</span>
-						</p>
+				<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'computer.svg"/>		
+				<p class="wphealthtracker-d3-chart-subtitle-actual">' . $this->translations->d3_trans_91 . '</p>
+				<div class="wphealthtracker-d3-chart-title-line"></div>
+				<div class="wphealthtracker-dashboard-actual-info">
+					<div class="wphealthtracker-dashboard-row">
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_3 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->first_muscle_date . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_59 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->top_3_exercise_muscles . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_56 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->top_3_exercise_categories . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_52 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->top_3_exercise_items . '
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_50 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->unique_exercises_count . ' ' . $this->translations->dashboard_trans_51 . '</span>
+							</p>
+						</div>
+						<div class="wphealthtracker-dashboard-row-entry">
+							<p>
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_57 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->exercise_categories_count . ' ' . $this->translations->common_trans_57 . '</span>
+							</p>
+						</div>
 					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_57 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_cals . '</span>
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_61 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_kjoules . '</span>
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_42 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_calories . '
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_43 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_kilojoules . '
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->exercise_trans_43 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->highest_caloric_item . '
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->exercise_trans_44 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->conseq_caloric_decrease . ' ' . $this->translations->common_trans_46 . '
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->exercise_trans_45 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->conseq_caloric_increase . ' ' . $this->translations->common_trans_46 . '
-						</p>
-					</div>
-				</div>
-			</div>';
+				</div>';
 
-			}
-
-			// If there is no Food data with Calories data saved, display the the 'No Data' message.
-			if ( 0 === $this->energy_day_counter ) {
+			} else {
 				$stats_2 = '<div class="wphealthtracker-no-saved-data-div">
-				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
-					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
-					<br>
-					' . $this->translations->d3_trans_64 . '
-					<br>' . $this->translations->d3_trans_65 . '
-				</p>
-			</div>';
+					<p>
+						<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+						<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
+						<br>
+						' . $this->translations->d3_trans_64 . '
+						<br>' . $this->translations->d3_trans_65 . '
+					</p>
+				</div>';
 			}
 
 			// If there is 1 or more days of Exercise data saved...
 			$stats_3 = '';
 			if ( count( $this->alluserdata ) > 0 ) {
-				$stats_3 = '
-			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'computer.svg"/>		
-			<p class="wphealthtracker-d3-chart-subtitle-actual">' . $this->translations->d3_trans_73 . '</p>
-			<div class="wphealthtracker-d3-chart-title-line"></div>
-			<div class="wphealthtracker-dashboard-actual-info">
-				<div class="wphealthtracker-dashboard-row">
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_3 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->alluserdata[0]->humandate . '</span>
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_36 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_carbs . ' ' . $this->translations->dashboard_trans_40 . '
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_35 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_protein . ' ' . $this->translations->dashboard_trans_40 . '
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_38 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->average_daily_fats . ' ' . $this->translations->dashboard_trans_40 . '
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_48 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->protein_total . ' ' . $this->translations->dashboard_trans_40 . '
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_47 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->carbs_total . ' ' . $this->translations->dashboard_trans_40 . '
-						</p>
-					</div>
-					<div class="wphealthtracker-dashboard-row-entry">
-						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
-							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_49 . '</span>
-							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->fats_total . ' ' . $this->translations->dashboard_trans_40 . '
-						</p>
-					</div>
-				</div>
-			</div>';
+				$stats_3 = '';
 
 			}
 

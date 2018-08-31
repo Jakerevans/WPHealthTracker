@@ -4457,6 +4457,10 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 }
 
 function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
+	console.log('mydataEnergy')
+	
+	console.log(mydataEnergy)
+
 
 	// Let's set the color of each muscle sgroup based on how often they're worked out. The darker the color, the more it's worked out.
 
@@ -4524,6 +4528,8 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 			'frequency': 0
 		}
 	];
+
+	 freqArray = mydataEnergy;
 
 	var highestFreq = 0;
 	var highestFreqName = 0;
@@ -4622,6 +4628,8 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 
 	// Now let's append info to the dom that will be used to create the readout details.
 	for ( var i = freqArray.length - 1; i >= 0; i-- ) {
+
+		console.log(freqArray[i])
 
 		switch ( freqArray[i].name ) {
 		case 'Biceps':
@@ -4903,10 +4911,27 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 			var	label = '';
 			var path = $( this ).children( ':first' );
 			var name = path.attr( 'data-name' );
-			var freq = path.attr( 'data-freq' );
+			var freq = path.attr( 'data-freq' ) + ' ' + wphealthtrackerPhpVariables.commontrans43;
 			var first = path.attr( 'data-first' );
 			var last = path.attr( 'data-last' );
 			var exercises = path.attr( 'data-exers' );
+
+			// Checks for no data
+			if ( '' === last ) {
+				last = first;
+			}
+
+			// Checks for no data
+			if ( '' === first ) {
+				first = last;
+			}
+
+			if ( '0 ' + wphealthtrackerPhpVariables.commontrans43 === freq ) {
+				freq = freq + ' <img class="wphealthtracker-stats-no-data-smile" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
+				last = wphealthtrackerPhpVariables.commontrans45 + ' <img class="wphealthtracker-stats-no-data-smile" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
+				first = wphealthtrackerPhpVariables.commontrans45 + ' <img class="wphealthtracker-stats-no-data-smile" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
+				exercises = wphealthtrackerPhpVariables.commontrans45 + ' <img class="wphealthtracker-stats-no-data-smile" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
+			}
 
 			$( '#wphealthtracker-d3chart-readout-exercise-muscle-groups' ).html( '' );
 
@@ -4923,7 +4948,7 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 			}
 
 			// Now build HTML for distance/dest. report...
-			reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'weightlifting.svg"/><p>' + name + '...</p></div><div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans48 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + freq + ' ' + wphealthtrackerPhpVariables.commontrans43 + '</p></div></div>        <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans49 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>     <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans50 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>    <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans51 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + exercises + ' </p></div></div><div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+			reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'weightlifting.svg"/><p>' + name + '...</p></div><div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans48 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + freq + '</p></div></div>        <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans49 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>     <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans50 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + last + ' </p></div></div>    <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans51 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + exercises + ' </p></div></div><div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
 
 			$( '#wphealthtracker-d3chart-readout-exercise-muscle-groups' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 
@@ -4974,19 +4999,36 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 		group.addEventListener( 'mouseover', function( el ) {
 
 			var name = $( this ).attr( 'data-name' );
-			var freq = $( this ).attr( 'data-freq' );
+			var freq = $( this ).attr( 'data-freq' ) + ' ' + wphealthtrackerPhpVariables.commontrans43;
 			var first = $( this ).attr( 'data-first' );
 			var last = $( this ).attr( 'data-last' );
 			var exercises = $( this ).attr( 'data-exers' );
 
+			// Checks for no data
+			if ( '' === last ) {
+				last = first;
+			}
+
+			// Checks for no data
+			if ( '' === first ) {
+				first = last;
+			}
+
+			if ( '0 ' + wphealthtrackerPhpVariables.commontrans43 === freq ) {
+				freq = freq + ' <img class="wphealthtracker-stats-no-data-smile" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
+				last = wphealthtrackerPhpVariables.commontrans45 + ' <img class="wphealthtracker-stats-no-data-smile" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
+				first = wphealthtrackerPhpVariables.commontrans45 + ' <img class="wphealthtracker-stats-no-data-smile" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
+				exercises = wphealthtrackerPhpVariables.commontrans45 + ' <img class="wphealthtracker-stats-no-data-smile" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
+			}
+
 			// Outline the muscle
-			$( '#wphealthtracker-' + name + ' path' ).css({'stroke': '#DE235A', 'stroke-width': '2px'});
+			$( '#wphealthtracker-' + name + ' path' ).css({'stroke': '#DE235A', 'stroke-width': '1px'});
 
 			// Reset the readout HTML
 			$( '#wphealthtracker-d3chart-readout-exercise-muscle-groups' ).html( '' );
 
 			// Now build HTML for distance/dest. report...
-			reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'weightlifting.svg"/><p>' + name + '...</p></div><div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans48 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + freq + ' ' + wphealthtrackerPhpVariables.commontrans43 + '</p></div></div>        <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans49 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>     <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans50 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>    <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans51 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + exercises + ' </p></div></div><div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+			reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'weightlifting.svg"/><p>' + name + '...</p></div><div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans48 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + freq + '</p></div></div>        <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans49 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + first + ' </p></div></div>     <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans50 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + last + ' </p></div></div>    <div class="wphealhttracker-d3chart-exercise-readout-row"><div class="wphealhttracker-d3chart-exercise-readout-cityname"><p> ' + wphealthtrackerPhpVariables.exercisetrans51 + ' </p></div><div class="wphealhttracker-d3chart-exercise-readout-percentage"><p>' + exercises + ' </p></div></div><div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
 
 			$( '#wphealthtracker-d3chart-readout-exercise-muscle-groups' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 
@@ -5016,5 +5058,99 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 }
 
 function wphealthtrackerExerciseD3Three( d3Three, $ ) {
+	console.log('d3Three')
+	console.log(d3Three)
+
+	d3ThreeTwo = [{day: "7", hour: "13", value: 1}, {day: "3", hour: "18", value: 16}]
+	d3ThreeOne = d3Three;
+
+	// This chart: http://bl.ocks.org/tjdecke/5558084, but instead of the two dataset buttons, there will be a drop-down that will let the user switch between 'All Exercises', and each unique exercise the user has performed ever. 
+	 var margin = { top: 50, right: 0, bottom: 100, left: 30 },
+          width = 460 - margin.left - margin.right,
+          height = 300 - margin.top - margin.bottom,
+          gridSize = Math.floor(width / 24),
+          legendElementWidth = gridSize*2,
+          buckets = 9,
+          colors = ["#ffffee","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"], // alternatively colorbrewer.YlGnBu[9]
+          days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+          times = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12a", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p", "12p"];
+          datasets = [d3ThreeOne, d3ThreeTwo];
+
+
+
+      var svg = d3.select("#chart").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      var dayLabels = svg.selectAll(".dayLabel")
+          .data(days)
+          .enter().append("text")
+            .text(function (d) { return d; })
+            .attr("x", 0)
+            .attr("y", function (d, i) { return i * gridSize; })
+            .style("text-anchor", "end")
+            .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+            .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
+
+      var timeLabels = svg.selectAll(".timeLabel")
+          .data(times)
+          .enter().append("text")
+            .text(function(d) { return d; })
+            .attr("x", function(d, i) { return i * gridSize; })
+            .attr("y", 0)
+            .style("text-anchor", "middle")
+            .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+            .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
+
+      var heatmapChart = function(d3ThreeDataSet) {
+       d3.tsv("", function (error, data) {
+
+		// Using my own data instead of suppling a URL/File path to the first argument in the d3.csv() function above (instead, we just pass an empty string)
+		var data = d3ThreeDataSet;
+		data.forEach(function (d) {
+		 	day = d.day,
+            hour = d.hour,
+            value = d.value
+		});
+        	 console.log('datasets!!!')
+          console.log(data);
+          var colorScale = d3.scaleQuantile()
+              .domain([0, buckets - 1, d3.max(data, function (d) { return d.value; })])
+              .range(colors);
+
+          var cards = svg.selectAll(".hour")
+              .data(data, function(d) { console.log('hours!'); return d.day+':'+d.hour;});
+
+          cards.enter().append("rect")
+              .attr("x", function(d) { return (d.hour - 1) * gridSize; })
+              .attr("y", function(d) { return (d.day - 1) * gridSize; })
+              .attr("rx", 4)
+              .attr("ry", 4)
+              .attr("class", "hour bordered")
+              .attr("width", gridSize)
+              .attr("height", gridSize)
+              .transition().duration(1000)
+              	.style("fill", function(d) { 
+
+              		if ( d.value == 0 ){
+              			return '#fff';
+              		} else {
+              			return colorScale(d.value);
+              		}
+              	});
+
+          cards.append("title");
+          cards.select("title").text(function(d) { return d.value; });
+          
+        });  
+      };
+
+      heatmapChart(datasets[0]);
+		// Hide the the spinner
+		$( '#wphealthtracker-spinner-d3-await-3' ).animate({'opacity': '0'});
+
+
 
 }
