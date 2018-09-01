@@ -43,6 +43,9 @@ jQuery( document ).ready( function( $ ) {
 
 					// Unescape the HTML
 					var e = document.createElement( 'div' );
+					var enterViewCont = $( '#wphealthtracker-stats-actual-top-div-1' );
+					var curHeight = enterViewCont.height();
+					var autoHeight = enterViewCont.css( 'height', 'auto' ).height();
 
 					// Turn off spinner
 					$( '#wphealthtracker-spinner-1' ).animate({'opacity': '0'});
@@ -52,14 +55,11 @@ jQuery( document ).ready( function( $ ) {
 					response = 0 === e.childNodes.length ? '' : e.childNodes[0].nodeValue;
 
 					console.log( 'Here is the data we received back from class-wphealthtracker-stats-exercise-ajax-functions.php for the Dashboard - Should simply be the HTML for the Dashboard. This output is AFTER it\'s been unescaped for better readability.' );
-					//console.log( response );
+					console.log( response );
 
 					$( '#wphealthtracker-stats-actual-inner-div-1' ).html( response );
 
-					// For animating the container's height, from 0 to auto
-					var enterViewCont = $( '#wphealthtracker-stats-actual-top-div-1' );
-					var curHeight = enterViewCont.height();
-					var autoHeight = enterViewCont.css( 'height', 'auto' ).height();
+					// For animating the container's height, from 0 to auto.
 					enterViewCont.height( curHeight );
 					enterViewCont.stop().animate({
 						height: autoHeight,
@@ -67,9 +67,7 @@ jQuery( document ).ready( function( $ ) {
 					}, {
 						duration: 1000,
 						complete: function() {
-
-//enterViewCont.css({'height': 'auto'})
-
+							enterViewCont.css({'height': 'auto'});
 						}
 					});
 
@@ -211,7 +209,6 @@ jQuery( document ).ready( function( $ ) {
 						d3ThreeTwo = arrayTwo;
 
 						wphealthtrackerExerciseD3Three( d3Three, $ );
-						console.log('fjdskfdadsfdsfds')
 					}
 
 					// For animating the container's height, from 0 to auto
@@ -225,9 +222,9 @@ jQuery( document ).ready( function( $ ) {
 					}, {
 						duration: 1000,
 						complete: function() {
-$( '#wphealthtracker-stats-actual-inner-d3-2-1' ).append( statsHtmlOne );
-$( '#wphealthtracker-d3-chart-title-div-1-1' ).animate({'opacity': 1}, 2000 );
-d3OneContainer.css({'height': 'auto'});
+							$( '#wphealthtracker-stats-actual-inner-d3-2-1' ).append( statsHtmlOne );
+							$( '#wphealthtracker-d3-chart-title-div-1-1' ).animate({'opacity': 1}, 2000 );
+							d3OneContainer.css({'height': 'auto'});
 						}
 					});
 
@@ -242,9 +239,9 @@ d3OneContainer.css({'height': 'auto'});
 					}, {
 						duration: 1000,
 						complete: function() {
-$( '#wphealthtracker-stats-actual-inner-d3-2-2' ).append( statsHtmlTwo );
-$( '#wphealthtracker-d3-chart-title-div-1-2' ).animate({'opacity': 1}, 2000 );
-d3TwoContainer.css({'height': 'auto'});
+							$( '#wphealthtracker-stats-actual-inner-d3-2-2' ).append( statsHtmlTwo );
+							$( '#wphealthtracker-d3-chart-title-div-1-2' ).animate({'opacity': 1}, 2000 );
+							d3TwoContainer.css({'height': 'auto'});
 						}
 					});
 
@@ -259,9 +256,9 @@ d3TwoContainer.css({'height': 'auto'});
 					}, {
 						duration: 1000,
 						complete: function() {
-$( '#wphealthtracker-stats-actual-inner-d3-2-3' ).append( statsHtmlThree );
-$( '#wphealthtracker-d3-chart-title-div-1-3' ).animate({'opacity': 1}, 2000 );
-d3ThreeContainer.css({'height': 'auto'});
+							$( '#wphealthtracker-stats-actual-inner-d3-2-3' ).append( statsHtmlThree );
+							$( '#wphealthtracker-d3-chart-title-div-1-3' ).animate({'opacity': 1}, 2000 );
+							d3ThreeContainer.css({'height': 'auto'});
 						}
 					});
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Class WPHealthTracker_Vitals_Tab - class-admin-tracker-vitals-tab-ui.php
+ * Class WPHealthTracker_Users_Tab - class-admin-tracker-users-tab-ui.php
  *
  * @author   Jake Evans
  * @category Admin
@@ -12,22 +12,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Tab', false ) ) :
+if ( ! class_exists( 'WPHEALTHTRACKER_Users_Tab', false ) ) :
 	/**
-	 * WPHEALTHTRACKER_Vitals_Tab.
+	 * WPHEALTHTRACKER_Users_Tab.
 	 */
-	class WPHEALTHTRACKER_Vitals_Tab {
+	class WPHEALTHTRACKER_Users_Tab {
 
 		/**
 		 * Constructor that calls all of the Classes functions upon instantiation.
 		 */
 		public function __construct() {
 			require_once WPHEALTHTRACKER_CLASSES_UI_DISPLAY_DIR . 'class-ui-display-template.php';
-			require_once WPHEALTHTRACKER_CLASSES_UI_DISPLAY_DIR . 'class-wphealthtracker-vitals-form.php';
+			require_once WPHEALTHTRACKER_CLASSES_UI_DISPLAY_DIR . 'class-wphealthtracker-users-form.php';
 
 			// Instantiate the class.
 			$this->template = new WPHEALTHTRACKER_UI_Display_Template();
-			$this->form     = new WPHEALTHTRACKER_Vitals_Form();
+			$this->form     = new WPHEALTHTRACKER_Users_Form();
 			$this->output_open_display_container();
 			$this->output_tab_content();
 			$this->output_close_display_container();
@@ -38,12 +38,12 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Tab', false ) ) :
 		 * Outputs the Title and image for this tab.
 		 */
 		public function output_open_display_container() {
-			$icon_url = WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'cardiogram.svg';
+			$icon_url = WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'teamwork.svg';
 
 			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
 			$trans = new WPHealthTracker_Translations();
 			$trans->tab_titles_trans_strings();
-			$title = $trans->tab_title_2;
+			$title = $trans->tab_title_7;
 
 			$return = $this->template->output_open_display_container( $title, $icon_url );
 			echo $return;
@@ -82,4 +82,4 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Tab', false ) ) :
 endif;
 
 // Instantiate the class.
-$am = new WPHEALTHTRACKER_Vitals_Tab();
+$am = new WPHEALTHTRACKER_Users_Tab();

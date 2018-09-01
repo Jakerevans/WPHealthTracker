@@ -1,6 +1,6 @@
 <?php
 /**
- * Class WPHealthTracker_D3_Exercise - class-d3-exercise.php
+ * Class WPHealthTracker_D3_Exercise - class-wphealthtracker-d3-exercise.php
  *
  * @author   Jake Evans
  * @category Transients
@@ -756,12 +756,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 
 			$data_flag = 0;
 			foreach ( $this->alluserdata as $key => $indiv_day ) {
-			/*
-				$t = strtotime('24-8-2014');
-				$day = date( 'N', $t );
-						error_log('$day');
-						error_log($t);
-*/
+
 				// If we have multiple exercises for one day...
 				if ( false !== stripos( $indiv_day->exercisestring, ',' ) ) {
 
@@ -782,14 +777,14 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 						$hour = ltrim( $hour, '0' );
 
 						// If we've saved data at 12:00 AM.
-						if ( '' === $hour || null === $hour || 0 === $hour || '0' === $hour ){
+						if ( '' === $hour || null === $hour || 0 === $hour || '0' === $hour ) {
 							$hour = '24';
 						}
 
 						$hour = (int) $hour + 1;
 						$hour = (string) $hour;
 
-						if ( $hour == '25' ) {
+						if ( '25' === $hour ) {
 							$hour = '1';
 						}
 
@@ -815,14 +810,14 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 					$hour = ltrim( $hour, '0' );
 
 					// If we've saved data at 12:00 AM.
-					if ( '' === $hour || null === $hour || 0 === $hour || '0' === $hour ){
+					if ( '' === $hour || null === $hour || 0 === $hour || '0' === $hour ) {
 						$hour = '24';
 					}
 
 					$hour = (int) $hour + 1;
 					$hour = (string) $hour;
 
-					if ( $hour == '25' ) {
+					if ( '25' === $hour ) {
 						$hour = '1';
 					}
 
@@ -859,9 +854,6 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			foreach ( $temp_array as $key => $value ) {
 				array_push( $this->data_3_array, $value );
 			}
-
-			error_log('$this->data_3_array');
-			error_log(print_r($this->data_3_array,true));
 
 			// Only run this if we've actually geenrated data by this point.
 			if ( count( $this->data_3_array ) > 0 ) {
@@ -1112,19 +1104,17 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 				}
 			}
 
-			// Vars for calculating longest single exercise 
-			$longest_hours   = 0;
-			$longest_minutes = 0;
-			$longest_seconds = 0;
+			// Vars for calculating longest single exercise.
+			$longest_hours         = 0;
+			$longest_minutes       = 0;
+			$longest_seconds       = 0;
 			$total_average_seconds = 0;
 
-			// Now calculate total time spent exercising
+			// Now calculate total time spent exercising.
 			foreach ( $this->alluserdata as $key => $value ) {
 
-
-
 				// If we have saved data...
-				if ( $value->exercisestring != '' ) {
+				if ( '' !== $value->exercisestring ) {
 					if ( stripos( $value->exercisestring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->exercisestring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
@@ -1155,7 +1145,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 								}
 
 								// Convert time to hour of day.
-								$hour = explode( ':', $indiv_day2[2] );
+								$hour    = explode( ':', $indiv_day2[2] );
 								$hour[0] = ltrim( $hour[0], '0' );
 
 								if ( '00' === $hour[1] ) {
@@ -1165,18 +1155,18 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 								}
 
 								// If we've saved data at 12:00 AM.
-								if ( '' === $hour[0] || null === $hour[0] || 0 === $hour[0] || '0' === $hour[0] ){
+								if ( '' === $hour[0] || null === $hour[0] || 0 === $hour[0] || '0' === $hour[0] ) {
 									$hour[0] = 24;
 								}
 
-								$average_seconds = $hour[0] * 3600;
+								$average_seconds       = $hour[0] * 3600;
 								$total_average_seconds = $total_average_seconds + $average_seconds + ( $hour[1] * 60 );
 
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->exercisestring );
-						if ( $indiv_day[0] != '' ) {
+						if ( '' !== $indiv_day[0] ) {
 
 							if ( '' !== $indiv_day[3] ) {
 								if ( $this->translations->common_trans_48 === $indiv_day[4] ) {
@@ -1204,7 +1194,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 								}
 
 									// Convert time to hour of day.
-									$hour = explode( ':', $indiv_day[2] );
+									$hour    = explode( ':', $indiv_day[2] );
 									$hour[0] = ltrim( $hour[0], '0' );
 									if ( '00' === $hour[1] ) {
 										$hour[1] = '0';
@@ -1212,13 +1202,12 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 										$hour[1] = ltrim( $hour[1], '0' );
 									}
 
-
 									// If we've saved data at 12:00 AM.
-									if ( '' === $hour[0] || null === $hour[0] || 0 === $hour[0] || '0' === $hour[0] ){
+									if ( '' === $hour[0] || null === $hour[0] || 0 === $hour[0] || '0' === $hour[0] ) {
 										$hour[0] = 24;
 									}
 
-									$average_seconds = $hour[0] * 3600;
+									$average_seconds       = $hour[0] * 3600;
 									$total_average_seconds = $total_average_seconds + $average_seconds + ( $hour[1] * 60 );
 							}
 						}
@@ -1227,7 +1216,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			}
 
 			// Build longest single exercise - first convert everything to seconds.
-			$longest_seconds = $longest_seconds + ( $longest_hours * 3600 );
+			$longest_seconds       = $longest_seconds + ( $longest_hours * 3600 );
 			$this->longest_seconds = $longest_seconds + ( $longest_minutes * 60 );
 			$this->longest_minutes = number_format( ( $this->longest_seconds / 60 ), 2 );
 			$this->longest_hours   = number_format( ( $this->longest_seconds / 3600 ), 2 );
@@ -1245,36 +1234,22 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 
 			$this->total_exercises = count( $total_exercises );
 
-			$temp1 = intval( ( ($total_average_seconds / $this->total_exercises) / 3600 )      );
-			$temp2 = intval( ( ($total_average_seconds / $this->total_exercises) % 3600 ) );
+			$temp1 = intval( ( ( $total_average_seconds / $this->total_exercises ) / 3600 ) );
+			$temp2 = intval( ( ( $total_average_seconds / $this->total_exercises ) % 3600 ) );
 			$temp2 = intval( ( $temp2 / 60 ) );
 
-
-
-			if($temp2 == 0){
+			if ( 0 === $temp2 ) {
 				$temp2 = '00';
 			}
 
-			if( $temp1 >= 12 ){
-				$temp1 = $temp1 - 11;
+			if ( $temp1 >= 12 ) {
+				$temp1    = $temp1 - 11;
 				$meridiem = $this->translations->common_trans_66;
 			} else {
 				$meridiem = $this->translations->common_trans_65;
 			}
 
 			$this->human_average_time = $temp1 . ':' . $temp2 . ' ' . $meridiem;
-
-
-
-error_log('total_average_seconds');
-error_log($total_average_seconds);
-
-error_log('total_average_seconds divided');
-error_log($total_average_seconds / $this->total_exercises);
-
-error_log('final time');
-error_log($human_average_time);
-
 
 		}
 
@@ -1471,7 +1446,7 @@ error_log($human_average_time);
 							<p>
 								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_55 . '</span>
-								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_hours  . ' ' . $this->translations->common_trans_50 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_hours . ' ' . $this->translations->common_trans_50 . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
@@ -1492,7 +1467,7 @@ error_log($human_average_time);
 							<p>
 								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_62 . '</span>
-								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->longest_hours  . ' ' . $this->translations->common_trans_50 . '</span>
+								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->longest_hours . ' ' . $this->translations->common_trans_50 . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">

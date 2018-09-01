@@ -269,6 +269,11 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->common_trans_71 = __( 'Fri.', 'wphealthtracker-textdomain' );
 			$this->common_trans_72 = __( 'Sat.', 'wphealthtracker-textdomain' );
 			$this->common_trans_73 = __( 'Sun.', 'wphealthtracker-textdomain' );
+			$this->common_trans_74  = __( 'Create a New User Below', 'wphealthtracker-textdomain' );
+			$this->common_trans_75  = __( 'Looks like you don\'t have access to this part of WPHealthTracker!', 'wphealthtracker-textdomain' );
+			$this->common_trans_76  = __( 'Contact', 'wphealthtracker-textdomain' );
+			$this->common_trans_77  = __( 'to request access.', 'wphealthtracker-textdomain' );
+			$this->common_trans_78  = __( 'at', 'wphealthtracker-textdomain' );
 
 			return $translation_array1 = array(
 				'commontrans1'  => $this->common_trans_1,
@@ -373,6 +378,65 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'tabtitle5' => $this->tab_title_5,
 				'tabtitle6' => $this->tab_title_6,
 				'tabtitle7' => $this->tab_title_7,
+			);
+
+		}
+
+		public function users_tab_trans_strings() {
+
+			$this->user_trans_1  = __( 'The Basics', 'wphealthtracker-textdomain' );
+			$this->user_trans_2  = __( 'First Name', 'wphealthtracker-textdomain' );
+			$this->user_trans_3  = __( 'Last Name', 'wphealthtracker-textdomain' );
+			$this->user_trans_4  = __( 'E-Mail', 'wphealthtracker-textdomain' );
+			$this->user_trans_5  = __( 'Confirm E-Mail', 'wphealthtracker-textdomain' );
+			$this->user_trans_6  = __( 'Password', 'wphealthtracker-textdomain' );
+			$this->user_trans_7  = __( 'Confirm Password', 'wphealthtracker-textdomain' );
+			$this->user_trans_8  = __( 'Username', 'wphealthtracker-textdomain' );
+			$this->user_trans_9  = __( 'User Role', 'wphealthtracker-textdomain' );
+			$this->user_trans_10 = __( 'Contact Info', 'wphealthtracker-textdomain' );
+			$this->user_trans_11 = __( 'Country', 'wphealthtracker-textdomain' );
+			$this->user_trans_12 = __( 'Street Address 1', 'wphealthtracker-textdomain' );
+			$this->user_trans_13 = __( 'Street Address 2', 'wphealthtracker-textdomain' );
+			$this->user_trans_14 = __( 'City', 'wphealthtracker-textdomain' );
+			$this->user_trans_15 = __( 'State', 'wphealthtracker-textdomain' );
+			$this->user_trans_16 = __( 'Zip/Postal Code', 'wphealthtracker-textdomain' );
+			$this->user_trans_17 = __( 'Phone', 'wphealthtracker-textdomain' );
+			$this->user_trans_18 = __( 'About This User', 'wphealthtracker-textdomain' );
+			$this->user_trans_19 = __( 'Bio', 'wphealthtracker-textdomain' );
+			$this->user_trans_20 = __( 'Profile Image', 'wphealthtracker-textdomain' );
+			$this->user_trans_21 = __( 'Birthdate', 'wphealthtracker-textdomain' );
+			$this->user_trans_22 = __( 'Height', 'wphealthtracker-textdomain' );
+			$this->user_trans_23 = __( 'Gender', 'wphealthtracker-textdomain' );
+			$this->user_trans_24 = __( 'Main Exercise Focus', 'wphealthtracker-textdomain' );
+			$this->user_trans_25 = __( 'Secondary Exercise Focus', 'wphealthtracker-textdomain' );
+			$this->user_trans_26 = __( 'Favorite Motivational Quote', 'wphealthtracker-textdomain' );
+			$this->user_trans_27 = __( 'Favorite Motivational Song', 'wphealthtracker-textdomain' );
+			$this->user_trans_28 = __( 'Favorite Single Exercise', 'wphealthtracker-textdomain' );
+			$this->user_trans_29 = __( 'Playlist', 'wphealthtracker-textdomain' );
+			$this->user_trans_30 = __( 'Enter First Name', 'wphealthtracker-textdomain' );
+			$this->user_trans_31 = __( 'Enter Last Name', 'wphealthtracker-textdomain' );
+			$this->user_trans_32 = __( 'Enter an E-Mail Address', 'wphealthtracker-textdomain' );
+			$this->user_trans_33 = __( 'Enter E-Mail Address Again', 'wphealthtracker-textdomain' );
+			$this->user_trans_34 = __( 'Create a Password', 'wphealthtracker-textdomain' );
+			$this->user_trans_35 = __( 'Enter Password Again', 'wphealthtracker-textdomain' );
+			$this->user_trans_36 = __( 'Create a Username', 'wphealthtracker-textdomain' );
+			$this->user_trans_37 = __( 'E-Mails', 'wphealthtracker-textdomain' );
+			$this->user_trans_38 = __( 'Match!', 'wphealthtracker-textdomain' );
+			$this->user_trans_39 = __( 'Passwords', 'wphealthtracker-textdomain' );
+			$this->user_trans_40 = __( 'Don\'t Match!', 'wphealthtracker-textdomain' );
+			$this->user_trans_41 = __( 'User', 'wphealthtracker-textdomain' );
+			$this->user_trans_42 = __( 'Reviewer', 'wphealthtracker-textdomain' );
+			$this->user_trans_43 = __( 'Admin', 'wphealthtracker-textdomain' );
+			$this->user_trans_44 = __( 'Select a Role...', 'wphealthtracker-textdomain' );
+			$this->user_trans_45 = __( 'Super Admin', 'wphealthtracker-textdomain' );
+			$this->user_trans_46 = __( 'Whoa!', 'wphealthtracker-textdomain' );
+			$this->user_trans_47 = __( 'There can only be one SuperAdmin, and right now, that\'s you! If you create this user as a SuperAdmin, your role will be changed to Admin, and this new user will become the one-and-only SuperAdmin for WPHealthTracker. This means you\'ll lose some of the abilities you currently have to modify plugin-wide settings and set specific permissions for individual users.', 'wphealthtracker-textdomain' );
+			$this->user_trans_48 = __( 'Contact Information', 'wphealthtracker-textdomain' );
+
+
+			return $translation_array1 = array(
+				'usertrans1' => $this->user_trans_1,
+
 			);
 
 		}

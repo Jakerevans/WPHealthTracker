@@ -88,7 +88,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 		 */
 		private function setup_users_ui() {
 			$this->tabs = array(
-				'users'      => $this->translations->tab_title_1,
+				//'users'      => $this->translations->tab_title_1,
 				'createuser' => $this->translations->tab_title_7,
 			);
 
@@ -113,10 +113,10 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 				'vitals'      => $this->translations->tab_title_2,
 				'diet'        => $this->translations->tab_title_4,
 				'exercise'    => $this->translations->tab_title_6,
-				'medications' => $this->translations->tab_title_8,
-				'lifestyle'   => $this->translations->tab_title_9,
-				'goaltracker' => $this->translations->tab_title_10,
-				'misc'        => $this->translations->tab_title_11,
+				//'medications' => $this->translations->tab_title_8,
+				//'lifestyle'   => $this->translations->tab_title_9,
+				//'goaltracker' => $this->translations->tab_title_10,
+				//'misc'        => $this->translations->tab_title_11,
 			);
 
 			if ( has_filter( 'wphealthtracker_add_tab_tracker' ) ) {
@@ -139,9 +139,9 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 				'vitalstats'    => $this->translations->tab_title_3,
 				'dietstats'     => $this->translations->tab_title_5,
 				'exercisestats' => $this->translations->tab_title_12,
-				'medstats'      => $this->translations->tab_title_13,
-				'lastats'       => $this->translations->tab_title_14,
-				'goalstats'     => $this->translations->tab_title_15,
+				//'medstats'      => $this->translations->tab_title_13,
+				//'lastats'       => $this->translations->tab_title_14,
+				//'goalstats'     => $this->translations->tab_title_15,
 			);
 
 			if ( has_filter( 'wphealthtracker_add_tab_tracker' ) ) {

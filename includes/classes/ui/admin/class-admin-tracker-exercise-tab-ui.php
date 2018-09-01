@@ -81,6 +81,5 @@ if ( ! class_exists( 'Admin_Tracker_Exercise_Tab_Ui', false ) ) :
 
 endif;
 
-
-// Instantiate the class
+// Instantiate the class.
 $am = new Admin_Tracker_Exercise_Tab_Ui();

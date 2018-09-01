@@ -4457,80 +4457,8 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 }
 
 function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
-	console.log('mydataEnergy')
-	
-	console.log(mydataEnergy)
 
-
-	// Let's set the color of each muscle sgroup based on how often they're worked out. The darker the color, the more it's worked out.
-
-	//Running;Endurance/Cardio;01:00;30;Minutes;20;Miles;Forearm/Chest/Biceps;;;,Cycling;Endurance/Cardio;14:01;3;Hours;43;Miles;;;;
-
-	var freqArray = [
-		{
-			'name': 'Biceps',
-			'frequency': 0,
-			'first': '08-21-2018',
-			'last': '08-23-2018',
-			'exers': 'Bicep Curl, Flat-Bench Barbell Press'
-		},
-		{
-			'name': 'Deltoids',
-			'frequency': 0
-		},
-		{
-			'name': 'Forearms',
-			'frequency': 1
-		},
-		{
-			'name': 'Triceps',
-			'frequency': 0
-		},
-		{
-			'name': 'Trapezius',
-			'frequency': 0
-		},
-
-		{
-			'name': 'Lats',
-			'frequency': 4
-		},
-		{
-			'name': 'Abs',
-			'frequency': 3
-		},
-		{
-			'name': 'Obliques',
-			'frequency': 0
-		},
-		{
-			'name': 'Pectorals',
-			'frequency': 10
-		},
-		{
-			'name': 'Adductors',
-			'frequency': 0
-		},
-		{
-			'name': 'Calves',
-			'frequency': 0
-		},
-		{
-			'name': 'Hamstrings',
-			'frequency': 0
-		},
-		{
-			'name': 'Glutes',
-			'frequency': 0
-		},
-		{
-			'name': 'Quads',
-			'frequency': 0
-		}
-	];
-
-	 freqArray = mydataEnergy;
-
+	var freqArray = mydataEnergy;
 	var highestFreq = 0;
 	var highestFreqName = 0;
 	var lowestFreq = 10000000;
@@ -4628,8 +4556,6 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 
 	// Now let's append info to the dom that will be used to create the readout details.
 	for ( var i = freqArray.length - 1; i >= 0; i-- ) {
-
-		console.log(freqArray[i])
 
 		switch ( freqArray[i].name ) {
 		case 'Biceps':
@@ -5059,97 +4985,107 @@ function wphealthtrackerExerciseD3Two( mydataEnergy, $ ) {
 
 function wphealthtrackerExerciseD3Three( d3Three, $ ) {
 
-	d3ThreeOne = d3Three;
-	// This chart: http://bl.ocks.org/tjdecke/5558084, but instead of the two dataset buttons, there will be a drop-down that will let the user switch between 'All Exercises', and each unique exercise the user has performed ever. 
-	 var margin = { top: 50, right: 0, bottom: 0, left: 30 },
-          width = 400 - margin.left - margin.right,
-          height = 270 - margin.top - margin.bottom,
-          gridSize = Math.floor(width / 24),
-          legendElementWidth = gridSize*2,
-          buckets = 9,
-          colors = ["#F6ED53","#F5E150", "#F5CD4C", "#F4B648", "#F39D44", "#F37D3F", "#F1473A"], // alternatively colorbrewer.YlGnBu[9]
-          days = [wphealthtrackerPhpVariables.commontrans67, wphealthtrackerPhpVariables.commontrans68, wphealthtrackerPhpVariables.commontrans69, wphealthtrackerPhpVariables.commontrans70, wphealthtrackerPhpVariables.commontrans71, wphealthtrackerPhpVariables.commontrans72, wphealthtrackerPhpVariables.commontrans73],
-          times = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
-          datasets = [d3ThreeOne];
+	var margin = { top: 50, right: 0, bottom: 0, left: 30 },
+		width = 400 - margin.left - margin.right,
+		height = 270 - margin.top - margin.bottom,
+		gridSize = Math.floor( width / 24 ),
+		legendElementWidth = gridSize * 2,
+		buckets = 9,
+		colors = [ '#F6ED53', '#F5E150', '#F5CD4C', '#F4B648', '#F39D44', '#F37D3F', '#F1473A' ], // alternatively colorbrewer.YlGnBu[ 9 ]
+		days = [ wphealthtrackerPhpVariables.commontrans67, wphealthtrackerPhpVariables.commontrans68, wphealthtrackerPhpVariables.commontrans69, wphealthtrackerPhpVariables.commontrans70, wphealthtrackerPhpVariables.commontrans71, wphealthtrackerPhpVariables.commontrans72, wphealthtrackerPhpVariables.commontrans73 ],
+		times = [ '12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11' ],
+		datasets = [ d3Three ];
 
+	var svg = d3.select( '#wphealthtracker-exercise-time-svg-chart' ).append( 'svg' )
+		.attr( 'width', width + margin.left + margin.right )
+		.attr( 'height', height + margin.top + margin.bottom )
+		.append( 'g' )
+		.attr( 'transform', 'translate( ' + margin.left + ', ' + margin.top + ' )' );
 
+	var dayLabels = svg.selectAll( '.dayLabel' )
+		.data( days )
+		.enter( ).append( 'text' )
+		.text( function( d ) {
+			return d;
+		})
+		.attr( 'x', 0 )
+		.attr( 'y', function( d, i ) {
+			return i * gridSize;
+		})
+		.style( 'text-anchor', 'end' )
+		.attr( 'transform', 'translate( -6, ' + gridSize / 1.5 + ' )' )
+		.attr( 'class', 'dayLabel mono axis' );
 
-      var svg = d3.select("#wphealthtracker-exercise-time-svg-chart").append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	var timeLabels = svg.selectAll( '.timeLabel' )
+		.data( times )
+		.enter( ).append( 'text' )
+		.text( function( d ) {
+			return d;
+		})
+		.attr( 'x', function( d, i ) {
+			return i * gridSize;
+		})
+		.attr( 'y', 0 )
+		.style( 'text-anchor', 'middle' )
+		.attr( 'transform', 'translate( ' + gridSize / 2 + ', -6)' )
+		.attr( 'class', 'timeLabel mono axis' );
 
-      var dayLabels = svg.selectAll(".dayLabel")
-          .data(days)
-          .enter().append("text")
-            .text(function (d) { return d; })
-            .attr("x", 0)
-            .attr("y", function (d, i) { return i * gridSize; })
-            .style("text-anchor", "end")
-            .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
-            .attr("class", "dayLabel mono axis"); 
+	var heatmapChart = function( d3ThreeDataSet ) {
+		d3.tsv( '', function( error, data ) {
 
-      var timeLabels = svg.selectAll(".timeLabel")
-          .data(times)
-          .enter().append("text")
-            .text(function(d) { return d; })
-            .attr("x", function(d, i) { return i * gridSize; })
-            .attr("y", 0)
-            .style("text-anchor", "middle")
-            .attr("transform", "translate(" + gridSize / 2 + ", -6)")
-            .attr("class", "timeLabel mono axis");
+			// Using my own data instead of suppling a URL/File path to the first argument in the d3.csv( ) function above ( instead, we just pass an empty string)
+			var data = d3ThreeDataSet;
+			var colorScale = '';
+			var cards = '';
+			var tooltipContainer = $( '#wphealthtracker-exercise-time-tooltip-div' );
 
-       
+			data.forEach( function( d ) {
+				day = d.day,
+				hour = d.hour,
+				value = d.value;
+			});
 
-      var heatmapChart = function(d3ThreeDataSet) {
-       d3.tsv("", function (error, data) {
+			colorScale = d3.scaleQuantile( )
+				.domain([ 0, buckets - 1, d3.max( data, function( d ) {
+					return d.value;
+				}) ])
+				.range( colors  );
 
+			cards = svg.selectAll( '.wphealthtracker-exercise-times-rects' )
+				.data( data, function( d ) {
+					return d.day + ':' + d.hour;
+				});
 
+			cards.enter( ).append( 'rect' )
+				.attr( 'x', function( d ) {
+					return ( d.hour - 1 ) * gridSize;
+				})
+				.attr( 'y', function( d ) {
+					return ( d.day - 1 ) * gridSize;
+				})
+				.attr( 'rx', 4 )
+				.attr( 'ry', 4 )
+				.attr( 'class', 'wphealthtracker-exercise-times-rects' )
+				.attr( 'width', gridSize )
+				.attr( 'height', gridSize )
+				.on( 'mouseover', function( d, i ) {
 
-		// Using my own data instead of suppling a URL/File path to the first argument in the d3.csv() function above (instead, we just pass an empty string)
-		var data = d3ThreeDataSet;
-		data.forEach(function (d) {
-		 	day = d.day,
-            hour = d.hour,
-            value = d.value
-		});
-		console.log('data')
-		console.log(data)
-          var colorScale = d3.scaleQuantile()
-              .domain([0, buckets - 1, d3.max(data, function (d) { return d.value; })])
-              .range(colors);
+					// For getting the Pounds/Kilograms value at associated position on line
+					var mouse = d3.mouse( this );
+					var value = d.value;
+					var hour = d.hour;
+					var day = '';
+					var meridiem = '';
 
-          var cards = svg.selectAll(".wphealthtracker-exercise-times-rects")
-              .data(data, function(d) { return d.day+':'+d.hour;});
+					if ( 12 >= hour ) {
+						meridiem = wphealthtrackerPhpVariables.commontrans65;
+					} else {
+						meridiem = wphealthtrackerPhpVariables.commontrans66;
+					}
 
-          var tooltipContainer = $('#wphealthtracker-exercise-time-tooltip-div');
-          cards.enter().append("rect")
-              .attr("x", function(d) { return (d.hour - 1) * gridSize; })
-              .attr("y", function(d) { return (d.day - 1) * gridSize; })
-              .attr("rx", 4)
-              .attr("ry", 4)
-              .attr("class", "wphealthtracker-exercise-times-rects")
-              .attr("width", gridSize)
-              .attr("height", gridSize)
-              .on("mouseover", function (d, i) {
-
-				// For getting the Pounds/Kilograms value at associated position on line
-				var mouse = d3.mouse(this);
-				var value = d.value;
-				var hour = d.hour;
-				var day = '';
-				var meridiem = '';
-				console.log(hour)
-				if ( hour <= 12 ){
-					meridiem = wphealthtrackerPhpVariables.commontrans65;
-				} else {
-					meridiem = wphealthtrackerPhpVariables.commontrans66;
-				}
-
-				switch ( d.day ) {
-              		case '1':
-              			day = wphealthtrackerPhpVariables.commontrans58;
+					switch (  d.day ) {
+					case '1':
+						day = wphealthtrackerPhpVariables.commontrans58;
 						break;
 					case '2':
 						day =  wphealthtrackerPhpVariables.commontrans59;
@@ -5169,61 +5105,53 @@ function wphealthtrackerExerciseD3Three( d3Three, $ ) {
 					case '7':
 						day =  wphealthtrackerPhpVariables.commontrans64;
 						break;
-              	}
+					}
 
-				// Now convert hour.
-				if ( hour === '1'  ){
-					console.log('hour equals 1!!!!')
-					hour = '12 ' + wphealthtrackerPhpVariables.commontrans65;
-				} else if( hour === '13') {
-					console.log('hour equals 13!!!!')
-					hour = '12 ' + wphealthtrackerPhpVariables.commontrans66;
-				} else if( parseInt( hour ) > 12  ){
-					hour = (parseInt( hour ) - 13) + ' ' + wphealthtrackerPhpVariables.commontrans66;
-				} else {
-					hour = (parseInt( hour ) - 1) + ' ' + wphealthtrackerPhpVariables.commontrans65;
-				}
+					// Now convert hour.
+					if ( '1' === hour ) {
+						hour = '12 ' + wphealthtrackerPhpVariables.commontrans65;
+					} else if ( '13' === hour ) {
+						hour = '12 ' + wphealthtrackerPhpVariables.commontrans66;
+					} else if ( 12 < parseInt( hour ) ) {
+						hour = ( parseInt( hour ) - 13 ) + ' ' + wphealthtrackerPhpVariables.commontrans66;
+					} else {
+						hour = ( parseInt(  hour ) - 1 ) + ' ' + wphealthtrackerPhpVariables.commontrans65;
+					}
 
+					tooltipContainer.html( '<div class="wphealthtracker-exercise-time-readout-img-div"><img class="wphealthtracker-exercise-time-readout-icon-img" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'calendar.svg"/></div><div><p class="wphealthtracker-exercise-time-readout-title">' + day + '</p><p class="wphealthtracker-exercise-time-readout-subtitle">Exercised ' + value + ' time( s) at ' + hour + '</p></div>' );
 
+					tooltipContainer.css({
+						'opacity': '1',
+						'left': mouse[ 0 ] + 23,
+						'top': mouse[ 1 ] + 115
+					});
 
-				tooltipContainer.html('<div class="wphealthtracker-exercise-time-readout-img-div"><img class="wphealthtracker-exercise-time-readout-icon-img" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'calendar.svg"/></div><div><p class="wphealthtracker-exercise-time-readout-title">'+day+'</p><p class="wphealthtracker-exercise-time-readout-subtitle">Exercised ' + value + ' time(s) at ' + hour + '</p></div>')
+				})
+				.on( 'mouseout', function( d, i ) {
+					tooltipContainer.css({
+						'opacity': '0'
+					});
+				})
+				.transition( ).duration( 1000 )
+				.style( 'fill', function( d ) {
 
-		        tooltipContainer.css({
-		        	'opacity':'1',
-		        	'left': mouse[0]+23,
-		        	'top': mouse[1]+115,
-		        })
+					if ( 0 === d.value ) {
+						return '#fff';
+					} else {
+						return colorScale( d.value );
+					}
+				});
 
-			 })
-             .on("mouseout", function (d, i) {
-             	tooltipContainer.css({
-		        	'opacity':'0'
-		        })
-              })
-             .transition().duration(1000)
-              	.style("fill", function(d) { 
+			cards.append( 'title' );
+			cards.select( 'title' ).text( function( d ) {
+				return d.value;
+			});
+		});
+	};
 
-              		if ( d.value == 0 ){
-              			return '#fff';
-              		} else {
-              			return colorScale(d.value);
-              		}
-              	});
+	heatmapChart( datasets[ 0 ]);
 
-          cards.append("title");
-          cards.select("title").text(function(d) { return d.value; });
-          
-        });  
-      };
-
-    
-
-    heatmapChart(datasets[0]);
-	// Hide the spinner
-	$( '#wphealthtracker-spinner-d3-await-3' ).animate({'opacity': '0'});
-
-	$( '#wphealthtracker-chart-hover-message-macro' ).html( '<p>' + wphealthtrackerPhpVariables.d3trans100 + '</p>' );
-
-
-
+	// Hide the spinner and change the flashing text
+	$(  '#wphealthtracker-spinner-d3-await-3' ).animate({'opacity': '0'});
+	$(  '#wphealthtracker-chart-hover-message-macro' ).html(  '<p>' + wphealthtrackerPhpVariables.d3trans100 + '</p>' );
 }

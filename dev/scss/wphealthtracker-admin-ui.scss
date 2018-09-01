@@ -331,12 +331,6 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     @extend %wphealthtracker-add-delete-row-item-text;
 }
 
-.wphealthtracker-response-form-row-removal-div{
-    @extend %wphealthtracker-response-form-row-removal-div;
-    left: 165px;
-    bottom: 24px;
-}
-
 .wphealthtracker-response-form-row-removal-img{
     @extend %wphealthtracker-response-form-row-removal-img;
 }
@@ -390,6 +384,17 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
 .wphealthtracker-display-top-title {
     @extend %wphealthtracker-border-bottom-1px-solid;
     @extend %wphealthtracker-display-top-title;
+}
+
+.wphealthtracker-spinner-tiny-primary{
+    @extend %wphealthtracker-spinner-dimensions;
+    @extend %wphealthtracker-spinner-color-primary;
+    @extend %wphealthtracker-spinner-animation;
+    height: 10px;
+    width: 10px;
+    opacity: 1;
+    bottom: 6px;
+    position: relative;
 }
 
 .wphealthtracker-spinner-primary-d3-await{
@@ -476,9 +481,39 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     padding-top:0;
 }
 
+.wphealthtracker-response-form-div-row-create-users{
+    @extend %wphealthtracker-response-form-row;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+}
+
 #wphealthtracker-icon-image-question-d3-chart-title{
     @extend %wphealthtracker-icon-image-question;
     display:inline-block;
+}
+
+.wphealthtracker-create-user-div{
+    @extend %wphealthtracker-hidden-row;
+    height:initial;
+}
+
+.wphealthtracker-response-form-row-removal-div{
+    @extend %wphealthtracker-response-form-row-removal-div;
+    left: 165px;
+    bottom: 24px;
+}
+
+.wphealthtracker-indiv-choice-create-user{
+    @extend %wphealthtracker-indiv-choice;
+    height:auto;
+    opacity:1;
+    cursor:initial;
+}
+
+.wphealthtracker-expansion-div-create-user{
+    @extend %wphealthtracker-expansion-div;
+    cursor:initial;
 }
 
 .wphealthtracker-icon-image-question-dashboard{
@@ -733,6 +768,56 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     right: -27px;
 }
 
+.wphealthtracker-response-form-div-row-create-users .wphealthtracker-response-form-users-label-row{
+    position: relative;
+    right: 13px;
+    margin-bottom: 0px;
+    text-align: left;
+    font-variant: all-petite-caps;
+    font-size: 17px;
+}
+
+.wphealthtracker-decorative-red-underline-create-users{
+    border: solid 1px #DE235A;
+    border-bottom:0px;
+    width: 85%;
+    position: relative;
+    left: 2px;
+    bottom: 3px;
+}
+
+.wphealthtracker-response-form-div-row-create-users .wphealthtracker-response-form-users-label-row img{
+    width: 14px;
+    top: 1px;
+}
+
+.wphealthracker-create-users-match-response-div, .wphealthracker-create-users-match-response-div p, .wphealthtracker-spinner-tiny-primary{
+    display: inline-block;
+}
+
+.wphealthracker-create-users-match-response-div p{
+    margin: 0;
+    margin-left: 5px;
+    font-size: 11px;
+    line-height: 1;
+}
+
+.wphealthtracker-create-user-div select{
+    width: 200px;
+}
+
+.wphealthracker-create-users-match-response-div{
+    position: absolute;
+    right: -95px;
+    bottom: 2px;
+    text-align: left;
+    width: 90px;
+}
+
+.wphealthtracker-response-form-div-row-create-users input[type="text"]{
+    width:200px;
+}
+
 .wphealthtracker-response-form-div-row .wphealthtracker-response-form-row-removal-div:hover p,
 .wphealthtracker-response-form-entry-row .wphealthtracker-response-form-row-addition-div:hover p,
 .wphealthtracker-response-form-exercise-set-addition-div:hover p{
@@ -743,6 +828,22 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
     font-weight:bold;
+}
+
+#wphealthtracker-create-user-godmode-warning-message-title{
+    font-weight:bold;
+    font-size:20px;
+    margin:0;
+}
+
+#wphealthtracker-create-user-godmode-warning-message-image{
+    width:50px;
+}
+
+#wphealthtracker-create-user-godmode-warning-message-body{
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
 }
 /*
  *  END NON-SASS CSS
