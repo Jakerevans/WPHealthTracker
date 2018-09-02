@@ -392,7 +392,6 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     @extend %wphealthtracker-spinner-animation;
     height: 10px;
     width: 10px;
-    opacity: 1;
     bottom: 6px;
     position: relative;
 }
@@ -839,6 +838,12 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     font-weight:bold;
 }
 
+#wphealthtracker-create-user-godmode-warning-message{
+    height:0px;
+    opacity:0px;
+    display:none;
+}
+
 #wphealthtracker-create-user-godmode-warning-message-title{
     font-weight:bold;
     font-size:20px;
@@ -853,6 +858,20 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     max-width:600px;
     margin-left:auto;
     margin-right:auto;
+}
+
+#wphealthracker-create-users-match-response-p-email, .wphealthracker-create-users-match-response-p-password{
+    opacity:0;
+}
+
+#wphealthracker-create-users-match-response-p-email #wphealthtracker-stats-good-data-smile-emails-match, #wphealthracker-create-users-match-response-p-password #wphealthtracker-stats-good-data-smile-password-match{
+    left: 16px;
+    top: -18px;
+}
+
+#wphealthracker-create-users-match-response-p-email #wphealthtracker-stats-good-data-smile-emails-mismatch, #wphealthracker-create-users-match-response-p-password #wphealthtracker-stats-good-data-smile-password-mismatch{
+    left: 16px;
+    top: -18px;
 }
 /*
  *  END NON-SASS CSS

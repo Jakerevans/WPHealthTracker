@@ -311,11 +311,9 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 					<div class="wphealthtracker-response-form-div-row-create-users">
 						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_5 . '</p>
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-lastname" type="text" placeholder="' . $this->trans->user_trans_33 . '">
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-emailconfirm" type="text" placeholder="' . $this->trans->user_trans_33 . '">
 						<div class="wphealthracker-create-users-match-response-div" id="wphealthracker-create-users-match-response-div-email">
-							<div class="wphealthtracker-spinner-tiny-primary" id="wphealthtracker-spinner-create-user-email">
-							</div>
-							<p id="wphealthracker-create-users-match-response-p-email">Passwords<br/>Don\'t Match!</p>
+							<p id="wphealthracker-create-users-match-response-p-email"></p>
 						</div>
 					</div>
 				</div>
@@ -328,11 +326,9 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 					<div class="wphealthtracker-response-form-div-row-create-users">
 						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_7 . '</p>
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-lastname" type="text" placeholder="' . $this->trans->user_trans_35 . '">
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-passwordconfirm" type="text" placeholder="' . $this->trans->user_trans_35 . '">
 						<div class="wphealthracker-create-users-match-response-div" id="wphealthracker-create-users-match-response-div-password">
-							<div class="wphealthtracker-spinner-tiny-primary" id="wphealthtracker-spinner-create-user-password">
-							</div>
-							<p id="wphealthracker-create-users-match-response-p-password">Passwords</br>Don\'t Match!</p>
+							<p id="wphealthracker-create-users-match-response-p-password"></p>
 					</div>
 				</div>
 				<div class="wphealthtracker-response-form-data-row-text" id="wphealthtracker-response-form-fisrtname-row-div">

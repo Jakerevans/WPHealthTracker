@@ -122,6 +122,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				$translation_array6 = $trans->diet_tab_trans_strings();
 				$translation_array7 = $trans->exercise_tab_trans_strings();
 				$translation_array8 = $trans->tab_titles_trans_strings();
+				$translation_array9 = $trans->users_tab_trans_strings();
 
 				// Now grab all of our Nonces to pass to the JavaScript for the Ajax functions and merge with the Translations array
 				$final_array_of_php_values = array_merge( $translation_array1, $translation_array2 );
@@ -131,6 +132,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array6 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array7 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array8 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array9 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, json_decode( WPHEALTHTRACKER_FINAL_NONCES_ARRAY, TRUE ) );
 
 				// Adding some other individual values we may need
