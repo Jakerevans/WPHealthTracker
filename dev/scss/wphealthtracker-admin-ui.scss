@@ -776,6 +776,10 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     font-size: 17px;
 }
 
+#wphealthtracker-response-form-users-label-row-password{
+    display:inline-block;
+}
+
 .wphealthtracker-decorative-red-underline-create-users{
     border: solid 1px #DE235A;
     border-bottom:0px;
@@ -813,7 +817,7 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     width: 90px;
 }
 
-.wphealthtracker-response-form-div-row-create-users input[type="text"], .wphealthtracker-response-form-div-row-create-users input[type="number"], .wphealthtracker-response-form-div-row-create-users input[type="date"]{
+.wphealthtracker-response-form-div-row-create-users input[type="text"], .wphealthtracker-response-form-div-row-create-users input[type="number"], .wphealthtracker-response-form-div-row-create-users input[type="date"], .wphealthtracker-response-form-div-row-create-users input[type="password"]{
     width:200px;
 }
 
@@ -840,8 +844,8 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
 
 #wphealthtracker-create-user-godmode-warning-message{
     height:0px;
-    opacity:0px;
-    display:none;
+    opacity:0;
+    overflow:hidden;
 }
 
 #wphealthtracker-create-user-godmode-warning-message-title{
@@ -872,6 +876,29 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
 #wphealthracker-create-users-match-response-p-email #wphealthtracker-stats-good-data-smile-emails-mismatch, #wphealthracker-create-users-match-response-p-password #wphealthtracker-stats-good-data-smile-password-mismatch{
     left: 16px;
     top: -18px;
+}
+
+#wphealthtracker-create-user-show-password{
+    margin: 0;
+    display: inline-block;
+    font-size: 10px;
+    right: 9px;
+    cursor: pointer;
+    position:relative;
+}
+
+#wphealthracker-create-user-profile-img-actual{
+    width:50px;
+}
+
+
+#wphealthtracker-create-user-show-password:hover{
+    -webkit-animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    -moz-animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    -o-animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
 }
 /*
  *  END NON-SASS CSS

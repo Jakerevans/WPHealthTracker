@@ -428,7 +428,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->user_trans_42 = __( 'Reviewer', 'wphealthtracker-textdomain' );
 			$this->user_trans_43 = __( 'Admin', 'wphealthtracker-textdomain' );
 			$this->user_trans_44 = __( 'Select a Role...', 'wphealthtracker-textdomain' );
-			$this->user_trans_45 = __( 'Super Admin', 'wphealthtracker-textdomain' );
+			$this->user_trans_45 = __( 'SuperAdmin', 'wphealthtracker-textdomain' );
 			$this->user_trans_46 = __( 'Whoa!', 'wphealthtracker-textdomain' );
 			$this->user_trans_47 = __( 'There can only be one SuperAdmin, and right now, that\'s you! If you create this user as a SuperAdmin, your role will be changed to Admin, and this new user will become the one-and-only SuperAdmin for WPHealthTracker. This means you\'ll lose some of the abilities you currently have to modify plugin-wide settings and set specific permissions for individual users.', 'wphealthtracker-textdomain' );
 			$this->user_trans_48 = __( 'Contact Information', 'wphealthtracker-textdomain' );
@@ -462,6 +462,8 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->user_trans_76 = __( 'Enter a Motivational Quote', 'wphealthtracker-textdomain' );
 			$this->user_trans_77 = __( 'About This User', 'wphealthtracker-textdomain' );
 			$this->user_trans_78 = __( 'Enter a Short Bio For This User', 'wphealthtracker-textdomain' );
+			$this->user_trans_79 = __( '(Show Password)', 'wphealthtracker-textdomain' );
+			$this->user_trans_80 = __( '(Hide Password)', 'wphealthtracker-textdomain' );
 
 			return $translation_array1 = array(
 				'usertrans1'  => $this->user_trans_1,
@@ -542,6 +544,8 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'usertrans76' => $this->user_trans_76,
 				'usertrans77' => $this->user_trans_77,
 				'usertrans78' => $this->user_trans_78,
+				'usertrans79' => $this->user_trans_79,
+				'usertrans80' => $this->user_trans_80,
 
 			);
 
