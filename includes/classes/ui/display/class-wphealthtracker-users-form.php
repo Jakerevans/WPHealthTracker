@@ -1,6 +1,6 @@
 <?php
 /**
- * Class WPHEALTHTRACKER_Users_Form - class-users-form.php
+ * Class WPHEALTHTRACKER_Users_Form - class-wphealhtrackers-users-form.php
  *
  * @author   Jake Evans
  * @category Display
@@ -89,11 +89,18 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 		 *  @var string $create_form_part_one
 		 */
 		public $create_form_part_one = '';
+
 		/** Common member variable
 		 *
-		 *  @var string $create_form_part_one
+		 *  @var string $create_form_part_two
 		 */
 		public $create_form_part_two = '';
+
+		/** Common member variable
+		 *
+		 *  @var string $create_form_part_three
+		 */
+		public $create_form_part_three = '';
 
 		/** Common member variable
 		 *
@@ -114,20 +121,21 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 			$this->trans->common_trans_strings();
 			$this->trans->dashboard_trans_strings();
 			$this->trans->users_tab_trans_strings();
+			$this->trans->exercise_tab_trans_strings();
 
 			// Set the current WordPress user.
 			$currentwpuser = wp_get_current_user();
 
 			// Now we'll determine access, and stop all execution if user isn't allowed in.
 			require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
-			$this->access = new WPHealthTracker_Utilities_Accesscheck();
+			$this->access          = new WPHealthTracker_Utilities_Accesscheck();
 			$this->currentwphtuser = $this->access->wphealthtracker_accesscheck( $currentwpuser->ID );
 
 			// If we received false from accesscheck class, display permissions message.
 			if ( false === $this->currentwphtuser ) {
 
 				// Outputs the 'No Permission!' message.
-				$this->wphealthtracker_no_permission_message();
+				$this->initial_output = $this->access->wphealthtracker_accesscheck_no_permission_message();
 				return false;
 			}
 
@@ -150,6 +158,9 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 
 			// Creating the Contact Info form part
 			$this->create_form_part_contact_info();
+
+			// Creating the Profile Info form part
+			$this->create_form_part_profile_info();
 
 			// Creating the ending HTML
 			$this->create_form_part_the_ending();
@@ -187,6 +198,10 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 		fav. workout song
 		fav single exercise
 		playlist
+
+	
+
+
 	
 
 
@@ -196,41 +211,6 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 
 
 */
-
-		public function wphealthtracker_no_permission_message() {
-
-			// Grab Superadmin from the settings table to the user knows who to contact.
-			global $wpdb;
-
-			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
-			$transients          = new WPHealthTracker_Transients();
-			$settings_table_name = $wpdb->prefix . 'wphealthtracker_general_settings';
-			$transient_name      = 'wpht_' . md5( 'SELECT * FROM ' . $settings_table_name );
-			$transient_exists    = $transients->existing_transient_check( $transient_name );
-			if ( $transient_exists ) {
-				$this->general_settings = $transient_exists;
-			} else {
-				$query                  = 'SELECT * FROM ' . $settings_table_name;
-				$this->general_settings = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
-			}
-
-			$gmuser = $this->general_settings->gmuser;
-			$gmuser = explode( ',', $gmuser );
-
-			$this->initial_output = '<div class="wphealthtracker-no-saved-data-stats-div">
-				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
-					<span class="wphealthtracker-no-saved-span-stats-1">' . $this->trans->dashboard_trans_21 . '</span>
-					<br>
-					' . $this->trans->common_trans_75 . '
-					<br>
-					' . $this->trans->common_trans_76 . ' ' . $gmuser[0] . ' ' . $gmuser[1] . ' ' . $this->trans->common_trans_78 . ' ' . $gmuser[2] . ' ' . $this->trans->common_trans_77 . '
-					<br><br>
-				</p>
-			</div>';
-		}
-
 
 		/**
 		 *  Get all saved Users from the WPHealthTracker Users table.
@@ -374,22 +354,6 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 		}
 
 		public function create_form_part_contact_info() {
-
-
-
-
-			/*
-
-				contact info
-	
-		country
-		street1
-		street2
-		city
-		state
-		zip
-		phone*/
-
 			$this->create_form_part_two = '
 			<div class="wphealthtracker-response-form-entry-row">
 				<h2 class="wphealthtracker-response-form-heading-black">
@@ -397,65 +361,160 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 				' . $this->trans->user_trans_48 . '<img class="wphealthtracker-icon-h2-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'phonebook.svg"></h2>
 				<div class="wphealthtracker-response-form-data-row-text" id="wphealthtracker-response-form-fisrtname-row-div">
 					<div class="wphealthtracker-response-form-div-row-create-users">
-						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_2 . '</p>
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_11 . '</p>
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-firstname" type="text" placeholder="' . $this->trans->user_trans_30 . '">
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-country" type="text" placeholder="' . $this->trans->user_trans_49 . '">
 					</div>
 					<div class="wphealthtracker-response-form-div-row-create-users">
-						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_3 . '</p>
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_12 . '</p>
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-lastname" type="text" placeholder="' . $this->trans->user_trans_31 . '">
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-street1" type="text" placeholder="' . $this->trans->user_trans_50 . '">
 					</div>
 				</div>
 				<div class="wphealthtracker-response-form-data-row-text" id="wphealthtracker-response-form-fisrtname-row-div">
 					<div class="wphealthtracker-response-form-div-row-create-users">
-						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-email" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_4 . '</p>
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-email" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_13 . '</p>
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-email" type="text" placeholder="' . $this->trans->user_trans_32 . '">
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-street2" type="text" placeholder="' . $this->trans->user_trans_51 . '">
 					</div>
 					<div class="wphealthtracker-response-form-div-row-create-users">
-						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_5 . '</p>
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_14 . '</p>
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-lastname" type="text" placeholder="' . $this->trans->user_trans_33 . '">
-						<div class="wphealthracker-create-users-match-response-div" id="wphealthracker-create-users-match-response-div-email">
-							<div class="wphealthtracker-spinner-tiny-primary" id="wphealthtracker-spinner-create-user-email">
-							</div>
-							<p id="wphealthracker-create-users-match-response-p-email">Passwords<br/>Don\'t Match!</p>
-						</div>
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-city" type="text" placeholder="' . $this->trans->user_trans_52 . '">
 					</div>
 				</div>
 				<div class="wphealthtracker-response-form-data-row-text" id="wphealthtracker-response-form-fisrtname-row-div">
 					<div class="wphealthtracker-response-form-div-row-create-users">
-						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-password" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_6 . '
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-password" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_15 . '
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-password" type="text" placeholder="' . $this->trans->user_trans_34 . '">
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-state" type="text" placeholder="' . $this->trans->user_trans_53 . '">
 					</div>
 					<div class="wphealthtracker-response-form-div-row-create-users">
-						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_7 . '</p>
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_16 . '</p>
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-lastname" type="text" placeholder="' . $this->trans->user_trans_35 . '">
-						<div class="wphealthracker-create-users-match-response-div" id="wphealthracker-create-users-match-response-div-password">
-							<div class="wphealthtracker-spinner-tiny-primary" id="wphealthtracker-spinner-create-user-password">
-							</div>
-							<p id="wphealthracker-create-users-match-response-p-password">Passwords</br>Don\'t Match!</p>
+						<input class="wphealthtracker-response-form-input-number" id="wphealthtracker-response-form-input-text-zip" type="number" placeholder="' . $this->trans->user_trans_54 . '">
 					</div>
 				</div>
 				<div class="wphealthtracker-response-form-data-row-text" id="wphealthtracker-response-form-fisrtname-row-div">
 					<div class="wphealthtracker-response-form-div-row-create-users">
-						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-password" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_8 . '
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-password" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_17 . '
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-password" type="text" placeholder="' . $this->trans->user_trans_36 . '">
-					</div>
-					<div class="wphealthtracker-response-form-div-row-create-users">
-						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_9 . '</p>
-						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						 ' . $this->role_select_string . '
-						</div>
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-phone" type="text" placeholder="' . $this->trans->user_trans_55 . '">
 					</div>
 				</div>
-				' . $this->role_warning . '
 			</div>';
+		}
 
+		public function create_form_part_profile_info() {
+
+/*
+	bio
+
+
+		ethnicity
+		height
+
+		main exercise interest
+		secondary exercise interest
+
+		fav. quote
+		fav. workout song
+
+		//fav single exercise
+
+		playlist
+
+*/
+
+
+			$this->create_form_part_three = '
+			<div class="wphealthtracker-response-form-entry-row">
+				<h2 class="wphealthtracker-response-form-heading-black">
+				<img id="wphealthtracker-icon-image-question-id-2" class="wphealthtracker-icon-image-question-enter-view" data-label="user-basics" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">
+				' . $this->trans->user_trans_56 . '<img style="width:40px;" class="wphealthtracker-icon-h2-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'conversation.svg"></h2>
+				<div class="wphealthtracker-response-form-data-row-text" id="wphealthtracker-response-form-fisrtname-row-div">
+					<div id="wphealthtracker-create-users-profile-img-div"></div>
+					<div class="wphealthtracker-response-form-div-row-create-users">
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_57 . '</p>
+						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-profileimage" type="text" placeholder="' . $this->trans->user_trans_58 . '">
+						<button class="wphealthtracker-response-form-input-button" id="wphealthtracker-response-form-input-text-profileimage">Select Profile Image</button>
+					</div>
+				</div>
+				<div class="wphealthtracker-response-form-data-row-text" id="wphealthtracker-response-form-fisrtname-row-div">
+					<div class="wphealthtracker-response-form-div-row-create-users">
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-email" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_59 . '</p>
+						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-street2" type="date" placeholder="' . $this->trans->user_trans_51 . '">
+					</div>
+					<div class="wphealthtracker-response-form-div-row-create-users">
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_60 . '</p>
+						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
+						<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-select-create-user-gender">
+							<option selected disabled default>' . $this->trans->user_trans_63 . '</option>
+							<option>' . $this->trans->user_trans_61 . '</option>
+							<option>' . $this->trans->user_trans_62 . '</option>
+						</select>
+					</div>
+				</div>
+				<div class="wphealthtracker-response-form-data-row-text" id="wphealthtracker-response-form-fisrtname-row-div">
+					<div class="wphealthtracker-response-form-div-row-create-users">
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-password" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_64 . '
+						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
+						<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-select-create-user-height-feet">
+							<option selected disabled default>' . $this->trans->user_trans_66 . '</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+						</select>
+						<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-select-create-user-height-feet">
+							<option selected disabled default>' . $this->trans->user_trans_67 . '</option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+						</select>
+					</div>
+					<div class="wphealthtracker-response-form-div-row-create-users">
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_65 . '</p>
+						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
+						<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-select-create-user-mainfocus">
+							<option selected disabled default>' . $this->trans->user_trans_68 . '</option>
+							<option>' . $this->trans->user_trans_70 . '</option>
+							<option>' . $this->trans->user_trans_71 . '</option>
+							<option>' . $this->trans->user_trans_72 . '</option>
+							<option>' . $this->trans->user_trans_69 . '</option>
+							<option>' . $this->trans->exercise_trans_9 . '</option>
+							<option>' . $this->trans->exercise_trans_10 . '</option>
+							<option>' . $this->trans->exercise_trans_11 . '</option>
+							<option>' . $this->trans->exercise_trans_12 . '</option>
+							<option>' . $this->trans->common_trans_47 . '</option>
+						</select>
+					</div>
+				</div>
+				<div class="wphealthtracker-response-form-data-row-text" id="wphealthtracker-response-form-fisrtname-row-div">
+					<div class="wphealthtracker-response-form-div-row-create-users">
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_75 . '</p>
+						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
+						<textarea class="wphealthtracker-response-form-input-textarea" id="wphealthtracker-response-form-input-textarea-motivational-quote" placeholder="' . $this->trans->user_trans_76 . '"></textarea>
+					</div>
+					<div class="wphealthtracker-response-form-div-row-create-users">
+						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_77 . '</p>
+						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
+						<textarea class="wphealthtracker-response-form-input-textarea" id="wphealthtracker-response-form-input-textarea-bio" placeholder="' . $this->trans->user_trans_78 . '"></textarea>
+					</div>
+				</div>
+			</div>';
 		}
 
 
@@ -463,7 +522,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 		 * Creates the form user fills out for creating new user
 		 */
 		public function output_create_users_form() {
-			$this->initial_output = $this->create_form_part_the_beginning . $this->create_form_part_one . $this->create_form_part_two . $this->create_form_part_the_ending;
+			$this->initial_output = $this->create_form_part_the_beginning . $this->create_form_part_one . $this->create_form_part_two . $this->create_form_part_three . $this->create_form_part_the_ending;
 		}
 	}
 endif;

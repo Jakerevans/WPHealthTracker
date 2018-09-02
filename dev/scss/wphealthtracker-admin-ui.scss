@@ -814,8 +814,17 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     width: 90px;
 }
 
-.wphealthtracker-response-form-div-row-create-users input[type="text"]{
+.wphealthtracker-response-form-div-row-create-users input[type="text"], .wphealthtracker-response-form-div-row-create-users input[type="number"], .wphealthtracker-response-form-div-row-create-users input[type="date"]{
     width:200px;
+}
+
+.wphealthtracker-response-form-div-row-create-users .wphealthtracker-response-form-input-textarea{
+    width:300px;
+    height:100px;
+}
+
+#wphealthtracker-response-form-select-create-user-height-feet{
+    width:100px;
 }
 
 .wphealthtracker-response-form-div-row .wphealthtracker-response-form-row-removal-div:hover p,
