@@ -248,12 +248,36 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				$test_name = $wpdb->prefix . 'wphealthtracker_users';
 				if ( $test_name !== $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) ) {
 					$db_delta_result = dbDelta( $sql_create_table );
-					$table_name      = $wpdb->prefix . 'wphealthtracker_general_settings';
+					$table_name      = $wpdb->prefix . 'wphealthtracker_users';
 					$current_user    = wp_get_current_user();
+					if ( ! ( $current_user instanceof WP_User ) ) {
+						return;
+					}
+
+					$firstname = '';
+					$lastname  = '';
+					if ( '' === $current_user->user_firstname || null === $current_user->user_firstname ) {
+
+						if ( '' === $current_user->display_name || null === $current_user->display_name ) {
+							$firstname = 'Admin';
+							$lastname  = '';
+						} else {
+							$firstname = $current_user->display_name;
+							$lastname  = '';
+						}
+					} else {
+						$firstname = $current_user->user_firstname;
+						$lastname  = $current_user->user_lastname;
+					}
+
 					$wpdb->insert( $table_name,
 						array(
-							'role'     => 'godmode',
-							'wpuserid' => $current_user->ID,
+							'role'      => 'godmode',
+							'username'  => $current_user->user_login,
+							'email'     => $current_user->user_email,
+							'firstname' => $firstname,
+							'lastname'  => $lastname,
+							'wpuserid'  => $current_user->ID,
 						)
 					);
 				}
