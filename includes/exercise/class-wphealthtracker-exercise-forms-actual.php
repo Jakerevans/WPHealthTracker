@@ -503,7 +503,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							</div>
 							<div class="wphealthtracker-expand-minimize-div-all-data">
 								<p class="wphealthtracker-expand-minimize-p" id="wphealthtracker-expand-minimize-p-enter" style="opacity: 1;">' . $this->translations->common_trans_1 . '</p>
-								<img src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
+								<img src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
 							</div>
 						</div>
 						<div class="wphealthtracker-response-form-exercise-shaded-container" id="wphealthtracker-response-form-exercise-shaded-container-' . $key . '-' . $loop_num . '">
@@ -664,7 +664,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							</div>
 							<div class="wphealthtracker-expand-minimize-div-all-data">
 								<p class="wphealthtracker-expand-minimize-p" id="wphealthtracker-expand-minimize-p-enter" style="opacity: 1;">' . $this->translations->common_trans_1 . '</p>
-								<img src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
+								<img src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
 							</div>
 						</div>
 						<div class="wphealthtracker-response-form-exercise-shaded-container" id="wphealthtracker-response-form-exercise-shaded-container-' . ( $key + 1 ) . '-' . $loop_num . '" style="height: 638px;">
@@ -1157,7 +1157,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 						</div>
 						<div class="wphealthtracker-expand-minimize-div-all-data">
 							<p class="wphealthtracker-expand-minimize-p" id="wphealthtracker-expand-minimize-p-enter" style="opacity: 1;">' . $this->translations->common_trans_1 . '</p>
-							<img src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
+							<img src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
 						</div>
 					</div>
 					<div class="wphealthtracker-response-form-exercise-shaded-container" id="wphealthtracker-response-form-exercise-shaded-container-' . $key . '-' . $loop_num . '" ' . $heightstring . '>
@@ -1319,7 +1319,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							</div>
 							<div class="wphealthtracker-expand-minimize-div-all-data">
 								<p class="wphealthtracker-expand-minimize-p" id="wphealthtracker-expand-minimize-p-enter" style="opacity: 1;">' . $this->translations->common_trans_1 . '</p>
-								<img src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
+								<img src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
 							</div>
 						</div>
 						<div class="wphealthtracker-response-form-exercise-shaded-container" id="wphealthtracker-response-form-exercise-shaded-container-' . $key . '-' . $loop_num . '" style="height: 638px;">
@@ -1498,7 +1498,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 					</div>
 					<div class="wphealthtracker-expand-minimize-div-all-data">
 						<p class="wphealthtracker-expand-minimize-p" id="wphealthtracker-expand-minimize-p-enter" style="opacity: 1;">' . $this->translations->common_trans_1 . '</p>
-						<img src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
+						<img src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'rotate.svg" class="wphealthtracker-indiv-choice-img-rotate" id="wphealthtracker-indiv-choice-img-rotate-enter">
 					</div>
 				</div>
 				<div class="wphealthtracker-response-form-exercise-shaded-container" id="wphealthtracker-response-form-exercise-shaded-container-' . $key . '-' . $loop_num . '" style="height: 638px;">

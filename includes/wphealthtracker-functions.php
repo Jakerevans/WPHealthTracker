@@ -235,7 +235,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 						favoritemotivationalquote MEDIUMTEXT,
 						playlist LONGTEXT,
 						website varchar(255),
-						faecbook varchar(255),
+						facebook varchar(255),
 						twitter varchar(255),
 						instagram varchar(255),
 						googleplus varchar(255),
@@ -243,10 +243,21 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 			            PRIMARY KEY  (ID),
 			              KEY firstname (firstname)
      				) $charset_collate; ";
-				$db_delta_result  = dbDelta( $sql_create_table );
 
+				// If table doesn't exist, create table and add initial data to it.
+				$test_name = $wpdb->prefix . 'wphealthtracker_users';
+				if ( $test_name !== $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) ) {
+					$db_delta_result = dbDelta( $sql_create_table );
+					$table_name      = $wpdb->prefix . 'wphealthtracker_general_settings';
+					$current_user    = wp_get_current_user();
+					$wpdb->insert( $table_name,
+						array(
+							'role'     => 'godmode',
+							'wpuserid' => $current_user->ID,
+						)
+					);
+				}
 				$key = $wpdb->prefix . 'wphealthtracker_users';
-
 				return $db_delta_result[ $key ];
 			} else {
 				return 'Table already exists';

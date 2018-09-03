@@ -108,8 +108,10 @@ global $wpdb;
 	require_once 'includes/wphealthtracker-functions.php';
 	require_once 'includes/vitals/wphealthtracker-vitals-ajax.php';
 	require_once 'includes/diet/class-wphealthtracker-diet-ajax-functions.php';
+	require_once 'includes/users/class-wphealthtracker-users-ajax-functions.php';
 	require_once 'includes/exercise/class-wphealthtracker-exercise-ajax-functions.php';
 	require_once 'includes/diet/wphealthtracker-diet-functions.php';
+	require_once 'includes/users/wphealthtracker-users-functions.php';
 	require_once 'includes/exercise/wphealthtracker-exercise-functions.php';
 	require_once 'includes/vitalstats/wphealthtracker-stats-vitals-ajax.php';
 	require_once 'includes/dietstats/class-wphealthtracker-stats-diet-ajax-functions.php';
@@ -139,6 +141,9 @@ global $wpdb;
 
 	// Root Diet & Meds Directory for this plugin.
 	define( 'WPHEALTHTRACKER_DIET_DIR', WPHEALTHTRACKER_ROOT_DIR . 'includes/diet/' );
+
+	// Root Users Directory for this plugin.
+	define( 'WPHEALTHTRACKER_USERS_DIR', WPHEALTHTRACKER_ROOT_DIR . 'includes/users/' );
 
 	// Root Exercise Directory for this plugin.
 	define( 'WPHEALTHTRACKER_EXERCISE_DIR', WPHEALTHTRACKER_ROOT_DIR . 'includes/exercise/' );
@@ -221,6 +226,8 @@ global $wpdb;
 			'dietnonce2'          => 'wphealthtracker_jre_selecteduser_diet_view_action_callback',
 			'dietnonce3'          => 'wphealthtracker_jre_save_diet_data_action_callback',
 			'dietnonce4'          => 'wphealthtracker_jre_selecteduser_diet_filter_data_action_callback',
+			'usersnonce1'         => 'wphealthtracker_jre_save_users_data_action_callback',
+			'usersnonce2'         => 'wphealthtracker_jre_create_wp_users_data_action',
 			'statsdietnonce1'     => 'wphealthtracker_jre_grab_user_data_for_diet_dashboard_action_callback',
 			'statsdietnonce2'     => 'wphealthtracker_jre_grab_user_data_for_diet_d3_action_callback',
 			'exercisenonce1'      => 'wphealthtracker_jre_selecteduser_exercise_enter_action_callback',
@@ -252,6 +259,12 @@ global $wpdb;
 
 	// Call the class found in wphealthtracker-diet-ajax.php.
 	$wp_health_tracker_diet_ajax_functions = new WPHealthTracker_Diet_Ajax_Functions();
+
+	// Call the class found in wphealthtracker-users-functions.php.
+	$wp_health_tracker_users_functions = new WPHealthTracker_Users_Functions();
+
+	// Call the class found in wphealthtracker-users-ajax.php.
+	$wp_health_tracker_users_ajax_functions = new WPHealthTracker_Users_Ajax_Functions();
 
 	// Call the class found in wphealthtracker-exercise-functions.php.
 	$wp_health_tracker_exercise_functions = new WPHealthTracker_Exercise_Functions();
@@ -366,6 +379,18 @@ global $wpdb;
 	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_selecteduser_diet_filter_data_action', array( $wp_health_tracker_diet_ajax_functions, 'wphealthtracker_jre_selecteduser_diet_filter_data_action_callback' ) );
 
 /* END OF AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-DIET-AJAX.PHP THAT ARE SPECIFIC TO THE DIET TAB */
+
+/* AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-USERS-AJAX.PHP THAT ARE SPECIFIC TO THE USERS TAB */
+
+	// For saving a new user on the Create Users tab.
+	add_action( 'wp_ajax_wphealthtracker_jre_create_wp_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_create_wp_users_data_action_callback' ) );
+	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_create_wp_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_create_wp_users_data_action_callback' ) );
+
+	// For saving and/or updating existing user data on the Users tab.
+	add_action( 'wp_ajax_wphealthtracker_jre_save_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_save_users_data_action_callback' ) );
+	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_save_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_save_users_data_action_callback' ) );
+
+/* END OF AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-USERS-AJAX.PHP THAT ARE SPECIFIC TO THE USERS TAB */
 
 /* NON-AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-EXERCISE-FUNCTIONS.PHP THAT ARE SPECIFIC TO THE EXERCISE TAB */
 

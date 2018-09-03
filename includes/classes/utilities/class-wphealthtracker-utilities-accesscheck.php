@@ -98,7 +98,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 
 			return '<div class="wphealthtracker-no-saved-data-stats-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span-stats-1">' . $this->trans->dashboard_trans_21 . '</span>
 					<br>
 					' . $this->trans->common_trans_75 . '

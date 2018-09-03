@@ -323,7 +323,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			if ( 0 === count( $this->data_1_array ) ) {
 				return '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_12 . '
@@ -333,7 +333,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			} elseif ( 1 === count( $this->data_1_array ) ) {
 				return '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_16 . '
@@ -473,7 +473,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			if ( 0 === count( $this->data_2_array ) ) {
 				return '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_22 . '
@@ -483,7 +483,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			} elseif ( 1 === count( $this->data_2_array ) ) {
 				return '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_24 . '
@@ -539,7 +539,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			if ( 0 === count( $this->data_3_array ) ) {
 				return '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_51 . '
@@ -549,7 +549,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			} elseif ( 1 === count( $this->data_3_array ) ) {
 				return '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_49 . '
@@ -1161,7 +1161,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			if ( 1 === $this->weight_entry_counter ) {
 				$stats_1 = '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_16 . '
@@ -1174,7 +1174,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			if ( 0 === $this->weight_entry_counter ) {
 				$stats_1 = '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_12 . '
@@ -1257,7 +1257,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			if ( 1 === $this->bp_day_counter ) {
 				$stats_2 = '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_24 . '
@@ -1270,7 +1270,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			if ( 0 === $this->bp_day_counter ) {
 				$stats_2 = '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_22 . '
@@ -1353,7 +1353,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			if ( 1 === $this->ch_day_counter ) {
 				$stats_3 = '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_49 . '
@@ -1366,7 +1366,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			if ( 0 === $this->ch_day_counter ) {
 				$stats_3 = '<div class="wphealthtracker-no-saved-data-div">
 				<p>
-					<img class="wphealthtracker-shocked-image" src="http://localhost:8888/local/wp-content/plugins/wphealthtracker/assets/img/icons/shocked.svg">
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
 					' . $this->translations->d3_trans_51 . '

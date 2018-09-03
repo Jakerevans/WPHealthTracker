@@ -108,6 +108,14 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 		 */
 		public $create_form_part_the_ending = '';
 
+
+		/** Common member variable
+		 *
+		 *  @var string create_form_part_save
+		 */
+		public $create_form_part_save = '';
+
+
 		/**
 		 * Class Constructor
 		 */
@@ -153,19 +161,22 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 			// Creates the User Roles Drop-down (makes superadmin check).
 			$this->wphealthtracker_create_role_dropdown_and_warning();
 
-			// Creating the beginning HTML
+			// Creating the beginning HTML.
 			$this->create_form_part_the_beginning();
 
-			// Creating 'The Basics' form part
+			// Creating 'The Basics' form part.
 			$this->create_form_part_the_basics();
 
-			// Creating the Contact Info form part
+			// Creating the Contact Info form part.
 			$this->create_form_part_contact_info();
 
-			// Creating the Profile Info form part
+			// Creating the Profile Info form part.
 			$this->create_form_part_profile_info();
 
-			// Creating the ending HTML
+			// Creating the save button and response div.
+			$this->create_form_part_save_response();
+
+			// Creating the ending HTML.
 			$this->create_form_part_the_ending();
 
 			// Output final HTML.
@@ -278,6 +289,16 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 					<div class="wphealthtracker-expansion-div-create-user" id="wphealthtracker-expansion-div-enter">
 						<img src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'data-entry.svg" class="wphealthtracker-indiv-choice-img" />
 						<p class="wphealthtracker-indiv-choice-p">' . $this->trans->common_trans_74 . '</p>
+						<p class="wphealthtracker-indiv-choice-sub-p">' . $this->trans->user_trans_82 . '</p>
+						<ul class="wphealthtracker-indiv-choice-sub-ul">
+							<li>' . $this->trans->user_trans_2 . '</li>
+							<li>' . $this->trans->user_trans_4 . '</li>
+							<li>' . $this->trans->user_trans_6 . '</li>
+							<li>' . $this->trans->user_trans_8 . '</li>
+						</ul>
+						<p class="wphealthtracker-indiv-choice-sub-p">' . $this->trans->user_trans_83 . ' 
+							<img class="wphealthtracker-stats-indiv-choice-good-data-smile" data-label="user-basics" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'happy.svg">
+						</p>
 					</div>
 					<div class="wphealthtracker-create-user-div" id="wphealthtracker-response-form-data-row-actual-0">';
 		}
@@ -407,26 +428,6 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 
 		public function create_form_part_profile_info() {
 
-/*
-	bio
-
-
-		ethnicity
-		height
-
-		main exercise interest
-		secondary exercise interest
-
-		fav. quote
-		fav. workout song
-
-		//fav single exercise
-
-		playlist
-
-*/
-
-
 			$this->create_form_part_three = '
 			<div class="wphealthtracker-response-form-entry-row">
 				<h2 class="wphealthtracker-response-form-heading-black">
@@ -445,7 +446,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 					<div class="wphealthtracker-response-form-div-row-create-users">
 						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-email" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_59 . '</p>
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-street2" type="date" placeholder="' . $this->trans->user_trans_51 . '">
+						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-date-birthday" type="date" placeholder="' . $this->trans->user_trans_51 . '">
 					</div>
 					<div class="wphealthtracker-response-form-div-row-create-users">
 						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-firstname" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_60 . '</p>
@@ -469,7 +470,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 							<option>6</option>
 							<option>7</option>
 						</select>
-						<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-select-create-user-height-feet">
+						<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-select-create-user-height-inches">
 							<option selected disabled default>' . $this->trans->user_trans_67 . '</option>
 							<option>0</option>
 							<option>1</option>
@@ -517,12 +518,27 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 			</div>';
 		}
 
+		public function create_form_part_save_response() {
+
+			$this->create_form_part_save =
+			'<div class="wphealthtracker-save-spinner-response-div">
+				<div class="wphealthtracker-spinner-primary" id="wphealthtracker-spinner-save-users"></div>
+				<div class="wphealthtracker-response-message-div" id="wphealthtracker-response-message-users-div"></div>
+				<button id="wphealthtracker-save-new-users">' . $this->trans->user_trans_81 . '</button>
+			</div>';
+		}
+
+
+
+
+
+
 
 		/**
 		 * Creates the form user fills out for creating new user
 		 */
 		public function output_create_users_form() {
-			$this->initial_output = $this->create_form_part_the_beginning . $this->create_form_part_one . $this->create_form_part_two . $this->create_form_part_three . $this->create_form_part_the_ending;
+			$this->initial_output = $this->create_form_part_the_beginning . $this->create_form_part_one . $this->create_form_part_two . $this->create_form_part_three . $this->create_form_part_save . $this->create_form_part_the_ending;
 		}
 	}
 endif;

@@ -464,6 +464,16 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->user_trans_78 = __( 'Enter a Short Bio For This User', 'wphealthtracker-textdomain' );
 			$this->user_trans_79 = __( '(Show Password)', 'wphealthtracker-textdomain' );
 			$this->user_trans_80 = __( '(Hide Password)', 'wphealthtracker-textdomain' );
+			$this->user_trans_81 = __( 'Create New User', 'wphealthtracker-textdomain' );
+			$this->user_trans_82 = __( 'The Only Required Fields are', 'wphealthtracker-textdomain' );
+			$this->user_trans_83 = __( 'Feel free to leave everything else blank!', 'wphealthtracker-textdomain' );
+			$this->user_trans_84  = __( 'Whoops! Looks like your E-Mail Addresses don\'t match!', 'wphealthtracker-textdomain' );
+			$this->user_trans_85  = __( 'Whoops! Looks like your Passwords don\'t match!', 'wphealthtracker-textdomain' );
+			$this->user_trans_86  = __( 'Looks like there\'s already a registered User with the Username of', 'wphealthtracker-textdomain' );
+			$this->user_trans_87  = __( 'Try creating this User again with a different Username', 'wphealthtracker-textdomain' );
+			$this->user_trans_88  = __( 'Looks like there\'s already a registered User with the E-Mail Address of', 'wphealthtracker-textdomain' );
+			$this->user_trans_89  = __( 'Try creating this User again with a different E-Mail Address', 'wphealthtracker-textdomain' );
+			$this->user_trans_90  = __( 'You\'ve just created a new WPHealthTracker User', 'wphealthtracker-textdomain' );
 
 			return $translation_array1 = array(
 				'usertrans1'  => $this->user_trans_1,
@@ -546,6 +556,16 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'usertrans78' => $this->user_trans_78,
 				'usertrans79' => $this->user_trans_79,
 				'usertrans80' => $this->user_trans_80,
+				'usertrans81' => $this->user_trans_81,
+				'usertrans82' => $this->user_trans_82,
+				'usertrans83' => $this->user_trans_83,
+				'usertrans84' => $this->user_trans_84,
+				'usertrans85' => $this->user_trans_85,
+				'usertrans86' => $this->user_trans_86,
+				'usertrans87' => $this->user_trans_87,
+				'usertrans88' => $this->user_trans_88,
+				'usertrans89' => $this->user_trans_89,
+				'usertrans90' => $this->user_trans_90,
 
 			);
 

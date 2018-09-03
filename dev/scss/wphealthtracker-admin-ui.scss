@@ -777,7 +777,7 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
 }
 
 #wphealthtracker-response-form-users-label-row-password{
-    display:inline-block;
+    top:4px;
 }
 
 .wphealthtracker-decorative-red-underline-create-users{
@@ -882,9 +882,10 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     margin: 0;
     display: inline-block;
     font-size: 10px;
-    right: 9px;
+    right: 40px;
+    bottom: 4px;
     cursor: pointer;
-    position:relative;
+    position: relative;
 }
 
 #wphealthracker-create-user-profile-img-actual{
@@ -899,6 +900,27 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
+}
+
+.wphealthtracker-indiv-choice-sub-p{
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    font-size: 14px;
+}
+
+.wphealthtracker-indiv-choice-sub-ul{
+    color:white;
+}
+
+.wphealthtracker-indiv-choice-sub-ul li{
+    margin:0px;
+}
+
+.wphealthtracker-stats-indiv-choice-good-data-smile{
+    width: 16px;
+    position: relative;
+    top: 2px;
 }
 /*
  *  END NON-SASS CSS
