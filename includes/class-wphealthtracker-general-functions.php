@@ -1,7 +1,6 @@
 <?php
-
 /**
- * Class WPHealthTracker_General_Functions - wphealthtracker-functions.php
+ * Class WPHealthTracker_General_Functions - class-wphealthtracker-general-functions.php
  *
  * @author   Jake Evans
  * @category Admin
@@ -19,29 +18,33 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 	 */
 	class WPHealthTracker_General_Functions {
 
-		// Create new WPHeathTracker User on plugin activation.
+		/**
+		 * Create new WPHeathTracker User on plugin activation.
+		 */
 		public function wphealthtracker_add_wphealthtracker_role_on_plugin_activation() {
 
 			require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
 			$this->access          = new WPHealthTracker_Utilities_Accesscheck();
 			$this->currentwphtuser = $this->access->wphealthtracker_accesscheck_create_role( 'WPHealthTracker Basic User' );
-
 		}
 
-		// Function to add the admin menu entry.
+		/**
+		 * Function to add the admin menu entry.
+		 */
 		public function wphealthtracker_jre_admin_menu() {
 			$hook_suffix = add_menu_page( 'WPHealthTracker Options', 'WPHealthTracker', 'wphealthtracker_dashboard_access', 'WPHealthTracker-Options', array( $this, 'wphealthtracker_jre_admin_page_function' ), WPHEALTHTRACKER_ROOT_IMG_URL . 'wphealthtrackerdashboardicon.png', 6 );
 			return $hook_suffix;
 		}
 
-
-		// Function to add the individual admin menu pages
+		/**
+		 * Function to add the individual admin menu pages
+		 */
 		public function wphealthtracker_jre_my_subadmin_menu() {
 
-			// Default sub menu pages
+			// Default sub menu pages.
 			$submenu_array = json_decode( WPHEALTHTRACKER_SUBMENU_ARRAY );
 
-			// Filter to allow the addition of a new subpage
+			// Filter to allow the addition of a new subpage.
 			if ( has_filter( 'wphealthtracker_add_sub_menu' ) ) {
 				$submenu_array = apply_filters( 'wphealthtracker_add_sub_menu', $submenu_array );
 			}
@@ -54,13 +57,15 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 			}
 
 			$add_submenu_result = remove_submenu_page( 'WPHealthTracker-Options', 'WPHealthTracker-Options' );
-			$sizeofaddsubmenu   = sizeof( $add_submenu_result );
-			$sizeofsubmenuarray = sizeof( $submenu_array );
+			$sizeofaddsubmenu   = count( $add_submenu_result );
+			$sizeofsubmenuarray = count( $submenu_array );
 
 			return $sizeofsubmenuarray . '--' . $add_submenu_results . '--' . $sizeofaddsubmenu;
 		}
 
-		// Here we take the Constant defined in wphealthtracker.php that holds the values that all our nonces will be created from, we create the actual nonces using wp_create_nonce, and the we define our new, final nonces Constant, called WPHEALTHTRACKER_FINAL_NONCES_ARRAY.
+		/**
+		 * Here we take the Constant defined in wphealthtracker.php that holds the values that all our nonces will be created from, we create the actual nonces using wp_create_nonce, and the we define our new, final nonces Constant, called WPHEALTHTRACKER_FINAL_NONCES_ARRAY.
+		 */
 		public function wphealthtracker_jre_create_nonces() {
 
 			$temp_array = array();
@@ -69,60 +74,67 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				$temp_array[ $key ] = $nonce;
 			}
 
-			// Defining our final nonce array
+			// Defining our final nonce array.
 			define( 'WPHEALTHTRACKER_FINAL_NONCES_ARRAY', wp_json_encode( $temp_array ) );
 
 		}
 
-		// Callback function for loading up the master file that will coordinate which file to output based on what page and/or tab user is on
-		function wphealthtracker_jre_admin_page_function() {
+		/**
+		 * Callback function for loading up the master file that will coordinate which file to output based on what page and/or tab user is on
+		 */
+		public function wphealthtracker_jre_admin_page_function() {
 			global $wpdb;
 			$result = require_once WPHEALTHTRACKER_CLASSES_UI_ADMIN_DIR . 'class-wphealthtracker-admin-master-ui.php';
 			return $result;
 		}
 
-		// Adding the jQuery Effects Library that ships with WordPress.
-		function wphealthtracker_jre_add_jquery_effects_library() {
+		/**
+		 * Adding the jQuery Effects Library that ships with WordPress.
+		 */
+		public function wphealthtracker_jre_add_jquery_effects_library() {
 			wp_enqueue_script( 'jquery-effects-core' );
 		}
 
-
-		// Function that adds the Ajax Library into the head of the doc: <script type="text/javascript">var ajaxurl = "http://localhost:8888/local/wp-admin/admin-ajax.php"</script>
-		function wphealthtracker_jre_add_ajax_library() {
+		/**
+		 * Function that adds the Ajax Library into the head of the doc
+		 */
+		public function wphealthtracker_jre_add_ajax_library() {
 
 			$html = '<script type="text/javascript">';
 
-			// checking $protocol in HTTP or HTTPS
-			if ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] != 'off' ) {
-				// this is HTTPS
+			// Checking $protocol in HTTP or HTTPS.
+			if ( isset( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] ) {
 				$protocol = 'https';
 			} else {
-				// this is HTTP
 				$protocol = 'http';
 			}
-			$tempAjaxPath = admin_url( 'admin-ajax.php' );
-			$goodAjaxUrl  = $protocol . strchr( $tempAjaxPath, ':' );
 
-			$html .= 'var ajaxurl = "' . $goodAjaxUrl . '"';
+			$temp_ajax_path = admin_url( 'admin-ajax.php' );
+			$good_ajax_url  = $protocol . strchr( $temp_ajax_path, ':' );
+
+			$html .= 'var ajaxurl = "' . $good_ajax_url . '"';
 			$html .= '</script>';
 			echo $html;
 			return $html;
 		}
 
+		/**
+		 * Code for adding the admin js file
+		 *
+		 * @param int $hook - The menu page hook thing.
+		 */
+		public function wphealthtracker_jre_admin_js( $hook ) {
 
-		// Code for adding the admin js file
-		function wphealthtracker_jre_admin_js( $hook ) {
-
-			// Loading this up on just the WPBookList admin pages that need it
+			// Loading this up on just the WPBookList admin pages that need it.
 			if ( stripos( $hook, 'wphealthtracker' ) !== false ) {
 
-				// First just register the script
+				// First just register the script.
 				wp_register_script( 'wphealthtracker_jre_admin_js', WPHEALTHTRACKER_ROOT_JS_URL . 'wphealthtracker-admin-min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
 
-				// Next 4-5 lines are required to allow translations of strings that would otherwise live in the wphealthtracker-admin-js.js JavaScript File
+				// Next 4-5 lines are required to allow translations of strings that would otherwise live in the wphealthtracker-admin-js.js JavaScript File.
 				require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
 				$trans = new WPHealthTracker_Translations();
-				// Localize the script with the appropriate translation array from the Translations class
+				// Localize the script with the appropriate translation array from the Translations class.
 				$translation_array1 = $trans->admin_js_trans_strings();
 				$translation_array2 = $trans->vitals_tab_trans_strings();
 				$translation_array3 = $trans->ajax_return_strings();
@@ -133,7 +145,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				$translation_array8 = $trans->tab_titles_trans_strings();
 				$translation_array9 = $trans->users_tab_trans_strings();
 
-				// Now grab all of our Nonces to pass to the JavaScript for the Ajax functions and merge with the Translations array
+				// Now grab all of our Nonces to pass to the JavaScript for the Ajax functions and merge with the Translations array.
 				$final_array_of_php_values = array_merge( $translation_array1, $translation_array2 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array3 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array4 );
@@ -142,9 +154,9 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array7 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array8 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array9 );
-				$final_array_of_php_values = array_merge( $final_array_of_php_values, json_decode( WPHEALTHTRACKER_FINAL_NONCES_ARRAY, TRUE ) );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, json_decode( WPHEALTHTRACKER_FINAL_NONCES_ARRAY, true ) );
 
-				// Adding some other individual values we may need
+				// Adding some other individual values we may need.
 				$final_array_of_php_values['WPHEALTHTRACKER_ROOT_IMG_ICONS_URL'] = WPHEALTHTRACKER_ROOT_IMG_ICONS_URL;
 
 				// Now registering/localizing our JavaScript file, passing all the PHP variables we'll need in our $final_array_of_php_values array, to be accessed from 'wphealthtrackerPhpVariables' object (like wphealthtrackerPhpVariables.nameofkey, like any other JavaScript object).
@@ -157,13 +169,17 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 			}
 		}
 
-		// Code for adding the admin js file
-		function wphealthtracker_jre_d3_js( $hook ) {
+		/**
+		 * Code for adding the  d3.js file
+		 *
+		 * @param int $hook - The menu page hook thing.
+		 */
+		public function wphealthtracker_jre_d3_js( $hook ) {
 
-			// Loading this up on just the WPBookList admin pages that need it
+			// Loading this up on just the WPBookList admin pages that need it.
 			if ( stripos( $hook, 'WPHealthTracker-stats' ) !== false ) {
 
-				// First just register the script
+				// First just register the script.
 				wp_register_script( 'wphealthtracker_jre_d3_js', WPHEALTHTRACKER_ROOT_JS_URL . 'd3.min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
 
 				// Enqueued script.
@@ -172,10 +188,12 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 			}
 		}
 
-		// Code for adding the general admin CSS file
-		function wphealthtracker_jre_admin_style() {
+		/**
+		 * Code for adding the admin stylesheet.
+		 */
+		public function wphealthtracker_jre_admin_style() {
 			if ( is_admin( 'administrator' ) ) {
-				wp_register_style( 'wphealthtracker-admin-ui', WPHEALTHTRACKER_ROOT_CSS_URL . 'wphealthtracker-admin-ui.css' );
+				wp_register_style( 'wphealthtracker-admin-ui', WPHEALTHTRACKER_ROOT_CSS_URL . 'wphealthtracker-admin-ui.css', null, WPHEALTHTRACKER_VERSION_NUM );
 				wp_enqueue_style( 'wphealthtracker-admin-ui' );
 			}
 		}
@@ -298,35 +316,37 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 
 		}
 
-		// Runs once upon plugin activation and creates the General Settings tables
-		function wphealthtracker_jre_create_general_settings_table() {
+		/**
+		 *  Runs once upon plugin activation and creates the General Settings tables
+		 */
+		public function wphealthtracker_jre_create_general_settings_table() {
 			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 			global $wpdb;
 			global $charset_collate;
 
-			// Call this manually as we may have missed the init hook
+			// Call this manually as we may have missed the init hook.
 			$this->wphealthtracker_jre_register_table_names();
 
-			// If table doesn't exist, create table
+			// If table doesn't exist, create table.
 			$test_name = $wpdb->prefix . 'wphealthtracker_general_settings';
-			if ( $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) != $test_name ) {
+			if ( $test_name !== $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) ) {
 
 				// This is the table that holds static data about users - things like username, password, height, gender...
 				$sql_create_table = "CREATE TABLE {$wpdb->wphealthtracker_general_settings} 
-      (
-            ID smallint(190) auto_increment,
-            defaultwpuser smallint(6),
-            gmuser varchar(255),
-            PRIMARY KEY  (ID),
-              KEY defaultwpuser (defaultwpuser)
-      ) $charset_collate; ";
-				$db_delta_result    = array();
+			      (
+			            ID smallint(190) auto_increment,
+			            defaultwpuser smallint(6),
+			            gmuser varchar(255),
+			            PRIMARY KEY  (ID),
+			              KEY defaultwpuser (defaultwpuser)
+			      ) $charset_collate; ";
+				$db_delta_result  = array();
 
-				// If table doesn't exist, create table and add initial data to it
+				// If table doesn't exist, create table and add initial data to it.
 				$test_name = $wpdb->prefix . 'wphealthtracker_general_settings';
-				if ( $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) != $test_name ) {
+				if ( $test_name !== $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) ) {
 					$db_delta_result = dbDelta( $sql_create_table );
-					$table_name    = $wpdb->prefix . 'wphealthtracker_general_settings';
+					$table_name      = $wpdb->prefix . 'wphealthtracker_general_settings';
 					$wpdb->insert( $table_name, array( 'ID' => 1 ) );
 				}
 
@@ -339,40 +359,42 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 
 		}
 
-		// Runs once upon plugin activation and creates the Daily Data - Vitals tables
-		function wphealthtracker_jre_create_daily_data_vitals_table() {
+		/**
+		 *  Runs once upon plugin activation and creates the Daily Data - Vitals tables
+		 */
+		public function wphealthtracker_jre_create_daily_data_vitals_table() {
 			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 			global $wpdb;
 			global $charset_collate;
 
-			// Call this manually as we may have missed the init hook
+			// Call this manually as we may have missed the init hook.
 			$this->wphealthtracker_jre_register_table_names();
 
-			// If table doesn't exist, create table
+			// If table doesn't exist, create table.
 			$test_name = $wpdb->prefix . 'wphealthtracker_user_daily_data_vitals';
-			if ( $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) != $test_name ) {
+			if ( $test_name !== $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) ) {
 
 				// This is the table that holds static data about users - things like username, password, height, gender...
 				$sql_create_table = "CREATE TABLE {$wpdb->wphealthtracker_user_daily_data_vitals} 
-      (
-            ID smallint(190) auto_increment,
-            firstname varchar(190),
-            lastname varchar(255),
-            wpuserid smallint(6),
-            humandate varchar(255),
-            weight TINYTEXT,
-            bloodpressure TINYTEXT,
-            bloodoxygen TINYTEXT,
-            bodytemp TINYTEXT,
-            cholesterol TINYTEXT,
-            heartrate TINYTEXT,
-            bloodsugar TINYTEXT,
-            vitalsimg MEDIUMTEXT,
-            vitalsfiles MEDIUMTEXT,
-            PRIMARY KEY  (ID),
-              KEY firstname (firstname)
-      ) $charset_collate; ";
-				$db_delta_result    = dbDelta( $sql_create_table );
+			      (
+			            ID smallint(190) auto_increment,
+			            firstname varchar(190),
+			            lastname varchar(255),
+			            wpuserid smallint(6),
+			            humandate varchar(255),
+			            weight TINYTEXT,
+			            bloodpressure TINYTEXT,
+			            bloodoxygen TINYTEXT,
+			            bodytemp TINYTEXT,
+			            cholesterol TINYTEXT,
+			            heartrate TINYTEXT,
+			            bloodsugar TINYTEXT,
+			            vitalsimg MEDIUMTEXT,
+			            vitalsfiles MEDIUMTEXT,
+			            PRIMARY KEY  (ID),
+			              KEY firstname (firstname)
+			      ) $charset_collate; ";
+				$db_delta_result  = dbDelta( $sql_create_table );
 
 				$key = $wpdb->prefix . 'wphealthtracker_user_daily_data_vitals';
 
@@ -382,34 +404,36 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 			}
 		}
 
-		// Runs once upon plugin activation and creates the Daily Data - Diet tables.
-		function wphealthtracker_jre_create_daily_data_diet_table() {
+		/**
+		 *  Runs once upon plugin activation and creates the Daily Data - Diet tables.
+		 */
+		public function wphealthtracker_jre_create_daily_data_diet_table() {
 			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 			global $wpdb;
 			global $charset_collate;
 
-			// Call this manually as we may have missed the init hook
+			// Call this manually as we may have missed the init hook.
 			$this->wphealthtracker_jre_register_table_names();
 
-			// If table doesn't exist, create table
+			// If table doesn't exist, create table.
 			$test_name = $wpdb->prefix . 'wphealthtracker_user_daily_data_diet';
-			if ( $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) != $test_name ) {
+			if ( $test_name !== $wpdb->get_var( "SHOW TABLES LIKE '$test_name'" ) ) {
 
 				// This is the table that holds static data about users - things like username, password, height, gender...
 				$sql_create_table = "CREATE TABLE {$wpdb->wphealthtracker_user_daily_data_diet} 
-      (
-            ID smallint(190) auto_increment,
-            firstname varchar(190),
-            lastname varchar(255),
-            wpuserid smallint(6),
-            humandate varchar(255),
-            foodstring LONGTEXT,
-            dietimg MEDIUMTEXT,
-            dietfiles MEDIUMTEXT,
-            PRIMARY KEY  (ID),
-              KEY firstname (firstname)
-      ) $charset_collate; ";
-				$db_delta_result    = dbDelta( $sql_create_table );
+			      (
+			            ID smallint(190) auto_increment,
+			            firstname varchar(190),
+			            lastname varchar(255),
+			            wpuserid smallint(6),
+			            humandate varchar(255),
+			            foodstring LONGTEXT,
+			            dietimg MEDIUMTEXT,
+			            dietfiles MEDIUMTEXT,
+			            PRIMARY KEY  (ID),
+			              KEY firstname (firstname)
+			      ) $charset_collate; ";
+				$db_delta_result  = dbDelta( $sql_create_table );
 
 				$key = $wpdb->prefix . 'wphealthtracker_user_daily_data_diet';
 
@@ -459,8 +483,10 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		}
 
 
-		// Function that calls the Style and Scripts needed for displaying of admin pointer messages.
-		function wphealthtracker_jre_admin_pointers_javascript() {
+		/**
+		 *  Function that calls the Style and Scripts needed for displaying of admin pointer messages.
+		 */
+		public function wphealthtracker_jre_admin_pointers_javascript() {
 			wp_enqueue_style( 'wp-pointer' );
 			wp_enqueue_script( 'wp-pointer' );
 			wp_enqueue_script( 'utils' );

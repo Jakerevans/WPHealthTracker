@@ -166,7 +166,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			$this->meters_running_total     = number_format( ( $this->miles_running_total * 1609.34 ), 2 );
 			$this->kilometers_running_total = number_format( ( $this->miles_running_total * 1.60934 ), 2 );
 
-			$this->perc_around_world = number_format( ( ( $this->miles_running_total / 24901 ) * 100 ), 6 ) . '%';
+			$this->perc_around_world = number_format( ( ( $this->miles_running_total / 24901 ) * 100 ), 6 );
 
 			// Determine at what signifigant digit to format around the world to.
 			$sig_dig = 2;
@@ -184,14 +184,16 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 				$this->perc_around_world = number_format( $this->perc_around_world, $sig_dig ) . '%';
 			}
 
-			$this->perc_to_moon = number_format( ( ( $this->miles_running_total / 238900 ) * 100 ), 2 ) . '%';
+			$this->perc_to_moon = number_format( ( ( $this->miles_running_total / 238900 ) * 100 ), 2 );
 
 			// Determine at what signifigant digit to format from earth to moon to.
 			$sig_dig = 2;
 			for ( $i = 4; $i <= 7; $i++ ) {
-				if ( 0 < $this->perc_to_moon[ $i ] ) {
-					$sig_dig = $i - 1;
-					break;
+				if ( isset( $this->perc_to_moon[ $i ] ) ) {
+					if ( 0 < $this->perc_to_moon[ $i ] ) {
+						$sig_dig = $i - 1;
+						break;
+					}
 				}
 			}
 
@@ -1012,16 +1014,16 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 						$indiv_day = explode( ';', $value->exercisestring );
 						if ( '' !== $indiv_day[7] ) {
 
-							if ( '' !== $indiv_day2[7] ) {
+							if ( '' !== $indiv_day[7] ) {
 
-								if ( stripos( $indiv_day2[7], '/' ) !== false ) {
-									$temp = explode( '/', $indiv_day2[7] );
+								if ( stripos( $indiv_day[7], '/' ) !== false ) {
+									$temp = explode( '/', $indiv_day[7] );
 
 									foreach ( $temp as $key => $muscle_indiv ) {
 										array_push( $exercise_muscles, $muscle_indiv );
 									}
 								} else {
-									array_push( $exercise_muscles, $indiv_day2[7] );
+									array_push( $exercise_muscles, $indiv_day[7] );
 								}
 							}
 						}
@@ -1052,10 +1054,14 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			$top_five_exercise_muscles = array_slice( array_keys( $values ), 0, 5, true );
 
 			// Building top exercise item string.
-			$this->top_3_exercise_items = $top_five_exercise_items[0];
+			if ( isset( $top_five_exercise_items[0] ) ) {
+				$this->top_3_exercise_items = $top_five_exercise_items[0];
+			}
 
 			// Building top exercise categories string.
-			$this->top_3_exercise_categories = $top_five_exercise_categories[0];
+			if ( isset( $top_five_exercise_categories[0] ) ) {
+				$this->top_3_exercise_categories = $top_five_exercise_categories[0];
+			}
 
 			// Building top 3 exercise muscles groups string.
 			if ( count( $top_five_exercise_muscles ) > 2 ) {
@@ -1108,6 +1114,9 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			$longest_hours         = 0;
 			$longest_minutes       = 0;
 			$longest_seconds       = 0;
+			$total_seconds         = 0;
+			$total_hours           = 0;
+			$total_minutes         = 0;
 			$total_average_seconds = 0;
 
 			// Now calculate total time spent exercising.
@@ -1218,25 +1227,40 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			// Build longest single exercise - first convert everything to seconds.
 			$longest_seconds       = $longest_seconds + ( $longest_hours * 3600 );
 			$this->longest_seconds = $longest_seconds + ( $longest_minutes * 60 );
-			$this->longest_minutes = number_format( ( $this->longest_seconds / 60 ), 2 );
-			$this->longest_hours   = number_format( ( $this->longest_seconds / 3600 ), 2 );
+
+			if ( 0 !== $this->longest_seconds ) {
+				$this->longest_minutes = number_format( ( $this->longest_seconds / 60 ), 2 );
+			}
+
+			if ( 0 !== $this->longest_seconds ) {
+				$this->longest_hours = number_format( ( $this->longest_seconds / 3600 ), 2 );
+			}
 
 			// Convert everything into seconds.
 			$total_seconds       = $total_seconds + ( $total_hours * 3600 );
 			$this->total_seconds = $total_seconds + ( $total_minutes * 60 );
 
 			// Now take those total seconds and create our minutes and hours values.
-			$this->total_minutes = number_format( ( $this->total_seconds / 60 ), 2 );
-			$this->total_hours   = number_format( ( $this->total_seconds / 3600 ), 2 );
+			if ( 0 !== $this->total_seconds ) {
+				$this->total_minutes = number_format( ( $this->total_seconds / 60 ), 2 );
+				$this->total_hours   = number_format( ( $this->total_seconds / 3600 ), 2 );
+			}
 
 			// Now format total seconds.
 			$this->total_seconds = number_format( $this->total_seconds, 2 );
 
 			$this->total_exercises = count( $total_exercises );
 
-			$temp1 = intval( ( ( $total_average_seconds / $this->total_exercises ) / 3600 ) );
-			$temp2 = intval( ( ( $total_average_seconds / $this->total_exercises ) % 3600 ) );
-			$temp2 = intval( ( $temp2 / 60 ) );
+			$temp1 = 0;
+			$temp2 = 0;
+			if ( 0 !== $total_average_seconds && $this->total_exercises ) {
+				$temp1 = intval( ( ( $total_average_seconds / $this->total_exercises ) / 3600 ) );
+				$temp2 = intval( ( ( $total_average_seconds / $this->total_exercises ) % 3600 ) );
+			}
+
+			if ( 0 !== $temp2 ) {
+				$temp2 = intval( ( $temp2 / 60 ) );
+			}
 
 			if ( 0 === $temp2 ) {
 				$temp2 = '00';

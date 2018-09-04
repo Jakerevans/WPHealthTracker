@@ -485,8 +485,8 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 							$energy_calories = round( ( $energy * 4.184 ), 2 );
 						}
 
-						$total_cals += round( $energy_calories, 2 );
-						$total_kjs  += round( $energy_kilojoules, 2 );
+						$total_cals = round( $energy_calories, 2 );
+						$total_kjs  = round( $energy_kilojoules, 2 );
 
 					}
 

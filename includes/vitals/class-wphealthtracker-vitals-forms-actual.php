@@ -125,8 +125,6 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 			require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-date.php';
 			$utilities_date = new WPHealthTracker_Utilities_Date();
 			$this->date     = $utilities_date->wphealthtracker_get_date_via_current_time( 'mysql' );
-
-			error_log($this->date);
 		}
 
 		/**
@@ -415,11 +413,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 						}
 
 						// Build the Options for the Select.
-						if ( $temp_measurement === $this->translations->vitals_trans_25 ) {
+						if ( $temp_measurement === $this->translations->vitals_trans_13 ) {
 							$option_string =
 							'<option selected>' . $this->translations->vitals_trans_13 . '</option>
 							 <option>' . $this->translations->vitals_trans_14 . '</option>';
-						} elseif ( $temp_measurement === $this->translations->vitals_trans_26 ) {
+						} elseif ( $temp_measurement === $this->translations->vitals_trans_14 ) {
 							$option_string =
 							'<option>' . $this->translations->vitals_trans_13 . '</option>
 							 <option  selected>' . $this->translations->vitals_trans_14 . '</option>';
@@ -484,11 +482,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 					}
 
 					// Build the Options for the Select.
-					if ( $temp_measurement === $this->translations->vitals_trans_25 ) {
+					if ( $temp_measurement === $this->translations->vitals_trans_13 ) {
 						$option_string =
 						'<option selected>' . $this->translations->vitals_trans_13 . '</option>
 						 <option>' . $this->translations->vitals_trans_14 . '</option>';
-					} elseif ( $temp_measurement === $this->translations->vitals_trans_26 ) {
+					} elseif ( $temp_measurement === $this->translations->vitals_trans_14 ) {
 						$option_string =
 						'<option>' . $this->translations->vitals_trans_13 . '</option>
 						 <option  selected>' . $this->translations->vitals_trans_14 . '</option>';
@@ -589,11 +587,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 						}
 
 						// Build the Options for the Select.
-						if ( $ox_measurement === $this->translations->vitals_trans_30 ) {
+						if ( $ox_measurement === $this->translations->common_trans_26 ) {
 							$option_string =
 							'<option selected>' . $this->translations->common_trans_26 . '</option>
 							 <option>' . $this->translations->vitals_trans_17 . '</option>';
-						} elseif ( $ox_measurement === $this->translations->vitals_trans_31 ) {
+						} elseif ( $ox_measurement === $this->translations->vitals_trans_17 ) {
 							$option_string =
 							'<option>' . $this->translations->common_trans_26 . '</option>
 							 <option selected>' . $this->translations->vitals_trans_17 . '</option>';
@@ -657,11 +655,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 					}
 
 					// Build the Options for the Select.
-					if ( $ox_measurement === $this->translations->vitals_trans_30 ) {
+					if ( $ox_measurement === $this->translations->common_trans_26 ) {
 						$option_string =
 						'<option selected>' . $this->translations->common_trans_26 . '</option>
 						 <option>' . $this->translations->vitals_trans_17 . '</option>';
-					} elseif ( $ox_measurement === $this->translations->vitals_trans_31 ) {
+					} elseif ( $ox_measurement === $this->translations->vitals_trans_17 ) {
 						$option_string =
 						'<option>' . $this->translations->common_trans_26 . '</option>
 						 <option selected>' . $this->translations->vitals_trans_17 . '</option>';
@@ -765,11 +763,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 						}
 
 						// Build the Options for the Select.
-						if ( $temp_measurement === $this->translations->vitals_trans_34 ) {
+						if ( $temp_measurement === $this->translations->vitals_trans_20 ) {
 							$option_string =
 							'<option selected>' . $this->translations->vitals_trans_20 . '</option>
 							 <option>' . $this->translations->vitals_trans_21 . '</option>';
-						} elseif ( $temp_measurement === $this->translations->vitals_trans_35 ) {
+						} elseif ( $temp_measurement === $this->translations->vitals_trans_21 ) {
 							$option_string =
 							'<option>' . $this->translations->vitals_trans_20 . '</option>
 							 <option selected>' . $this->translations->vitals_trans_21 . '</option>';
@@ -840,11 +838,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 					}
 
 					// Build the Options for the Select.
-					if ( $temp_measurement === $this->translations->vitals_trans_30 ) {
+					if ( $temp_measurement === $this->translations->vitals_trans_20 ) {
 						$option_string =
 						'<option selected>' . $this->translations->vitals_trans_20 . '</option>
 						 <option>' . $this->translations->vitals_trans_21 . '</option>';
-					} elseif ( $temp_measurement === $this->translations->vitals_trans_31 ) {
+					} elseif ( $temp_measurement === $this->translations->vitals_trans_21 ) {
 						$option_string =
 						'<option>' . $this->translations->vitals_trans_20 . '</option>
 						 <option selected>' . $this->translations->vitals_trans_21 . '</option>';

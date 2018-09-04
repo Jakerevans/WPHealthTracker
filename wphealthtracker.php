@@ -105,7 +105,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $wpdb;
 
 /* REQUIRE STATEMENTS */
-	require_once 'includes/wphealthtracker-functions.php';
+	require_once 'includes/class-wphealthtracker-general-functions.php';
+	require_once 'includes/class-wphealthtracker-general-ajax-functions.php';
 	require_once 'includes/vitals/wphealthtracker-vitals-ajax.php';
 	require_once 'includes/diet/class-wphealthtracker-diet-ajax-functions.php';
 	require_once 'includes/users/class-wphealthtracker-users-ajax-functions.php';

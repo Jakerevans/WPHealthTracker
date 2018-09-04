@@ -1324,7 +1324,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 			$data_section = ' data-section="' . $type . '" ';
 
 			return '
-			<div class="wphealthtracker-response-form-all-data-row-parent" id="wphealthtracker-response-form-all-data-row-parent-' . $key . '-' . $loop_num . '">
+			<div class="wphealthtracker-response-form-all-data-row-parent" id="wphealthtracker-response-form-all-data-row-parent-' . $loop_num . '-' . $loop_num . '">
 					<div class="wphealthtracker-response-form-food-all-data-row" ' . $data_section . ' id="wphealthtracker-response-form-all-data-row-' . $loop_num . '">
 				<img class="wphealthtracker-saved-data-indiv-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'analysis.svg" />
 				<p class="wphealthtracker-all-data-p">' . $this->translations->diet_trans_29 . ' ' . $this->humandate . '</p>

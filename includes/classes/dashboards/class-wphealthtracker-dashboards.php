@@ -669,16 +669,16 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 						$indiv_day = explode( ';', $value->exercisestring );
 						if ( '' !== $indiv_day[7] ) {
 
-							if ( '' !== $indiv_day2[7] ) {
+							if ( '' !== $indiv_day[7] ) {
 
-								if ( stripos( $indiv_day2[7], '/' ) !== false ) {
-									$temp = explode( '/', $indiv_day2[7] );
+								if ( stripos( $indiv_day[7], '/' ) !== false ) {
+									$temp = explode( '/', $indiv_day[7] );
 
 									foreach ( $temp as $key => $muscle_indiv ) {
 										array_push( $exercise_muscles, $muscle_indiv );
 									}
 								} else {
-									array_push( $exercise_muscles, $indiv_day2[7] );
+									array_push( $exercise_muscles, $indiv_day[7] );
 								}
 							}
 						}

@@ -1062,10 +1062,21 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			}
 
 			// Some final calcs.
-			$this->average_ch_ldl   = round( $temp_total_ldl / $this->ch_day_counter, 2 );
-			$this->average_ch_hdl   = round( $temp_total_hdl / $this->ch_day_counter, 2 );
-			$this->average_ch_tri   = round( $temp_total_tri / $this->ch_day_counter, 2 );
-			$this->average_ch_total = round( $temp_total_total / $this->ch_day_counter, 2 );
+			if ( 0 !== $temp_total_ldl && 0 !== $this->ch_day_counter ) {
+				$this->average_ch_ldl = round( $temp_total_ldl / $this->ch_day_counter, 2 );
+			}
+
+			if ( 0 !== $temp_total_hdl && 0 !== $this->ch_day_counter ) {
+				$this->average_ch_hdl = round( $temp_total_hdl / $this->ch_day_counter, 2 );
+			}
+
+			if ( 0 !== $temp_total_tri && 0 !== $this->ch_day_counter ) {
+				$this->average_ch_tri = round( $temp_total_tri / $this->ch_day_counter, 2 );
+			}
+
+			if ( 0 !== $temp_total_total && 0 !== $this->ch_day_counter ) {
+				$this->average_ch_total = round( $temp_total_total / $this->ch_day_counter, 2 );
+			}
 
 		}
 
