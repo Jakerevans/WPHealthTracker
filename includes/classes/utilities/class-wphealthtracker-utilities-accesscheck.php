@@ -25,7 +25,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 		public $user = array();
 
 		/**
-		 * Returns the current accesscheck using the WordPress 'current_time()' function and accepts a time format
+		 * The users ID we're checking access on.
 		 *
 		 * @param int $wpuserid - The users ID we're checking access on.
 		 */
@@ -68,6 +68,9 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 			}
 		}
 
+		/**
+		 * Create the 'No Access' message.
+		 */
 		public function wphealthtracker_accesscheck_no_permission_message() {
 
 			// Grab Superadmin from the settings table to the user knows who to contact.
@@ -107,6 +110,74 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 					<br><br>
 				</p>
 			</div>';
+		}
+
+		/**
+		 * Creates custom WPHealthTracker WordPress roles
+		 *
+		 * @param string $role_name - The name of the role we're wanting to create.
+		 */
+		public function wphealthtracker_accesscheck_create_role( $role_name ) {
+
+			// Require the translations file.
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			$this->translations = new WPHealthTracker_Translations();
+			$this->translations->users_tab_trans_strings();
+
+			$role_caps    = array();
+			$display_name = '';
+
+			switch ( $role_name ) {
+				case $this->translations->user_trans_91:
+					// Basic WPHealthTracker User.
+					$role_caps = array(
+						'read'                   => true,
+						'edit_posts'             => false,
+						'delete_posts'           => false,
+						'edit_others_posts'      => false,
+						'edit_published_posts'   => false,
+						'publish_posts'          => false,
+						'delete_others_posts'    => false,
+						'delete_published_posts' => false,
+						'delete_private_posts'   => false,
+						'edit_private_posts'     => false,
+						'read_private_posts'     => false,
+						'edit_pages'             => false,
+						'delete_pages'           => false,
+						'edit_others_pages'      => false,
+						'edit_published_pages'   => false,
+						'publish_pages'          => false,
+						'delete_others_pages'    => false,
+						'delete_published_pages' => false,
+						'delete_private_pages'   => false,
+						'edit_private_pages'     => false,
+						'read_private_pages'     => false,
+						'moderate_comments'      => false,
+
+					);
+
+					$role_name    = wphealthtracker_basic_user;
+					$display_name = $this->translations->user_trans_91;
+
+					break;
+				default:
+					break;
+			}
+
+			// Create the wphealthtracker_basic_user role.
+			$result = add_role( $role_name, $display_name, $role_caps );
+
+			// Now get each role we have in WordPress and add our custom 'wphealthtracker_dashboard_access' capability to ensure that each user has access to the WPHealthTracker menu pages.
+			global $wp_roles;
+			$roles = $wp_roles->get_names();
+			foreach ( $roles as $key => $role ) {
+				$role       = strtolower( $role );
+				$role       = str_replace( ' ', '_', $role );
+				$indiv_role = get_role( $role );
+				if ( null !== $indiv_role ) {
+					$indiv_role->add_cap( 'wphealthtracker_dashboard_access' );
+				}
+			}
 		}
 	}
 

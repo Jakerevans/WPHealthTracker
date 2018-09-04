@@ -474,6 +474,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->user_trans_88  = __( 'Looks like there\'s already a registered User with the E-Mail Address of', 'wphealthtracker-textdomain' );
 			$this->user_trans_89  = __( 'Try creating this User again with a different E-Mail Address', 'wphealthtracker-textdomain' );
 			$this->user_trans_90  = __( 'You\'ve just created a new WPHealthTracker User', 'wphealthtracker-textdomain' );
+			$this->user_trans_91  = __( 'WPHealthTracker Basic User', 'wphealthtracker-textdomain' );
 
 			return $translation_array1 = array(
 				'usertrans1'  => $this->user_trans_1,
@@ -820,7 +821,6 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'exercisetrans39' => $this->exercise_trans_39,
 				'exercisetrans40' => $this->exercise_trans_40,
 				'exercisetrans41' => $this->exercise_trans_41,
-				'exercisetrans42' => $this->exercise_trans_42,
 				'exercisetrans43' => $this->exercise_trans_43,
 				'exercisetrans44' => $this->exercise_trans_44,
 				'exercisetrans45' => $this->exercise_trans_45,
@@ -1061,6 +1061,10 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->d3_trans_99  = __( 'Exercise Duration Chart & Stats:', 'wphealthtracker-textdomain' );
 			$this->d3_trans_100 = __( 'Hover Over Squares', 'wphealthtracker-textdomain' );
 			$this->d3_trans_101  = __( 'Exercise Duration Stats' );
+
+			$this->d3_trans_102  = __( "Looks like there's no Macronutrients Data!", 'wphealthtracker-textdomain' );
+			$this->d3_trans_103 = __( 'Once there is, this area will display a diagram showing Macronutrient Percentages.', 'wphealthtracker-textdomain' );
+			$this->d3_trans_104 = __( 'Once there is, this area will display some Macronutrients Statistics.', 'wphealthtracker-textdomain' );
 
 			return $d3_array1 = array(
 				'd3trans1'   => $this->d3_trans_1,

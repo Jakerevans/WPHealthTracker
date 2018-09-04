@@ -97,9 +97,11 @@ if ( ! class_exists( 'WPHealthTracker_Stats_Diet_Ajax_Functions', false ) ) :
 			array_push( $return_array, $stats );
 			$return_array = wp_json_encode( $return_array );
 
-			foreach ( $d3_1 as $key => $value ) {
-				foreach ( $d3_1[ $key ] as $key2 => $value2 ) {
-					$d3_1[ $key ][ $key2 ] = sanitize_text_field( $d3_1[ $key ][ $key2 ] );
+			if ( is_array( $d3_1 ) > 0 ) {
+				foreach ( $d3_1 as $key => $value ) {
+					foreach ( $d3_1[ $key ] as $key2 => $value2 ) {
+						$d3_1[ $key ][ $key2 ] = sanitize_text_field( $d3_1[ $key ][ $key2 ] );
+					}
 				}
 			}
 

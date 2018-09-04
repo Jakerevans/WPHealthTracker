@@ -308,6 +308,9 @@ global $wpdb;
 	// Registers table names.
 	add_action( 'init', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_register_table_names' ), 1 );
 
+	// Creates basic WPHealthTracker User role on activation.
+	register_activation_hook( __FILE__, array( $wp_health_tracker_general_functions, 'wphealthtracker_add_wphealthtracker_role_on_plugin_activation' ) );
+
 	// Creates User table upon activation.
 	register_activation_hook( __FILE__, array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_create_user_table' ) );
 

@@ -114,17 +114,17 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 
 		public function output_no_data() {
 
-			// Getting the user's display name
+			// Getting the user's display name.
 			$this->get_user_name();
 
-			// Build final output, including the no data message
+			// Build final output, including the no data message.
 			$this->final_output = '<div class="wphealthtracker-no-saved-data-stats-div">
 				<p>
 					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg"/>
 					<span class="wphealthtracker-no-saved-span-stats-1">' . $this->translations->dashboard_trans_21 . '</span>
 					<br/>
 					' . $this->translations->dashboard_trans_22 . ' ' . $this->displayname . '!
-					<br/><a href="">' . $this->translations->dashboard_trans_23 . '</a>
+					<br/><a href="' . admin_url( 'admin.php?page=WPHealthTracker-tracker' ) . '&tab=' . $this->tab . '">' . $this->translations->dashboard_trans_23 . '</a>
 					<br/><br/>
 				</p>
 			</div>';
@@ -150,7 +150,7 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			}
 
 			$this->displayname = $userstablerow->firstname . ' ' . $userstablerow->lastname;
-			$this->profileimg  = $userstablerow->profileimg;
+			$this->profileimg  = $userstablerow->profileimage;
 		}
 
 		public function calculate_common_data() {

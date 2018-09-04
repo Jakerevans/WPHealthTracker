@@ -144,13 +144,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 			// If we already have a row of saved data for this user on humandate, just update.
 			if ( 'update' === $this->dbmode ) {
 
-				$data_format     = array( '%s', '%s', '%s', '%s', '%s', '%d' );
-				$where           = array(
-					'wpuserid'  => $this->wpuserid,
-					'humandate' => $this->human_date,
-				);
-				$where_format    = array( '%d', '%s' );
-				$this->db_result = $wpdb->update( $this->users_table, $this->users_save_array, $where, $data_format, $where_format );
+				
 			}
 
 			// If we don't have data saved for this user.

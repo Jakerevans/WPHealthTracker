@@ -104,7 +104,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 			$data_section      = ' data-section="' . $type . '" ';
 
 			// If there is indeed Food data saved at all.
-			if ( null !== $this->foodstring ) {
+			if ( '' !== $this->foodstring ) {
 
 				// If there are multiple food entries entries on the same date...
 				if ( strpos( $this->foodstring, ',' ) !== false ) {

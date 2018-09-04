@@ -9,7 +9,7 @@
 
 "use strict";
 
-function wphealthtracker_vitals_d3_1(mydataWeight){
+function wphealthtracker_vitals_d3_1(mydataWeight, $){
 
 	// Set dimensions
 	var margin = {
@@ -433,16 +433,16 @@ function wphealthtracker_vitals_d3_1(mydataWeight){
 			});
 	
 		};
-
-		// Hide the the spinner
-    	$('#wphealthtracker-spinner-d3-await-1').animate({'opacity':'0'})
-
-    	$('#wphealthtracker-chart-hover-message-weight').html('<p>'+wphealthtrackerPhpVariables.d3trans20+'</p>');
 	});
+
+	// Hide the spinner
+	$('#wphealthtracker-spinner-d3-await-1').animate({'opacity':'0'})
+
+	$('#wphealthtracker-chart-hover-message-weight').html('<p>'+wphealthtrackerPhpVariables.d3trans20+'</p>');
 
 }
 
-function wphealthtracker_vitals_d3_2(mydata) {
+function wphealthtracker_vitals_d3_2(mydata, $) {
 
 	var bisectDate = d3.bisector(function (d) {
 		return d.date;
@@ -1138,7 +1138,7 @@ function wphealthtracker_vitals_d3_2(mydata) {
 	}
 }
 
-function wphealthtracker_vitals_d3_3(mydataCh){
+function wphealthtracker_vitals_d3_3(mydataCh, $){
 
 	// Set dimensions
 	var margin = {

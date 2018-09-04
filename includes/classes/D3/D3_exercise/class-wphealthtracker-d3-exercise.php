@@ -1498,7 +1498,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 
 			// If there's no blood pressure data saved, display the 'No Data' message.
 			if ( count( $this->alluserdata ) === 0 ) {
-				$stats_3 = '<div class="wphealthtracker-no-saved-data-div">
+				$stats_3 = '<div style="bottom:58px;" class="wphealthtracker-no-saved-data-div">
 				<p>
 					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>

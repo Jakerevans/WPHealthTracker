@@ -151,7 +151,7 @@ jQuery(document).ready(function($) {
             } else {
               // Append any HTML that may be needed for the creation of the charts
               $('#wphealthtracker-stats-actual-inner-d3-1-1').append('<div id="wphealthtracker-d3chart-legendContainer-weight" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-weight"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-weight">'+wphealthtrackerPhpVariables.d3trans48+'</div>');
-              wphealthtracker_vitals_d3_1(d3One);
+              wphealthtracker_vitals_d3_1(d3One, $);
             }
 
             // If no data was found for the creation of the D3 chart, output returned "No Data" HTML, else, display chart
@@ -164,7 +164,7 @@ jQuery(document).ready(function($) {
             } else {
               // Append any HTML that may be needed for the creation of the charts
               $('#wphealthtracker-stats-actual-inner-d3-1-2').append('<div id="wphealthtracker-bp-chart-select-div"></div><div id="wphealthtracker-d3chart-legendContainer-bp" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-bp"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-bp">'+wphealthtrackerPhpVariables.d3trans48+'</div>');
-              wphealthtracker_vitals_d3_2(d3Two);
+              wphealthtracker_vitals_d3_2(d3Two, $);
             }
 
             // If no data was found for the creation of the D3 chart, output returned "No Data" HTML, else, display chart
@@ -175,7 +175,7 @@ jQuery(document).ready(function($) {
             } else {
               // Append any HTML that may be needed for the creation of the charts
               $('#wphealthtracker-stats-actual-inner-d3-1-3').append('<div id="wphealthtracker-d3chart-legendContainer-ch" class="wphealthtracker-d3chart-legendContainer"><svg id="wphealthtracker-d3chart-legend-ch"></svg></div><div class="wphealthtracker-chart-hover-message" id="wphealthtracker-chart-hover-message-ch">'+wphealthtrackerPhpVariables.d3trans48+'</div>');
-              wphealthtracker_vitals_d3_3(d3Three);
+              wphealthtracker_vitals_d3_3(d3Three, $);
             }
 
             

@@ -506,7 +506,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			foreach ( $this->alluserdata as $key => $value ) {
 
 				// If cholesterol has been recorded for this loop iteration...
-				if ( ',,,' === $value->cholesterol && '' !== $value->cholesterol && null !== $value->cholesterol ) {
+				if ( ',,,' !== $value->cholesterol && '' !== $value->cholesterol && null !== $value->cholesterol ) {
 
 					// Split up weight from it's measurement.
 					$cholesterol   = explode( ',', $value->cholesterol );
@@ -967,10 +967,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 								$this->lowest_single_bp_read = $tempbparray2[0] . '/' . $tempbparray2[1];
 							}
 						}
-					}
-
-					// If there is ONE Blood Pressure entry on this day...
-					if ( stripos( $indiv_day->bloodpressure, ',' ) !== false ) {
+					} else  {
 
 						// Iterate overall counter.
 						$this->bp_entry_counter++;
@@ -1159,7 +1156,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 
 			// If there's just one day of weight data saved, display the 'No Enough Data' message.
 			if ( 1 === $this->weight_entry_counter ) {
-				$stats_1 = '<div class="wphealthtracker-no-saved-data-div">
+				$stats_1 = '<div style="bottom:58px;" class="wphealthtracker-no-saved-data-div">
 				<p>
 					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
@@ -1172,7 +1169,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 
 			// If there's no weight data saved, display the 'No Data' message.
 			if ( 0 === $this->weight_entry_counter ) {
-				$stats_1 = '<div class="wphealthtracker-no-saved-data-div">
+				$stats_1 = '<div style="bottom:58px;" class="wphealthtracker-no-saved-data-div">
 				<p>
 					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
@@ -1351,7 +1348,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 
 			// If there's just one day of Cholesterol data saved, display the 'Not Enough Data' message.
 			if ( 1 === $this->ch_day_counter ) {
-				$stats_3 = '<div class="wphealthtracker-no-saved-data-div">
+				$stats_3 = '<div style="bottom:58px;" class="wphealthtracker-no-saved-data-div">
 				<p>
 					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
@@ -1364,7 +1361,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 
 			// If there's no blood pressure data saved, display the 'No Data' message.
 			if ( 0 === $this->ch_day_counter ) {
-				$stats_3 = '<div class="wphealthtracker-no-saved-data-div">
+				$stats_3 = '<div style="bottom:58px;" class="wphealthtracker-no-saved-data-div">
 				<p>
 					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>

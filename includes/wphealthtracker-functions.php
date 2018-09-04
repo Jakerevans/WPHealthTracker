@@ -19,12 +19,21 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 	 */
 	class WPHealthTracker_General_Functions {
 
+		// Create new WPHeathTracker User on plugin activation.
+		public function wphealthtracker_add_wphealthtracker_role_on_plugin_activation() {
 
-		// Function to add the admin menu entry
+			require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
+			$this->access          = new WPHealthTracker_Utilities_Accesscheck();
+			$this->currentwphtuser = $this->access->wphealthtracker_accesscheck_create_role( 'WPHealthTracker Basic User' );
+
+		}
+
+		// Function to add the admin menu entry.
 		public function wphealthtracker_jre_admin_menu() {
-			$hook_suffix = add_menu_page( 'WPHealthTracker Options', 'Health Tracker', 'manage_options', 'WPHealthTracker-Options', array( $this, 'wphealthtracker_jre_admin_page_function' ), WPHEALTHTRACKER_ROOT_IMG_URL . 'wphealthtrackerdashboardicon.png', 6 );
+			$hook_suffix = add_menu_page( 'WPHealthTracker Options', 'WPHealthTracker', 'wphealthtracker_dashboard_access', 'WPHealthTracker-Options', array( $this, 'wphealthtracker_jre_admin_page_function' ), WPHEALTHTRACKER_ROOT_IMG_URL . 'wphealthtrackerdashboardicon.png', 6 );
 			return $hook_suffix;
 		}
+
 
 		// Function to add the individual admin menu pages
 		public function wphealthtracker_jre_my_subadmin_menu() {
@@ -40,7 +49,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 			$add_submenu_results = 0;
 			foreach ( $submenu_array as $key => $submenu ) {
 				$menu_slug = strtolower( str_replace( ' ', '-', $submenu ) );
-				add_submenu_page( 'WPHealthTracker-Options', 'WPHealthTracker', $submenu, 'manage_options', 'WPHealthTracker-' . $menu_slug, array( $this, 'wphealthtracker_jre_admin_page_function' ) );
+				add_submenu_page( 'WPHealthTracker-Options', 'WPHealthTracker', $submenu, 'wphealthtracker_dashboard_access', 'WPHealthTracker-' . $menu_slug, array( $this, 'wphealthtracker_jre_admin_page_function' ) );
 				$add_submenu_results++;
 			}
 
@@ -105,7 +114,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		function wphealthtracker_jre_admin_js( $hook ) {
 
 			// Loading this up on just the WPBookList admin pages that need it
-			if ( stripos( $hook, 'health-tracker' ) !== false ) {
+			if ( stripos( $hook, 'wphealthtracker' ) !== false ) {
 
 				// First just register the script
 				wp_register_script( 'wphealthtracker_jre_admin_js', WPHEALTHTRACKER_ROOT_JS_URL . 'wphealthtracker-admin-min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
@@ -462,334 +471,3 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 
 	}
 endif;
-
-
-
-
-
-/*
-<?php
-
-function wphealthtracker_add_ajax_library() {
-
-	$html = '<script type="text/javascript">';
-
-	// checking $protocol in HTTP or HTTPS
-	if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-		// this is HTTPS
-		$protocol  = "https";
-	} else {
-		// this is HTTP
-		$protocol  = "http";
-	}
-	$tempAjaxPath = admin_url( 'admin-ajax.php' );
-	$goodAjaxUrl = $protocol.strchr($tempAjaxPath,':');
-
-	$html .= 'var ajaxurl = "' . $goodAjaxUrl . '"';
-	$html .= '</script>';
-	echo $html;
-
-} // End add_ajax_library
-
-// Adding the front-end ui css file for this extension
-function wphealthtracker_frontend_ui_style() {
-	wp_register_style('wphealthtracker-frontend-ui', WPHEALTHTRACKER_ROOT_CSS_URL.'wphealthtracker-frontend-ui.css' );
-	wp_enqueue_style('wphealthtracker-frontend-ui');
-}
-// Code for adding the general admin CSS file
-function wphealthtracker_admin_style() {
-  if(current_user_can('administrator' )){
-	  wp_register_style('wphealthtracker-admin-ui', WPHEALTHTRACKER_ROOT_CSS_URL.'wphealthtracker-admin-ui.css');
-	  wp_enqueue_style('wphealthtracker-admin-ui');
-  }
-}
-
-// Function to add the admin menu
-function wphealthtracker_admin_menu() {
-  add_menu_page( 'WPHEALTHTRACKER Options', 'Health Tracker', 'manage_options', 'WPHEALTHTRACKER-Options', 'wphealthtracker_admin_page_function', WPHEALTHTRACKER_ROOT_IMG_URL.'wphealthtrackerdashboardicon.png', 6  );
-
-  $submenu_array = array(
-	"Tracker",
-	"Users",
-  );
-
-  // Filter to allow the addition of a new subpage
-  if(has_filter('wphealthtracker_add_sub_menu')) {
-	$submenu_array = apply_filters('wphealthtracker_add_sub_menu', $submenu_array);
-  }
-
-  foreach($submenu_array as $key=>$submenu){
-	$menu_slug = strtolower(str_replace(' ', '-', $submenu));
-	add_submenu_page('WPHEALTHTRACKER-Options', 'WPHEALTHTRACKER', $submenu, 'manage_options', 'WPHEALTHTRACKER-Options-'.$menu_slug, 'wphealthtracker_admin_page_function');
-  }
-
-  remove_submenu_page('WPHEALTHTRACKER-Options', 'WPHEALTHTRACKER-Options');
-
-}
-
-function wphealthtracker_admin_page_function(){
-  global $wpdb;
-  require_once(WPHEALTHTRACKER_CLASSES_UI_ADMIN_DIR.'class-admin-master-ui.php');
-}
-
-// Function to add table names to the global $wpdb
-function wphealthtracker_register_table_name() {
-	global $wpdb;
-	$wpdb->wphealthtracker_users = "{$wpdb->prefix}wphealthtracker_users";
-	$wpdb->wphealthtracker_user_daily_data_vitals = "{$wpdb->prefix}wphealthtracker_user_daily_data_vitals";
-	$wpdb->wphealthtracker_user_daily_data_diet = "{$wpdb->prefix}wphealthtracker_user_daily_data_diet";
-}
-
-// Runs once upon plugin activation and creates tables
-function wphealthtracker_create_tables() {
-  require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-  global $wpdb;
-  global $charset_collate;
-
-  // Call this manually as we may have missed the init hook
-  wphealthtracker_register_table_name();
-
-  // This is the table that holds static data about users - things like username, password, height, gender...
-  $sql_create_table1 = "CREATE TABLE {$wpdb->wphealthtracker_users}
-  (
-		ID smallint(190) auto_increment,
-		firstname varchar(190),
-		lastname varchar(255),
-		wpuserid smallint,
-		PRIMARY KEY  (ID),
-		  KEY firstname (firstname)
-  ) $charset_collate; ";
-  dbDelta( $sql_create_table1 );
-
-  // This is the table that will hold all user's daily data for the Vitals tab - one row per day per user, if they input data for that day.
-  $sql_create_table2 = "CREATE TABLE {$wpdb->wphealthtracker_user_daily_data_vitals}
-  (
-		ID smallint(190) auto_increment,
-		firstname varchar(190),
-		lastname varchar(255),
-		wpuserid smallint,
-		humandate varchar(255),
-		weight TINYTEXT,
-		bloodpressure TINYTEXT,
-		bloodoxygen TINYTEXT,
-		bodytemp TINYTEXT,
-		cholesterol TINYTEXT,
-		heartrate TINYTEXT,
-		bloodsugar TINYTEXT,
-		vitalsimg MEDIUMTEXT,
-		vitalsfiles MEDIUMTEXT,
-		PRIMARY KEY  (ID),
-		  KEY firstname (firstname)
-  ) $charset_collate; ";
-  dbDelta( $sql_create_table2 );
-
-  // This is the table that will hold all user's daily data for the Diet & Meds tab - one row per day per user, if they input data for that day.
-  $sql_create_table3 = "CREATE TABLE {$wpdb->wphealthtracker_user_daily_data_diet}
-  (
-		ID smallint(190) auto_increment,
-		firstname varchar(190),
-		lastname varchar(255),
-		wpuserid smallint,
-		humandate varchar(255),
-		foodstring LONGTEXT,
-		PRIMARY KEY  (ID),
-		  KEY firstname (firstname)
-  ) $charset_collate; ";
-  dbDelta( $sql_create_table3 );
-
-  /* For use in case we need to create and add just one row to it, like as is usually done with your settings tables
-  $table_name = $wpdb->prefix . 'wphealthtracker_users';
-  $wpdb->insert( $table_name, array('ID' => 1));
-
-
-
-
-}
-
-function wphealthtracker_jre_admin_pointers_javascript(){
-  wp_enqueue_style( 'wp-pointer' );
-  wp_enqueue_script( 'wp-pointer' );
-  wp_enqueue_script( 'utils' ); // for user settings
-
-  $adminjstransstring1 = __('Select a User','wphealthtracker-textdomain');
-  $adminjstransstring2 = __('Blah','wphealthtracker-textdomain');
-  $adminjstransstring3 = __('Weight','wphealthtracker-textdomain');
-  $adminjstransstring4 = __('Blah','wphealthtracker-textdomain');
-  $adminjstransstring5 = __('Blood Pressure','wphealthtracker-textdomain');
-  $adminjstransstring6 = __('Blah','wphealthtracker-textdomain');
-  $adminjstransstring7 = __('Blood Oxygen Level','wphealthtracker-textdomain');
-  $adminjstransstring8 = __('Blah','wphealthtracker-textdomain');
-
-
-  ?>
-  <script type="text/javascript" >
-  "use strict";
-  jQuery(document).ready(function($) {
-	// Clicking on 'Approve Checked Comments' button
-	$('body').on('mouseenter', ".wphealthtracker-icon-image-question", function () {
-	  var label = $(this).attr('data-label');
-	  var pointer;
-
-	  switch(label) {
-		case 'selectauser':
-			pointer = $(this).pointer({
-			  content: '<h3><?php echo $adminjstransstring1; ?></h3><p class="wphealthtracker-admin-pointer"><?php echo $adminjstransstring2; ?></p>',
-			  position: {
-				  edge: 'right',
-				  align: 'right',
-			  },
-			  close: function() {
-				  //
-			  }
-			})
-			break;
-		case 'vitals-weight':
-			pointer = $(this).pointer({
-			  content: '<h3><?php echo $adminjstransstring3; ?></h3><p class="wphealthtracker-admin-pointer"><?php echo $adminjstransstring4; ?></p>',
-			  position: {
-				  edge: 'right',
-				  align: 'right',
-			  },
-			  close: function() {
-				  //
-			  }
-			})
-			break;
-		case 'vitals-bp':
-			pointer = $(this).pointer({
-			  content: '<h3><?php echo $adminjstransstring5; ?></h3><p class="wphealthtracker-admin-pointer"><?php echo $adminjstransstring6; ?></p>',
-			  position: {
-				  edge: 'right',
-				  align: 'right',
-			  },
-			  close: function() {
-				  //
-			  }
-			})
-			break;
-		case 'vitals-bo':
-			pointer = $(this).pointer({
-			  content: '<h3><?php echo $adminjstransstring7; ?></h3><p class="wphealthtracker-admin-pointer"><?php echo $adminjstransstring8; ?></p>',
-			  position: {
-				  edge: 'right',
-				  align: 'right',
-			  },
-			  close: function() {
-				  //
-			  }
-			})
-			break;
-		default:
-			//code block
-	  }
-
-	  // open the pointer on mouseenter
-	  pointer.pointer('open');
-
-	  // close the pointer on mouseleave
-	  $('body').on('mouseleave', ".wphealthtracker-icon-image-question", function () {
-		pointer.pointer('close');
-	  });
-
-	});
-  });
-  </script>
-  <?php
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// For enabling the media selection/upload buttons
-function wphealthtracker_media_upload_select_javascript() {
-  wp_enqueue_media();
-  $my_saved_attachment_post_id = get_option( 'media_selector_attachment_id', 0 );
-  ?>
-	<script type="text/javascript" >
-	"use strict";
-	jQuery(document).ready(function($) {
-	  // For the image upload/selection
-	  var file_frame;
-	  var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
-	  var set_to_post_id = <?php echo $my_saved_attachment_post_id; ?>; // Set this
-	  $(document).on("click","#wphealthtracker-response-form-input-button-image-upload-0", function(event){
-		var buttonid = $(this).attr('id');
-		$(this).attr('data-active', true);
-		event.preventDefault();
-		// If the media frame already exists, reopen it.
-		if ( file_frame ) {
-		  // Set the post ID to what we want
-		  file_frame.uploader.uploader.param( 'post_id', set_to_post_id );
-		  // Open frame
-		  file_frame.open();
-		  return;
-		} else {
-		  // Set the wp.media post id so the uploader grabs the ID we want when initialised
-		  wp.media.model.settings.post.id = set_to_post_id;
-		}
-		// Create the media frame.
-		file_frame = wp.media.frames.file_frame = wp.media({
-		  title: 'Select a image to upload',
-		  button: {
-		  text: 'Use this image',
-		  },
-		  multiple: false // Set to true to allow multiple files to be selected
-		});
-		// When an image is selected, run a callback.
-		file_frame.on( 'select', function() {
-		  // We set multiple to false so only get one image from the uploader
-		  var attachment = file_frame.state().get('selection').first().toJSON();
-		  // Do something with attachment.id and/or attachment.url here
-
-
-
-		  // Restore the main post ID
-		  wp.media.model.settings.post.id = wp_media_post_id;
-		});
-		  // Finally, open the modal
-		  //file_frame.open();
-	  });
-	  // Restore the main ID when the add media button is pressed
-	  jQuery( 'a.add_media' ).on( 'click', function() {
-		wp.media.model.settings.post.id = wp_media_post_id;
-	  });
-
-
-  });
-  </script>
-  <?php
-}
-
-
-
-/*
- * Below is a boilerplate function with Javascript
- *
-/*
-// For
-add_action( 'admin_footer', 'wphealthtracker_boilerplate_javascript' );
-
-function wphealthtracker_boilerplate_javascript() {
-  ?>
-	<script type="text/javascript" >
-	"use strict";
-	jQuery(document).ready(function($) {
-	  $(document).on("click",".wphealthtracker-trigger-actions-checkbox", function(event){
-
-		event.preventDefault ? event.preventDefault() : event.returnValue = false;
-	  });
-  });
-  </script>
-  <?php
-}
-*/
-
-

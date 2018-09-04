@@ -259,6 +259,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 			if ( array_key_exists( 1, $page ) ) {
 				$filename = 'class-admin-' . $page[1] . '-' . $this->activetab . '-tab-ui.php';
 			}
+
 			// Support for Extensions.
 			if ( ! file_exists( WPHEALTHTRACKER_CLASSES_UI_ADMIN_DIR . $filename ) ) {
 				$path = $this->build_extension_path();

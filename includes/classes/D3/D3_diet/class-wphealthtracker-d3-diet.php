@@ -318,9 +318,11 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 				}
 
 				if ( 'kJ' === $value[1] ) {
-					$calories = round( ( $value[0] / 4.184 ), 2 );
-					$kcals    = round( ( $value[0] / 4.184 ), 2 );
-					$kjs      = $value[0];
+					if ( 0 !== $value[0] ) {
+						$calories = round( ( $value[0] / 4.184 ), 2 );
+						$kcals    = round( ( $value[0] / 4.184 ), 2 );
+					}
+					$kjs = $value[0];
 				}
 
 				$food_calories_array[ $key ] = number_format( $calories, 2 ) . ';' . number_format( $kcals, 2 ) . ';' . number_format( $kjs, 2 );
@@ -414,7 +416,9 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 
 							// Now convert Pounds to Kilograms.
 							if ( '' !== $energy_calories ) {
-								$energy_kilojoules = round( ( $energy / 4.184 ), 2 );
+								if ( 0 !== $energy ) {
+									$energy_kilojoules = round( ( $energy / 4.184 ), 2 );
+								}
 							}
 
 							// Now convert Kilograms to Pounds.
@@ -471,7 +475,9 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 
 						// Now convert Pounds to Kilograms.
 						if ( '' !== $energy_calories ) {
-							$energy_kilojoules = round( ( $energy / 4.184 ), 2 );
+							if ( 0 !== $energy ) {
+								$energy_kilojoules = round( ( $energy / 4.184 ), 2 );
+							}
 						}
 
 						// Now convert Kilograms to Pounds.
@@ -555,7 +561,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_protein = round( ( $this->protein_total / $protein_counter ), 2 );
+
+			if ( 0 !== $this->protein_total && 0 !== $protein_counter ) {
+				$this->average_daily_protein = round( ( $this->protein_total / $protein_counter ), 2 );
+			}
 
 			// Building average carbs per day.
 			$this->carbs_total         = 0;
@@ -583,7 +592,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_carbs = round( ( $this->carbs_total / $this->carbs_total_counter ), 2 );
+
+			if ( 0 !== $this->carbs_total && 0 !== $this->carbs_total_counter ) {
+				$this->average_daily_carbs = round( ( $this->carbs_total / $this->carbs_total_counter ), 2 );
+			}
 
 			// Building average fats per day.
 			$this->fats_total = 0;
@@ -611,7 +623,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_fats = round( ( $this->fats_total / $fats_counter ), 2 );
+
+			if ( 0 !== $this->fats_total && 0 !== $fats_counter ) {
+				$this->average_daily_fats = round( ( $this->fats_total / $fats_counter ), 2 );
+			}
 
 			$carb_array1 = array(
 				'cat' => $this->translations->diet_trans_35,
@@ -673,7 +688,20 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 			array_push( $this->data_3_array, $temp_array1 );
 			array_push( $this->data_3_array, $temp_array2 );
 
-			return $this->data_3_array;
+			// If there was no saved Diet data at all, return an array holding the 'No Data Found' Html.
+			if ( count( $this->alluserdata ) === 0 ) {
+				return '<div class="wphealthtracker-no-saved-data-div">
+				<p>
+					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
+					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
+					<br>
+					' . $this->translations->d3_trans_102 . '
+					<br>' . $this->translations->d3_trans_103 . '
+				</p>
+			</div>';
+			} else {
+				return $this->data_3_array;
+			}
 
 		}
 
@@ -717,8 +745,11 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 			$values                   = array_count_values( $orig_unique_foods );
 			arsort( $values );
 			$this->top_five_food_items = array_slice( array_keys( $values ), 0, 5, true );
-			$temp_top_food_item        = explode( ';', $this->top_five_food_items[0] );
-			$this->top_five_food_items = $temp_top_food_item[0];
+
+			if ( isset( $this->top_five_food_items[0] ) ) {
+				$temp_top_food_item        = explode( ';', $this->top_five_food_items[0] );
+				$this->top_five_food_items = $temp_top_food_item[0];
+			}
 
 			$total_cals = 0;
 			foreach ( $this->alluserdata as $key => $value ) {
@@ -746,9 +777,12 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 						}
 
 						if ( 'kJ' === $split_day_items[4] ) {
-							$calories = round( ( $split_day_items[3] / 4.184 ), 2 );
-							$kcals    = round( ( $split_day_items[3] / 4.184 ), 2 );
-							$kjs      = $split_day_items[3];
+							if ( 0 !== $split_day_items[3] ) {
+								$calories = round( ( $split_day_items[3] / 4.184 ), 2 );
+								$kcals    = round( ( $split_day_items[3] / 4.184 ), 2 );
+							}
+
+							$kjs = $split_day_items[3];
 						}
 
 						$this->total_cals    += $calories;
@@ -777,9 +811,11 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 
 					if ( 'kJ' === $split_day_items[4] ) {
-						$calories = round( ( $split_day_items[3] / 4.184 ), 2 );
-						$kcals    = round( ( $split_day_items[3] / 4.184 ), 2 );
-						$kjs      = $split_day_items[3];
+						if ( 0 !== $split_day_items[3] ) {
+							$calories = round( ( $split_day_items[3] / 4.184 ), 2 );
+							$kcals    = round( ( $split_day_items[3] / 4.184 ), 2 );
+						}
+						$kjs = $split_day_items[3];
 					}
 
 					$this->total_cals    += $calories;
@@ -815,7 +851,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_protein = round( ( $protein / $protein_counter ), 2 );
+
+			if ( 0 !== $protein && 0 !== $protein_counter ) {
+				$this->average_daily_protein = round( ( $protein / $protein_counter ), 2 );
+			}
 
 			// Building average carbs per day.
 			$this->carbs_total         = 0;
@@ -843,7 +882,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_carbs = round( ( $this->carbs_total / $this->carbs_total_counter ), 2 );
+
+			if ( 0 !== $this->carbs_total && 0 !== $this->carbs_total_counter ) {
+				$this->average_daily_carbs = round( ( $this->carbs_total / $this->carbs_total_counter ), 2 );
+			}
 
 			// Building average sugars per day.
 			$sugars         = 0;
@@ -871,7 +913,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_sugars = round( ( $sugars / $sugars_counter ), 2 );
+
+			if ( 0 !== $sugars && 0 !== $sugars_counter ) {
+				$this->average_daily_sugars = round( ( $sugars / $sugars_counter ), 2 );
+			}
 
 			// Building average fiber per day.
 			$fiber         = 0;
@@ -899,7 +944,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_fiber = round( ( $fiber / $fiber_counter ), 2 );
+
+			if ( 0 !== $fiber && 0 !== $fiber_counter ) {
+				$this->average_daily_fiber = round( ( $fiber / $fiber_counter ), 2 );
+			}
 
 			// Building average fats per day.
 			$this->fats_total        = 0;
@@ -927,7 +975,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_fats = round( ( $this->fats_total/ $fats_counter ), 2 );
+
+			if ( 0 !== $this->fats_total && 0 !== $fats_counter ) {
+				$this->average_daily_fats = round( ( $this->fats_total / $fats_counter ), 2 );
+			}
 
 			// Building average satfats per day.
 			$satfats         = 0;
@@ -955,7 +1006,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_satfats = round( ( $satfats / $satfats_counter ), 2 );
+
+			if ( 0 !== $satfats && 0 !== $satfats_counter ) {
+				$this->average_daily_satfats = round( ( $satfats / $satfats_counter ), 2 );
+			}
 
 			// Building average monounsatfats per day.
 			$monounsatfats         = 0;
@@ -983,7 +1037,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_monounsatfats = round( ( $monounsatfats / $monounsatfats_counter ), 2 );
+
+			if ( 0 !== $monounsatfats && 0 !== $monounsatfats_counter ) {
+				$this->average_daily_monounsatfats = round( ( $monounsatfats / $monounsatfats_counter ), 2 );
+			}
 
 			// Building average polyunsatfats per day.
 			$polyunsatfats         = 0;
@@ -1011,7 +1068,10 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 					}
 				}
 			}
-			$this->average_daily_polyunsatfats = round( ( $polyunsatfats / $polyunsatfats_counter ), 2 );
+
+			if ( 0 !== $polyunsatfats && 0 !== $polyunsatfats_counter ) {
+				$this->average_daily_polyunsatfats = round( ( $polyunsatfats / $polyunsatfats_counter ), 2 );
+			}
 		}
 
 		/**
@@ -1056,7 +1116,9 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 
 								$energy = 0;
 								if ( 'kJ' === $indiv_day2[4] ) {
-									$energy = round( ( $indiv_day2[3] / 4.184 ), 2 );
+									if ( 0 !== $indiv_day2[3] ) {
+										$energy = round( ( $indiv_day2[3] / 4.184 ), 2 );
+									}
 								} else {
 									$energy = $indiv_day2[3];
 								}
@@ -1076,7 +1138,9 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 
 							$energy = 0;
 							if ( 'kJ' === $indiv_day[4] ) {
-								$energy = round( ( $indiv_day[3] / 4.184 ), 2 );
+								if ( 0 !== $indiv_day[3] ) {
+									$energy = round( ( $indiv_day[3] / 4.184 ), 2 );
+								}
 							} else {
 								$energy = $indiv_day[3];
 							}
@@ -1118,7 +1182,9 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 			rsort($conseq_decrease_array);
 
 			// Calculating final averages.
-			$this->average_daily_calories   = round( ( $calories / $calories_counter ), 2 );
+			if ( 0 !== $calories && 0 !== $calories_counter ) {
+				$this->average_daily_calories = round( ( $calories / $calories_counter ), 2 );
+			}
 			$this->average_daily_kilojoules = round( ( $this->average_daily_calories * 4.184 ), 2 );
 			$this->highest_caloric_item     = explode( ';', $highest_caloric_food );
 			$this->highest_caloric_item     = $this->highest_caloric_item[0] . ' <span class="wphealthtracker-diet-span">(' . $highest_calories_counter . ' ' . $this->translations->diet_trans_41 . '/' . ( round( ( $highest_calories_counter * 4.184 ), 0 ) ) . ' ' . $this->translations->diet_trans_42 . ')</span>';
@@ -1425,13 +1491,13 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 
 			// If there's no blood pressure data saved, display the 'No Data' message.
 			if ( count( $this->alluserdata ) === 0 ) {
-				$stats_3 = '<div class="wphealthtracker-no-saved-data-div">
+				$stats_3 = '<div style="bottom:58px;" class="wphealthtracker-no-saved-data-div">
 				<p>
 					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span1">' . $this->translations->d3_trans_15 . '</span>
 					<br>
-					' . $this->translations->d3_trans_51 . '
-					<br>' . $this->translations->d3_trans_52 . '
+					' . $this->translations->d3_trans_102 . '
+					<br>' . $this->translations->d3_trans_104 . '
 				</p>
 			</div>';
 			}

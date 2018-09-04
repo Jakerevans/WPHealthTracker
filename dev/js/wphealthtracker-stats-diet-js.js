@@ -133,7 +133,6 @@ jQuery( document ).ready( function( $ ) {
 				timeout: 0,
 				success: function( response ) {
 
-
 					var response = JSON.parse( response );
 
 					var d3One = response[0];
