@@ -376,7 +376,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 			$key = 0;
 
 			$final_bs_string = '<div class="wphealthtracker-response-form-entry-row">
-					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->vitals_trans_11 . '
+					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-bs" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->vitals_trans_11 . '
 					<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'injury.svg" /></h2>';
 
 			// If there is indeed Blood sugar data saved at all.
@@ -551,7 +551,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 			$key = 0;
 
 			$final_bo_string = '<div class="wphealthtracker-response-form-entry-row">
-							<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->vitals_trans_15 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'oxygen.svg" /></h2>';
+							<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-bo" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->vitals_trans_15 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'oxygen.svg" /></h2>';
 
 			// If there is indeed Blood oxygen data saved at all.
 			if ( '' !== $this->bloodoxygen ) {
@@ -727,7 +727,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 			$key = 0;
 
 			$final_bt_string = '<div class="wphealthtracker-response-form-entry-row">
-					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->vitals_trans_18 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'thermometer.svg" /></h2>';
+					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-bt" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->vitals_trans_18 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'thermometer.svg" /></h2>';
 
 			// If there is indeed Blood oxygen.
 			if ( '' !== $this->bloodoxygen ) {
@@ -911,7 +911,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 			$key = 0;
 
 			$final_hr_string = '<div class="wphealthtracker-response-form-entry-row">
-					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->vitals_trans_22 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'monitor.svg" /></h2>';
+					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-hr" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->vitals_trans_22 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'monitor.svg" /></h2>';
 
 			// If there is indeed Heart Rate Data...
 			if ( '' !== $this->heartrate ) {
@@ -1028,7 +1028,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 			$key = 0;
 
 			$final_img_string = '<div class="wphealthtracker-response-form-entry-row">
-					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->common_trans_27 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'image.svg" /></h2>';
+					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->common_trans_27 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'image.svg" /></h2>';
 
 			// If there is indeed Image Data...
 			if ( '' !== $this->imgvitalsurl ) {
@@ -1105,7 +1105,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 			$key = 0;
 
 			$final_file_string = '<div class="wphealthtracker-response-form-entry-row">
-					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->common_trans_31 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'upload-file.svg" /></h2>';
+					<h2 class="wphealthtracker-response-form-heading-black"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view" data-label="vitals-files" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" />' . $this->translations->common_trans_31 . '<img class="wphealthtracker-icon-h2-image" data-label="vitals-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'upload-file.svg" /></h2>';
 
 			// If there is indeed file Data...
 			if ( '' !== $this->filevitalsurl ) {

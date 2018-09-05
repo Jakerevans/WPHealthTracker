@@ -3774,7 +3774,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 		}
 
 		// Now build HTML for distance/dest. report.
-		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>San Diego ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Houston ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
 		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 
@@ -4014,7 +4014,7 @@ function wphealthtrackerExerciseD3One( milesTravelledData, $ ) {
 		}
 
 		// Now build HTML for distance/dest. report.
-		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>San Diego ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
+		reportHtml = '<div><div class="wphealhttracker-d3chart-exercise-readout-title"><img src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'route.svg"/><p>Miami ' + wphealthtrackerPhpVariables.d3trans77 + '...</p></div>' + rowHtml + '<div class="wphealhttracker-d3chart-exercise-readout-contents"></div></div>';
 		$( '#wphealthtracker-d3chart-readout-exercise-distance' ).append( reportHtml ).animate({'opacity': '1'}, 1000 );
 	});
 

@@ -922,6 +922,16 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     position: relative;
     top: 2px;
 }
+
+.toplevel_page_WPHealthTracker-Options .dashicons-before img{
+    width: 30px!important;
+    margin-right: 2px!important;
+    padding: 2px 0 0!important;
+}
+
+.wphealthtracker-admin-bold-tip{
+    font-weight:bold;
+}
 /*
  *  END NON-SASS CSS
  */

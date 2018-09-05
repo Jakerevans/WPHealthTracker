@@ -363,7 +363,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 
 								$sets_html = $sets_html . '
 								<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">' . $this->translations->exercise_trans_17 . ' #' . ( $key2 + 1 ) . '</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
 												<input ' . $weight_disabled . ' type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-' . $key2 . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $weight . '"/>
 												<div class="wphealthtracker-response-form-input-checkbox-div">
 													<input ' . $bodyweight_checked . ' type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-' . $key2 . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
@@ -371,11 +371,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 												</div>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-reps" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-' . $key2 . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $reps . '"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-set-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-' . $key2 . '-' . $loop_num . '">
 													' . $setweightmeasure . '
 												</select>
@@ -387,7 +387,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 
 							$sets_html = '
 							<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">' . $this->translations->exercise_trans_17 . ' #1</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 												<div class="wphealthtracker-response-form-input-checkbox-div">
 													<input type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
@@ -395,11 +395,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 												</div>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-reps" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-set-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-' . $key . '-' . $loop_num . '">
 													<option>' . $this->translations->d3_trans_19 . '</option>
 													<option>' . $this->translations->d3_trans_18 . '</option>
@@ -512,17 +512,17 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-name" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-exercise" id="wphealthtracker-response-form-input-text-exercise-name-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $exerciseitem . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 												' . $exercisetype . '
 											</select>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
 											<input ' . $time_input . ' class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-exercise" id="wphealthtracker-response-form-input-time-exercise-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $time . '"/>
 										</div>
 									</div>
@@ -530,22 +530,22 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $duration . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 												' . $exerdurmeasure . '
 											</select>
 										</div>
 
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $distance . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 												' . $distancemeasure . '
 											</select>
@@ -555,7 +555,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-protein-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-select-2">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-muscle-groups" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
 											<select class="wphealthtracker-response-form-select select2-input" id="select2-upsells" name="musclegroups[]" multiple="multiple">
 												' . $muscles . '
 											</select>
@@ -571,11 +571,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-image-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $imageurl . '" placeholder="' . $this->translations->common_trans_28 . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 											<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 										</div>
 									</div>
@@ -583,11 +583,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-file-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $fileurl . '" placeholder="' . $this->translations->common_trans_32 . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 											<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 										</div>
 									</div>
@@ -633,7 +633,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<option>' . $this->translations->common_trans_55 . '</option>';
 
 						$sets_html = '<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">' . $this->translations->exercise_trans_17 . ' #1</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 												<div class="wphealthtracker-response-form-input-checkbox-div">
 												<input type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-' . $key2 . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
@@ -641,11 +641,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 											</div>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-reps" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-set-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-' . $key . '-' . $loop_num . '">
 													<option>' . $this->translations->d3_trans_19 . '</option>
 													<option>' . $this->translations->d3_trans_18 . '</option>
@@ -673,17 +673,17 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-name" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
 												<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-exercise" id="wphealthtracker-response-form-input-text-exercise-name-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 													' . $exercisetype . '
 												</select>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
 												<input ' . $time_input . ' class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-exercise" id="wphealthtracker-response-form-input-time-exercise-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 										</div>
@@ -691,22 +691,22 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 													' . $exerdurmeasure . '
 												</select>
 											</div>
 
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 													' . $distancemeasure . '
 												</select>
@@ -716,7 +716,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-protein-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-select-2">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-muscle-groups" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
 												<select class="wphealthtracker-response-form-select select2-input" id="select2-upsells" name="musclegroups[]" multiple="multiple">
 													' . $muscles . '
 												</select>
@@ -732,11 +732,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-image-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 												<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" placeholder="' . $this->translations->common_trans_28 . '"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 												<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 											</div>
 										</div>
@@ -744,11 +744,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-file-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 												<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"placeholder="' . $this->translations->common_trans_32 . '"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 												<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 											</div>
 										</div>
@@ -1018,7 +1018,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 
 							$sets_html = $sets_html . '
 							<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">' . $this->translations->exercise_trans_17 . ' #' . ( $key2 + 1 ) . '</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
 											<input ' . $weight_disabled . ' type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-' . $key2 . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $weight . '"/>
 											<div class="wphealthtracker-response-form-input-checkbox-div">
 												<input ' . $bodyweight_checked . ' type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-' . $key2 . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
@@ -1026,11 +1026,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 											</div>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-reps" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-' . $key2 . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $reps . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-set-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-' . $key2 . '-' . $loop_num . '">
 												' . $setweightmeasure . '
 											</select>
@@ -1041,7 +1041,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 					} else {
 						$sets_html = '
 						<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">' . $this->translations->exercise_trans_17 . ' #1</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											<div class="wphealthtracker-response-form-input-checkbox-div">
 												<input type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
@@ -1049,11 +1049,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 											</div>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-reps" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-exercise-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-set-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-' . $key . '-' . $loop_num . '">
 												<option>' . $this->translations->d3_trans_19 . '</option>
 												<option>' . $this->translations->d3_trans_18 . '</option>
@@ -1166,17 +1166,17 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-name" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-exercise" id="wphealthtracker-response-form-input-text-exercise-name-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $exerciseitem . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
 										<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 											' . $exercisetype . '
 										</select>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
 										<input ' . $time_input . ' class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-exercise" id="wphealthtracker-response-form-input-time-exercise-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $time . '"/>
 									</div>
 								</div>
@@ -1184,22 +1184,22 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $duration . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 										<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 											' . $exerdurmeasure . '
 										</select>
 									</div>
 
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $distance . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 										<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 											' . $distancemeasure . '
 										</select>
@@ -1209,7 +1209,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-protein-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-select-2">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-muscle-groups" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
 										<select class="wphealthtracker-response-form-select select2-input" id="select2-upsells" name="musclegroups[]" multiple="multiple">
 											' . $muscles . '
 										</select>
@@ -1225,11 +1225,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-image-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $imageurl . '" placeholder="' . $this->translations->common_trans_28 . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 										<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 									</div>
 								</div>
@@ -1237,11 +1237,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-file-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $fileurl . '" placeholder="' . $this->translations->common_trans_32 . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 										<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 									</div>
 								</div>
@@ -1288,7 +1288,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<option>' . $this->translations->common_trans_55 . '</option>';
 
 						$sets_html = '<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">' . $this->translations->exercise_trans_17 . ' #1</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 												<div class="wphealthtracker-response-form-input-checkbox-div">
 													<input type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
@@ -1296,11 +1296,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 												</div>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-reps" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-set-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-' . $key . '-' . $loop_num . '">
 													<option>' . $this->translations->d3_trans_19 . '</option>
 													<option>' . $this->translations->d3_trans_18 . '</option>
@@ -1328,17 +1328,17 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-name" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
 												<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-exercise" id="wphealthtracker-response-form-input-text-exercise-name-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 													' . $exercisetype . '
 												</select>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
 												<input ' . $time_input . ' class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-exercise" id="wphealthtracker-response-form-input-time-exercise-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 										</div>
@@ -1346,22 +1346,22 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 													' . $exerdurmeasure . '
 												</select>
 											</div>
 
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
 												<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 												<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 													' . $distancemeasure . '
 												</select>
@@ -1371,7 +1371,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-protein-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-select-2">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-muscle-groups" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
 												<select class="wphealthtracker-response-form-select select2-input" id="select2-upsells" name="musclegroups[]" multiple="multiple">
 													' . $muscles . '
 												</select>
@@ -1387,11 +1387,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-image-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 												<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" placeholder="' . $this->translations->common_trans_28 . '"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 												<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 											</div>
 										</div>
@@ -1399,11 +1399,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 									<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-file-row-div-' . $key . '-' . $loop_num . '">
 										<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 												<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"placeholder="' . $this->translations->common_trans_32 . '"/>
 											</div>
 											<div class="wphealthtracker-response-form-exercise-innerrow-div">
-												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+												<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 												<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 											</div>
 										</div>
@@ -1467,7 +1467,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 					<option>' . $this->translations->common_trans_55 . '</option>';
 
 				$sets_html = '<div class="wphealthtracker-response-form-exercise-set-div"><p class="wphealthtracker-response-form-exercise-set-label">' . $this->translations->exercise_trans_17 . ' #1</p><div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-weight" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->d3_trans_40 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-weight-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										<div class="wphealthtracker-response-form-input-checkbox-div">
 											<input type="checkbox" class="wphealthtracker-response-form-input-checkbox wphealthtracker-response-form-input-checkbox-exercise-bodyweight" id="wphealthtracker-response-form-input-text-setrep-bodyweight-' . $key2 . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
@@ -1475,11 +1475,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 										</div>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-reps" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_16 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-setrep-reps-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-set-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 										<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-setrep-measurement-' . $key . '-' . $loop_num . '">
 											<option>' . $this->translations->d3_trans_19 . '</option>
 											<option>' . $this->translations->d3_trans_18 . '</option>
@@ -1507,17 +1507,17 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-name" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_7 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-exercise" id="wphealthtracker-response-form-input-text-exercise-name-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_8 . '</p>
 										<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 											' . $exercisetype . '
 										</select>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_13 . '</p>
 										<input ' . $time_input . ' class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-exercise" id="wphealthtracker-response-form-input-time-exercise-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 									</div>
 								</div>
@@ -1525,22 +1525,22 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-item-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_14 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-time-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 										<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 											' . $exerdurmeasure . '
 										</select>
 									</div>
 
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_15 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-distance-measure" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 										<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-exercise-type-' . $key . '-' . $loop_num . '">
 											' . $distancemeasure . '
 										</select>
@@ -1550,7 +1550,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-protein-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div wphealthtracker-response-form-exercise-innerrow-div-select-2">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-muscle-groups" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->exercise_trans_19 . '</p>
 										<select class="wphealthtracker-response-form-select select2-input" id="select2-upsells" name="musclegroups[]" multiple="multiple">
 											' . $muscles . '
 										</select>
@@ -1566,11 +1566,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-image-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" placeholder="' . $this->translations->common_trans_28 . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 										<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 									</div>
 								</div>
@@ -1578,11 +1578,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-exercise" id="wphealthtracker-response-form-exercise-file-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-exercise-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"placeholder="' . $this->translations->common_trans_32 . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-exercise-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-exercise" data-label="exercise-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 										<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 									</div>
 								</div>

@@ -365,15 +365,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-item-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-item" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-food" id="wphealthtracker-response-form-input-text-food-name-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $fooditem . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-category" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-food-category-' . $key . '-' . $loop_num . '"value="' . $category . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-time-consumed" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
 											<input ' . $time_input . ' class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-food" id="wphealthtracker-response-form-input-time-food-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $time . '"/>
 										</div>
 									</div>
@@ -381,11 +381,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-calories-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $energy . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories-measurement" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-energy-measurement-' . $key . '-' . $loop_num . '">
 												' . $energymeasure . '
 											</select>
@@ -395,11 +395,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-protein-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-protein-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $protein . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-protein-measurement-' . $key . '-' . $loop_num . '">
 												' . $proteintype . '
 											</select>
@@ -409,19 +409,19 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-fat-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-total-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $totalfat . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-sat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-sat-' . $key . '-' . $loop_num . '"value="' . $satfat . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-monounsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-mono-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $monofat . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-polyunsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-poly-' . $key . '-' . $loop_num . '"value="' . $polyfat . '"/>
 										</div>
 									</div>
@@ -429,15 +429,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-carbs-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-total-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $totalcarbs . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-fiber-' . $key . '-' . $loop_num . '"value="' . $dietaryfiber . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-sugars" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-sugar-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $sugars . '"/>
 										</div>
 									</div>
@@ -446,11 +446,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-image-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $imageurl . '" placeholder="' . $this->translations->common_trans_28 . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
 											<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 										</div>
 									</div>
@@ -458,11 +458,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-file-row-div-' . $key . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $fileurl . '" placeholder="' . $this->translations->common_trans_32 . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 											<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 										</div>
 									</div>
@@ -498,15 +498,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-item-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-item" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-food" id="wphealthtracker-response-form-input-text-food-name-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-category" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-food-category-' . ( $key + 1 ) . '-' . $loop_num . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-time-consumed" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
 											<input type="time" class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-food" id="wphealthtracker-response-form-input-time-food-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 									</div>
@@ -514,11 +514,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-calories-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories-measurement" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-energy-measurement-' . ( $key + 1 ) . '-' . $loop_num . '">
 												' . $energymeasure . '
 											</select>
@@ -528,11 +528,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-protein-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-protein-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-protein-measurement-' . ( $key + 1 ) . '-' . $loop_num . '">
 												' . $proteintype . '
 											</select>
@@ -542,19 +542,19 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-fat-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-total-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-sat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-sat-' . ( $key + 1 ) . '-' . $loop_num . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-monounsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-mono-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-polyunsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-poly-' . ( $key + 1 ) . '-' . $loop_num . '"/>
 										</div>
 									</div>
@@ -562,15 +562,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-carbs-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-total-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-fiber" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-fiber-' . ( $key + 1 ) . '-' . $loop_num . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-sugars" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-sugar-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 									</div>
@@ -579,11 +579,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-image-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" placeholder="' . $this->translations->common_trans_28 . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
 											<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . ( $key + 1 ) . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 										</div>
 									</div>
@@ -591,11 +591,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-file-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" placeholder="' . $this->translations->common_trans_32 . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 											<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . ( $key + 1 ) . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 										</div>
 									</div>
@@ -857,15 +857,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-item" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-food" id="wphealthtracker-response-form-input-text-food-name-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $fooditem . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-category" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-food-category-' . $key . '-' . $loop_num . '"value="' . $category . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-time-consumed" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
 										<input ' . $time_input . ' class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-food" id="wphealthtracker-response-form-input-time-food-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $time . '"/>
 									</div>
 								</div>
@@ -873,11 +873,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $energy . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories-measurement" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 										<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-energy-measurement-' . $key . '-' . $loop_num . '">
 											' . $energymeasure . '
 										</select>
@@ -887,11 +887,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-protein-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $protein . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
 										<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-protein-measurement-' . $key . '-' . $loop_num . '">
 											' . $proteintype . '
 										</select>
@@ -901,19 +901,19 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-total-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $totalfat . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-sat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-sat-' . $key . '-' . $loop_num . '"value="' . $satfat . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-monounsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-mono-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $monofat . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-polyunsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-poly-' . $key . '-' . $loop_num . '"value="' . $polyfat . '"/>
 									</div>
 								</div>
@@ -921,15 +921,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-total-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $totalcarbs . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-fiber" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-fiber-' . $key . '-' . $loop_num . '"value="' . $dietaryfiber . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-sugars" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
 										<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-sugar-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $sugars . '"/>
 									</div>
 								</div>
@@ -938,11 +938,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $imageurl . '" placeholder="' . $this->translations->common_trans_28 . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
 										<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 									</div>
 								</div>
@@ -950,11 +950,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 							<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 								<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 										<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" value="' . $fileurl . '" placeholder="' . $this->translations->common_trans_32 . '"/>
 									</div>
 									<div class="wphealthtracker-response-form-diet-innerrow-div">
-										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+										<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 										<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 									</div>
 								</div>
@@ -987,15 +987,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-item" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-food" id="wphealthtracker-response-form-input-text-food-name-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-category" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-food-category-' . ( $key + 1 ) . '-' . $loop_num . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-time-consumed" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
 											<input type="time" class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-food" id="wphealthtracker-response-form-input-time-food-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 									</div>
@@ -1003,11 +1003,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories-measurement" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-energy-measurement-' . ( $key + 1 ) . '-' . $loop_num . '">
 												' . $energymeasure . '
 											</select>
@@ -1017,11 +1017,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-protein-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
 											<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-protein-measurement-' . ( $key + 1 ) . '-' . $loop_num . '">
 												' . $proteintype . '
 											</select>
@@ -1031,19 +1031,19 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-total-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-sat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-sat-' . ( $key + 1 ) . '-' . $loop_num . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-monounsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-mono-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-polyunsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-poly-' . ( $key + 1 ) . '-' . $loop_num . '"/>
 										</div>
 									</div>
@@ -1051,15 +1051,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-total-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-fiber" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-fiber-' . ( $key + 1 ) . '-' . $loop_num . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-sugars" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
 											<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-sugar-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 										</div>
 									</div>
@@ -1068,11 +1068,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" placeholder="' . $this->translations->common_trans_28 . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
 											<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . ( $key + 1 ) . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 										</div>
 									</div>
@@ -1080,11 +1080,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 								<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . ( $key + 1 ) . '-' . $loop_num . '">
 									<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 											<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . ( $key + 1 ) . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" placeholder="' . $this->translations->common_trans_32 . '"/>
 										</div>
 										<div class="wphealthtracker-response-form-diet-innerrow-div">
-											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+											<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 											<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . ( $key + 1 ) . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 										</div>
 									</div>
@@ -1122,15 +1122,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 						<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 							<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-item" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_2 . '</p>
 									<input type="text" class="wphealthtracker-response-form-input-text wphealthtracker-response-form-input-text-food" id="wphealthtracker-response-form-input-text-food-name-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-category" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_35 . '</p>
 									<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-food-category-' . $key . '-' . $loop_num . '"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-time-consumed" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_3 . '</p>
 									<input type="time" class="wphealthtracker-response-form-input-time wphealthtracker-response-form-input-time-food" id="wphealthtracker-response-form-input-time-food-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 								</div>
 							</div>
@@ -1138,11 +1138,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 						<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 							<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_8 . '</p>
 									<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-energy-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-calories-measurement" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_23 . '</p>
 									<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-energy-measurement-' . $key . '-' . $loop_num . '">
 										<option>' . $this->translations->diet_trans_9 . '</option>
 										<option>' . $this->translations->diet_trans_10 . '</option>
@@ -1154,11 +1154,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 						<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 							<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_12 . '</p>
 									<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-protein-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-protein-type" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_36 . '</p>
 									<select class="wphealthtracker-response-form-select" id="wphealthtracker-response-form-input-select-protein-measurement-' . $key . '-' . $loop_num . '">
 										<option>' . $this->translations->common_trans_37 . '</option>
 										<option>' . $this->translations->diet_trans_13 . '</option>
@@ -1176,19 +1176,19 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 						<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 							<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_4 . '</p>
 									<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-total-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-sat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_5 . '</p>
 									<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-sat-' . $key . '-' . $loop_num . '"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-monounsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_6 . '</p>
 									<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-mono-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-fat-polyunsat" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_7 . '</p>
 									<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-fat-poly-' . $key . '-' . $loop_num . '"/>
 								</div>
 							</div>
@@ -1196,15 +1196,15 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 						<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 							<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-total" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_20 . '</p>
 									<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-total-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-fiber" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_21 . '</p>
 									<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-fiber-' . $key . '-' . $loop_num . '"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-carbs-sugars" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->diet_trans_22 . '</p>
 									<input type="number" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-carbs-sugar-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);"/>
 								</div>
 							</div>
@@ -1213,11 +1213,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 						<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 							<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_28 . '</p>
 									<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-image-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" placeholder="' . $this->translations->common_trans_28 . '"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-image-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_29 . '</p>
 									<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-image-upload" id="wphealthtracker-response-form-input-button-image-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_30 . '</button>
 								</div>
 							</div>
@@ -1225,11 +1225,11 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 						<div class="wphealthtracker-response-form-data-row-food" id="wphealthtracker-response-form-food-row-div-' . $key . '-' . $loop_num . '">
 							<div class="wphealthtracker-response-form-diet-row-div-cal-pro">
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_32 . '</p>
 									<input type="text" class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-file-' . $key . '-' . $loop_num . '" style="border: 1px solid rgb(221, 221, 221);" placeholder="' . $this->translations->common_trans_32 . '"/>
 								</div>
 								<div class="wphealthtracker-response-form-diet-innerrow-div">
-									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-bp" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
+									<p><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="diet-food-file-button" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->translations->common_trans_33 . '</p>
 									<button class="wphealthtracker-response-form-input-button wphealthtracker-response-form-input-button-file-upload" id="wphealthtracker-response-form-input-button-file-upload-' . $key . '-' . $loop_num . '">' . $this->translations->common_trans_34 . '</button>
 								</div>
 							</div>
