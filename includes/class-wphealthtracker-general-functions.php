@@ -135,15 +135,16 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
 				$trans = new WPHealthTracker_Translations();
 				// Localize the script with the appropriate translation array from the Translations class.
-				$translation_array1 = $trans->admin_js_trans_strings();
-				$translation_array2 = $trans->vitals_tab_trans_strings();
-				$translation_array3 = $trans->ajax_return_strings();
-				$translation_array4 = $trans->d3_chart_trans_strings();
-				$translation_array5 = $trans->common_trans_strings();
-				$translation_array6 = $trans->diet_tab_trans_strings();
-				$translation_array7 = $trans->exercise_tab_trans_strings();
-				$translation_array8 = $trans->tab_titles_trans_strings();
-				$translation_array9 = $trans->users_tab_trans_strings();
+				$translation_array1  = $trans->admin_js_trans_strings();
+				$translation_array2  = $trans->vitals_tab_trans_strings();
+				$translation_array3  = $trans->ajax_return_strings();
+				$translation_array4  = $trans->d3_chart_trans_strings();
+				$translation_array5  = $trans->common_trans_strings();
+				$translation_array6  = $trans->diet_tab_trans_strings();
+				$translation_array7  = $trans->exercise_tab_trans_strings();
+				$translation_array8  = $trans->tab_titles_trans_strings();
+				$translation_array9  = $trans->users_tab_trans_strings();
+				$translation_array10 = $trans->dashboard_trans_strings();
 
 				// Now grab all of our Nonces to pass to the JavaScript for the Ajax functions and merge with the Translations array.
 				$final_array_of_php_values = array_merge( $translation_array1, $translation_array2 );
@@ -154,6 +155,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array7 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array8 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array9 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array10 );
 				$final_array_of_php_values = array_merge( $final_array_of_php_values, json_decode( WPHEALTHTRACKER_FINAL_NONCES_ARRAY, true ) );
 
 				// Adding some other individual values we may need.

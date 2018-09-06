@@ -601,15 +601,756 @@ jQuery( document ).ready( function( $ ) {
 					}
 				});
 				break;
-			case 'dash-daystracked':
+			case 'dash-conseqdaystracked':
 				pointer = $( this ).pointer({
-					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring7 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring8 + '</p>',
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans4 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring71 + '</p>',
 					position: {
 						edge: 'left',
 						align: 'left'
 					}
 				});
 				break;
+			case 'dash-firstdaytracked':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans5 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring72 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-lastdaytracked':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans6 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring73 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-largestgap':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans7 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring74 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-daystracked':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans2 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring70 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-numberofgaps':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans14 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring75 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-startingweight':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans8 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring76 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-recentweight':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans9 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring77 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-startingbp':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans12 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring78 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-recentbp':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans13 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring79 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-startingcho':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans10 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring80 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-recentcho':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans11 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring81 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-highestweight':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans6 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring82 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-lowestweight':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans7 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring83 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-averageweight':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans8 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring84 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-totalweightlost':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans9 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring85 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-totalweightgained':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans17 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring86 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-largestsingleweightloss':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring87 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring88 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-largestsingleweightgain':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring89 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring90 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-averagebpreading':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring91 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring92 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-highestbpreading':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring93 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring94 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-lowestbpreading':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring95 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring96 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-highestsys':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring97 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring98 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-lowestsys':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring99 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring100 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-highestdys':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring101 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring102 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-lowestdys':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring103 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring104 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+
+			case 'd3-vitals-averageldl':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans42 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring105 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-averagehdl':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans43 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring106 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-averagetri':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans44 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring107 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-averagetotalcho':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans45 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring108 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-highesttotalcho':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans46 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring109 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-lowesttotalcho':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans47 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring110 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-weightchartandstats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans1 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring111 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-bloodpressurechartandstats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans21 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring112 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-vitals-cholesterolchartandstats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans38 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring113 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-totalunique':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans33 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring114 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-top3consumedfoods':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans34 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring115 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-averagedailycals':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans42 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring116 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-averagedailykilojoules':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans43 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring117 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-averagedailyprotein':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans35 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring118 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-averagedailycarbs':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans36 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring119 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-averagedailysugars':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans37 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring120 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-averagedailytotalfats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans38 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring121 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-averagedailyfiber':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans39 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring122 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-mostconsumedfood':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans56 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring123 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-averagesatfat':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans44 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring124 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-averagemonosatfat':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans45 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring125 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-averagepolysatfat':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans46 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring126 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-totalcalsconsumed':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans57 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring127 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-totalkilojoulesconsumed':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans61 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring128 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-highestsinglefood':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.adminjstransstring130 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring129 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-highestconseqdecrease':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.diettrans44 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring131 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-highestconseqincrease':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.diettrans45 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring132 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-totalprotein':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans48 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring133 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-totalcarbs':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans47 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring134 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-totalfats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans49 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring135 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-foodchartandstats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans53 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring136 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-energychartandstats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans62 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring137 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-diet-macrobutrientschartandstats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans63 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring138 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-totaluniqueexercises':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans50 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring139 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-topexercise':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans52 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring140 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-topexercisecategory':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans56 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring158 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-totalexercisecategories':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans57 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring141 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'dash-totalmusclegroups':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans58 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring143 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-topmusclegroups':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans59 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring144 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-totalsecondsexercised':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans53 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring145 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-totalminutesexercised':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans54 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring146 + '</p>',
+					position: {
+						edge: 'left',
+						align: 'left'
+					}
+				});
+				break;
+			case 'dash-totalhoursexercised':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans55 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring147 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-distancechartandstats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans74 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring148 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-musclegroupschartandstats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans90 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring149 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-durationchartandstats':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans99 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring150 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-totalmiles':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans79 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring151 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-totalkilometers':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans80 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring152 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-totalmeters':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans81 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring153 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-totalyards':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans82 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring154 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-totalfeet':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans83 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring155 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-aroundearth':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans88 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring156 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-earthtomoon':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.d3trans89 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring157 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-totalperformed':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans61 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring159 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-longesthours':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans62 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring160 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-longestminutes':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans63 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring161 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-longestseconds':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans64 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring162 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+			case 'd3-exercise-averageoccurance':
+				pointer = $( this ).pointer({
+					content: '<h3>' + wphealthtrackerPhpVariables.dashboardtrans65 + '</h3><p class="wphealthtracker-admin-pointer">' + wphealthtrackerPhpVariables.adminjstransstring163 + '</p>',
+					position: {
+						edge: 'right',
+						align: 'right'
+					}
+				});
+				break;
+
+
 			default:
 			}
 

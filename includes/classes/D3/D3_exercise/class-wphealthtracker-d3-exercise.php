@@ -908,17 +908,17 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 
 			$title_1 = '
 			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'runner.svg"/>		
-			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="selectauser" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_74 . '</p>
+			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="d3-exercise-distancechartandstats" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_74 . '</p>
 			<div class="wphealthtracker-d3-chart-title-line"></div>';
 
 			$title_2 = '
 			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'strong.svg"/>		
-			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="selectauser" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_90 . '</p>
+			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="d3-exercise-musclegroupschartandstats" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_90 . '</p>
 			<div class="wphealthtracker-d3-chart-title-line"></div>';
 
 			$title_3 = '
 			<img class="wphealthtracker-d3-chart-title-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'stopwatch.svg"/>		
-			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="selectauser" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_99 . '</p>
+			<img class="wphealthtracker-icon-image-question" id="wphealthtracker-icon-image-question-d3-chart-title" data-label="d3-exercise-durationchartandstats" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg" /><p class="wphealthtracker-d3-chart-title-actual">' . $this->translations->d3_trans_99 . '</p>
 			<div class="wphealthtracker-d3-chart-title-line"></div>';
 
 			array_push( $this->titles_array, $title_1 );
@@ -1307,56 +1307,56 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 				<div class="wphealthtracker-dashboard-row">
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-firstdaytracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_3 . '</span>
 							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->alluserdata[0]->humandate . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+							<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-totalmiles" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_79 . '</span>
 							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->miles_running_total . ' ' . $this->translations->common_trans_53 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+							<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-totalkilometers" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_80 . '</span>
 							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->kilometers_running_total . ' ' . $this->translations->common_trans_55 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+							<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-totalmeters" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_81 . '</span>
 							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->meters_running_total . ' ' . $this->translations->common_trans_54 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+							<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-totalyards" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_82 . '</span>
 							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->yards_running_total . ' ' . $this->translations->common_trans_52 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+							<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-totalfeet" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_83 . '</span>
 							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->feet_running_total . ' ' . $this->translations->common_trans_51 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+							<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-aroundearth" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_88 . '</span>
 							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->perc_around_world . ' ' . $this->translations->d3_trans_75 . '</span>
 						</p>
 					</div>
 					<div class="wphealthtracker-dashboard-row-entry">
 						<p>
-							<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+							<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-earthtomoon" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 							<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_89 . '</span>
 							<span class="wphealthtracker-dashboard-row-entry-data">' . $this->perc_to_moon . ' ' . $this->translations->d3_trans_75 . '</span>
 						</p>
@@ -1389,42 +1389,42 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 					<div class="wphealthtracker-dashboard-row">
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-firstdaytracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_3 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->first_muscle_date . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-topmusclegroups" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_59 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->top_3_exercise_muscles . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-topexercisecategory" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_56 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->top_3_exercise_categories . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-topexercise" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_52 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->top_3_exercise_items . '
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-totaluniqueexercises" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_50 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->unique_exercises_count . ' ' . $this->translations->dashboard_trans_51 . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-totalexercisecategories" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_57 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->exercise_categories_count . ' ' . $this->translations->common_trans_57 . '</span>
 							</p>
@@ -1454,63 +1454,63 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 					<div class="wphealthtracker-dashboard-row">
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-firstdaytracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->d3_trans_3 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->first_exercise_date . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-totalperformed" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_61 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_exercises . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-totalhoursexercised" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_55 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_hours . ' ' . $this->translations->common_trans_50 . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-totalminutesexercised" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_54 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_minutes . ' ' . $this->translations->common_trans_49 . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-totalsecondsexercised" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_53 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->total_seconds . ' ' . $this->translations->common_trans_48 . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-longesthours" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_62 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->longest_hours . ' ' . $this->translations->common_trans_50 . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-longestminutes" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_63 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->longest_minutes . ' ' . $this->translations->common_trans_49 . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-longestseconds" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_64 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->longest_seconds . ' ' . $this->translations->common_trans_48 . '</span>
 							</p>
 						</div>
 						<div class="wphealthtracker-dashboard-row-entry">
 							<p>
-								<img class="wphealthtracker-icon-image-question-dashboard" data-label="dash-daystracked" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
+								<img class="wphealthtracker-icon-image-question-dashboard" data-label="d3-exercise-averageoccurance" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-red.svg" />
 								<span class="wphealthtracker-dashboard-row-entry-label">' . $this->translations->dashboard_trans_65 . '</span>
 								<span class="wphealthtracker-dashboard-row-entry-data">' . $this->human_average_time .
 							'</p>
