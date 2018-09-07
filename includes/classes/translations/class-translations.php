@@ -342,7 +342,35 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'adminjstransstring161' => __( 'This is the longest single Exercise you\'ve ever performed, in Minutes.', 'wphealthtracker-textdomain' ),
 				'adminjstransstring162' => __( 'This is the longest single Exercise you\'ve ever performed, in Seconds.', 'wphealthtracker-textdomain' ),
 				'adminjstransstring163' => __( 'This is the average time of day you perform your Exercises.', 'wphealthtracker-textdomain' ),
-
+				'adminjstransstring164' => __( 'Enter this user\'s First Name here. This is a required field.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring165' => __( 'Enter this user\'s Last Name here.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring166' => __( 'Enter this user\'s E-Mail Address here. This is a required field.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring167' => __( 'Enter this user\'s E-Mail Address again, just to make sure it\'s correct. This is a required field.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring168' => __( 'Create a Password for this user here. Click the \'Show Password\' text below to see the password you\'ve typed. This is a required field.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring169' => __( 'Enter this user\'s Password again, just to make sure it\'s correct. Click the \'Show Password\' text to the left to see the password you\'ve typed. This is a required field.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring170' => __( 'Choose a Username for this user. By default, the username for this user will be set to the part of the user\'s Email address before the \'@\' sign, but you can change it to whatever you\'d like. This is a required field.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring171' => __( 'Here you can set the User\'s Role. This will control what a user is able to see and what actions a user can take.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring172' => __( 'Can record and view their own data and stats, but has no access to other User\'s data or WPHealthTracker settings.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring173' => __( 'Can record and view their own data and stats, and has access to view (but not edit) other User\'s data. Can not change WPHealthTracker settings.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring174' => __( 'Can record and view their own data and stats, and has access to view and edit other User\'s data. Can not change WPHealthTracker settings.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring175' => __( 'Can record and view their own data and stats, and has access to view and edit other User\'s data. Can create new users, can set custom permissions for users, and has full access to WPHealthTracker settings. There can only be one SuperAdmin.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring176' => __( 'Let\'s start with the Basics - Name, Username, E-mail, Password. This section is the only section that contains required fields - everything else on this page is optional. The required fields are:', 'wphealthtracker-textdomain' ),
+				'adminjstransstring177' => __( 'Here you\'ll enter everything you could ever need to contact this user. All of these fields are optional. None of this information will be used throughout WPHealthTracker unless explicitly stated, such as in the WPHealthTracker Payment & Billing Extensions.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring178' => __( 'Enter the name of the Country this user lives in (example: United States)', 'wphealthtracker-textdomain' ),
+				'adminjstransstring179' => __( 'Enter the Street Address this user lives on (example: 123 Mystreet Lane)', 'wphealthtracker-textdomain' ),
+				'adminjstransstring180' => __( 'Enter any additional address info here, such as an Apartment number or P.O. Box.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring181' => __( 'Enter the name of the City this user lives in (example: New York City)', 'wphealthtracker-textdomain' ),
+				'adminjstransstring182' => __( 'Enter the name of the State/Region/Province this user lives in (example: Kansas or Ontario)', 'wphealthtracker-textdomain' ),
+				'adminjstransstring183' => __( 'Enter the Zip/Postal code this user lives in.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring184' => __( 'Enter a Phone number this user can be reached at.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring185' => __( 'Here you\'ll enter some personalized profile info for this user. All of these fields are optional. Some of this information will be used throughout WPHealthTracker, such as in the Leaderboards. The user will have the ability to determine what information can and cannot be displayed on their own Profile page.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring186' => __( 'Here you can set this user\'s Profile Image. This image will be used on the user\'s Profile Page. Either use the \'Select Profile Image\' button to the right, or enter the URL of where the profile image can be found in the text box below.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring187' => __( 'Set the User\'s birthday here. This information will be hidden from others, as will their age, unless the user chooses to share this info on their Profile Page.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring188' => __( 'Set the User\'s gender here. This information will be hidden from others unless the user chooses to share this info on their Profile Page.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring189' => __( 'Set the User\'s Height here.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring190' => __( 'Set the User\'s main Health Goal/Focus here. This information will be used throughout WPHealthTracker in various places, such as on the user\'s Profile Page.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring191' => __( 'Here you can set the user\'s favorite motivational quote.', 'wphealthtracker-textdomain' ),
+				'adminjstransstring192' => __( 'Here you can write a short paragraph about this user. This information will be displayed on the user\'s profile page, and the user will have full access to edit and/or hide this information if they choose.', 'wphealthtracker-textdomain' ),
 
 			);
 		}
@@ -556,15 +584,11 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->user_trans_15 = __( 'State/Region/Province', 'wphealthtracker-textdomain' );
 			$this->user_trans_16 = __( 'Zip/Postal Code', 'wphealthtracker-textdomain' );
 			$this->user_trans_17 = __( 'Phone', 'wphealthtracker-textdomain' );
-			$this->user_trans_18 = __( 'About This User', 'wphealthtracker-textdomain' );
 			$this->user_trans_19 = __( 'Bio', 'wphealthtracker-textdomain' );
-			$this->user_trans_20 = __( 'Profile Image', 'wphealthtracker-textdomain' );
 			$this->user_trans_21 = __( 'Birthdate', 'wphealthtracker-textdomain' );
-			$this->user_trans_22 = __( 'Height', 'wphealthtracker-textdomain' );
 			$this->user_trans_23 = __( 'Gender', 'wphealthtracker-textdomain' );
 			$this->user_trans_24 = __( 'Main Exercise Focus', 'wphealthtracker-textdomain' );
 			$this->user_trans_25 = __( 'Secondary Exercise Focus', 'wphealthtracker-textdomain' );
-			$this->user_trans_26 = __( 'Favorite Motivational Quote', 'wphealthtracker-textdomain' );
 			$this->user_trans_27 = __( 'Favorite Motivational Song', 'wphealthtracker-textdomain' );
 			$this->user_trans_28 = __( 'Favorite Single Exercise', 'wphealthtracker-textdomain' );
 			$this->user_trans_29 = __( 'Playlist', 'wphealthtracker-textdomain' );
@@ -651,13 +675,10 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'usertrans17' => $this->user_trans_17,
 				'usertrans18' => $this->user_trans_18,
 				'usertrans19' => $this->user_trans_19,
-				'usertrans20' => $this->user_trans_20,
 				'usertrans21' => $this->user_trans_21,
-				'usertrans22' => $this->user_trans_22,
 				'usertrans23' => $this->user_trans_23,
 				'usertrans24' => $this->user_trans_24,
 				'usertrans25' => $this->user_trans_25,
-				'usertrans26' => $this->user_trans_26,
 				'usertrans27' => $this->user_trans_27,
 				'usertrans28' => $this->user_trans_28,
 				'usertrans29' => $this->user_trans_29,
