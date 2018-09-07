@@ -8,7 +8,9 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     gutil = require('gulp-util'),
     rename = require('gulp-rename'),
-    babel = require('gulp-babel');
+    babel = require('gulp-babel'),
+    zip = require('gulp-zip'),
+    del = require('del');
 
 // Define file sources
 var sassMain = ['dev/scss/wphealthtracker-admin-ui.scss'];
@@ -54,6 +56,30 @@ gulp.task('concat', function() {
         .pipe(gulp.dest('assets/js')); // The destination for the concatenated and uglified file
 });
 
+gulp.task('copyassets', function () {
+    gulp.src(['./assets/**/*'], {base: './'}).pipe(gulp.dest('../wphealthtracker_dist/WPHealthTracker-Distribution'));
+});
+
+gulp.task('copyincludes', function () {
+    gulp.src(['./includes/**/*'], {base: './'}).pipe(gulp.dest('../wphealthtracker_dist/WPHealthTracker-Distribution'));
+});
+
+gulp.task('copymainfile', function () {
+    gulp.src(['./wphealthtracker.php'], {base: './'}).pipe(gulp.dest('../wphealthtracker_dist/WPHealthTracker-Distribution'));
+});
+
+gulp.task('zip', function () {
+    return gulp.src('../wphealthtracker_dist/WPHealthTracker-Distribution/**')
+        .pipe(zip('wphealthtracker.zip'))
+        .pipe(gulp.dest('../wphealthtracker_dist/WPHealthTracker-Distribution'));
+});
+
+gulp.task('clean', function(cb) {
+    del(['../wphealthtracker_dist/WPHealthTracker-Distribution/**/*', '!../wphealthtracker_dist/WPHealthTracker-Distribution/wphealthtracker.zip'], {force: true}, cb);
+});
+
+
+
 // Task to watch for changes in our file sources
 gulp.task('watch', function() {
     gulp.watch(sassMain,['sass']); // If any changes in 'sassMain', perform 'sass' task
@@ -64,3 +90,9 @@ gulp.task('watch', function() {
 
 // Default gulp task
 gulp.task('default', ['sass', 'd3-uglify', 'concat', 'watch']);
+
+//gulp.task('default', ['copyassets', 'copyincludes', 'copymainfile']);
+
+//gulp.task('default', ['zip']);
+
+//gulp.task('default', ['clean']);

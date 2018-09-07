@@ -22,6 +22,7 @@ $lightgray: #CCCCCC;
 $white-trans-9:rgba(255, 255, 255, 0.9);
 $primary-box-shadow:2px 2px 5px $pureblack;
 $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
+$menu-text-shadow: 1px 1px black;
 /*
  *   END COLOR VARIABLES
 */
@@ -445,6 +446,7 @@ $primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
     font-size: 23px;
     font-style: italic;
     width: 90%;
+    text-shadow: $menu_text_shadow;
 }
 
 .wphealthtracker-no-saved-data-div p, .wphealthtracker-no-saved-span1{
