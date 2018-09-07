@@ -217,7 +217,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 			$this->alluserdata = $userdata;
 
 			// Get Translations.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->d3_chart_trans_strings();
 			$this->translations->diet_tab_trans_strings();
@@ -656,7 +656,6 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 				'total' => round( $this->average_daily_carbs + $this->average_daily_protein + $this->average_daily_fats, 2 ),
 			);
 
-
 			$carb_array2 = array(
 				'cat' => $this->translations->diet_trans_35,
 				'val' => $this->carbs_total,
@@ -950,8 +949,8 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 			}
 
 			// Building average fats per day.
-			$this->fats_total        = 0;
-			$fats_counter = 0;
+			$this->fats_total = 0;
+			$fats_counter     = 0;
 			foreach ( $this->alluserdata as $key => $value ) {
 				// If we have saved data...
 				if ( '' !== $value->foodstring ) {
@@ -964,13 +963,13 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 
 							$indiv_day2 = explode( ';', $value2 );
 							if ( '' !== $indiv_day2[7] ) {
-								$this->fats_total+= $indiv_day2[7];
+								$this->fats_total += $indiv_day2[7];
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->foodstring );
 						if ( '' !== $indiv_day[7] ) {
-							$this->fats_total+= $indiv_day[7];
+							$this->fats_total += $indiv_day[7];
 						}
 					}
 				}
@@ -1079,27 +1078,17 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 		 */
 		public function build_stats_data_2() {
 
-			//avg daily cals
-			//aver daily kilojoules
-			//highest calories on one day
-			//lowest cals on one day
-			//highest calorie food item
-			//totla comsnumed
-			//total consumd
-			// consequtive decrease
-			// consequtive increase
-
 			// Building average calories per day.
-			$calories                    = 0;
-			$calories_counter            = 0;
-			$highest_caloric_food        = '';
-			$highest_calories_counter    = 0;
-			$daily_cal_total           = 0;
-			$daily_cal_array = array();
-			$conseq_increase_array = array();
-			$conseq_decrease_array = array();
-			$conseq_increase_counter          = 0;
-			$conseq_decrease_counter          = 0;
+			$calories                 = 0;
+			$calories_counter         = 0;
+			$highest_caloric_food     = '';
+			$highest_calories_counter = 0;
+			$daily_cal_total          = 0;
+			$daily_cal_array          = array();
+			$conseq_increase_array    = array();
+			$conseq_decrease_array    = array();
+			$conseq_increase_counter  = 0;
+			$conseq_decrease_counter  = 0;
 			foreach ( $this->alluserdata as $key => $value ) {
 				// If we have saved data...
 				if ( '' !== $value->foodstring ) {
@@ -1156,20 +1145,19 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 
 					if ( 0 !== $key ) {
 
-						if ( $daily_cal_total > $daily_cal_array[ count( $daily_cal_array ) -1 ] ) {
+						if ( $daily_cal_total > $daily_cal_array[ count( $daily_cal_array ) - 1 ] ) {
 							$conseq_increase_counter++;
-							array_push($conseq_increase_array, $conseq_increase_counter);
+							array_push( $conseq_increase_array, $conseq_increase_counter );
 							$conseq_decrease_counter = 0;
 						}
 
-						if ( $daily_cal_total < $daily_cal_array[ count( $daily_cal_array ) -1 ] ) {
+						if ( $daily_cal_total < $daily_cal_array[ count( $daily_cal_array ) - 1 ] ) {
 							$conseq_decrease_counter++;
-							array_push($conseq_decrease_array, $conseq_decrease_counter);
+							array_push( $conseq_decrease_array, $conseq_decrease_counter );
 							$conseq_increase_counter = 0;
 						}
 
-						array_push($daily_cal_array, $daily_cal_total);
-						
+						array_push( $daily_cal_array, $daily_cal_total );
 					} else {
 						array_push( $daily_cal_array, $daily_cal_total );
 					}
@@ -1178,8 +1166,8 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 				}
 			}
 
-			rsort($conseq_increase_array);
-			rsort($conseq_decrease_array);
+			rsort( $conseq_increase_array );
+			rsort( $conseq_decrease_array );
 
 			// Calculating final averages.
 			if ( 0 !== $calories && 0 !== $calories_counter ) {

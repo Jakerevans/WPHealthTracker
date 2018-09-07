@@ -116,7 +116,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 		public function __construct() {
 
 			// Require the translations file.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->vitals_tab_trans_strings();
 			$this->translations->common_trans_strings();

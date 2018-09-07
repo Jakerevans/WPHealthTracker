@@ -50,7 +50,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Stats_Exercise_Form', false ) ) :
 			global $wpdb;
 
 			// First we'll get all the translations for this tab.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->trans = new WPHealthTracker_Translations();
 			$this->trans->common_trans_strings();
 
@@ -79,7 +79,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Stats_Exercise_Form', false ) ) :
 			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
 
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients       = new WPHealthTracker_Transients();
 			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' ORDER BY firstname' );
 			$transient_exists = $transients->existing_transient_check( $transient_name );
@@ -100,7 +100,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Stats_Exercise_Form', false ) ) :
 			global $wpdb;
 
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients          = new WPHealthTracker_Transients();
 			$settings_table_name = $wpdb->prefix . 'wphealthtracker_general_settings';
 			$transient_name      = 'wpht_' . md5( 'SELECT * FROM ' . $settings_table_name );

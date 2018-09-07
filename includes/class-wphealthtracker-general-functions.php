@@ -119,6 +119,13 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		}
 
 		/**
+		 * Outputs the jQuery autocomplete that ships with WordPress.
+		 */
+		public function wphealthtracker_jre_add_core_jquery_ui() {
+			wp_enqueue_script( 'jquery-ui-autocomplete' );
+		}
+
+		/**
 		 * Code for adding the admin js file
 		 *
 		 * @param int $hook - The menu page hook thing.
@@ -132,7 +139,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 				wp_register_script( 'wphealthtracker_jre_admin_js', WPHEALTHTRACKER_ROOT_JS_URL . 'wphealthtracker-admin-min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
 
 				// Next 4-5 lines are required to allow translations of strings that would otherwise live in the wphealthtracker-admin-js.js JavaScript File.
-				require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+				require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 				$trans = new WPHealthTracker_Translations();
 				// Localize the script with the appropriate translation array from the Translations class.
 				$translation_array1  = $trans->admin_js_trans_strings();

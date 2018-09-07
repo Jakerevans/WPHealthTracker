@@ -1,7 +1,6 @@
 <?php
-
 /**
- * Class WPHealthTracker_Transients - wphealthtracker-transients.php
+ * Class WPHealthTracker_Transients - class-wphealthtracker-transients.php
  *
  * @author   Jake Evans
  * @category Transients
@@ -19,16 +18,30 @@ if ( ! class_exists( 'WPHealthTracker_Transients', false ) ) :
 	 */
 	class WPHealthTracker_Transients {
 
+		/**
+		 *  Function that checks for existing transient.
+		 *
+		 *  @param string $transient_name - The transient name to check for.
+		 */
 		public function existing_transient_check( $transient_name ) {
 
 			$transient_actual = false;
-			if ( false === ( $transient_actual = get_transient( $transient_name ) ) ) {
-				return $transient_actual;
+			if ( false === get_transient( $transient_name ) ) {
+				return false;
 			} else {
+				$transient_actual = get_transient( $transient_name );
 				return $transient_actual;
 			}
 		}
 
+		/**
+		 *  Function that checks for existing transient.
+		 *
+		 *  @param string $transient_name - The transient name to check for.
+		 *  @param string $wpdb_type - The type of db call to be used.
+		 *  @param string $query - The query to be used in the db call.
+		 *  @param string $ttl - How long the transient will exist.
+		 */
 		public function create_transient( $transient_name, $wpdb_type, $query, $ttl ) {
 
 			global $wpdb;
@@ -50,6 +63,11 @@ if ( ! class_exists( 'WPHealthTracker_Transients', false ) ) :
 			return $query_result;
 		}
 
+		/**
+		 *  Function that deletes transient.
+		 *
+		 *  @param string $transient_name - The transient name to check for.
+		 */
 		public function delete_transient( $transient_name ) {
 			return delete_transient( $transient_name );
 		}

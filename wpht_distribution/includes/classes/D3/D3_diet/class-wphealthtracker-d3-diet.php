@@ -217,7 +217,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Diet', false ) ) :
 			$this->alluserdata = $userdata;
 
 			// Get Translations.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->d3_chart_trans_strings();
 			$this->translations->diet_tab_trans_strings();

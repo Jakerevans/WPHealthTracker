@@ -100,7 +100,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 			$this->users_table      = $wpdb->prefix . 'wphealthtracker_users';
 
 			// Require the Transients file.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$this->transients = new WPHealthTracker_Transients();
 
 			// Determine if we're updating a row or inserting a new row.
@@ -135,16 +135,17 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 			global $wpdb;
 
 			// Also make the God check here - if role is godmode...
+			$this->prev_god = '';
 			if ( 'SuperAdmin' === $this->users_save_array['role'] ) {
-				$godmode = 'godmode';
+				$godmode        = 'godmode';
 				$this->prev_god = $wpdb->get_row(  $wpdb->prepare( "SELECT * FROM $this->users_table WHERE role = %s", $godmode ) );
+
 				$this->users_save_array['role'] = 'godmode';
 			}
 
 			// If we already have a row of saved data for this user on humandate, just update.
 			if ( 'update' === $this->dbmode ) {
 
-				
 			}
 
 			// If we don't have data saved for this user.
@@ -161,38 +162,35 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 
 			// If we modified the DB in any way (if there were no errors and if more than 0 rows were affected), then check for an existing applicable Transient and delete it.
 			if ( $this->db_result > 0 ) {
-				require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+				require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 				$transients = new WPHealthTracker_Transients();
 
 				// Transients to check for and delete if they exist.
-				$transient_name1 = 'wpht_' . $this->wpuserid . '_' . md5( 'SELECT * FROM ' . $this->users_table );
-
-				$transient_name2 = 'wpht_' . $this->wpuserid . '_' . md5( 'SELECT * FROM ' . $this->users_table . ' WHERE wpuserid = ' . $this->wpuserid );
+				$transient_name1 = 'wpht_' . md5( 'SELECT * FROM ' . $this->users_table . ' ORDER BY firstname' );
 
 				// Actually attempting to delete transients.
 				$result1 = $transients->delete_transient( $transient_name1 );
-				$result2 = $transients->delete_transient( $transient_name2 );
 
 				// Recording results of transient deletion (which were actually deleted, if any).
-				if ( $result1 || $result2 ) {
+				if ( $result1 ) {
 					$this->transients_deleted = '';
 				}
 				if ( $result1 ) {
-					$this->transients_deleted = $this->transients_deleted . 'SELECT * FROM ' . $this->users_table . ' WHERE wpuserid = ' . $this->wpuserid . ' ORDER BY humandate DESC LIMIT 8 ---- ';
-				}
-				if ( $result2 ) {
-					$this->transients_deleted = $this->transients_deleted . ' --- SELECT * FROM ' . $this->users_table . ' WHERE wpuserid = ' . $this->wpuserid . ' ORDER BY humandate DESC LIMIT 31 ---- ';
+					$this->transients_deleted = $this->transients_deleted . 'SELECT * FROM ' . $this->users_table . ' ORDER BY firstname';
 				}
 
-				// Resetting God.
-				$data_format           = array( '%s' );
-				$where                 = array(
-					'wpuserid' => $this->prev_god->wpuserid,
-				);
-				$where_format          = array( '%d' );
-				$this->prev_god_result = $wpdb->update( $this->users_table, array( 'role' => 'admin' ), $where, $data_format, $where_format );
+				if ( '' !== $this->prev_god ) {
 
+					// Resetting God.
+					$data_format           = array( '%s' );
+					$where                 = array(
+						'wpuserid' => $this->prev_god->wpuserid,
+					);
+					$where_format          = array( '%d' );
+					$this->prev_god_result = $wpdb->update( $this->users_table, array( 'role' => 'admin' ), $where, $data_format, $where_format );
+				}
 			}
+
 			return $this->db_result;
 		}
 	}

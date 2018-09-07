@@ -100,7 +100,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Diet_Data', false ) ) :
 			$this->diet_table      = $wpdb->prefix . 'wphealthtracker_user_daily_data_diet';
 
 			// Require the Transients file.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$this->transients = new WPHealthTracker_Transients();
 
 			// Determine if we're updating a row or inserting a new row.
@@ -159,7 +159,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Diet_Data', false ) ) :
 
 			// If we modified the DB in any way (if there were no errors and if more than 0 rows were affected), then check for an existing applicable Transient and delete it.
 			if ( $this->db_result > 0 ) {
-				require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+				require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 				$transients = new WPHealthTracker_Transients();
 
 				// Transients to check for and delete if they exist.

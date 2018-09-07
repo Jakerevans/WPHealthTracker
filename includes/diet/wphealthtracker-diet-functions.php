@@ -18,9 +18,7 @@ if ( ! class_exists( 'WPHealthTracker_Diet_Functions', false ) ) :
 	 */
 	class WPHealthTracker_Diet_Functions {
 
-		public function wphealthtracker_jre_add_core_jquery_ui() {
-			wp_enqueue_script( 'jquery-ui-autocomplete' );
-		}
+
 
 	}
 

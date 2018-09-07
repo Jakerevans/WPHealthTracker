@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class WPHealthTracker_Transients - wphealthtracker-transients.php
+ * Class WPHealthTracker_Transients - class-wphealthtracker-transients.php
  *
  * @author   Jake Evans
  * @category Transients

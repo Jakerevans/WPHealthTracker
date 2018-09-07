@@ -81,7 +81,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Exercise', false ) ) :
 			$this->alluserdata = $userdata;
 
 			// Get Translations.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->d3_chart_trans_strings();
 			$this->translations->exercise_tab_trans_strings();

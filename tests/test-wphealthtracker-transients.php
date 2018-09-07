@@ -1,7 +1,7 @@
 
 <?php 
 /**
- * class WP_Meta_VerifyTest - test-wphealthtracker-transients.php
+ * class WP_Meta_VerifyTest - test-class-wphealthtracker-transients.php
  *
  * @author   Jake Evans
  * @category Unit Testing
@@ -22,8 +22,8 @@ class WP_Meta_VerifyTest_Transients extends WP_UnitTestCase
         \WP_Mock::setUp();
         parent::setUp();
 
-        // Get class instance of the WPHEALTHTRACKER_Transients in class-transients.php file
-        require_once(WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR.'class-transients.php');
+        // Get class instance of the WPHEALTHTRACKER_Transients in class-wphealthtracker-transients.php file
+        require_once(WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR.'class-wphealthtracker-transients.php');
         $this->transients_class_instance = new WPHEALTHTRACKER_Transients();
 
         // Create Users Table
@@ -50,7 +50,7 @@ class WP_Meta_VerifyTest_Transients extends WP_UnitTestCase
 
     }
 
-    // For testing the output of the existing_transient_check() function in class-transients.php file
+    // For testing the output of the existing_transient_check() function in class-wphealthtracker-transients.php file
     public function test_existing_transient_check()
     {
 
@@ -95,7 +95,7 @@ class WP_Meta_VerifyTest_Transients extends WP_UnitTestCase
         delete_transient($transient_name);
     }
 
-    // For testing the output of the create_transient() function with 'wpdb->get_results' in class-transients.php file
+    // For testing the output of the create_transient() function with 'wpdb->get_results' in class-wphealthtracker-transients.php file
     public function test_create_transient__get_results()
     {
 
@@ -138,7 +138,7 @@ class WP_Meta_VerifyTest_Transients extends WP_UnitTestCase
         $this->assertArraySubset($expected, $this->transients_class_instance->create_transient($transient_name, 'wpdb->get_results', $query, MONTH_IN_SECONDS));
     }
 
-    // For testing the output of the create_transient() function with 'wpdb->get_row' in class-transients.php file
+    // For testing the output of the create_transient() function with 'wpdb->get_row' in class-wphealthtracker-transients.php file
     public function test_create_transient__get_row()
     {
 

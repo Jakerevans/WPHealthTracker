@@ -256,7 +256,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 			$this->alluserdata = $userdata;
 
 			// Get Translations.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->d3_chart_trans_strings();
 		}
@@ -967,7 +967,7 @@ if ( ! class_exists( 'WPHealthTracker_D3_Vitals', false ) ) :
 								$this->lowest_single_bp_read = $tempbparray2[0] . '/' . $tempbparray2[1];
 							}
 						}
-					} else  {
+					} else {
 
 						// Iterate overall counter.
 						$this->bp_entry_counter++;

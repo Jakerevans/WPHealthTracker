@@ -79,7 +79,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 		public function __construct() {
 
 			// Require the translations file.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->exercise_tab_trans_strings();
 			$this->translations->common_trans_strings();
@@ -340,10 +340,10 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 
 								// Creating the checked attribute.
 								$bodyweight_checked = '';
-								$weight_disabled = '';
+								$weight_disabled    = '';
 								if ( 'true' === $bodyweight ) {
 									$bodyweight_checked = 'checked="true"';
-									$weight_disabled = 'disabled';
+									$weight_disabled    = 'disabled';
 								}
 
 								// Build the Options for the Sets weight measurement Select.
@@ -995,10 +995,10 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 
 							// Creating the checked attribute.
 							$bodyweight_checked = '';
-							$weight_disabled = '';
+							$weight_disabled    = '';
 							if ( 'true' === $bodyweight ) {
 								$bodyweight_checked = 'checked="true"';
-								$weight_disabled = 'disabled';
+								$weight_disabled    = 'disabled';
 							}
 
 							// Build the Options for the Sets weight measurement Select.
@@ -1254,7 +1254,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Exercise_Forms_Actual', false ) ) :
 					';
 
 					// Now output a blank and open form for the user to add a new exercise item, if we're dealing with Today's data - if not, user can add additional exercise items to previous days by using the 'Add a row' circle image button thing.
-					if ( 'today' === $type && '' !== $this->exercisestring) {
+					if ( 'today' === $type && '' !== $this->exercisestring ) {
 
 						$duplicate_string = '
 						<div class="wphealthtracker-response-form-exercise-row-duplicate-div" data-date="' . $this->humandate . '" data-key="' . ( $key + 1 ) . '" data-loopnum="' . $loop_num . '" data-idnum="' . $loop_num . '" data-id-to-update="' . $loop_num . '" data-id-to-add-after="wphealthtracker-response-form-all-data-row-parent-' . ( $key + 1 ) . '-' . $loop_num . '"><p>' . $this->translations->common_trans_40 . '</p><img class="wphealthtracker-response-form-row-removal-img" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'duplicate.svg" />

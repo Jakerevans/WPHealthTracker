@@ -66,22 +66,23 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 		public $top_five_exercise_items = array();
 		public $unique_exercises_count = 0;
 
-
-
-
-
-
-
+		/** Class Constructor
+		 *
+		 *  @param array  $userdata - The user's complete data set - all food items.
+		 *  @param int    $wpuserid - The user's WordPress ID.
+		 *  @param string $tab - The tab that is requesting the dashboard.
+		 */
 		public function __construct( $userdata, $wpuserid = null, $tab = null ) {
-			// Setting some class variables
+
+			// Setting some class variables.
 			global $wpdb;
 			$this->wpuserid          = $wpuserid;
 			$this->tab               = $tab;
 			$this->allsavedusersdata = $userdata;
 			$this->users_table       = $wpdb->prefix . 'wphealthtracker_users';
 
-			// Require the translations file
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			// Require the translations file.
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->dashboard_trans_strings();
 			$this->translations->common_trans_strings();
@@ -89,10 +90,10 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			// If data was found for the user...
 			if ( count( $this->allsavedusersdata ) > 0 ) {
 
-				// Calculate all common data
+				// Calculate all common data.
 				$this->calculate_common_data();
 
-				// A switch to build values specific to each tab
+				// A switch to build values specific to each tab.
 				switch ( $tab ) {
 					case 'Vitals':
 						$this->calculate_vitals_data();
@@ -112,6 +113,9 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 
 		}
 
+		/**
+		 *  Function that handles outputting the no data message, if no data is found for the user
+		 */
 		public function output_no_data() {
 
 			// Getting the user's display name.
@@ -132,12 +136,15 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			return $this->final_output;
 		}
 
+		/**
+		 *  Function that get's the user's name.
+		 */
 		public function get_user_name() {
 
 			global $wpdb;
 
-			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients       = new WPHealthTracker_Transients();
 			$transient_name   = 'wpht_' . $this->wpuserid . '_' . md5( 'SELECT * FROM ' . $this->users_table . ' WHERE wpuserid = ' . $this->wpuserid );
 			$transient_exists = $transients->existing_transient_check( $transient_name );
@@ -153,72 +160,75 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			$this->profileimg  = $userstablerow->profileimage;
 		}
 
+		/**
+		 *  Function that sets the common data common to all dashboards regardless of tab.
+		 */
 		public function calculate_common_data() {
 
 			$this->total_days_tracked = count( $this->allsavedusersdata );
 			$this->first_date_tracked = $this->allsavedusersdata[0]->humandate;
 			$this->last_date_tracked  = $this->allsavedusersdata[ ( $this->total_days_tracked - 1 ) ]->humandate;
 
-			// Now modify the humandate in each of the saved dates to convert to day of the year instead of a date
+			// Now modify the humandate in each of the saved dates to convert to day of the year instead of a date.
 			$first_day_of_year = 0;
 			$prev_day_of_year  = 0;
 			$gap_tracker       = 0;
 			$gap_array         = array();
 
-			// Building Gap array
+			// Building Gap array.
 			foreach ( $this->allsavedusersdata as $key => $indiv_day ) {
 				$indiv_day->humandate = str_replace( '-', '/', $indiv_day->humandate );
 				$day_of_year          = date( 'z', strtotime( $indiv_day->humandate ) );
 
-				if ( $key != 0 ) {
+				if ( 0 !== $key ) {
 					$prev_day_of_year = $this->allsavedusersdata[ $key - 1 ]->humandate;
 					$prev_day_of_year = date( 'z', strtotime( $prev_day_of_year ) );
 				}
 
-				if ( ($day_of_year - $prev_day_of_year != 1) && ($prev_day_of_year != 0) ) {
+				if ( ( 1 !== $day_of_year - $prev_day_of_year ) && ( 0 !== $prev_day_of_year ) ) {
 					$gap_tracker = $day_of_year - $prev_day_of_year;
 				} else {
-					if ( $gap_tracker != 0 ) {
+					if ( 0 !== $gap_tracker ) {
 						array_push( $gap_array, $gap_tracker );
 					}
 					$gap_tracker = 0;
 				}
 			}
 
-			// Push last possible value if needed
+			// Push last possible value if needed.
 			if ( $gap_tracker > 0 ) {
 				array_push( $gap_array, $gap_tracker );
 			}
 
-			// Reset values
+			// Reset values.
 			$first_day_of_year = 0;
 			$prev_day_of_year  = 0;
 
-			// Set new values
+			// Set new values.
 			$conseq_tracker = 1;
 			$conseq_array   = array();
 
-			// Building Consecutive array
+			// Building Consecutive array.
 			foreach ( $this->allsavedusersdata as $key => $indiv_day ) {
 				$indiv_day->humandate = str_replace( '-', '/', $indiv_day->humandate );
 				$day_of_year          = date( 'z', strtotime( $indiv_day->humandate ) );
 
-				if ( $key != 0 ) {
+				if ( 0 !== $key ) {
 					$prev_day_of_year = $this->allsavedusersdata[ $key - 1 ]->humandate;
 					$prev_day_of_year = date( 'z', strtotime( $prev_day_of_year ) );
 				}
 
-				if ( $day_of_year - $prev_day_of_year == 1 ) {
+				if ( 1 === $day_of_year - $prev_day_of_year ) {
 					$conseq_tracker++;
 				} else {
-					if ( $conseq_tracker != 1 ) {
+					if ( 1 !== $conseq_tracker ) {
 						array_push( $conseq_array, $conseq_tracker );
 					}
 					$conseq_tracker = 1;
 				}
 			}
 
-			// Push last possible value if needed
+			// Push last possible value if needed.
 			if ( $conseq_tracker > 1 ) {
 				array_push( $conseq_array, $conseq_tracker );
 			}
@@ -235,7 +245,7 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 				$this->most_conseq_days = $this->translations->dashboard_trans_31 . '<img class="wphealthtracker-stats-good-data-smile"src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg"/>';
 			}
 
-			if ( count( $gap_array ) == 0 ) {
+			if ( 0 === count( $gap_array ) ) {
 				$this->largest_gap = $this->translations->dashboard_trans_24 . '<img class="wphealthtracker-stats-good-data-smile"src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'happy.svg"/>';
 				$this->num_of_gaps = $this->translations->dashboard_trans_24 . '<img class="wphealthtracker-stats-good-data-smile"src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'happy.svg"/>';
 			} else {
@@ -245,9 +255,12 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 
 		}
 
+		/**
+		 *  Function that sets the Vitals data
+		 */
 		public function calculate_vitals_data() {
 
-			// Create Starting Weight
+			// Create Starting Weight.
 			foreach ( $this->allsavedusersdata as $key => $value ) {
 				if ( substr( $value->weight, 0, 1 ) !== ';' ) {
 					$this->starting_weight = $this->allsavedusersdata[0]->weight;
@@ -255,26 +268,27 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 					break;
 				}
 			}
-			if ( $this->starting_weight == '' ) {
+			if ( '' === $this->starting_weight ) {
 				$this->starting_weight = $this->translations->dashboard_trans_25 . '<img class="wphealthtracker-stats-good-data-smile"src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg"/>';
 			}
 
-			// Create Ending Weight
+			// Create Ending Weight.
 			$temp_array = array_reverse( $this->allsavedusersdata );
 			foreach ( $temp_array as $key => $value ) {
-				if ( substr( $value->weight, 0, 1 ) !== ';' ) {
+				if ( ';' !== substr( $value->weight, 0, 1 ) ) {
 					$this->recent_weight = $value->weight;
 					$this->recent_weight = str_replace( ';', ' ', $this->recent_weight );
 					break;
 				}
 			}
-			if ( $this->recent_weight == '' ) {
+
+			if ( '' === $this->recent_weight ) {
 				$this->recent_weight = $this->translations->dashboard_trans_26 . '<img class="wphealthtracker-stats-good-data-smile"src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg"/>';
 			}
 
-			// Create Starting Cholesterol Value
+			// Create Starting Cholesterol Value.
 			foreach ( $this->allsavedusersdata as $key => $value ) {
-				if ( $value->cholesterol == ',,,' ) {
+				if ( ',,,' === $value->cholesterol ) {
 					$this->starting_chol = $this->translations->dashboard_trans_27 . '<img class="wphealthtracker-stats-good-data-smile"src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg"/>';
 				} else {
 					$this->starting_chol = $value->cholesterol;
@@ -284,10 +298,10 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 				}
 			}
 
-			// Create Ending Cholesterol Value
+			// Create Ending Cholesterol Value.
 			$temp_array = array_reverse( $this->allsavedusersdata );
 			foreach ( $temp_array as $key => $value ) {
-				if ( $value->cholesterol == ',,,' ) {
+				if ( ',,,' === $value->cholesterol ) {
 					$this->ending_chol = $this->translations->dashboard_trans_28 . '<img class="wphealthtracker-stats-good-data-smile"src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg"/>';
 				} else {
 					$this->ending_chol = $value->cholesterol;
@@ -297,9 +311,9 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 				}
 			}
 
-			// Create Starting Blood Pressure Value
+			// Create Starting Blood Pressure Value.
 			foreach ( $this->allsavedusersdata as $key => $value ) {
-				if ( $value->bloodpressure == '//' ) {
+				if ( '//' === $value->bloodpressure ) {
 					$this->starting_bp = $this->translations->dashboard_trans_29 . '<img class="wphealthtracker-stats-good-data-smile"src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg"/>';
 				} else {
 					if ( stripos( $value->bloodpressure, ',' ) !== false ) {
@@ -314,10 +328,10 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 				}
 			}
 
-			// Create ending Blood Pressure Value
+			// Create ending Blood Pressure Value.
 			$temp_array = array_reverse( $this->allsavedusersdata );
 			foreach ( $temp_array as $key => $value ) {
-				if ( $value->bloodpressure == '//' ) {
+				if ( '//' === $value->bloodpressure ) {
 					$this->ending_bp = $this->translations->dashboard_trans_30 . '<img class="wphealthtracker-stats-good-data-smile"src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg"/>';
 				} else {
 					if ( stripos( $value->bloodpressure, ',' ) !== false ) {
@@ -333,46 +347,52 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			}
 		}
 
+		/**
+		 *  Function that sets the Diet data
+		 */
 		public function calculate_diet_data() {
 
-			// Pizza;Junk;01:00;1000;Calories;20;Mixed;40;30;5;5;40;12;27;www.google.com;www.google.com;,HeyThere2;Junk;01:00;;Calories;;Mixed;;;;;;;;;
-			// Calculating Daily Calorie Averages
-			$calCounter = 0;
-			$cals       = 0;
+			// Calculating Daily Calorie Averages.
+			$cal_counter = 0;
+			$cals        = 0;
 			foreach ( $this->allsavedusersdata as $key => $value ) {
 				// If we have saved data...
-				if ( $value->foodstring != '' ) {
-					// Increment counter for averages and whatnot
-					$calCounter++;
-					// Multiple food items per day
+				if ( '' !== $value->foodstring ) {
+
+					// Increment counter for averages and whatnot.
+					$cal_counter++;
+
+					// Multiple food items per day.
 					if ( stripos( $value->foodstring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->foodstring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
 							$indiv_day = explode( ';', $value2 );
-							if ( $indiv_day[3] != '' ) {
-								// Convert to Calories
-								if ( $indiv_day[4] == 'kcal' ) {
+							if ( '' !== $indiv_day[3] ) {
+
+								// Convert to Calories.
+								if ( 'kcal' === $indiv_day[4] ) {
 									$cals += $indiv_day[3];
 								}
-								if ( $indiv_day[4] == 'kJ' ) {
+								if ( 'kJ' === $indiv_day[4] ) {
 									$cals += round( ( $indiv_day[3] / 4.184 ), 2 );
 								}
-								if ( $indiv_day[4] == 'Calories' ) {
+								if ( 'Calories' === $indiv_day[4] ) {
 									$cals += $indiv_day[3];
 								}
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->foodstring );
-						if ( $indiv_day[3] != '' ) {
-							// Convert to Calories
-							if ( $indiv_day[4] == 'kcal' ) {
+						if ( '' !== $indiv_day[3] ) {
+
+							// Convert to Calories.
+							if ( 'kcal' === $indiv_day[4] ) {
 								$cals += $indiv_day[3];
 							}
-							if ( $indiv_day[4] == 'kJ' ) {
+							if ( 'kJ' === $indiv_day[4] ) {
 								$cals += round( ( $indiv_day[3] / 4.184 ), 2 );
 							}
-							if ( $indiv_day[4] == 'Calories' ) {
+							if ( 'Calories' === $indiv_day[4] ) {
 								$cals += $indiv_day[3];
 							}
 						}
@@ -380,23 +400,23 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 				}
 			}
 
-			// Building # of unique food items
+			// Building # of unique food items.
 			$unique_foods = array();
 			foreach ( $this->allsavedusersdata as $key => $value ) {
 				// If we have saved data...
-				if ( $value->foodstring != '' ) {
+				if ( '' !== $value->foodstring ) {
 					if ( stripos( $value->foodstring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->foodstring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
 
 							$indiv_day2 = explode( ';', $value2 );
-							if ( $indiv_day2[0] != '' ) {
+							if ( '' !== $indiv_day2[0] ) {
 								array_push( $unique_foods, $indiv_day2[0] );
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->foodstring );
-						if ( $indiv_day[0] != '' ) {
+						if ( '' !== $indiv_day[0] ) {
 							array_push( $unique_foods, $indiv_day[0] );
 						}
 					}
@@ -430,112 +450,114 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 				}
 			}
 
-			// Building average carbs per day
-			$carbsCounter = 0;
-			$carbs        = 0;
+			// Building average carbs per day.
+			$carbs_counter = 0;
+			$carbs         = 0;
 			foreach ( $this->allsavedusersdata as $key => $value ) {
 				// If we have saved data...
-				if ( $value->foodstring != '' ) {
+				if ( '' !== $value->foodstring ) {
 
-					// Increment counter for averages and whatnot
-					$carbsCounter++;
+					// Increment counter for averages and whatnot.
+					$carbs_counter++;
 
 					if ( stripos( $value->foodstring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->foodstring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
 
 							$indiv_day2 = explode( ';', $value2 );
-							if ( $indiv_day2[11] != '' ) {
+							if ( '' !== $indiv_day2[11] ) {
 								$carbs += $indiv_day2[11];
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->foodstring );
-						if ( $indiv_day[11] != '' ) {
+						if ( '' !== $indiv_day[11] ) {
 							$carbs += $indiv_day[11];
 						}
 					}
 				}
 			}
 
-			// Building average sugars per day
-			$sugarsCounter = 0;
-			$sugars        = 0;
+			// Building average sugars per day.
+			$sugars_counter = 0;
+			$sugars         = 0;
 			foreach ( $this->allsavedusersdata as $key => $value ) {
 				// If we have saved data...
-				if ( $value->foodstring != '' ) {
+				if ( '' !== $value->foodstring ) {
 
-					// Increment counter for averages and whatnot
-					$sugarsCounter++;
+					// Increment counter for averages and whatnot.
+					$sugars_counter++;
 
 					if ( stripos( $value->foodstring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->foodstring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
 
 							$indiv_day2 = explode( ';', $value2 );
-							if ( $indiv_day2[13] != '' ) {
+							if ( '' !== $indiv_day2[13] ) {
 								$sugars += $indiv_day2[13];
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->foodstring );
-						if ( $indiv_day[13] != '' ) {
+						if ( '' !== $indiv_day[13] ) {
 							$sugars += $indiv_day[13];
 						}
 					}
 				}
 			}
 
-			// Building average fiber per day
-			$fiberCounter = 0;
-			$fiber        = 0;
+			// Building average fiber per day.
+			$fiber_counter = 0;
+			$fiber         = 0;
 			foreach ( $this->allsavedusersdata as $key => $value ) {
-				// If we have saved data...
-				if ( $value->foodstring != '' ) {
 
-					// Increment counter for averages and whatnot
-					$fiberCounter++;
+				// If we have saved data...
+				if ( '' !== $value->foodstring ) {
+
+					// Increment counter for averages and whatnot.
+					$fiber_counter++;
 
 					if ( stripos( $value->foodstring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->foodstring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
 
 							$indiv_day2 = explode( ';', $value2 );
-							if ( $indiv_day2[12] != '' ) {
+							if ( '' !== $indiv_day2[12] ) {
 								$fiber += $indiv_day2[12];
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->foodstring );
-						if ( $indiv_day[12] != '' ) {
+						if ( '' !== $indiv_day[12] ) {
 							$fiber += $indiv_day[12];
 						}
 					}
 				}
 			}
 
-			// Building average fats per day
-			$fatsCounter = 0;
-			$fats        = 0;
+			// Building average fats per day.
+			$fats_counter = 0;
+			$fats         = 0;
 			foreach ( $this->allsavedusersdata as $key => $value ) {
-				// If we have saved data...
-				if ( $value->foodstring != '' ) {
 
-					// Increment counter for averages and whatnot
-					$fatsCounter++;
+				// If we have saved data...
+				if ( '' !== $value->foodstring ) {
+
+					// Increment counter for averages and whatnot.
+					$fats_counter++;
 
 					if ( stripos( $value->foodstring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->foodstring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
 
 							$indiv_day2 = explode( ';', $value2 );
-							if ( $indiv_day2[7] != '' ) {
+							if ( '' !== $indiv_day2[7] ) {
 								$fats += $indiv_day2[7];
 							}
 						}
 					} else {
 						$indiv_day = explode( ';', $value->foodstring );
-						if ( $indiv_day[7] != '' ) {
+						if ( '' !== $indiv_day[7] ) {
 							$fats += $indiv_day[7];
 						}
 					}
@@ -569,13 +591,13 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 				}
 			}
 
-			// Calculating some final Calorie values
-			$tempcals                  = round( ( $cals / $calCounter ), 2 );
+			// Calculating some final Calorie values.
+			$tempcals                  = round( ( $cals / $cal_counter ), 2 );
 			$this->average_daily_cals  = number_format( $tempcals );
 			$this->average_daily_kcals = number_format( round( ( $tempcals * 1000 ), 2 ) );
 			$this->average_daily_kjs   = number_format( round( ( $tempcals * 239.006 ), 2 ) );
 
-			// Calculating some final food item values
+			// Calculating some final food item values.
 			$orig_unique_foods        = $unique_foods;
 			$final_unique_foods       = array_unique( $unique_foods );
 			$this->unique_foods_count = count( $final_unique_foods );
@@ -583,17 +605,20 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			arsort( $values );
 			$this->top_five_food_items = array_slice( array_keys( $values ), 0, 5, true );
 
-			// Calculating final averages
-			$this->average_daily_protein = round( ( $protein / $protein_counter ), 2 );
-			$this->average_daily_carbs   = round( ( $carbs / $carbsCounter ), 2 );
-			$this->average_daily_sugars  = round( ( $sugars / $sugarsCounter ), 2 );
-			$this->average_daily_fats    = round( ( $fats / $fatsCounter ), 2 );
-			$this->average_daily_fiber   = round( ( $fiber / $fiberCounter ), 2 );
-			$this->average_daily_calories = round( ( $calories / $calories_counter ), 2 );
+			// Calculating final averages.
+			$this->average_daily_protein    = round( ( $protein / $protein_counter ), 2 );
+			$this->average_daily_carbs      = round( ( $carbs / $carbs_counter ), 2 );
+			$this->average_daily_sugars     = round( ( $sugars / $sugars_counter ), 2 );
+			$this->average_daily_fats       = round( ( $fats / $fats_counter ), 2 );
+			$this->average_daily_fiber      = round( ( $fiber / $fiber_counter ), 2 );
+			$this->average_daily_calories   = round( ( $calories / $calories_counter ), 2 );
 			$this->average_daily_kilojoules = round( ( $this->average_daily_calories * 4.184 ), 2 );
 
 		}
 
+		/**
+		 *  Function that sets the Exercise data
+		 */
 		public function calculate_exercise_data() {
 
 			// Building # of unique exercise items.
@@ -686,17 +711,14 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 				}
 			}
 
-
-
-
-			// Building the total minutes exercised
+			// Building the total minutes exercised.
 			$total_seconds = 0;
 			$total_minutes = 0;
-			$total_hours = 0;
+			$total_hours   = 0;
 			foreach ( $this->allsavedusersdata as $key => $value ) {
 
 				// If we have saved data...
-				if ( $value->exercisestring != '' ) {
+				if ( '' !== $value->exercisestring ) {
 					if ( stripos( $value->exercisestring, ',' ) !== false ) {
 						$indiv_day = explode( ',', $value->exercisestring );
 						foreach ( $indiv_day as $key2 => $value2 ) {
@@ -718,7 +740,7 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 					}
 				} else {
 					$indiv_day = explode( ';', $value->exercisestring );
-					if ( $indiv_day[0] != '' ) {
+					if ( '' !== $indiv_day[0] ) {
 						if ( '' !== $indiv_day[3] ) {
 							if ( $this->translations->common_trans_48 === $indiv_day[4] ) {
 								$total_seconds += $indiv_day[3];
@@ -768,23 +790,23 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			$values                       = array_count_values( $orig_exercise_muscles );
 			arsort( $values );
 			$this->top_five_exercise_muscles = array_slice( array_keys( $values ), 0, 5, true );
-
-
 		}
 
-		// This function builds and outputs the title/profile image/username area
+		/**
+		 *  This function builds and outputs the title/profile image/username area
+		 */
 		public function output_title_area() {
 
 			// Build profile Image div.
 			$profimgstring = '';
-			if ( $this->profileimg != null && $this->profileimg != '' ) {
+			if ( null !== $this->profileimg && '' !== $this->profileimg ) {
 				$profimgstring = '
 				<div class="wphealthtracker-prof-img-div">
 					<img class="wphealthtracker-prof-img-actual" src="' . $this->profileimg . '" />
 				</div>';
 			}
 
-			// Build Title/Name div
+			// Build Title/Name div.
 			$this->title_area = '
 			<div class="wphealthtracker_dashboard_title_div">
 				<div class="wphealthtracker-dashboard-p-title-div">
@@ -796,12 +818,15 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 
 		}
 
+		/**
+		 *  This function assembles and outputs the final built HTML for the Vitals Quickstats/Dashaboard.
+		 */
 		public function output_vitals_backend_dashboard() {
 
-			// Getting the user's display name
+			// Getting the user's display name.
 			$this->get_user_name();
 
-			// Getting the title area
+			// Getting the title area.
 			$this->output_title_area();
 
 			$this->final_output = $this->title_area . '
@@ -901,35 +926,25 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			return $this->final_output;
 		}
 
+		/**
+		 *  This function assembles and outputs the final built HTML for the Diet Quickstats/Dashaboard.
+		 */
 		public function output_diet_backend_dashboard() {
 
-			/*
-			public $average_daily_cals = '';
-			public $average_daily_kcals = '';
-			public $average_daily_kjs = '';
-			public $unique_foods_count = 0;
-			public $top_five_food_items = array();
-			public $average_daily_protein = 0;
-			public $average_daily_carbs = 0;
-			public $average_daily_sugars = 0;
-			public $average_daily_fats = 0;
-			public $average_daily_fiber = 0;
-			*/
-
-			// Getting the user's display name
+			// Getting the user's display name.
 			$this->get_user_name();
 
-			// Getting the title area
+			// Getting the title area.
 			$this->output_title_area();
 
-			// Building top 3 food item string
+			// Building top 3 food item string.
 			if ( count( $this->top_five_food_items ) > 2 ) {
 				$top_3_food_items = $this->top_five_food_items[0] . ', ' . $this->top_five_food_items[1] . ', ' . $this->top_five_food_items[2];
 			}
-			if ( count( $this->top_five_food_items ) == 2 ) {
+			if ( 2 === count( $this->top_five_food_items ) ) {
 				$top_3_food_items = $this->top_five_food_items[0] . ', ' . $this->top_five_food_items[1];
 			}
-			if ( count( $this->top_five_food_items ) == 1 ) {
+			if ( 1 === count( $this->top_five_food_items ) ) {
 				$top_3_food_items = $this->top_five_food_items[0];
 			}
 
@@ -1051,12 +1066,15 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			return $this->final_output;
 		}
 
+		/**
+		 *  This function assembles and outputs the final built HTML for the Exercise Quickstats/Dashaboard.
+		 */
 		public function output_exercise_backend_dashboard() {
 
-			// Getting the user's display name
+			// Getting the user's display name.
 			$this->get_user_name();
 
-			// Getting the title area
+			// Getting the title area.
 			$this->output_title_area();
 
 			// Building top exercise item string.

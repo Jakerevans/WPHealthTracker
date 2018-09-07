@@ -40,7 +40,7 @@ if ( ! class_exists( 'Admin_Tracker_Exercise_Tab_Ui', false ) ) :
 		public function output_open_display_container() {
 			$icon_url = WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'athlete.svg';
 
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$trans = new WPHealthTracker_Translations();
 			$trans->tab_titles_trans_strings();
 			$title = $trans->tab_title_6;

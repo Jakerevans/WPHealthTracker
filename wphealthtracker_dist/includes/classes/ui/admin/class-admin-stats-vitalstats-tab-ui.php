@@ -33,7 +33,7 @@ if ( ! class_exists( 'WPHealthTracker_Vital_Stats_Tab', false ) ) :
 		public function output_open_display_container() {
 			$icon_url = WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'cardiogram.svg';
 
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$trans = new WPHealthTracker_Translations();
 			$trans->tab_titles_trans_strings();
 			$title = $trans->tab_title_3;

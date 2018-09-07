@@ -36,7 +36,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 		public function __construct() {
 
 			// Require the translations file.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->exercise_tab_trans_strings();
 			$this->translations->common_trans_strings();
@@ -88,7 +88,6 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 		 */
 		private function setup_users_ui() {
 			$this->tabs = array(
-				//'users'      => $this->translations->tab_title_1,
 				'createuser' => $this->translations->tab_title_7,
 			);
 

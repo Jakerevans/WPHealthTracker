@@ -45,7 +45,7 @@ if ( ! class_exists( 'WPHealthTracker_Diet_Ajax_Functions', false ) ) :
 			$users_master_table = $wpdb->prefix . 'wphealthtracker_users';
 
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients       = new WPHealthTracker_Transients();
 			$transient_name   = 'wpht_' . $wpuserid . '_' . md5( 'SELECT * FROM ' . $users_master_table . ' WHERE wpuserid = ' . $wpuserid );
 			$transient_exists = $transients->existing_transient_check( $transient_name );
@@ -130,7 +130,7 @@ if ( ! class_exists( 'WPHealthTracker_Diet_Ajax_Functions', false ) ) :
 			$users_master_table = $wpdb->prefix . 'wphealthtracker_users';
 
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients       = new WPHealthTracker_Transients();
 			$transient_name   = 'wpht_' . $wpuserid . '_' . md5( 'SELECT * FROM ' . $users_master_table . ' WHERE wpuserid = ' . $wpuserid );
 			$transient_exists = $transients->existing_transient_check( $transient_name );
@@ -208,7 +208,7 @@ if ( ! class_exists( 'WPHealthTracker_Diet_Ajax_Functions', false ) ) :
 			$users_master_table = $wpdb->prefix . 'wphealthtracker_users';
 
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients       = new WPHealthTracker_Transients();
 			$transient_name   = 'wpht_' . $wpuserid . '_' . md5( 'SELECT * FROM ' . $users_master_table . ' WHERE wpuserid = ' . $wpuserid );
 			$transient_exists = $transients->existing_transient_check( $transient_name );

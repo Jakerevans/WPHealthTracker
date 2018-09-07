@@ -81,7 +81,7 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			$this->users_table       = $wpdb->prefix . 'wphealthtracker_users';
 
 			// Require the translations file
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->dashboard_trans_strings();
 			$this->translations->common_trans_strings();
@@ -137,7 +137,7 @@ if ( ! class_exists( 'WPHealthTracker_Dashboards', false ) ) :
 			global $wpdb;
 
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients       = new WPHealthTracker_Transients();
 			$transient_name   = 'wpht_' . $this->wpuserid . '_' . md5( 'SELECT * FROM ' . $this->users_table . ' WHERE wpuserid = ' . $this->wpuserid );
 			$transient_exists = $transients->existing_transient_check( $transient_name );

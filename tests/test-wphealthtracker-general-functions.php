@@ -235,7 +235,7 @@ class WP_Meta_VerifyTest_General_Functions extends WP_UnitTestCase
     public function test_wphealthtracker_jre_admin_js()
     {
         // Build our expected value by requiring the file and calling the function
-        require_once(WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR.'class-translations.php');      
+        require_once(WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR.'class-wphealthtracker-translations.php');      
         $trans = new WPHealthTracker_Translations;
         $expected_translation_array = $trans->admin_js_trans_strings();
 

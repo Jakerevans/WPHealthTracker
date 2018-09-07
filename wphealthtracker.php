@@ -120,7 +120,6 @@ global $wpdb;
 /* END REQUIRE STATEMENTS */
 
 // CONSTANT DEFINITIONS //
-
 	// Plugin Version Number.
 	define( 'WPHEALTHTRACKER_VERSION_NUM', '0.0.1' );
 
@@ -333,6 +332,9 @@ global $wpdb;
 	// Adding the function that will take our WPHEALTHTRACKER_NONCES_ARRAY Constant from below and create actual nonces to be passed to Javascript functions.
 	add_action( 'init', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_create_nonces' ) );
 
+	// For adding the default jQuery-Ui-Autocomplete script taht ships with WordPress Core for the Autocomplete function for each unique food item.
+	add_action( 'admin_footer', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_add_core_jquery_ui' ) );
+
 /* END OF FUNCTIONS FOUND IN WPHEALTHTRACKER-FUNCTIONS.PHP THAT APPLY PLUGIN-WIDE */
 
 
@@ -358,9 +360,6 @@ global $wpdb;
 /* END OF AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-VITALS-AJAX.PHP THAT ARE SPECIFIC TO THE VITALS TAB */
 
 /* NON-AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-DIET-FUNCTIONS.PHP THAT ARE SPECIFIC TO THE DIET TAB */
-
-	// For adding the default jQuery-Ui-Autocomplete script taht ships with WordPress Core for the Autocomplete function for each unique food item.
-	add_action( 'admin_footer', array( $wp_health_tracker_diet_functions, 'wphealthtracker_jre_add_core_jquery_ui' ) );
 
 /* END OF NON-AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-DIET-FUNCTIONS.PHP THAT ARE SPECIFIC TO THE DIET TAB */
 
@@ -397,9 +396,6 @@ global $wpdb;
 /* END OF AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-USERS-AJAX.PHP THAT ARE SPECIFIC TO THE USERS TAB */
 
 /* NON-AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-EXERCISE-FUNCTIONS.PHP THAT ARE SPECIFIC TO THE EXERCISE TAB */
-
-	// For adding the default jQuery-Ui-Autocomplete script taht ships with WordPress Core for the Autocomplete function for each unique food item.
-	add_action( 'admin_footer', array( $wp_health_tracker_exercise_functions, 'wphealthtracker_jre_add_core_jquery_ui' ) );
 
 /* END OF NON-AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-EXERCISE-FUNCTIONS.PHP THAT ARE SPECIFIC TO THE EXERCISE TAB */
 

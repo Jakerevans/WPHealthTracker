@@ -31,7 +31,7 @@ if ( ! class_exists( 'WPHealthTracker_Stats_Exercise_Ajax_Functions', false ) ) 
 
 			// Get all of user's saved data for Dashboard generation.
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients             = new WPHealthTracker_Transients();
 			$users_daily_table_name = $wpdb->prefix . 'wphealthtracker_user_daily_data_exercise';
 			$transient_name         = 'wpht_' . $wpuserid . '_' . md5( 'SELECT * FROM ' . $users_daily_table_name . ' WHERE wpuserid = ' . $wpuserid );
@@ -65,7 +65,7 @@ if ( ! class_exists( 'WPHealthTracker_Stats_Exercise_Ajax_Functions', false ) ) 
 
 			// Get ALL user's saved data for d3 chart generation.
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients             = new WPHealthTracker_Transients();
 			$users_daily_table_name = $wpdb->prefix . 'wphealthtracker_user_daily_data_exercise';
 			$transient_name         = 'wpht_' . $wpuserid . '_' . md5( 'SELECT * FROM ' . $users_daily_table_name . ' WHERE wpuserid = ' . $wpuserid );

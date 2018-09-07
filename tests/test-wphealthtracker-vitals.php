@@ -88,7 +88,7 @@ class WP_Meta_VerifyTest_Vitals extends WP_UnitTestCase
     {
 
         $icon_url = WPHEALTHTRACKER_ROOT_IMG_ICONS_URL.'cardiogram.svg';
-        require_once(WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR.'class-translations.php');      
+        require_once(WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR.'class-wphealthtracker-translations.php');      
         $trans = new WPHealthTracker_Translations;
         $title = $trans->tab_titles_trans_strings('vitals');
 
@@ -107,7 +107,7 @@ class WP_Meta_VerifyTest_Vitals extends WP_UnitTestCase
     public function test_output_tab_content__vitals_tab()
     {
 
-        require_once(WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR.'class-translations.php');     
+        require_once(WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR.'class-wphealthtracker-translations.php');     
         require_once(WPHEALTHTRACKER_CLASSES_UI_DISPLAY_DIR.'class-vitals-form.php'); 
         require_once(WPHEALTHTRACKER_CLASSES_UI_ADMIN_DIR.'class-admin-tracker-vitals-tab-ui.php'); 
         $trans = new WPHealthTracker_Translations;
@@ -226,7 +226,7 @@ class WP_Meta_VerifyTest_Vitals extends WP_UnitTestCase
     }
 
     #TODO: Functions like the past 4, when I create the other tabs
-    #TODO: Tests for the functions in class-transients.php - gonna have to look into making dummy db data & such 
+    #TODO: Tests for the functions in class-wphealthtracker-transients.php - gonna have to look into making dummy db data & such 
     #TODO: Test for wphealthtracker_get_default_user() in class-vitals-form
 
 }

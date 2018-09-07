@@ -18,164 +18,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 	 */
 	class WPHealthTracker_Translations {
 
-		// Member variables for the Vitals tab
-		public $vitals_trans_1  = '';
-		public $vitals_trans_2  = '';
-		public $vitals_trans_3  = '';
-		public $vitals_trans_4  = '';
-		public $vitals_trans_5  = '';
-		public $vitals_trans_6  = '';
-		public $vitals_trans_7  = '';
-		public $vitals_trans_8  = '';
-		public $vitals_trans_9  = '';
-		public $vitals_trans_10 = '';
-		public $vitals_trans_11 = '';
-		public $vitals_trans_12 = '';
-		public $vitals_trans_13 = '';
-		public $vitals_trans_14 = '';
-		public $vitals_trans_15 = '';
-		public $vitals_trans_16 = '';
-		public $vitals_trans_17 = '';
-		public $vitals_trans_18 = '';
-		public $vitals_trans_19 = '';
-		public $vitals_trans_20 = '';
-		public $vitals_trans_21 = '';
-		public $vitals_trans_22 = '';
-		public $vitals_trans_23 = '';
-		public $vitals_trans_24 = '';
-
-
-		public $common_trans_1  = '';
-		public $common_trans_2  = '';
-		public $common_trans_3  = '';
-		public $common_trans_4  = '';
-		public $common_trans_5  = '';
-		public $common_trans_6  = '';
-		public $common_trans_7  = '';
-		public $common_trans_8  = '';
-		public $common_trans_9  = '';
-		public $common_trans_10 = '';
-		public $common_trans_11 = '';
-		public $common_trans_12 = '';
-		public $common_trans_13 = '';
-		public $common_trans_14 = '';
-		public $common_trans_15 = '';
-		public $common_trans_16 = '';
-		public $common_trans_17 = '';
-		public $common_trans_18 = '';
-		public $common_trans_19 = '';
-		public $common_trans_20 = '';
-		public $common_trans_21 = '';
-		public $common_trans_22 = '';
-		public $common_trans_23 = '';
-		public $common_trans_24 = '';
-		public $common_trans_25 = '';
-		public $common_trans_26 = '';
-		public $common_trans_27 = '';
-		public $common_trans_28 = '';
-		public $common_trans_29 = '';
-		public $common_trans_30 = '';
-		public $common_trans_31 = '';
-		public $common_trans_32 = '';
-		public $common_trans_33 = '';
-		public $common_trans_34 = '';
-
-		public $tab_title_1 = '';
-		public $tab_title_2 = '';
-		public $tab_title_3 = '';
-		public $tab_title_4 = '';
-
-		public $dashboard_trans_1  = '';
-		public $dashboard_trans_2  = '';
-		public $dashboard_trans_3  = '';
-		public $dashboard_trans_4  = '';
-		public $dashboard_trans_5  = '';
-		public $dashboard_trans_6  = '';
-		public $dashboard_trans_7  = '';
-		public $dashboard_trans_8  = '';
-		public $dashboard_trans_9  = '';
-		public $dashboard_trans_10 = '';
-		public $dashboard_trans_11 = '';
-		public $dashboard_trans_12 = '';
-		public $dashboard_trans_13 = '';
-		public $dashboard_trans_14 = '';
-		public $dashboard_trans_15 = '';
-		public $dashboard_trans_16 = '';
-		public $dashboard_trans_17 = '';
-		public $dashboard_trans_18 = '';
-		public $dashboard_trans_19 = '';
-		public $dashboard_trans_20 = '';
-		public $dashboard_trans_21 = '';
-		public $dashboard_trans_22 = '';
-		public $dashboard_trans_23 = '';
-		public $dashboard_trans_24 = '';
-		public $dashboard_trans_25 = '';
-		public $dashboard_trans_26 = '';
-		public $dashboard_trans_27 = '';
-		public $dashboard_trans_28 = '';
-		public $dashboard_trans_29 = '';
-		public $dashboard_trans_30 = '';
-		public $dashboard_trans_31 = '';
-		public $dashboard_trans_32 = '';
-		public $dashboard_trans_33 = '';
-		public $dashboard_trans_34 = '';
-		public $dashboard_trans_35 = '';
-		public $dashboard_trans_36 = '';
-		public $dashboard_trans_37 = '';
-		public $dashboard_trans_38 = '';
-		public $dashboard_trans_39 = '';
-
-		public $d3_trans_1  = '';
-		public $d3_trans_2  = '';
-		public $d3_trans_3  = '';
-		public $d3_trans_4  = '';
-		public $d3_trans_5  = '';
-		public $d3_trans_6  = '';
-		public $d3_trans_7  = '';
-		public $d3_trans_8  = '';
-		public $d3_trans_9  = '';
-		public $d3_trans_10 = '';
-		public $d3_trans_11 = '';
-		public $d3_trans_12 = '';
-		public $d3_trans_13 = '';
-		public $d3_trans_14 = '';
-		public $d3_trans_15 = '';
-		public $d3_trans_16 = '';
-		public $d3_trans_17 = '';
-		public $d3_trans_18 = '';
-		public $d3_trans_19 = '';
-		public $d3_trans_20 = '';
-		public $d3_trans_21 = '';
-		public $d3_trans_22 = '';
-		public $d3_trans_23 = '';
-		public $d3_trans_24 = '';
-		public $d3_trans_25 = '';
-		public $d3_trans_26 = '';
-		public $d3_trans_27 = '';
-		public $d3_trans_28 = '';
-		public $d3_trans_29 = '';
-		public $d3_trans_30 = '';
-		public $d3_trans_31 = '';
-		public $d3_trans_32 = '';
-		public $d3_trans_33 = '';
-		public $d3_trans_34 = '';
-		public $d3_trans_35 = '';
-		public $d3_trans_36 = '';
-		public $d3_trans_37 = '';
-		public $d3_trans_38 = '';
-		public $d3_trans_39 = '';
-		public $d3_trans_40 = '';
-		public $d3_trans_41 = '';
-		public $d3_trans_42 = '';
-		public $d3_trans_43 = '';
-		public $d3_trans_44 = '';
-		public $d3_trans_45 = '';
-		public $d3_trans_46 = '';
-		public $d3_trans_47 = '';
-		public $d3_trans_48 = '';
-
-
-		// This function will house all the strings that would need translations in the wphealthtracker-admin-js.js JavaScript file.
+		/**
+		 *  This function will house all the strings that would need translations specifically in the wphealthtracker-admin-js.js JavaScript file.
+		 */
 		public function admin_js_trans_strings() {
 			return $translation_array = array(
 				'adminjstransstring1'   => __( 'Select a User', 'wphealthtracker-textdomain' ),
@@ -375,7 +220,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			);
 		}
 
-		// Translation strings that are common to different tabs and used all throughout the plugin.
+		/**
+		 *  Translation strings that are common to different tabs and used all throughout the plugin.
+		 */
 		public function common_trans_strings() {
 
 			$this->common_trans_1 = __( 'Expand', 'wphealthtracker-textdomain' );
@@ -452,11 +299,11 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->common_trans_71 = __( 'Fri.', 'wphealthtracker-textdomain' );
 			$this->common_trans_72 = __( 'Sat.', 'wphealthtracker-textdomain' );
 			$this->common_trans_73 = __( 'Sun.', 'wphealthtracker-textdomain' );
-			$this->common_trans_74  = __( 'Create a New User Below', 'wphealthtracker-textdomain' );
-			$this->common_trans_75  = __( 'Looks like you don\'t have access to this part of WPHealthTracker!', 'wphealthtracker-textdomain' );
-			$this->common_trans_76  = __( 'Contact', 'wphealthtracker-textdomain' );
-			$this->common_trans_77  = __( 'to request access.', 'wphealthtracker-textdomain' );
-			$this->common_trans_78  = __( 'at', 'wphealthtracker-textdomain' );
+			$this->common_trans_74 = __( 'Create a New User Below', 'wphealthtracker-textdomain' );
+			$this->common_trans_75 = __( 'Looks like you don\'t have access to this part of WPHealthTracker!', 'wphealthtracker-textdomain' );
+			$this->common_trans_76 = __( 'Contact', 'wphealthtracker-textdomain' );
+			$this->common_trans_77 = __( 'to request access.', 'wphealthtracker-textdomain' );
+			$this->common_trans_78 = __( 'at', 'wphealthtracker-textdomain' );
 
 			return $translation_array1 = array(
 				'commontrans1'  => $this->common_trans_1,
@@ -535,6 +382,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			);
 		}
 
+		/**
+		 *  Translation strings that are used in tab titles
+		 */
 		public function tab_titles_trans_strings() {
 
 			$this->tab_title_1  = __( 'Welcome!', 'wphealthtracker-textdomain' );
@@ -565,6 +415,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 
 		}
 
+		/**
+		 *  Translation strings that are used on the Users menu page
+		 */
 		public function users_tab_trans_strings() {
 
 			$this->user_trans_1  = __( 'The Basics', 'wphealthtracker-textdomain' );
@@ -646,14 +499,14 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->user_trans_81 = __( 'Create New User', 'wphealthtracker-textdomain' );
 			$this->user_trans_82 = __( 'The Only Required Fields are', 'wphealthtracker-textdomain' );
 			$this->user_trans_83 = __( 'Feel free to leave everything else blank!', 'wphealthtracker-textdomain' );
-			$this->user_trans_84  = __( 'Whoops! Looks like your E-Mail Addresses don\'t match!', 'wphealthtracker-textdomain' );
-			$this->user_trans_85  = __( 'Whoops! Looks like your Passwords don\'t match!', 'wphealthtracker-textdomain' );
-			$this->user_trans_86  = __( 'Looks like there\'s already a registered User with the Username of', 'wphealthtracker-textdomain' );
-			$this->user_trans_87  = __( 'Try creating this User again with a different Username', 'wphealthtracker-textdomain' );
-			$this->user_trans_88  = __( 'Looks like there\'s already a registered User with the E-Mail Address of', 'wphealthtracker-textdomain' );
-			$this->user_trans_89  = __( 'Try creating this User again with a different E-Mail Address', 'wphealthtracker-textdomain' );
-			$this->user_trans_90  = __( 'You\'ve just created a new WPHealthTracker User', 'wphealthtracker-textdomain' );
-			$this->user_trans_91  = __( 'WPHealthTracker Basic User', 'wphealthtracker-textdomain' );
+			$this->user_trans_84 = __( 'Whoops! Looks like your E-Mail Addresses don\'t match!', 'wphealthtracker-textdomain' );
+			$this->user_trans_85 = __( 'Whoops! Looks like your Passwords don\'t match!', 'wphealthtracker-textdomain' );
+			$this->user_trans_86 = __( 'Looks like there\'s already a registered User with the Username of', 'wphealthtracker-textdomain' );
+			$this->user_trans_87 = __( 'Try creating this User again with a different Username', 'wphealthtracker-textdomain' );
+			$this->user_trans_88 = __( 'Looks like there\'s already a registered User with the E-Mail Address of', 'wphealthtracker-textdomain' );
+			$this->user_trans_89 = __( 'Try creating this User again with a different E-Mail Address', 'wphealthtracker-textdomain' );
+			$this->user_trans_90 = __( 'You\'ve just created a new WPHealthTracker User', 'wphealthtracker-textdomain' );
+			$this->user_trans_91 = __( 'WPHealthTracker Basic User', 'wphealthtracker-textdomain' );
 
 			return $translation_array1 = array(
 				'usertrans1'  => $this->user_trans_1,
@@ -673,7 +526,6 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 				'usertrans15' => $this->user_trans_15,
 				'usertrans16' => $this->user_trans_16,
 				'usertrans17' => $this->user_trans_17,
-				'usertrans18' => $this->user_trans_18,
 				'usertrans19' => $this->user_trans_19,
 				'usertrans21' => $this->user_trans_21,
 				'usertrans23' => $this->user_trans_23,
@@ -748,6 +600,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 
 		}
 
+		/**
+		 *  Translation strings that are used on the Vitals tab
+		 */
 		public function vitals_tab_trans_strings() {
 
 			$this->vitals_trans_1  = __( 'Weight', 'wphealthtracker-textdomain' );
@@ -803,6 +658,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			);
 		}
 
+		/**
+		 *  Translation strings that are used on the Diet tab
+		 */
 		public function diet_tab_trans_strings() {
 
 			$this->diet_trans_1  = __( 'Diet', 'wphealthtracker-textdomain' );
@@ -900,6 +758,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			);
 		}
 
+		/**
+		 *  Translation strings that are used on the Exercise tab
+		 */
 		public function exercise_tab_trans_strings() {
 
 			$this->exercise_trans_1  = __( 'Enter Exercises for', 'wphealthtracker-textdomain' );
@@ -953,18 +814,16 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->exercise_trans_50 = __( 'Last Exercised On', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_51 = __( 'Used In These Exercises', 'wphealthtracker-textdomain' );
 
-			
-
 			return $translation_array2 = array(
-				'exercisetrans1' => $this->exercise_trans_1,
-				'exercisetrans2' => $this->exercise_trans_2,
-				'exercisetrans3' => $this->exercise_trans_3,
-				'exercisetrans4' => $this->exercise_trans_4,
-				'exercisetrans5' => $this->exercise_trans_5,
-				'exercisetrans6' => $this->exercise_trans_6,
-				'exercisetrans7' => $this->exercise_trans_7,
-				'exercisetrans8' => $this->exercise_trans_8,
-				'exercisetrans9' => $this->exercise_trans_9,
+				'exercisetrans1'  => $this->exercise_trans_1,
+				'exercisetrans2'  => $this->exercise_trans_2,
+				'exercisetrans3'  => $this->exercise_trans_3,
+				'exercisetrans4'  => $this->exercise_trans_4,
+				'exercisetrans5'  => $this->exercise_trans_5,
+				'exercisetrans6'  => $this->exercise_trans_6,
+				'exercisetrans7'  => $this->exercise_trans_7,
+				'exercisetrans8'  => $this->exercise_trans_8,
+				'exercisetrans9'  => $this->exercise_trans_9,
 				'exercisetrans10' => $this->exercise_trans_10,
 				'exercisetrans11' => $this->exercise_trans_11,
 				'exercisetrans12' => $this->exercise_trans_12,
@@ -1009,6 +868,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			);
 		}
 
+		/**
+		 *  Translation strings that are used in the Quickstats dashboards
+		 */
 		public function dashboard_trans_strings() {
 
 			$this->dashboard_trans_1  = __( 'QuickStats', 'wphealthtracker-textdomain' );
@@ -1147,6 +1009,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 
 		}
 
+		/**
+		 *  Translation strings that are used in d3 charts/stats areas
+		 */
 		public function d3_chart_trans_strings() {
 
 			$this->d3_trans_1   = __( 'Weight Chart & Stats', 'wphealthtracker-textdomain' );
@@ -1249,9 +1114,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->d3_trans_98  = __( 'Once there is, this area will display some Exercise Statistics.', 'wphealthtracker-textdomain' );
 			$this->d3_trans_99  = __( 'Exercise Duration Chart & Stats', 'wphealthtracker-textdomain' );
 			$this->d3_trans_100 = __( 'Hover Over Squares', 'wphealthtracker-textdomain' );
-			$this->d3_trans_101  = __( 'Exercise Duration Stats' );
+			$this->d3_trans_101 = __( 'Exercise Duration Stats' );
 
-			$this->d3_trans_102  = __( "Looks like there's no Macronutrients Data!", 'wphealthtracker-textdomain' );
+			$this->d3_trans_102 = __( "Looks like there's no Macronutrients Data!", 'wphealthtracker-textdomain' );
 			$this->d3_trans_103 = __( 'Once there is, this area will display a diagram showing Macronutrient Percentages.', 'wphealthtracker-textdomain' );
 			$this->d3_trans_104 = __( 'Once there is, this area will display some Macronutrients Statistics.', 'wphealthtracker-textdomain' );
 
@@ -1361,6 +1226,9 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 
 		}
 
+		/**
+		 *  Translation strings that are used in responses to specific Ajax cals, like saving/editing user data
+		 */
 		public function ajax_return_strings() {
 
 			$this->ajax_return_1  = __( 'Success!', 'wphealthtracker-textdomain' );

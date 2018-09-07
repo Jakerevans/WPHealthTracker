@@ -37,7 +37,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
 
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients       = new WPHealthTracker_Transients();
 			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $wpuserid );
 			$transient_exists = $transients->existing_transient_check( $transient_name );
@@ -77,7 +77,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 			global $wpdb;
 
 			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-transients.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients          = new WPHealthTracker_Transients();
 			$settings_table_name = $wpdb->prefix . 'wphealthtracker_general_settings';
 			$transient_name      = 'wpht_' . md5( 'SELECT * FROM ' . $settings_table_name );
@@ -93,7 +93,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 			$gmuser = explode( ',', $gmuser );
 
 			// First we'll get all the translations for this tab.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->trans = new WPHealthTracker_Translations();
 			$this->trans->common_trans_strings();
 			$this->trans->dashboard_trans_strings();
@@ -120,7 +120,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 		public function wphealthtracker_accesscheck_create_role( $role_name ) {
 
 			// Require the translations file.
-			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-translations.php';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->translations = new WPHealthTracker_Translations();
 			$this->translations->users_tab_trans_strings();
 
