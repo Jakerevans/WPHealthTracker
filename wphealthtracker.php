@@ -326,7 +326,7 @@ global $wpdb;
 	// Runs once upon plugin activation and creates the Daily Data - Exercise table.
 	register_activation_hook( __FILE__, array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_create_daily_data_exercise_table' ) );
 
-	// Adding the function that will create all the nonces we'll need for all the Ajax-type functionality.
+	// Adding the function that will allow the displaying of the Adminpointers when question marks are hovered over.
 	add_action( 'admin_footer', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_admin_pointers_javascript' ) );
 
 	// Adding the function that will take our WPHEALTHTRACKER_NONCES_ARRAY Constant from below and create actual nonces to be passed to Javascript functions.

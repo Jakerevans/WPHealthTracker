@@ -89,10 +89,10 @@ gulp.task('watch', function() {
 });
 
 // Default gulp task
-//gulp.task('default', ['sass', 'd3-uglify', 'concat', 'watch']);
+gulp.task('default', ['sass', 'd3-uglify', 'concat', 'watch']);
 
 //gulp.task('default', ['copyassets', 'copyincludes', 'copymainfile']);
 
 //gulp.task('default', ['zip']);
 
-gulp.task('default', ['clean']);
+//gulp.task('default', ['clean']);
