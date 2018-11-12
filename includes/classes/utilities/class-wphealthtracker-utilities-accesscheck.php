@@ -104,7 +104,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span-stats-1">' . $this->trans->dashboard_trans_21 . '</span>
 					<br>
-					' . $this->trans->common_trans_75 . '
+					' . $this->trans->trans_490 . '
 					<br>
 					' . $this->trans->common_trans_76 . ' ' . $gmuser[0] . ' ' . $gmuser[1] . ' ' . $this->trans->common_trans_78 . ' ' . $gmuser[2] . ' ' . $this->trans->common_trans_77 . '
 					<br><br>
