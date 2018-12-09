@@ -68,6 +68,10 @@ gulp.task('copymainfile', function () {
     gulp.src(['./wphealthtracker.php'], {base: './'}).pipe(gulp.dest('../wphealthtracker_dist/WPHealthTracker-Distribution'));
 });
 
+gulp.task( 'copyreadme', function () {
+    gulp.src([ './readme.txt' ], {base: './'}).pipe(gulp.dest( '../wphealthtracker_dist/WPHealthTracker-Distribution' ) );
+});
+
 gulp.task('zip', function () {
     return gulp.src('../wphealthtracker_dist/WPHealthTracker-Distribution/**')
         .pipe(zip('wphealthtracker.zip'))
@@ -76,6 +80,10 @@ gulp.task('zip', function () {
 
 gulp.task('clean', function(cb) {
     del(['../wphealthtracker_dist/WPHealthTracker-Distribution/**/*', '!../wphealthtracker_dist/WPHealthTracker-Distribution/wphealthtracker.zip'], {force: true}, cb);
+});
+
+gulp.task( 'cleanzip', function(cb) {
+    del([ '../wphealthtracker_dist/WPHealthTracker-Distribution/**/*' ], {force: true}, cb);
 });
 
 
@@ -91,7 +99,9 @@ gulp.task('watch', function() {
 // Default gulp task
 gulp.task('default', ['sass', 'd3-uglify', 'concat', 'watch']);
 
-//gulp.task('default', ['copyassets', 'copyincludes', 'copymainfile']);
+//gulp.task( 'default', [ 'cleanzip' ]);
+
+//gulp.task('default', ['copyassets', 'copyincludes', 'copymainfile', 'copyreadme']);
 
 //gulp.task('default', ['zip']);
 
