@@ -46,7 +46,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 			// Get active plugins to see if any extensions are in play.
 			$this->active_plugins = (array) get_option( 'active_plugins', array() );
 			if ( is_multisite() ) {
-				$this->active_plugins = array_merge( $active_plugins, get_site_option( 'active_sitewide_plugins', array() ) );
+				$this->active_plugins = array_merge( $this->active_plugins, get_site_option( 'active_sitewide_plugins', array() ) );
 			}
 
 			// Get current menu/submenu.
