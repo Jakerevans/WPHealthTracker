@@ -193,6 +193,9 @@ global $wpdb;
 	// Root JS URL for this plugin.
 	define( 'WPHEALTHTRACKER_ROOT_JS_URL', WPHEALTHTRACKER_ROOT_URL . 'assets/js/' );
 
+	// Root JS URL for this plugin.
+	define( 'WPHEALTHTRACKER_ROOT_JS_FRONTEND_URL', WPHEALTHTRACKER_ROOT_URL . 'assets/js/frontend/' );
+
 	// Define the Uploads base directory.
 	$uploads     = wp_upload_dir();
 	$upload_path = $uploads['basedir'];
@@ -299,11 +302,23 @@ global $wpdb;
 	// Adding the admin js file.
 	add_action( 'admin_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_admin_js' ) );
 
-	// Adding the d3 js file.
+	// Adding the frontend Diet Stats JS file, if the [] shortcode is present on page.
+	add_action( 'wp_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_frontend_dietstats_js' ) );
+
+	// Adding the front-end Diet Stats shortcode.
+	add_shortcode( 'wphealthtracker_dietstats', array( $wp_health_tracker_general_functions, 'wphealthtracker_dietstats_frontend_shortcode_function' ) );
+
+	// Adding the d3 js file to the backend.
 	add_action( 'admin_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_d3_js' ) );
 
-	// CSS.
+	// Adding the d3 js file to the frontend, if needed.
+	add_action( 'wp_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_frontend_d3_js' ) );
+
+	// Admin CSS.
 	add_action( 'admin_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_admin_style' ) );
+
+	// Frontend CSS.
+	add_action( 'wp_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_frontend_style' ) );
 
 	// Registers table names.
 	add_action( 'init', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_register_table_names' ), 1 );

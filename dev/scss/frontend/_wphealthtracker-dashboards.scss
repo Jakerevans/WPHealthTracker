@@ -1,0 +1,126 @@
+/*
+ *   BEGIN PLACEHOLDER CLASSES
+*/
+%wphealthtracker-stats-actual-top-div{
+    box-shadow: inset 0px 0px 15px -5px $pureblack;
+    border: solid 1px $primary-color;
+    opacity:0;
+    overflow:hidden;
+    height:0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom:30px;
+    padding-left:5px;
+    padding-right:5px;
+    border-radius: 3px;
+    position:relative;
+}
+
+%wphealthtracker-stats-subtext{
+    font-size: 10px;
+    font-style: normal;
+    margin-left: 1px;
+    margin-right: 3px;
+    position: relative;
+    bottom: 1px;
+}
+/*
+ *  END PLACEHOLDER CLASSES
+*/
+
+/*
+ *  BEGIN SASS CSS
+*/
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-stats-actual-top-div{
+    @extend %wphealthtracker-stats-actual-top-div;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-chol-span{
+    @extend %wphealthtracker-stats-subtext;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-title-line{
+    @extend %wphealthtracker-border-bottom-1px-solid;
+    @extend %wphealthtracker-margin-centered;
+    box-shadow: 0px 2px 2px $primary-color;
+    width: 70%;
+    height: 1px;
+    display: block;
+    margin-bottom:15px;
+    margin-top:10px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-p-title{
+    text-shadow: 1px 1px $verylight-primary-color;
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: -8px;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+    display: inline-block;
+}
+
+/*
+ *  END SASS CSS
+ */
+
+/*
+ *  BEGIN NON-SASS CSS
+ */
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-row{
+    display: grid;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-row-entry{
+    display:inline-grid;
+    margin:5px
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-row-entry p, #wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-p-name{
+    margin:0px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-row-entry-label{
+    margin: 0px;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-row-entry-data{
+    font-style:italic;
+    position: relative;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-stats-good-data-smile{
+    width: 16px;
+    position: absolute;
+    right: -20px;
+    top: 0;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-prof-img-actual{
+    width:40px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-prof-img-div, #wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-p-title-div{
+    display: inline-block;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-dashboard-title-line-bottom{
+    margin-top: 15px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-dashboard-row-entry-data-start-chol{
+    position:relative;
+    left: 6px;
+}
+
+/*
+ *  END NON-SASS CSS
+ */

@@ -1,0 +1,988 @@
+/**
+ * SCSS - wphealthtracker-admin-ui.scss
+ *
+ * @author   Jake Evans
+ * @category CSS
+ * @package  Includes/Assets/CSS
+ * @version  0.0.1
+ */
+
+
+// CSS Reset.
+#wphealthtracker-master-frontend-wrapper html,  #wphealthtracker-master-frontend-wrapper body,  #wphealthtracker-master-frontend-wrapper div,  #wphealthtracker-master-frontend-wrapper span,  #wphealthtracker-master-frontend-wrapper applet,  #wphealthtracker-master-frontend-wrapper object,  #wphealthtracker-master-frontend-wrapper iframe,
+h1,  #wphealthtracker-master-frontend-wrapper h2,  #wphealthtracker-master-frontend-wrapper h3,  #wphealthtracker-master-frontend-wrapper h4,  #wphealthtracker-master-frontend-wrapper h5,  #wphealthtracker-master-frontend-wrapper h6,  #wphealthtracker-master-frontend-wrapper blockquote,  #wphealthtracker-master-frontend-wrapper pre,
+a,  #wphealthtracker-master-frontend-wrapper abbr,  #wphealthtracker-master-frontend-wrapper acronym,  #wphealthtracker-master-frontend-wrapper address,  #wphealthtracker-master-frontend-wrapper big,  #wphealthtracker-master-frontend-wrapper cite,
+del,  #wphealthtracker-master-frontend-wrapper dfn,  #wphealthtracker-master-frontend-wrapper img,  #wphealthtracker-master-frontend-wrapper ins,  #wphealthtracker-master-frontend-wrapper q,  #wphealthtracker-master-frontend-wrapper s,
+small,  #wphealthtracker-master-frontend-wrapper strike,  #wphealthtracker-master-frontend-wrapper sub,  #wphealthtracker-master-frontend-wrapper sup,  #wphealthtracker-master-frontend-wrapper tt, #wphealthtracker-master-frontend-wrapper u,  #wphealthtracker-master-frontend-wrapper center,
+dl,  #wphealthtracker-master-frontend-wrapper dt,  #wphealthtracker-master-frontend-wrapper dd,  #wphealthtracker-master-frontend-wrapper ol,  #wphealthtracker-master-frontend-wrapper ul,  #wphealthtracker-master-frontend-wrapper li,
+fieldset,  #wphealthtracker-master-frontend-wrapper form,  #wphealthtracker-master-frontend-wrapper label,  #wphealthtracker-master-frontend-wrapper legend,
+table,  #wphealthtracker-master-frontend-wrapper caption,  #wphealthtracker-master-frontend-wrapper tbody,  #wphealthtracker-master-frontend-wrapper tfoot,  #wphealthtracker-master-frontend-wrapper thead,  #wphealthtracker-master-frontend-wrapper tr,  #wphealthtracker-master-frontend-wrapper th,  #wphealthtracker-master-frontend-wrapper td,
+article,  #wphealthtracker-master-frontend-wrapper aside,  #wphealthtracker-master-frontend-wrapper canvas,  #wphealthtracker-master-frontend-wrapper details,  #wphealthtracker-master-frontend-wrapper embed,  #wphealthtracker-master-frontend-wrapper 
+figure,  #wphealthtracker-master-frontend-wrapper figcaption,  #wphealthtracker-master-frontend-wrapper footer,  #wphealthtracker-master-frontend-wrapper header,  #wphealthtracker-master-frontend-wrapper hgroup,  #wphealthtracker-master-frontend-wrapper 
+menu,  #wphealthtracker-master-frontend-wrapper nav,  #wphealthtracker-master-frontend-wrapper output,  #wphealthtracker-master-frontend-wrapper ruby,  #wphealthtracker-master-frontend-wrapper section,  #wphealthtracker-master-frontend-wrapper summary,
+time,  #wphealthtracker-master-frontend-wrapper mark,  #wphealthtracker-master-frontend-wrapper audio,  #wphealthtracker-master-frontend-wrapper video, #wphealthtracker-master-frontend-wrapper svg {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#wphealthtracker-master-frontend-wrapper svg {
+    height: initial;
+    width: initial;
+}
+
+/* HTML5 display-role reset for older browsers */
+#wphealthtracker-master-frontend-wrapper article,  #wphealthtracker-master-frontend-wrapper aside,  #wphealthtracker-master-frontend-wrapper details,  #wphealthtracker-master-frontend-wrapper figcaption,  #wphealthtracker-master-frontend-wrapper figure,  #wphealthtracker-master-frontend-wrapper 
+footer,  #wphealthtracker-master-frontend-wrapper header,  #wphealthtracker-master-frontend-wrapper hgroup,  #wphealthtracker-master-frontend-wrapper menu,  #wphealthtracker-master-frontend-wrapper nav,  #wphealthtracker-master-frontend-wrapper section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+#wphealthtracker-master-frontend-wrapper ol,  #wphealthtracker-master-frontend-wrapper ul {
+    list-style: none;
+}
+#wphealthtracker-master-frontend-wrapper blockquote,  #wphealthtracker-master-frontend-wrapper q {
+    quotes: none;
+}
+#wphealthtracker-master-frontend-wrapper blockquote:before,  #wphealthtracker-master-frontend-wrapper blockquote:after,
+q:before,  #wphealthtracker-master-frontend-wrapper q:after {
+    content: '';
+    content: none;
+}
+#wphealthtracker-master-frontend-wrapper table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+ *   BEGIN COLOR VARIABLES
+*/
+$primary-color: #DE235A;
+$primary-color-border: #b11c48;
+$verylight-primary-color: #FAE6EC;
+$slightly-darker-primary: #F8DEE6;
+$slightly-darker-primary-border: #DFC7CF;
+$secondary-yellow: #F8C849;
+$purewhite: #FFFFFF;
+$pureblack: #000000;
+$lightgray: #CCCCCC;
+$white-trans-9:rgba(255, 255, 255, 0.9);
+$primary-box-shadow:2px 2px 5px $pureblack;
+$primary-box-shadow-inset: inset 2px 2px 5px $pureblack;
+$menu-text-shadow: 1px 1px black;
+/*
+ *   END COLOR VARIABLES
+*/
+
+/*
+ *   BEGIN PLACEHOLDER CLASSES
+*/
+
+%wphealthtracker-hidden-row{
+    height: 0px;
+    overflow: hidden;
+    margin-bottom:20px;
+}
+
+%wphealthtracker-response-form-row{
+    display: inline-block;
+    position: relative;
+}
+
+%wphealthtracker-response-form-row-removal-div{
+    position: absolute;
+    right: 0;
+    left: 165px;
+    bottom: 0px;
+    cursor: pointer;
+    height:30px;
+    width:30px;
+}
+
+
+%wphealthtracker-response-form-row-removal-img{
+    width:30px;
+}
+
+%wphealthtracker-margin-centered{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%wphealthtracker-spinner-dimensions{
+    border-radius: 100%;
+    opacity: 0;
+    height: 20px;
+    width: 20px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+%wphealthtracker-spinner-animation{
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+}
+
+%wphealthtracker-missing-data-animation{
+    0%{margin-left:0px; color:rgb(255,0,0)}
+    50%{margin-left:10px}
+    100%{margin-left:0px; color:rgb(0,0,0)}
+}
+
+%wphealthtracker-spinner-color-primary{
+    border-left: 1px solid $purewhite;
+    border-right: 1px solid $purewhite;
+    border-bottom: 1px solid $purewhite;
+    border-top: 1px solid $primary-color;
+}
+
+%wphealthtracker-spinner-color-white{
+    border-top: 1px solid $purewhite;
+    border-left: 1px solid $verylight-primary-color;
+    border-right: 1px solid $verylight-primary-color;
+    border-bottom: 1px solid $verylight-primary-color;
+}
+
+%wphealthtracker-spinner-color-red{
+    border-top: 1px solid $primary-color;
+    border-left: 1px solid $verylight-primary-color;
+    border-right: 1px solid $verylight-primary-color;
+    border-bottom: 1px solid $verylight-primary-color;
+}
+
+%wphealthtracker-border-bottom-1px-solid{
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+}
+
+%wphealthtracker-display-top-title{
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 18px;
+}
+
+%wphealthtracker-p-max-width{
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+%wphealthtracker-icon-image-question{
+    position: relative;
+    right:5px;
+    cursor: pointer;
+    width:11px;
+    margin-right: -4px;
+}
+
+%wphealthtracker-no-saved-data-div-p{
+    font-size: 18px;
+    font-style: italic;
+    display:block;
+}
+
+%wphealthtracker-p-title{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 45px;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+%wphealthtracker-expansion-div {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    cursor: pointer;
+}
+
+%wphealthtracker-response-form-row-add-img{
+    width:30px;
+}
+
+%wphealthtracker-response-form-select{
+    position:relative;
+    bottom:2px;
+    width:160px;
+}
+
+%wphealthtracker-response-form-input-time-and-number{
+    height: 28px;
+    width: 160px;
+}
+
+%wphealthtracker-expand-minimize-p{
+    color: $purewhite;
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    font-style: italic;
+    right: 5px;
+}
+
+%wphealthtracker-add-delete-row-item-text{
+    margin: 0px;
+    font-size: 11px;
+    position: relative;
+    top: 46px;
+    right: 2px;
+}
+
+%wphealthtracker-response-form-heading {
+    @extend %wphealthtracker-border-bottom-1px-solid;
+    @extend %wphealthtracker-margin-centered;
+    font-size: 20px;
+    margin-top: 40px;
+    padding-top: 40px;
+    width: 70%;
+    line-height: 2;
+    position: relative;
+}
+
+%wphealthtracker-indiv-choice{
+    @extend %wphealthtracker-margin-centered;
+    border: solid 1px $primary-color-border;
+    background-color: $primary-color;
+    box-shadow: 10px 10px 11px -4px black;
+    width: 95%;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+%wphealthtracker-response-form-all-data-row{
+    @extend %wphealthtracker-margin-centered;
+    background-color: $purewhite;
+    border: solid 6px $purewhite;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    height: 46px;
+    width: 90%;
+    height:30px;
+    opacity:0;
+}
+
+%wphealthtracker-shocked-image{
+    @extend %wphealthtracker-margin-centered;
+    width: 60px;
+}
+
+%wphealthtracker-ajax-return-img{
+    @extend %wphealthtracker-margin-centered;
+    width: 40px;
+    position: relative;
+    top: 10px;
+}
+
+%wphealthtracker-response-message-div{
+    @extend %wphealthtracker-margin-centered;
+    width:80%
+}
+
+%wphealthtracker-icon-h2-image{
+    @extend %wphealthtracker-margin-centered;
+    width: 26px;
+    margin-top: 9px;
+    display: block;
+    position: relative;
+    bottom: 10px;
+}
+
+%wphealthtracker-response-form-row-addition-div{
+    @extend %wphealthtracker-margin-centered;
+    height: 30px;
+    width: 65px;
+    margin-bottom:5px;
+    cursor: pointer;
+}
+
+/*
+ *  BEGIN IMPORTS
+*/
+@import '_wphealthtracker-d3-charts';
+@import '_wphealthtracker-dashboards';
+/*
+@import '_wphealthtracker-admin-advert';
+@import '_wphealthtracker-filter-saved-data';
+@import '_wphealthtracker-diet-tracker-tab';
+@import '_wphealthtracker-exercise-tracker-tab';
+@import '_wphealthtracker-animations';
+*/
+
+/*
+ *  END IMPORTS
+*/
+
+/*
+ *  END PLACEHOLDER CLASSES
+*/
+
+/*
+ *  BEGIN SASS CSS
+*/
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-spinner-primary{
+    @extend %wphealthtracker-spinner-dimensions;
+    @extend %wphealthtracker-spinner-color-primary;
+    @extend %wphealthtracker-spinner-animation;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-spinner-white{
+    @extend %wphealthtracker-spinner-dimensions;
+    @extend %wphealthtracker-spinner-color-white;
+    @extend %wphealthtracker-spinner-animation;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-spinner-red{
+    @extend %wphealthtracker-spinner-dimensions;
+    @extend %wphealthtracker-spinner-color-red;
+    @extend %wphealthtracker-spinner-animation;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-icon-image-question-enter-view{
+    @extend %wphealthtracker-icon-image-question;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-shocked-image{
+    @extend %wphealthtracker-shocked-image;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-ajax-return-img{
+    @extend %wphealthtracker-ajax-return-img;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-p-title{
+    @extend %wphealthtracker-p-title;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice{
+    @extend %wphealthtracker-indiv-choice;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-expansion-div {
+    @extend %wphealthtracker-expansion-div;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row{
+    @extend %wphealthtracker-response-form-row;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-row-addition-div p, #wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-exercise-set-addition-div p{
+    @extend %wphealthtracker-add-delete-row-item-text;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-row-removal-img{
+    @extend %wphealthtracker-response-form-row-removal-img;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-selected-user-response-enter-div{
+    @extend %wphealthtracker-hidden-row;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-selected-user-response-view-div{
+    @extend %wphealthtracker-hidden-row;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-row-add-img{
+    @extend %wphealthtracker-response-form-row-add-img;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-select{
+    @extend %wphealthtracker-response-form-select;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-input-time{
+    @extend %wphealthtracker-response-form-input-time-and-number;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-input-number{
+    @extend %wphealthtracker-response-form-input-time-and-number;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-select{
+    @extend %wphealthtracker-response-form-select;
+}
+
+#wphealthtracker-expand-minimize-p-enter, #wphealthtracker-master-frontend-wrapper #wphealthtracker-expand-minimize-p-view{
+    @extend %wphealthtracker-expand-minimize-p;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-row-addition-div, #wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-exercise-set-addition-div{
+    @extend %wphealthtracker-response-form-row-addition-div;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-all-data-row{
+    @extend %wphealthtracker-margin-centered;
+    @extend %wphealthtracker-response-form-all-data-row;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-display-top-title-stats{
+    @extend %wphealthtracker-border-bottom-1px-solid;
+    @extend %wphealthtracker-display-top-title;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-display-top-title {
+    @extend %wphealthtracker-border-bottom-1px-solid;
+    @extend %wphealthtracker-display-top-title;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-spinner-tiny-primary{
+    @extend %wphealthtracker-spinner-dimensions;
+    @extend %wphealthtracker-spinner-color-primary;
+    @extend %wphealthtracker-spinner-animation;
+    height: 10px;
+    width: 10px;
+    bottom: 6px;
+    position: relative;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-spinner-primary-d3-await{
+    @extend %wphealthtracker-spinner-dimensions;
+    @extend %wphealthtracker-spinner-color-primary;
+    @extend %wphealthtracker-spinner-animation;
+    opacity:1;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-spinner-primary-d3-await-muscle-groups{
+    @extend %wphealthtracker-spinner-dimensions;
+    @extend %wphealthtracker-spinner-color-primary;
+    @extend %wphealthtracker-spinner-animation;
+    opacity:1;
+    position: absolute;
+    top: 35%;
+    left: 21%;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-all-data-row-actual{
+    @extend %wphealthtracker-hidden-row;
+    @extend %wphealthtracker-margin-centered;
+    box-shadow: $primary-box-shadow-inset;
+    background-color:$white-trans-9;
+    border: solid 6px $purewhite;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    width:90%;
+    opacity:0;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-message-div{
+    @extend %wphealthtracker-hidden-row;
+    @extend %wphealthtracker-response-message-div;
+    background-color:$purewhite;
+    box-shadow:$primary-box-shadow;
+    border-radius:5px;
+    padding:10px;
+    opacity:0;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice-p {
+    @extend %wphealthtracker-border-bottom-1px-solid;
+    @extend %wphealthtracker-margin-centered;
+    color: $purewhite;
+    font-size: 23px;
+    font-style: italic;
+    width: 90%;
+    text-shadow: $menu_text_shadow;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-no-saved-data-div p, #wphealthtracker-master-frontend-wrapper .wphealthtracker-no-saved-span1{
+    @extend %wphealthtracker-no-saved-data-div-p;
+    @extend %wphealthtracker-margin-centered;
+    color:$purewhite;
+    max-width: 400px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-entry-row{
+    @extend %wphealthtracker-margin-centered;
+    background-color: $purewhite;
+    box-shadow: $primary-box-shadow;
+    margin-bottom: 10px;
+    padding-bottom: 40px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-heading-black{
+    @extend %wphealthtracker-response-form-heading;
+    color:$pureblack;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-heading-white{
+    @extend %wphealthtracker-response-form-heading;
+    color:$purewhite;
+    border:none;
+    display:block;
+    margin-top:0;
+    padding-top:0;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row-create-users{
+    @extend %wphealthtracker-response-form-row;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+}
+
+#wphealthtracker-icon-image-question-d3-chart-title{
+    @extend %wphealthtracker-icon-image-question;
+    display:inline-block;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-create-user-div{
+    @extend %wphealthtracker-hidden-row;
+    height:initial;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-row-removal-div{
+    @extend %wphealthtracker-response-form-row-removal-div;
+    left: 165px;
+    bottom: 24px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice-create-user{
+    @extend %wphealthtracker-indiv-choice;
+    height:auto;
+    opacity:1;
+    cursor:initial;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-expansion-div-create-user{
+    @extend %wphealthtracker-expansion-div;
+    cursor:initial;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-icon-image-question-dashboard{
+    @extend %wphealthtracker-icon-image-question;
+
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice input[type="text"],
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice input[type="time"],
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice input[type="number"]{
+    @extend %wphealthtracker-response-form-select;
+    bottom:0px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-missing-data-animation{
+    @extend %wphealthtracker-margin-centered;
+    background-image: url(../img/icons/shocked.svg);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 8px;
+    padding-top: 30px;
+    display: block;
+    content: "";
+}
+
+#wphealthtracker-icon-image-question-id-1{
+    @extend %wphealthtracker-icon-image-question;
+    padding-right: 3px;
+    top: 3px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-user-dropdown-p{
+    @extend %wphealthtracker-p-max-width;
+    position: relative;
+    right: 12px;
+    margin-bottom:5px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-display-title-icon{
+    @extend %wphealthtracker-margin-centered;
+    width: 50px;
+    display: block;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-icon-h2-image{
+    @extend %wphealthtracker-icon-h2-image;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-ajax-error-textarea{
+    @extend %wphealthtracker-margin-centered;
+    display: block;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 80px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-no-saved-data-stats-div p, #wphealthtracker-master-frontend-wrapper .wphealthtracker-no-saved-span-stats-1{
+    @extend %wphealthtracker-no-saved-data-div-p;
+    color:$primary-color;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-display-container {
+    box-shadow: 10px 10px 10px $primary-color;
+    border-color: $primary-color;
+    background-color: $purewhite;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+    width: 90%;
+    border-radius: 10px;
+    margin: 25px;
+    text-align:center;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-selected-user-response-id-view .wphealthtracker-expand-minimize-div-all-data #wphealthtracker-expand-minimize-p-enter, #wphealthtracker-master-frontend-wrapper #wphealthtracker-selected-user-response-id-view .wphealthtracker-expand-minimize-div-all-data #wphealthtracker-expand-minimize-p-view{
+    color:$pureblack;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-no-data-text, #wphealthtracker-master-frontend-wrapper .wphealthtracker-no-saved-span2{
+    color:$purewhite;
+    font-size:16px;
+}
+/*
+ *  END SASS CSS
+ */
+
+/*
+ *  BEGIN NON-SASS CSS
+ */
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-user-dropdown-div{
+    text-align:center;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-choice-container{
+    opacity: 0;
+    pointer-events: none;
+    height:0px;
+    margin-bottom: 60px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-spinner-1{
+    margin-top:20px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-expand-minimize-div{
+    position: absolute;
+    right: 9px;
+    cursor: pointer;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-expand-minimize-div-all-data{
+    position: absolute;
+    right: 9px;
+    top:1px;
+    cursor: pointer;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice-img{
+    width: 50px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice-img-rotate{
+    width:30px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-choose-title{
+    opacity:0;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-no-data-text-span{
+    font-style:italic;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-data-row{
+    overflow:hidden;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-save-spinner-response-div{
+    margin:20px;
+    margin-top:55px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-spinner-save-vitals{
+    margin-bottom:20px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-saved-data-indiv-img{
+    width: 20px;
+    display: inline;
+    position: relative;
+    top: 4px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-all-data-p{
+    position: relative;
+    bottom: 1px;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-missing-data-animation {
+    -webkit-animation: wphealthtracker-missing-data-animation 1s infinite;
+    -moz-animation: wphealthtracker-missing-data-animation 1s infinite;
+    -o-animation: wphealthtracker-missing-data-animation 1s infinite;
+    animation: wphealthtracker-missing-data-animation 1s infinite;
+    font-weight:bold;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row p{
+    height:20px;
+    font-size:13px;
+    
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-success-title{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 0px;
+    font-style: italic;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-success-description{
+    margin-top:0px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-success-advert{
+    margin-bottom:0px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-success-reviews{
+    margin-top:4px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-success-humandate{
+    font-weight:bold;
+    font-style:italic;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-stats-title-inner-div{
+    position: relative;
+    top: 15px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-display-title-icon-stats{
+    width:40px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-display-title-icon-stats-plus{
+    width:20px;
+    margin-left:10px;
+    margin-right:10px;
+    position: relative;
+    bottom: 5px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-user-dropdown-select{
+    width:155px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-spinner-filter-vitals, #wphealthtracker-master-frontend-wrapper #wphealthtracker-spinner-filter-diet, #wphealthtracker-master-frontend-wrapper #wphealthtracker-spinner-filter-exercise{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-stats-actual-top-div-inner-right #wphealthtracker-master-frontend-wrapper .wphealthtracker-dashboard-row-entry-data{
+    right: 8px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-exercise-set-addition-div{
+    position: relative;
+    bottom: 18px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-exercise-set-addition-div .wphealthtracker-response-form-row-add-img{
+    width:25px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-exercise-set-addition-div p{
+    top: 40px;
+}
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row .wphealthtracker-response-form-row-removal-div p{
+    margin: 0px;
+    font-size: 11px;
+    position: relative;
+    top: 31px;
+    right: -27px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row-create-users .wphealthtracker-response-form-users-label-row{
+    position: relative;
+    right: 13px;
+    margin-bottom: 0px;
+    text-align: left;
+    font-variant: all-petite-caps;
+    font-size: 17px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-response-form-users-label-row-password{
+    top:4px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-decorative-red-underline-create-users{
+    border: solid 1px #DE235A;
+    border-bottom:0px;
+    width: 85%;
+    position: relative;
+    left: 2px;
+    bottom: 3px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row-create-users .wphealthtracker-response-form-users-label-row img{
+    width: 14px;
+    top: 1px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthracker-create-users-match-response-div, #wphealthtracker-master-frontend-wrapper .wphealthracker-create-users-match-response-div p, #wphealthtracker-master-frontend-wrapper .wphealthtracker-spinner-tiny-primary{
+    display: inline-block;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthracker-create-users-match-response-div p{
+    margin: 0;
+    margin-left: 5px;
+    font-size: 11px;
+    line-height: 1;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-create-user-div select{
+    width: 200px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthracker-create-users-match-response-div{
+    position: absolute;
+    right: -95px;
+    bottom: 2px;
+    text-align: left;
+    width: 90px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row-create-users input[type="text"], #wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row-create-users input[type="number"], #wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row-create-users input[type="date"], #wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row-create-users input[type="password"]{
+    width:200px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row-create-users .wphealthtracker-response-form-input-textarea{
+    width:300px;
+    height:100px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-response-form-select-create-user-height-feet{
+    width:100px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-response-form-div-row .wphealthtracker-response-form-row-removal-div:hover p,
+.wphealthtracker-response-form-entry-row .wphealthtracker-response-form-row-addition-div:hover p,
+.wphealthtracker-response-form-exercise-set-addition-div:hover p{
+    -webkit-animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    -moz-animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    -o-animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    font-weight:bold;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-create-user-godmode-warning-message{
+    height:0px;
+    opacity:0;
+    overflow:hidden;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-create-user-godmode-warning-message-title{
+    font-weight:bold;
+    font-size:20px;
+    margin:0;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-create-user-godmode-warning-message-image{
+    width:50px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-create-user-godmode-warning-message-body{
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthracker-create-users-match-response-p-email, #wphealthtracker-master-frontend-wrapper .wphealthracker-create-users-match-response-p-password{
+    opacity:0;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthracker-create-users-match-response-p-email #wphealthtracker-stats-good-data-smile-emails-match, #wphealthtracker-master-frontend-wrapper #wphealthracker-create-users-match-response-p-password #wphealthtracker-stats-good-data-smile-password-match{
+    left: 16px;
+    top: -18px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthracker-create-users-match-response-p-email #wphealthtracker-stats-good-data-smile-emails-mismatch, #wphealthtracker-master-frontend-wrapper #wphealthracker-create-users-match-response-p-password #wphealthtracker-stats-good-data-smile-password-mismatch{
+    left: 16px;
+    top: -18px;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-create-user-show-password{
+    margin: 0;
+    display: inline-block;
+    font-size: 10px;
+    right: 40px;
+    bottom: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+#wphealthtracker-master-frontend-wrapper #wphealthracker-create-user-profile-img-actual{
+    width:50px;
+}
+
+
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-create-user-show-password:hover{
+    -webkit-animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    -moz-animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    -o-animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice-sub-p{
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    font-size: 14px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice-sub-ul{
+    color:white;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-indiv-choice-sub-ul li{
+    margin:0px;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-stats-indiv-choice-good-data-smile{
+    width: 16px;
+    position: relative;
+    top: 2px;
+}
+
+#wphealthtracker-master-frontend-wrapper .toplevel_page_WPHealthTracker-Options .dashicons-before img{
+    width: 30px!important;
+    margin-right: 2px!important;
+    padding: 2px 0 0!important;
+}
+
+#wphealthtracker-master-frontend-wrapper .wphealthtracker-admin-bold-tip{
+    font-weight:bold;
+}
+/*
+ *  END NON-SASS CSS
+ */
