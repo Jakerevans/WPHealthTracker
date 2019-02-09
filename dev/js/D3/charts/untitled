@@ -1,4 +1,4 @@
-function wphealthtracker_vitals_d3_1(mydataWeight){
+function wphealthtrackerVitalsD3One(mydataWeight){
 
 	// Set dimensions
 	var margin = {

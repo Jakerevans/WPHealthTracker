@@ -400,13 +400,13 @@ opacity: 0.5
     }
     label + h2 { margin-top: 1rem; }
     label {
-        width: 50px;
         display: block;
         cursor: pointer;
-        font-size: .7rem;
+        font-size: 11px;
+        line-height: 11px;
         opacity: .5;
         position: relative;
-        z-index: 200;
+        z-index: 1;
         border-left: 5px solid transparent;
         padding-left: 6px;
         margin-left: -11px;

@@ -160,7 +160,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Stats_Diet_Form', false ) ) :
 
 							</div>
 						</div>
-						<div class="wphealthtracker-stats-actual-top-div-d3" id="wphealthtracker-stats-inner-d3-1">
+						<div class="wphealthtracker-stats-actual-top-div-d3 wphealthtracker-stats-actual-diet-top-div" id="wphealthtracker-stats-inner-d3-1">
 							<div class="wphealthtracker-spinner-primary-d3-await" id="wphealthtracker-spinner-d3-await-1"></div>
 							<div class="wphealthtracker-d3-chart-title-div" id="wphealthtracker-d3-chart-title-div-1-1">
 
@@ -173,7 +173,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Stats_Diet_Form', false ) ) :
 							</div>
 
 						</div>
-						<div class="wphealthtracker-stats-actual-top-div-d3" id="wphealthtracker-stats-inner-d3-2">
+						<div class="wphealthtracker-stats-actual-top-div-d3 wphealthtracker-stats-actual-diet-top-div" id="wphealthtracker-stats-inner-d3-2">
 							<div class="wphealthtracker-spinner-primary-d3-await" id="wphealthtracker-spinner-d3-await-2"></div>
 							<div class="wphealthtracker-d3-chart-title-div" id="wphealthtracker-d3-chart-title-div-1-2">
 
@@ -186,7 +186,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Stats_Diet_Form', false ) ) :
 							</div>
 
 						</div>
-						<div class="wphealthtracker-stats-actual-top-div-d3" id="wphealthtracker-stats-inner-d3-3">
+						<div class="wphealthtracker-stats-actual-top-div-d3 wphealthtracker-stats-actual-diet-top-div" id="wphealthtracker-stats-inner-d3-3">
 							<div class="wphealthtracker-spinner-primary-d3-await" id="wphealthtracker-spinner-d3-await-3"></div>
 							<div class="wphealthtracker-d3-chart-title-div" id="wphealthtracker-d3-chart-title-div-1-3">
 

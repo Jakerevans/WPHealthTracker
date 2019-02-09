@@ -9,7 +9,7 @@
 
 "use strict";
 
-function wphealthtracker_vitals_d3_1(mydata) {
+function wphealthtrackerVitalsD3One(mydata) {
 
   // Basic SVG setup
   var margin = { top: 50, right: 150, bottom: 5, left: 35 };
@@ -227,7 +227,7 @@ function wphealthtracker_vitals_d3_1(mydata) {
   });
 }
 
-function wphealthtracker_vitals_d3_2(mydata) {
+function wphealthtrackerVitalsD3Two(mydata) {
   var bisectDate = d3.bisector(function (d) {
     return d.date;
   }).left;
@@ -808,7 +808,7 @@ function wphealthtracker_vitals_d3_2(mydata) {
   }
 }
 
-function wphealthtracker_vitals_d3_3(mydata) {
+function wphealthtrackerVitalsD3Three(mydata) {
 
   // Set the dimensions of the canvas / graph
   var margin = { top: 50, right: 40, bottom: 50, left: 70 },

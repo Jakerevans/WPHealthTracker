@@ -4996,7 +4996,7 @@ function wphealthtrackerExerciseD3Three( d3Three, $ ) {
 		times = [ '12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11' ],
 		datasets = [ d3Three ];
 
-	var svg = d3.select( '#wphealthtracker-exercise-time-svg-chart' ).append( 'svg' )
+	var svg = d3.select( '.wphealthtracker-stats-actual-exercise-top-div #wphealthtracker-exercise-time-svg-chart' ).append( 'svg' )
 		.attr( 'width', width + margin.left + margin.right )
 		.attr( 'height', height + margin.top + margin.bottom )
 		.append( 'g' )

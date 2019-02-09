@@ -126,7 +126,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		public function wphealthtracker_jre_frontend_d3_js( $hook ) {
 
 			global $post;
-			if( has_shortcode( $post->post_content, 'wphealthtracker_dietstats') ) {
+			if( has_shortcode( $post->post_content, 'wphealthtracker_dietstats') || has_shortcode( $post->post_content, 'wphealthtracker_vitalstats') || has_shortcode( $post->post_content, 'wphealthtracker_exercisestats') ) {
 				
 				// First just register the script.
 				wp_register_script( 'wphealthtracker-jre-frontend-d3core', WPHEALTHTRACKER_ROOT_JS_URL . 'd3.min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
@@ -190,11 +190,117 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		}
 
 		/**
+		 * Code for adding the frontend vitalsstats javascript file.
+		 *
+		 * @param int $hook - The menu page hook thing.
+		 */
+		public function wphealthtracker_jre_frontend_vitalsstats_js( $hook ) {
+
+			global $post;
+			if( has_shortcode( $post->post_content, 'wphealthtracker_vitalstats') ) {
+				
+				// First just register the script.
+				wp_register_script( 'wphealthtracker-jre-frontend-vitalsstats', WPHEALTHTRACKER_ROOT_JS_FRONTEND_URL . 'wphealthtracker-jre-frontend-vitalsstats-min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
+
+				// Next 4-5 lines are required to allow translations of strings that would otherwise live in the wphealthtracker-admin-js.js JavaScript File.
+				require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
+				$trans = new WPHealthTracker_Translations();
+				// Localize the script with the appropriate translation array from the Translations class.
+				$translation_array1  = $trans->admin_js_trans_strings();
+				$translation_array2  = $trans->vitals_tab_trans_strings();
+				$translation_array3  = $trans->ajax_return_strings();
+				$translation_array4  = $trans->d3_chart_trans_strings();
+				$translation_array5  = $trans->common_trans_strings();
+				$translation_array6  = $trans->vitals_tab_trans_strings();
+				$translation_array7  = $trans->exercise_tab_trans_strings();
+				$translation_array8  = $trans->tab_titles_trans_strings();
+				$translation_array9  = $trans->users_tab_trans_strings();
+				$translation_array10 = $trans->dashboard_trans_strings();
+
+				// Now grab all of our Nonces to pass to the JavaScript for the Ajax functions and merge with the Translations array.
+				$final_array_of_php_values = array_merge( $translation_array1, $translation_array2 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array3 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array4 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array5 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array6 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array7 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array8 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array9 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array10 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, json_decode( WPHEALTHTRACKER_FINAL_NONCES_ARRAY, true ) );
+
+				$final_array_of_php_values['WPHEALTHTRACKER_CURRENT_USER_ID'] = get_current_user_id();
+
+				// Adding some other individual values we may need.
+				$final_array_of_php_values['WPHEALTHTRACKER_ROOT_IMG_ICONS_URL'] = WPHEALTHTRACKER_ROOT_IMG_ICONS_URL;
+
+				// Now registering/localizing our JavaScript file, passing all the PHP variables we'll need in our $final_array_of_php_values array, to be accessed from 'wphealthtrackerPhpVariables' object (like wphealthtrackerPhpVariables.nameofkey, like any other JavaScript object).
+				wp_localize_script( 'wphealthtracker-jre-frontend-vitalsstats', 'wphealthtrackerPhpVariables', $final_array_of_php_values );
+
+				// Enqueued script with localized data.
+				wp_enqueue_script( 'wphealthtracker-jre-frontend-vitalsstats' );
+			}
+		}
+
+		/**
+		 * Code for adding the frontend exercisestats javascript file.
+		 *
+		 * @param int $hook - The menu page hook thing.
+		 */
+		public function wphealthtracker_jre_frontend_exercisestats_js( $hook ) {
+
+			global $post;
+			if( has_shortcode( $post->post_content, 'wphealthtracker_exercisestats') ) {
+				
+				// First just register the script.
+				wp_register_script( 'wphealthtracker-jre-frontend-exercisestats', WPHEALTHTRACKER_ROOT_JS_FRONTEND_URL . 'wphealthtracker-jre-frontend-exercisestats-min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
+
+				// Next 4-5 lines are required to allow translations of strings that would otherwise live in the wphealthtracker-admin-js.js JavaScript File.
+				require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
+				$trans = new WPHealthTracker_Translations();
+				// Localize the script with the appropriate translation array from the Translations class.
+				$translation_array1  = $trans->admin_js_trans_strings();
+				$translation_array2  = $trans->exercise_tab_trans_strings();
+				$translation_array3  = $trans->ajax_return_strings();
+				$translation_array4  = $trans->d3_chart_trans_strings();
+				$translation_array5  = $trans->common_trans_strings();
+				$translation_array6  = $trans->exercise_tab_trans_strings();
+				$translation_array7  = $trans->exercise_tab_trans_strings();
+				$translation_array8  = $trans->tab_titles_trans_strings();
+				$translation_array9  = $trans->users_tab_trans_strings();
+				$translation_array10 = $trans->dashboard_trans_strings();
+
+				// Now grab all of our Nonces to pass to the JavaScript for the Ajax functions and merge with the Translations array.
+				$final_array_of_php_values = array_merge( $translation_array1, $translation_array2 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array3 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array4 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array5 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array6 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array7 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array8 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array9 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, $translation_array10 );
+				$final_array_of_php_values = array_merge( $final_array_of_php_values, json_decode( WPHEALTHTRACKER_FINAL_NONCES_ARRAY, true ) );
+
+				$final_array_of_php_values['WPHEALTHTRACKER_CURRENT_USER_ID'] = get_current_user_id();
+
+				// Adding some other individual values we may need.
+				$final_array_of_php_values['WPHEALTHTRACKER_ROOT_IMG_ICONS_URL'] = WPHEALTHTRACKER_ROOT_IMG_ICONS_URL;
+
+				// Now registering/localizing our JavaScript file, passing all the PHP variables we'll need in our $final_array_of_php_values array, to be accessed from 'wphealthtrackerPhpVariables' object (like wphealthtrackerPhpVariables.nameofkey, like any other JavaScript object).
+				wp_localize_script( 'wphealthtracker-jre-frontend-exercisestats', 'wphealthtrackerPhpVariables', $final_array_of_php_values );
+
+				// Enqueued script with localized data.
+				wp_enqueue_script( 'wphealthtracker-jre-frontend-exercisestats' );
+			}
+		}
+
+		/**
 		 * Adding the front-end Diet Stats shortcode
 		 */
-		public function wphealthtracker_dietstats_frontend_shortcode_function(){
+		public function wphealthtracker_dietstats_frontend_shortcode_function() {
 
-			echo '<div id="wphealthtracker-master-frontend-wrapper"><div class="wphealthtracker-stats-actual-top-div" id="wphealthtracker-stats-actual-top-div-1">
+			echo '<div id="wphealthtracker-master-frontend-wrapper" class="wphealthtracker-stats-actual-diet-top-div"><div class="wphealthtracker-stats-actual-top-div" id="wphealthtracker-stats-actual-top-div-1">
 
 							<div class="wphealthtracker-stats-actual-inner-div" id="wphealthtracker-stats-actual-inner-div-1">
 
@@ -240,9 +346,112 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 
 						</div>
 						</div>';
+		}
 
-			
+		/**
+		 * Adding the front-end Vitals Stats shortcode
+		 */
+		public function wphealthtracker_vitalsstats_frontend_shortcode_function() {
 
+			echo '<div id="wphealthtracker-master-frontend-wrapper" class="wphealthtracker-stats-actual-vitals-top-div"><div class="wphealthtracker-stats-actual-top-div" id="wphealthtracker-stats-actual-top-div-1">
+
+							<div class="wphealthtracker-stats-actual-inner-div" id="wphealthtracker-stats-actual-inner-div-1">
+
+							</div>
+						</div>
+						<div class="wphealthtracker-stats-actual-top-div-d3" id="wphealthtracker-stats-inner-d3-1">
+							<div class="wphealthtracker-spinner-primary-d3-await" id="wphealthtracker-spinner-d3-await-1"></div>
+							<div class="wphealthtracker-d3-chart-title-div" id="wphealthtracker-d3-chart-title-div-1-1">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-left" id="wphealthtracker-stats-actual-inner-d3-1-1">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-right" id="wphealthtracker-stats-actual-inner-d3-2-1">
+
+							</div>
+
+						</div>
+						<div class="wphealthtracker-stats-actual-top-div-d3" id="wphealthtracker-stats-inner-d3-2">
+							<div class="wphealthtracker-spinner-primary-d3-await" id="wphealthtracker-spinner-d3-await-2"></div>
+							<div class="wphealthtracker-d3-chart-title-div" id="wphealthtracker-d3-chart-title-div-1-2">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-left" id="wphealthtracker-stats-actual-inner-d3-1-2">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-right" id="wphealthtracker-stats-actual-inner-d3-2-2">
+
+							</div>
+
+						</div>
+						<div class="wphealthtracker-stats-actual-top-div-d3" id="wphealthtracker-stats-inner-d3-3">
+							<div class="wphealthtracker-spinner-primary-d3-await" id="wphealthtracker-spinner-d3-await-3"></div>
+							<div class="wphealthtracker-d3-chart-title-div" id="wphealthtracker-d3-chart-title-div-1-3">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-left" id="wphealthtracker-stats-actual-inner-d3-1-3">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-right" id="wphealthtracker-stats-actual-inner-d3-2-3">
+
+							</div>
+
+						</div>
+						</div>';
+		}
+
+		/**
+		 * Adding the front-end Vitals Stats shortcode
+		 */
+		public function wphealthtracker_exercisestats_frontend_shortcode_function() {
+
+			echo '<div id="wphealthtracker-master-frontend-wrapper" class="wphealthtracker-stats-actual-exercise-top-div"><div class="wphealthtracker-stats-actual-top-div" id="wphealthtracker-stats-actual-top-div-1">
+
+							<div class="wphealthtracker-stats-actual-inner-div" id="wphealthtracker-stats-actual-inner-div-1">
+
+							</div>
+						</div>
+						<div class="wphealthtracker-stats-actual-top-div-d3" id="wphealthtracker-stats-inner-d3-1">
+							<div class="wphealthtracker-spinner-primary-d3-await" id="wphealthtracker-spinner-d3-await-1"></div>
+							<div class="wphealthtracker-d3-chart-title-div" id="wphealthtracker-d3-chart-title-div-1-1">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-left" id="wphealthtracker-stats-actual-inner-d3-1-1">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-right" id="wphealthtracker-stats-actual-inner-d3-2-1">
+
+							</div>
+
+						</div>
+						<div class="wphealthtracker-stats-actual-top-div-d3" id="wphealthtracker-stats-inner-d3-2">
+							<div class="wphealthtracker-spinner-primary-d3-await" id="wphealthtracker-spinner-d3-await-2"></div>
+							<div class="wphealthtracker-d3-chart-title-div" id="wphealthtracker-d3-chart-title-div-1-2">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-left" id="wphealthtracker-stats-actual-inner-d3-1-2">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-right" id="wphealthtracker-stats-actual-inner-d3-2-2">
+
+							</div>
+
+						</div>
+						<div class="wphealthtracker-stats-actual-top-div-d3" id="wphealthtracker-stats-inner-d3-3">
+							<div class="wphealthtracker-spinner-primary-d3-await" id="wphealthtracker-spinner-d3-await-3"></div>
+							<div class="wphealthtracker-d3-chart-title-div" id="wphealthtracker-d3-chart-title-div-1-3">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-left" id="wphealthtracker-stats-actual-inner-d3-1-3">
+
+							</div>
+							<div class="wphealthtracker-stats-actual-top-div-inner-right" id="wphealthtracker-stats-actual-inner-d3-2-3">
+
+							</div>
+
+						</div>
+						</div>';
 		}
 
 		/**

@@ -21,6 +21,8 @@ var jsSources = ['dev/js/*.js', 'dev/js/D3/charts/*.js']; // Any .js file in scr
 var d3Source = ['dev/js/D3/d3.js']; // Any .js file in scripts directory
 
 var frontendDietJs = ['dev/js/frontend/wphealthtracker-jre-frontend-dietstats.js', 'dev/js/D3/charts/d3-diet-js.js'];
+var frontendVitalsJs = ['dev/js/frontend/wphealthtracker-jre-frontend-vitalsstats.js', 'dev/js/D3/charts/d3-vitals-js.js'];
+var frontendExerciseJs = ['dev/js/frontend/wphealthtracker-jre-frontend-exercisestats.js', 'dev/js/D3/charts/d3-exercise-js.js'];
 
 var babelSource = ['dev/js/D3/charts/d3-vitals-js.js']; // Any .js file in scripts directory
 gulp.task('babel', () =>
@@ -70,9 +72,27 @@ gulp.task('concat', function() {
 });
 
 // Task to concatenate and uglify js files
-gulp.task('concat', function() {
+gulp.task('concat1', function() {
     gulp.src(frontendDietJs) // use jsSources
         .pipe(concat('wphealthtracker-jre-frontend-dietstats-min.js')) // Concat to a file named 'script.js'
+        //.pipe(babel({presets: ['es2015']}))
+        .pipe(uglify()) // Uglify concatenated file
+        .pipe(gulp.dest('assets/js/frontend')); // The destination for the concatenated and uglified file
+});
+
+// Task to concatenate and uglify js files
+gulp.task('concat2', function() {
+    gulp.src(frontendVitalsJs) // use jsSources
+        .pipe(concat('wphealthtracker-jre-frontend-vitalsstats-min.js')) // Concat to a file named 'script.js'
+        //.pipe(babel({presets: ['es2015']}))
+        .pipe(uglify()) // Uglify concatenated file
+        .pipe(gulp.dest('assets/js/frontend')); // The destination for the concatenated and uglified file
+});
+
+// Task to concatenate and uglify js files
+gulp.task('concat3', function() {
+    gulp.src(frontendExerciseJs) // use jsSources
+        .pipe(concat('wphealthtracker-jre-frontend-exercisestats-min.js')) // Concat to a file named 'script.js'
         //.pipe(babel({presets: ['es2015']}))
         .pipe(uglify()) // Uglify concatenated file
         .pipe(gulp.dest('assets/js/frontend')); // The destination for the concatenated and uglified file
@@ -120,7 +140,7 @@ gulp.task('watch', function() {
 });
 
 // Default gulp task
-gulp.task('default', ['sass', 'sassFrontend', 'd3-uglify', 'concat', 'watch']);
+gulp.task('default', ['sass', 'sassFrontend', 'd3-uglify', 'concat', 'concat1', 'concat2', 'concat3', 'watch']);
 
 //gulp.task( 'default', [ 'cleanzip' ]);
 

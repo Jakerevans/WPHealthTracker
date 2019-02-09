@@ -2,10 +2,10 @@
  *   BEGIN PLACEHOLDER CLASSES
 */
 %wphealthtracker-d3chart-tooltip-readout-container{
-  line-height: 1;
+  line-height: 1.5;
   font-weight: bold;
   padding: 6px;
-  padding-bottom:5px;
+  padding-bottom:20px;
   background: rgba(0,0,0,0.7);
   border: solid 1px #000;
   color: #fff;
@@ -44,6 +44,151 @@
 /*
  *  BEGIN SASS CSS
 */
+
+.wphealthtracker-response-form-exercise-row-duplicate-div p, .wphealthtracker-response-form-exercise-row-removal-div p{
+    @extend %wphealthtracker-add-delete-row-item-text;
+}
+
+.wphealthtracker-response-form-exercise-set-removal-div{
+    @extend %wphealthtracker-response-form-row-removal-div;
+    right: 64px;
+    left: initial;
+    bottom: 22px;
+}
+
+.wphealthtracker-response-form-exercise-set-removal-div{
+    @extend %wphealthtracker-response-form-row-removal-img;
+    width: 24px;
+}
+
+.wphealthtracker-response-form-exercise-set-removal-div p{
+    margin: 0;
+    position: relative;
+    top: 40px;
+    font-size: 10px;
+    opacity: 0;
+    right: 4px;
+}
+
+.wphealthtracker-response-form-exercise-all-data-row{
+    @extend %wphealthtracker-margin-centered;
+    @extend %wphealthtracker-response-form-all-data-row;
+    opacity:1;
+}
+
+.wphealthtracker-response-form-exercise-row-removal-div{
+    @extend %wphealthtracker-response-form-row-removal-div;
+    @extend %wphealthtracker-margin-centered;
+    right: 0px;
+    left: 70px;
+    bottom: -24px;
+    display: inline-block;
+}
+
+.wphealthtracker-response-form-exercise-row-addition-div{
+    @extend %wphealthtracker-response-form-row-addition-div;
+    width:85px;
+}
+
+.wphealthtracker-response-form-exercise-row-addition-div p{
+    @extend %wphealthtracker-add-delete-row-item-text;
+    color:$purewhite;
+}
+
+.wphealthtracker-response-form-exercise-shaded-container{
+    @extend %wphealthtracker-margin-centered;
+    background-color: $white-trans-9;
+    border: solid 6px $purewhite;
+    box-shadow: $primary-box-shadow-inset;
+    border-top: 0;
+    width: 90%;
+    margin-top: 0px;
+    overflow: hidden;
+    height: 0px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.wphealthtracker-response-form-all-data-row-actual-exercise .wphealthtracker-response-form-all-data-row-parent{
+    @extend %wphealthtracker-margin-centered;
+    border: solid 1px $slightly-darker-primary-border;
+    box-shadow: $primary-box-shadow;
+    margin-top: 20px;
+    width: 95%;
+    background-color: $purewhite;
+    border-radius: 3px;
+}
+
+.wphealthtracker-response-form-exercise-row-duplicate-div {
+    @extend %wphealthtracker-margin-centered;
+    display: inline-block;
+    bottom: -24px;
+    position: absolute;
+    left: -70px;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.wphealthtracker-icon-image-question-enter-view-exercise{
+    @extend %wphealthtracker-icon-image-question;
+    width:14px;
+    top:2px;
+}
+
+.wphealthtracker-icon-h2-image-exercise{
+    @extend %wphealthtracker-icon-h2-image;
+    display: inline-block;
+    top: 5px;
+}
+
+.wphealthtracker-response-form-exercise-row-div-cal-pro{
+    border: solid 1px $slightly-darker-primary-border;
+    background-color: $slightly-darker-primary;
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width:95%;
+    position:relative;
+}
+
+.wphealthtracker-response-form-exercise-row-addition-div .wphealthtracker-response-form-exercise-row-addition-p-view{
+    color:$pureblack;
+}
+
+.wphealthtracker-response-form-exercise-all-data-row #wphealthtracker-expand-minimize-p-enter{
+    bottom: 8px;
+    font-size:11px;
+    color:$pureblack;
+}
+
+#wphealthtracker-d3chart-exercise-distance-svg .wphealthtracker-d3chart-exercise-distance-line{
+    stroke-width:1px;
+    pointer-events:none;
+}
+
+#wphealthtracker-d3chart-exercise-distance-svg path{
+    fill: $pureblack;
+}
+
+#wphealthtracker-d3chart-exercise-distance-svg .wphealthtracker-d3chart-exercise-city-dot{
+    stroke: $primary-color;
+    fill: $primary-color;
+}
+
+#sandiego-to-sanfransisco {
+    stroke-dasharray: 165;
+    stroke-dashoffset: 165;
+    stroke: $primary-color;
+}
 
 #wphealthtracker-master-frontend-wrapper .wphealthtracker-diet-span{
     @extend %wphealthtracker-stats-subtext;
@@ -333,7 +478,7 @@
   font-size: 16px;
 }
 
-.wphealhttracker-d3chart-exercise-readout-row{
+#wphealthtracker-d3chart-readout-exercise-distance .wphealhttracker-d3chart-exercise-readout-row, #wphealthtracker-stats-actual-inner-d3-1-2 .wphealhttracker-d3chart-exercise-readout-row{
     display: inline-block;
     margin: 10px;
     margin-bottom:0px;
@@ -346,7 +491,7 @@
   position: relative;
 }
 
-.wphealhttracker-d3chart-exercise-readout-percentage p{
+#wphealthtracker-d3chart-readout-exercise-distance .wphealhttracker-d3chart-exercise-readout-row .wphealhttracker-d3chart-exercise-readout-percentage p, #wphealthtracker-stats-actual-inner-d3-1-2 .wphealhttracker-d3chart-exercise-readout-row .wphealhttracker-d3chart-exercise-readout-percentage p{
   font-size:10px;
   font-weight:normal;
 }
@@ -366,6 +511,7 @@
 
 #wphealthtracker-master-frontend-wrapper .wphealthtracker-d3chart-readout-exercise p{
   margin: 0;
+  font-size:13px;
 }
 
 .wphealhttracker-d3chart-exercise-readout-congrats{
@@ -379,7 +525,7 @@
   display:inline-block;
 }
 
-.wphealhttracker-d3chart-exercise-readout-title p{
+#wphealthtracker-d3chart-readout-exercise-distance .wphealhttracker-d3chart-exercise-readout-title p, #wphealthtracker-d3chart-readout-exercise-muscle-groups .wphealhttracker-d3chart-exercise-readout-title p{
     font-size: 20px;
     font-style: italic;
     font-weight: 100;
@@ -389,7 +535,7 @@
     margin-left: 5px;
 }
 
-.wphealhttracker-d3chart-exercise-readout-title{
+#wphealthtracker-d3chart-readout-exercise-distance .wphealhttracker-d3chart-exercise-readout-title, #wphealthtracker-d3chart-readout-exercise-muscle-groups .wphealhttracker-d3chart-exercise-readout-title{
     @extend %wphealthtracker-margin-centered;
     width: 50%;
     border: solid 1px black;
@@ -398,7 +544,7 @@
     border-right: 0;
 }
 
-.wphealhttracker-d3chart-exercise-readout-title img{
+#wphealthtracker-d3chart-readout-exercise-distance .wphealhttracker-d3chart-exercise-readout-title img, .wphealhttracker-d3chart-exercise-readout-title img{
  width:30px;
  display:inline-block;
 }
@@ -434,7 +580,7 @@
   vertical-align:top;
 }
 
-#wphealthtracker-master-frontend-wrapper #wphealthtracker-exercise-time-tooltip-div #wphealthtracker-master-frontend-wrapper .wphealthtracker-exercise-time-readout-title{
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-exercise-time-tooltip-div .wphealthtracker-exercise-time-readout-title{
     @extend %wphealthtracker-margin-centered;
     margin-bottom: 5px;
     width: 100%;
@@ -443,9 +589,10 @@
     border-left: 0;
     border-right: 0;
     display: inline-block;
+    font-size:13px;
 }
 
-#wphealthtracker-master-frontend-wrapper #wphealthtracker-exercise-time-tooltip-div #wphealthtracker-master-frontend-wrapper .wphealthtracker-exercise-time-readout-subtitle{
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-exercise-time-tooltip-div .wphealthtracker-exercise-time-readout-subtitle{
   font-weight: normal;
   font-size: 10px;
   margin-right: 8px
@@ -457,7 +604,7 @@
   margin-right: 5px;
 }
 
-#wphealthtracker-master-frontend-wrapper #wphealthtracker-exercise-time-tooltip-div #wphealthtracker-master-frontend-wrapper .wphealthtracker-exercise-time-readout-icon-img{
+#wphealthtracker-master-frontend-wrapper #wphealthtracker-exercise-time-tooltip-div .wphealthtracker-exercise-time-readout-icon-img{
   width: 40px;
   display: inline-block;
 }
@@ -491,8 +638,9 @@
     display: inline-block;
     margin: 0;
     font-size: 10px;
-    opacitY: 0.5;
+    opacity: 0.5;
     width: 50%;
+    text-align:center;
 }
 
 #wphealthtracker-master-frontend-wrapper #wphealthtracker-exercise-time-am-pm-labels-div p img{
@@ -510,4 +658,968 @@
 
 /*
  *  END NON-SASS CSS
+ */
+
+/*
+ *  BEGIN NON-SASS CSS
+ */
+ .wphealthtracker-response-form-exercise-innerrow-div p{
+    position:relative;
+    right:7px;
+    margin-bottom:2px;
+    margin-top:0px;
+}
+
+.wphealthtracker-response-form-exercise-all-data-row .wphealthtracker-indiv-choice-img-rotate{
+    width: 25px;
+}
+
+#wphealthtracker-spinner-save-exercise{
+    bottom: 13px;
+    position: relative;
+}
+
+.wphealthtracker-response-form-all-data-row-actual-exercise .wphealthtracker-response-form-exercise-shaded-container{
+    box-shadow:none;
+    border: none;
+    margin-bottom:0px;
+    width:100%;
+}
+
+.wphealthtracker-expand-minimize-div-exercise{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.wphealthtracker-response-form-data-row-exercise-inner-cont{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position:relative;
+}
+
+.wphealthtracker-response-form-exercise-shaded-container-title{
+    position:relative;
+    bottom:12px;
+}
+
+.wphealthtracker-response-form-exercise-innerrow-div {
+    display: inline-block;
+}
+
+.wphealthtracker-expand-minimize-div-exercise .wphealthtracker-indiv-choice-img-rotate{
+    width:22px;
+}
+
+.wphealthtracker-response-form-exercise-shaded-container-title h3{
+    margin-top:0px;
+}
+
+.wphealthtracker-response-form-all-data-row-actual.wphealthtracker-response-form-all-data-row-actual-exercise{
+    opacity:1;
+}
+
+
+.wphealthtracker-response-form-all-data-row-actual-exercise .wphealthtracker-response-form-all-data-row{
+    width:98%;
+}
+
+.wphealthtracker-response-form-all-data-row-actual-exercise .wphealthtracker-response-form-exercise-shaded-container-title h3{
+    font-size:13px;
+}
+
+.wphealthtracker-response-form-all-data-row-actual-exercise .wphealthtracker-icon-h2-image-exercise{
+    width:22px;
+}
+
+.wphealthtracker-response-form-exercise-row-duplicate-div:hover p,
+.wphealthtracker-response-form-exercise-row-removal-div:hover p,
+.wphealthtracker-response-form-exercise-row-addition-div:hover p{
+    -webkit-animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    -moz-animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    -o-animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    font-weight:bold;
+}
+
+.wphealthtracker-response-form-exercise-set-label{
+    display: inline-block;
+    position: relative;
+    right: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.wphealthtracker-response-form-exercise-innerrow-div-bodyweight-special{
+    position:relative;
+    top:24px;
+    z-index:1;
+}
+
+.wphealthtracker-response-form-input-checkbox-div{
+    text-align:left;
+    margin-left: 2px;
+}
+
+.wphealthtracker-response-form-input-checkbox-div label{
+    position: relative;
+    font-size: 10px;
+    font-style: italic;
+    bottom: 2px;
+    right: 4px;
+}
+
+.wphealthtracker-response-form-exercise-set-div{
+    position: relative;
+}
+
+.wphealthtracker-response-form-exercise-set-removal-div:hover p{
+    -webkit-animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    -moz-animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    -o-animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    animation: wphealthtracker-back-forth-wiggle-animation 0.5s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    font-weight:bold;
+    opacity:1;
+}
+
+.wphealthtracker-response-form-input-time-exercise{
+    min-width: 155px;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-inner-div .wphealthtracker-exercise-muscle-groups-legend-text{
+    font-size: 12px;
+    opacity: 0.5;
+    width: 43px;
+    text-align: center;
+    line-height: 1;
+    font-variant: all-small-caps;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-div{
+    position: relative;
+    top: 22px;
+    left: 69px;
+    text-align: left;
+}
+
+.wphealthtracker-exercise-muscle-groups-legend-colorbox{
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    position: relative;
+    top: 2px;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox1{
+    background-color: #f8d3de;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox2{
+    background-color: #ee91ad;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox3{
+    background-color: #e34f7b;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox4{
+    background-color: #c71f51;
+}
+
+#wphealthtracker-exercise-muscle-groups-legend-colorbox5{
+    background-color: #841536;
+}
+
+
+
+
+
+
+#wphealthtracker-exercise-times-legend-colorbox1{
+    background-color: #F6ED53;
+}
+
+#wphealthtracker-exercise-times-legend-colorbox2{
+    background-color: #F5E150;
+}
+
+#wphealthtracker-exercise-times-legend-colorbox3{
+    background-color: #F5CD4C;
+}
+
+#wphealthtracker-exercise-times-legend-colorbox4{
+    background-color: #F4B648;
+}
+
+#wphealthtracker-exercise-times-legend-colorbox5{
+    background-color: #F39D44;
+}
+
+
+
+
+
+
+#wphealthtracker-exercise-muscle-groups-legend-inner-div div{
+    display:inline-block;
+}
+
+#wphealthtracker-chart-hover-message-exercise-muscle-groups{
+    left: -61px;
+    bottom: 120px;
+}
+
+.wphealthtracker-stats-no-data-smile{
+    width: 14px;
+    position: relative;
+    right: -2px;
+    top: 4px;
+}
+
+.wphealthtracker-exercise-times-rects{
+    stroke: #E6E6E6;
+    stroke-width:1px;   
+}
+
+text.mono {
+font-size: 9px;
+opacity: 0.5
+}
+
+
+
+#wphealthtracker-exercise-stats-muscle-groups-main .wphealthtracker-muscle-groups {
+    position: relative;
+    left: 15px;
+    top: 15px;
+    height: 500px;
+    text-align: left;
+    width: 320px;
+    h2 {
+        margin: 0px;
+        margin-bottom: 3px;
+        margin-top: 12px;
+        font-size: .8rem;
+        letter-spacing: -.03em;
+        text-transform: uppercase;
+    }
+    label + h2 { margin-top: 1rem; }
+    label {
+        display: block;
+        cursor: pointer;
+        font-size: 11px;
+        line-height: 11px;
+        opacity: .5;
+        position: relative;
+        z-index: 1;
+        border-left: 5px solid transparent;
+        padding-left: 6px;
+        margin-left: -11px;
+        &:hover, &.hover {
+          opacity: 1;
+          border-color: rgba($pureblack, .75);
+        }
+    }
+    input:checked + label {
+        opacity: 1;
+        font-weight: bold;
+        color: $primary-color;
+    }
+    svg {
+        position: absolute;
+        left: 70px;
+        top: 12px;
+        height: 350px;
+        z-index: 100;
+        opacity: 0;
+    }
+    svg g[id] path {
+        stroke: $lightgray;
+        stroke-width: 0.5px;
+        transition: opacity .25s ease-in-out;
+    }
+    svg g g[id]:hover path {
+        cursor: pointer;
+        opacity: .5;
+        fill: $primary-color !important;
+    }
+    .wphealthtracker-muscles-helper {
+        display: none;
+    }
+
+    $groups: wphealthtracker-obliques, wphealthtracker-abs, wphealthtracker-quads, wphealthtracker-biceps, wphealthtracker-adductors, wphealthtracker-pectorals, wphealthtracker-deltoids, wphealthtracker-hamstrings, wphealthtracker-quads, wphealthtracker-forearms, wphealthtracker-calves, wphealthtracker-triceps, wphealthtracker-glutes, wphealthtracker-lats, wphealthtracker-trapezius;
+    @each $muscle in $groups {
+        $upper: to-upper-case(str-slice($muscle, 1, 1)) + str-slice($muscle, 2);
+        label[for="#{$muscle}"]:hover ~ svg ##{$upper} path {
+          opacity: .75;
+        }
+        .#{$muscle}:checked ~ svg ##{$upper} path {
+          opacity: .8;
+          fill: $primary-color !important;
+        }
+    }
+}
+
+    /*
+     *   BEGIN SELECT2 CSS
+    */
+
+    .wphealthtracker-response-form-exercise-innerrow-div-select-2{
+        width:100%;
+    }
+
+    .select2-input{
+        width:70%;
+    }
+
+    .select2-container {
+        margin: 5px!important;
+        width: 70%!important;
+        box-sizing: border-box;
+        display: inline-block;
+        margin: 0;
+        position: relative;
+        vertical-align: middle
+    }
+
+    .select2-container .select2-selection--single {
+        box-sizing: border-box;
+        cursor: pointer;
+        display: block;
+        height: 28px;
+        user-select: none;
+        -webkit-user-select: none
+    }
+
+    .select2-container .select2-selection--single .select2-selection__rendered {
+        max-width: 70%;
+        display: block;
+        padding-left: 8px;
+        padding-right: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap
+    }
+
+    .select2-container .select2-selection--single .select2-selection__clear {
+        position: relative
+    }
+
+    .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
+        padding-right: 8px;
+        padding-left: 20px
+    }
+
+    .select2-container .select2-selection--multiple {
+        box-sizing: border-box;
+        cursor: pointer;
+        display: block;
+        min-height: 32px;
+        user-select: none;
+        -webkit-user-select: none
+    }
+
+    .select2-container .select2-selection--multiple .select2-selection__rendered {
+        display: inline-block;
+        overflow: hidden;
+        padding-left: 8px;
+        text-overflow: ellipsis;
+        white-space: nowrap
+    }
+
+    .select2-container .select2-search--inline {
+        float: left
+    }
+
+    .select2-container .select2-search--inline .select2-search__field {
+        box-sizing: border-box;
+        border: none;
+        font-size: 100%;
+        margin-top: 5px;
+        padding: 0
+    }
+
+    .select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button {
+        -webkit-appearance: none
+    }
+
+    .select2-dropdown {
+        background-color: $purewhite;
+        border: 1px solid $slightly-darker-primary-border;
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        left: -100000px;
+        width: 100%;
+        z-index: 1051
+    }
+
+    .select2-results {
+        display: block
+    }
+
+    .select2-results__options {
+        list-style: none;
+        margin: 0;
+        padding: 0
+    }
+
+    .select2-results__option {
+        padding: 6px;
+        user-select: none;
+        -webkit-user-select: none
+    }
+
+    .select2-results__option[aria-selected] {
+        cursor: pointer
+    }
+
+    .select2-container--open .select2-dropdown {
+        left: -5px
+    }
+
+    .select2-container--open .select2-dropdown--above {
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0
+    }
+
+    .select2-container--open .select2-dropdown--below {
+        border-top: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0
+    }
+
+    .select2-search--dropdown {
+        display: block;
+        padding: 4px
+    }
+
+    .select2-search--dropdown .select2-search__field {
+        padding: 4px;
+        width: 100%;
+        box-sizing: border-box
+    }
+
+    .select2-search--dropdown .select2-search__field::-webkit-search-cancel-button {
+        -webkit-appearance: none
+    }
+
+    .select2-search--dropdown.select2-search--hide {
+        display: none
+    }
+
+    .select2-close-mask {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        min-height: 100%;
+        min-width: 100%;
+        height: auto;
+        width: auto;
+        opacity: 0;
+        z-index: 99;
+        background-color: $purewhite;
+        filter: alpha(opacity=0)
+    }
+
+    .select2-hidden-accessible {
+        border: 0 !important;
+        clip: rect(0 0 0 0) !important;
+        height: 1px !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+        width: 1px !important
+    }
+
+    .select2-container--default .select2-selection--single {
+        background-color: $purewhite;
+        border: 1px solid $slightly-darker-primary-border;
+        border-radius: 4px
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #444;
+        line-height: 28px
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__clear {
+        cursor: pointer;
+        float: right;
+        font-weight: bold
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__placeholder {
+        color: #999
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 26px;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        width: 20px
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow b {
+        border-color: #888 transparent transparent transparent;
+        border-style: solid;
+        border-width: 5px 4px 0 4px;
+        height: 0;
+        left: 50%;
+        margin-left: -4px;
+        margin-top: -2px;
+        position: absolute;
+        top: 50%;
+        width: 0
+    }
+
+    .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
+        float: left
+    }
+
+    .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+        left: 1px;
+        right: auto
+    }
+
+    .select2-container--default.select2-container--disabled .select2-selection--single {
+        background-color: #eee;
+        cursor: default
+    }
+
+    .select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {
+        display: none
+    }
+
+    .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+        border-color: transparent transparent #888 transparent;
+        border-width: 0 4px 5px 4px
+    }
+
+    .select2-container--default .select2-selection--multiple {
+        -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+        background-color: $purewhite;
+        border: 1px solid $slightly-darker-primary-border;
+        cursor: text;
+        padding-top:4px;
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+        max-width: 98%;
+        box-sizing: border-box;
+        list-style: none;
+        margin: 0;
+        padding: 0 5px;
+        width: 100%
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+        list-style: none
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__placeholder {
+        color: #999;
+        margin-top: 5px;
+        float: left
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__clear {
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-right: 10px
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: #e4e4e4;
+        border: 1px solid $slightly-darker-primary-border;
+        cursor: default;
+        float: left;
+        margin-right: 5px;
+        margin-top: 5px;
+        padding: 0 5px
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        color: #999;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 2px
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+        color: #333
+    }
+
+    .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice,
+    .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__placeholder,
+    .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-search--inline {
+        float: right
+    }
+
+    .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+        margin-left: 5px;
+        margin-right: auto
+    }
+
+    .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+        margin-left: 2px;
+        margin-right: auto
+    }
+
+    .select2-container--default.select2-container--focus .select2-selection--multiple {
+        border: solid $slightly-darker-primary-border 1px;
+        outline: 0;
+        padding-top:4px;
+    }
+
+    .select2-container--default.select2-container--disabled .select2-selection--multiple {
+        background-color: #eee;
+        cursor: default
+    }
+
+    .select2-container--default.select2-container--disabled .select2-selection__choice__remove {
+        display: none
+    }
+
+    .select2-container--default.select2-container--open.select2-container--above .select2-selection--single,
+    .select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0
+    }
+
+    .select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
+    .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0
+    }
+
+    .select2-container--default .select2-search--dropdown .select2-search__field {
+        border: 1px solid $slightly-darker-primary-border
+    }
+
+    .select2-container--default .select2-search--inline .select2-search__field {
+        background: transparent;
+        border: none;
+        outline: 0;
+        box-shadow: none;
+        -webkit-appearance: textfield
+    }
+
+    .select2-container--default .select2-results>.select2-results__options {
+        max-height: 200px;
+        overflow-y: auto
+    }
+
+    .select2-container--default .select2-results__option[role=group] {
+        padding: 0
+    }
+
+    .select2-container--default .select2-results__option[aria-disabled=true] {
+        color: #999
+    }
+
+    .select2-container--default .select2-results__option[aria-selected=true] {
+        background-color: $slightly-darker-primary-border
+    }
+
+    .select2-container--default .select2-results__option .select2-results__option {
+        padding-left: 1em
+    }
+
+    .select2-container--default .select2-results__option .select2-results__option .select2-results__group {
+        padding-left: 0
+    }
+
+    .select2-container--default .select2-results__option .select2-results__option .select2-results__option {
+        margin-left: -1em;
+        padding-left: 2em
+    }
+
+    .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+        margin-left: -2em;
+        padding-left: 3em
+    }
+
+    .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+        margin-left: -3em;
+        padding-left: 4em
+    }
+
+    .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+        margin-left: -4em;
+        padding-left: 5em
+    }
+
+    .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+        margin-left: -5em;
+        padding-left: 6em
+    }
+
+    .select2-container--default .select2-results__option--highlighted[aria-selected] {
+        background-color: #5897fb;
+        color: $purewhite
+    }
+
+    .select2-container--default .select2-results__group {
+        cursor: default;
+        display: block;
+        padding: 6px
+    }
+
+    .select2-container--classic .select2-selection--single {
+        background-color: #f7f7f7;
+        border: 1px solid $slightly-darker-primary-border;
+        outline: 0;
+        background-image: -webkit-linear-gradient(top, $purewhite 50%, #eee 100%);
+        background-image: -o-linear-gradient(top, $purewhite 50%, #eee 100%);
+        background-image: linear-gradient(to bottom, $purewhite 50%, #eee 100%);
+        background-repeat: repeat-x;
+        //filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='$purewhiteFFFFF', endColorstr='#FFEEEEEE', GradientType=0)
+    }
+
+    .select2-container--classic .select2-selection--single:focus {
+        border: 1px solid #5897fb
+    }
+
+    .select2-container--classic .select2-selection--single .select2-selection__rendered {
+        color: #444;
+        line-height: 28px
+    }
+
+    .select2-container--classic .select2-selection--single .select2-selection__clear {
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+        margin-right: 10px
+    }
+
+    .select2-container--classic .select2-selection--single .select2-selection__placeholder {
+        color: #999
+    }
+
+    .select2-container--classic .select2-selection--single .select2-selection__arrow {
+        background-color: $slightly-darker-primary-border;
+        border: none;
+        border-left: 1px solid $slightly-darker-primary-border;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        height: 26px;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        width: 20px;
+        background-image: -webkit-linear-gradient(top, #eee 50%, #ccc 100%);
+        background-image: -o-linear-gradient(top, #eee 50%, #ccc 100%);
+        background-image: linear-gradient(to bottom, #eee 50%, #ccc 100%);
+        background-repeat: repeat-x;
+        //filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0)
+    }
+
+    .select2-container--classic .select2-selection--single .select2-selection__arrow b {
+        border-color: #888 transparent transparent transparent;
+        border-style: solid;
+        border-width: 5px 4px 0 4px;
+        height: 0;
+        left: 50%;
+        margin-left: -4px;
+        margin-top: -2px;
+        position: absolute;
+        top: 50%;
+        width: 0
+    }
+
+    .select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__clear {
+        float: left
+    }
+
+    .select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+        border: none;
+        border-right: 1px solid $slightly-darker-primary-border;
+        border-radius: 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        left: 1px;
+        right: auto
+    }
+
+    .select2-container--classic.select2-container--open .select2-selection--single {
+        border: 1px solid #5897fb
+    }
+
+    .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow {
+        background: transparent;
+        border: none
+    }
+
+    .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b {
+        border-color: transparent transparent #888 transparent;
+        border-width: 0 4px 5px 4px
+    }
+
+    .select2-container--classic.select2-container--open.select2-container--above .select2-selection--single {
+        border-top: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-image: -webkit-linear-gradient(top, $purewhite 0%, #eee 50%);
+        background-image: -o-linear-gradient(top, $purewhite 0%, #eee 50%);
+        background-image: linear-gradient(to bottom, $purewhite 0%, #eee 50%);
+        background-repeat: repeat-x;
+        //filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='$purewhiteFFFFF', endColorstr='#FFEEEEEE', GradientType=0)
+    }
+
+    .select2-container--classic.select2-container--open.select2-container--below .select2-selection--single {
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-image: -webkit-linear-gradient(top, #eee 50%, $purewhite 100%);
+        background-image: -o-linear-gradient(top, #eee 50%, $purewhite 100%);
+        background-image: linear-gradient(to bottom, #eee 50%, $purewhite 100%);
+        background-repeat: repeat-x;
+        //filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='$purewhiteFFFFF', GradientType=0)
+    }
+
+    .select2-container--classic .select2-selection--multiple {
+        background-color: $purewhite;
+        border: 1px solid $slightly-darker-primary-border;
+        cursor: text;
+        outline: 0
+    }
+
+    .select2-container--classic .select2-selection--multiple:focus {
+        border: 1px solid #5897fb
+    }
+
+    .select2-container--classic .select2-selection--multiple .select2-selection__rendered {
+        list-style: none;
+        margin: 0;
+        padding: 0 5px
+    }
+
+    .select2-container--classic .select2-selection--multiple .select2-selection__clear {
+        display: none
+    }
+
+    .select2-container--classic .select2-selection--multiple .select2-selection__choice {
+        background-color: #e4e4e4;
+        border: 1px solid $slightly-darker-primary-border;
+        cursor: default;
+        float: left;
+        margin-right: 5px;
+        margin-top: 5px;
+        padding: 0 5px
+    }
+
+    .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove {
+        color: #888;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 2px
+    }
+
+    .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover {
+        color: #555
+    }
+
+    .select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+        float: right
+    }
+
+    .select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+        margin-left: 5px;
+        margin-right: auto
+    }
+
+    .select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+        margin-left: 2px;
+        margin-right: auto
+    }
+
+    .select2-container--classic.select2-container--open .select2-selection--multiple {
+        border: 1px solid #5897fb
+    }
+
+    .select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple {
+        border-top: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0
+    }
+
+    .select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple {
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0
+    }
+
+    .select2-container--classic .select2-search--dropdown .select2-search__field {
+        border: 1px solid $slightly-darker-primary-border;
+        outline: 0
+    }
+
+    .select2-container--classic .select2-search--inline .select2-search__field {
+        outline: 0;
+        box-shadow: none
+    }
+
+    .select2-container--classic .select2-dropdown {
+        background-color: $purewhite;
+        border: 1px solid transparent
+    }
+
+    .select2-container--classic .select2-dropdown--above {
+        border-bottom: none
+    }
+
+    .select2-container--classic .select2-dropdown--below {
+        border-top: none
+    }
+
+    .select2-container--classic .select2-results>.select2-results__options {
+        max-height: 200px;
+        overflow-y: auto
+    }
+
+    .select2-container--classic .select2-results__option[role=group] {
+        padding: 0
+    }
+
+    .select2-container--classic .select2-results__option[aria-disabled=true] {
+        color: grey
+    }
+
+    .select2-container--classic .select2-results__option--highlighted[aria-selected] {
+        background-color: #3875d7;
+        color: $purewhite
+    }
+
+    .select2-container--classic .select2-results__group {
+        cursor: default;
+        display: block;
+        padding: 6px
+    }
+
+    .select2-container--classic.select2-container--open .select2-dropdown {
+        border-color: #5897fb
+    }
+
+    /*
+     *   END SELECT2 CSS
+    */
+/*
+ *   END NON-SASS CSS
  */

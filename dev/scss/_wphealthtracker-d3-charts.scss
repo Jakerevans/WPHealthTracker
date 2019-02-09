@@ -341,7 +341,7 @@
   position: relative;
 }
 
-.wphealhttracker-d3chart-exercise-readout-percentage p{
+.wphealhttracker-d3chart-exercise-readout-row .wphealhttracker-d3chart-exercise-readout-percentage p{
   font-size:10px;
   font-weight:normal;
 }
@@ -361,6 +361,7 @@
 
 .wphealthtracker-d3chart-readout-exercise p{
   margin: 0;
+  font-size:13px;
 }
 
 .wphealhttracker-d3chart-exercise-readout-congrats{

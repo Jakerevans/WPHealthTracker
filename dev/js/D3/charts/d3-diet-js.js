@@ -33,10 +33,10 @@ function wphealthtrackerDietD3One(mydataFoodItems, $){
         return e;
     });
 
-    d3.select("#wphealthtracker-stats-actual-inner-d3-1-1")
+    d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-stats-actual-inner-d3-1-1")
     	.style('bottom','20px');
 
-	var svg = d3.select("#wphealthtracker-stats-actual-inner-d3-1-1").append("svg")
+	var svg = d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-stats-actual-inner-d3-1-1").append("svg")
 	    .attr("width", width + margin.left + margin.right)
 	    .attr("height", height + margin.top + margin.bottom)
 	    .style("opacity",'0')
@@ -94,12 +94,12 @@ function wphealthtrackerDietD3One(mydataFoodItems, $){
 	      	}
 	      	categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
 
-			d3.select(".wphealthtracker-d3chart-readout-fooditems")
+			d3.select(".wphealthtracker-stats-actual-diet-top-div .wphealthtracker-d3chart-readout-fooditems")
 				.style("opacity", "1")
 				.select("#wphealthtracker-d3chart-tooltip-fooditems-item")
 				.html(foodName)
 
-			d3.select(".wphealthtracker-d3chart-readout-fooditems")
+			d3.select(".wphealthtracker-stats-actual-diet-top-div .wphealthtracker-d3chart-readout-fooditems")
 				.style("opacity", "1")
 				.select("#wphealthtracker-d3chart-tooltip-fooditems-category")
 				.text(categoryName)
@@ -176,7 +176,7 @@ function wphealthtrackerDietD3One(mydataFoodItems, $){
 
 				finalConsumedText = consumedText1+consumedText2+consumedText3+consumedText4+consumedText5;
 
-			d3.select(".wphealthtracker-d3chart-readout-fooditems")
+			d3.select(".wphealthtracker-stats-actual-diet-top-div .wphealthtracker-d3chart-readout-fooditems")
 				.select("#wphealthtracker-d3chart-tooltip-fooditems-number")
 				.html(finalConsumedText);
 
@@ -187,14 +187,14 @@ function wphealthtrackerDietD3One(mydataFoodItems, $){
 
 	      })
 
-	      d3.select("input").on("change", wpht_helper_d3_fooditem_change);
+	      d3.select(".wphealthtracker-stats-actual-diet-top-div input").on("change", wpht_helper_d3_fooditem_change);
 
 	      var sortTimeout = setTimeout(function() {
 	      	// Hide the spinner.
 	      	$('#wphealthtracker-stats-actual-inner-d3-1-1 svg').animate({'opacity':'1'}, 2000)
     		$('#wphealthtracker-spinner-d3-await-1').animate({'opacity':'0'})
     		$('#wphealthtracker-chart-hover-message-fooditem').html('<p>'+wphealthtrackerPhpVariables.d3trans54+'</p>');
-		    d3.select("input").property("checked", true).each(wpht_helper_d3_fooditem_change);
+		    d3.select(".wphealthtracker-stats-actual-diet-top-div input").property("checked", true).each(wpht_helper_d3_fooditem_change);
 		  }, 2000);
 
 	      function wpht_helper_d3_fooditem_change() {
@@ -244,7 +244,7 @@ function wphealthtrackerDietD3Two(mydataEnergy, $) {
 	var width = 550 - margin.right - margin.left;
 	var height = 450 - margin.top - margin.bottom;
 
-  	var svgEnergy = d3.select("#wphealthtracker-stats-actual-inner-d3-1-2")
+  	var svgEnergy = d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-stats-actual-inner-d3-1-2")
   		.append("svg")
   			.attr('class','wphealthtracker-d3chart-topsvg')
   			.attr('id','wphealthtracker-d3chart-topsvg-energy')
@@ -357,17 +357,17 @@ function wphealthtrackerDietD3Two(mydataEnergy, $) {
 			.style("fill", "none")
 			.style("pointer-events", "all")
 			.on("mouseout", function () {
-			  d3.select("#wphealthtracker-circle0-energy").style("opacity", '0');
-			  d3.select("#wphealthtracker-circle1-energy").style("opacity", '0');
-			  d3.select("#wphealthtracker-circle2-energy").style("opacity", '0');
-			  d3.select("#wphealthtracker-circle3-energy").style("opacity", '0');
-			  d3.select("#wphealthtracker-text0-energy").style("opacity", '0');
-			  d3.select("#wphealthtracker-text1-energy").style("opacity", '0');
-			  d3.select("#wphealthtracker-text2-energy").style("opacity", '0');
-			  d3.select("#wphealthtracker-text3-energy").style("opacity", '0');
-			  d3.select(".wphealthtracker-d3chart-mouse-line-energy").style("opacity", '0');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-circle0-energy").style("opacity", '0');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-circle1-energy").style("opacity", '0');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-circle2-energy").style("opacity", '0');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-circle3-energy").style("opacity", '0');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-text0-energy").style("opacity", '0');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-text1-energy").style("opacity", '0');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-text2-energy").style("opacity", '0');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-text3-energy").style("opacity", '0');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div .wphealthtracker-d3chart-mouse-line-energy").style("opacity", '0');
 			  d3.selectAll(".wphealthtracker-d3chart-legendtextval-energy").text('');
-			  d3.select("#wphealthtracker-d3chart-xaxislabel-top-energy").text('');
+			  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-xaxislabel-top-energy").text('');
 			}).on("mousemove", wpht_helper_d3_energy_mousemove);
 
 		// Add the line groups
@@ -414,18 +414,18 @@ function wphealthtrackerDietD3Two(mydataEnergy, $) {
 			xDate = new Date(xDate);
 			xDate = wpht_helper_d3_energy_build_better_date(xDate);
 			xDate = xDate+' - '+displayValue
-			d3.select("#wphealthtracker-d3chart-xaxislabel-top-energy")
+			d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-xaxislabel-top-energy")
 				.style('opacity',1)
 				.text(xDate);
 
 			// Loop through the per-day entries, if we don't match the selected value, hide things, otherwise, display the values
 			for (j = 0; j < 2; j++) {
 				if (i !== j) {
-					d3.select("#wphealthtracker-d3chart-linepath-energy-" + j).style("opacity", 0.1);
-					d3.select("#wphealthtracker-d3chart-legendrect-energy-"+j).style("opacity",0.1);
-					d3.select("#wphealthtracker-d3chart-legendtextval-energy-"+j).text('');
+					d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-linepath-energy-" + j).style("opacity", 0.1);
+					d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-legendrect-energy-"+j).style("opacity",0.1);
+					d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-legendtextval-energy-"+j).text('');
 				} else {
-					d3.select("#wphealthtracker-d3chart-legendtextval-energy-"+j).text(displayValue);
+					d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-legendtextval-energy-"+j).text(displayValue);
 				}
 			};
 
@@ -433,11 +433,11 @@ function wphealthtrackerDietD3Two(mydataEnergy, $) {
 		
 		  d3.select(this).style('stroke-width',2);
 		  for (j = 0; j < 2; j++) {
-		    d3.select("#wphealthtracker-d3chart-linepath-energy-" + j).style("opacity", 1);
-		    d3.select("#wphealthtracker-d3chart-legendrect-energy-"+j).style("opacity",1);
+		    d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-linepath-energy-" + j).style("opacity", 1);
+		    d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-legendrect-energy-"+j).style("opacity",1);
 		  };
 		  d3.selectAll(".wphealthtracker-d3chart-legendtextval-energy").text('');
-		  d3.select("#wphealthtracker-d3chart-xaxislabel-top-energy").text('');
+		  d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-xaxislabel-top-energy").text('');
 
 		});
 
@@ -494,7 +494,7 @@ function wphealthtrackerDietD3Two(mydataEnergy, $) {
 	
 
 		// Add the Legend Text and Rects
-		var legend = d3.select("#wphealthtracker-d3chart-legend-energy");
+		var legend = d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-legend-energy");
 
 		// Kilojoules
 		legend.append("text")
@@ -607,7 +607,7 @@ function wphealthtrackerDietD3Two(mydataEnergy, $) {
 	        });
 
 			var mouseEnergy = d3.mouse(this);
-			d3.select("#wphealthtracker-d3chart-mouse-line-energy").attr("d", function (){
+			d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-mouse-line-energy").attr("d", function (){
 				var d = "M" + mouseEnergy[0] + "," + height;
 				d += " " + mouseEnergy[0] + "," + 0;
 				return d;
@@ -615,11 +615,11 @@ function wphealthtrackerDietD3Two(mydataEnergy, $) {
 
 			d3.selectAll(".wphealthtracker-d3chart-mouse-per-line-energy").attr("transform", function (d, i){
 
-				d3.select("#wphealthtracker-text0-energy").style("opacity", '1');
-				d3.select("#wphealthtracker-text1-energy").style("opacity", '1');
-				d3.select("#wphealthtracker-text2-energy").style("opacity", '1');
-				d3.select("#wphealthtracker-text3-energy").style("opacity", '1');
-				d3.select(".wphealthtracker-d3chart-mouse-line-energy").style("opacity", '1');
+				d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-text0-energy").style("opacity", '1');
+				d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-text1-energy").style("opacity", '1');
+				d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-text2-energy").style("opacity", '1');
+				d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-text3-energy").style("opacity", '1');
+				d3.select(".wphealthtracker-stats-actual-diet-top-div .wphealthtracker-d3chart-mouse-line-energy").style("opacity", '1');
 
 				// This if is to ensure we don't go over the number of individual data items contained within a day - without this if, this function would run an amount of times equal to how many days of data there are.
 				if(i < energyLines.length){
@@ -643,7 +643,7 @@ function wphealthtrackerDietD3Two(mydataEnergy, $) {
 
 					xDate = new Date(xDate);
 					xDate = wpht_helper_d3_energy_build_better_date(xDate);
-					d3.select("#wphealthtracker-d3chart-xaxislabel-top-energy")
+					d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-xaxislabel-top-energy")
 						.style('opacity',1)
 						.text(xDate);
 
@@ -651,7 +651,7 @@ function wphealthtrackerDietD3Two(mydataEnergy, $) {
 					d3.select(this).select('circle').style("opacity", '1');
 					var displayValue = yRangeEnergy.invert(pos.y).toFixed(2);
 					d3.select(this).select('text').text(displayValue);
-					d3.select("#wphealthtracker-d3chart-legendtextval-energy-"+i).text(displayValue);
+					d3.select(".wphealthtracker-stats-actual-diet-top-div #wphealthtracker-d3chart-legendtextval-energy-"+i).text(displayValue);
 
 					return "translate(" + mouseEnergy[0] + "," + pos.y + ")";
 				}
@@ -682,7 +682,7 @@ function wphealthtrackerDietD3Three(d3Three, $){
 
     function DonutCharts() {
 
-	  	var charts = d3.select('#wphealthtracker-stats-actual-inner-d3-1-3');
+	  	var charts = d3.select('.wphealthtracker-stats-actual-diet-top-div #wphealthtracker-stats-actual-inner-d3-1-3');
 
 	    var chart_m,
 	        chart_r,

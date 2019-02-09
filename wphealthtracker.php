@@ -305,8 +305,20 @@ global $wpdb;
 	// Adding the frontend Diet Stats JS file, if the [] shortcode is present on page.
 	add_action( 'wp_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_frontend_dietstats_js' ) );
 
+	// Adding the frontend Vitals Stats JS file, if the [] shortcode is present on page.
+	add_action( 'wp_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_frontend_vitalsstats_js' ) );
+
+	// Adding the frontend Exercise Stats JS file, if the [] shortcode is present on page.
+	add_action( 'wp_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_frontend_exercisestats_js' ) );
+
 	// Adding the front-end Diet Stats shortcode.
 	add_shortcode( 'wphealthtracker_dietstats', array( $wp_health_tracker_general_functions, 'wphealthtracker_dietstats_frontend_shortcode_function' ) );
+
+	// Adding the front-end Vitals Stats shortcode.
+	add_shortcode( 'wphealthtracker_vitalstats', array( $wp_health_tracker_general_functions, 'wphealthtracker_vitalsstats_frontend_shortcode_function' ) );
+
+	// Adding the front-end Vitals Exercise shortcode.
+	add_shortcode( 'wphealthtracker_exercisestats', array( $wp_health_tracker_general_functions, 'wphealthtracker_exercisestats_frontend_shortcode_function' ) );
 
 	// Adding the d3 js file to the backend.
 	add_action( 'admin_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_d3_js' ) );
