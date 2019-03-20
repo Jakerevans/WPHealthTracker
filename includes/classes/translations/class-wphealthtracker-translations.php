@@ -19,6 +19,32 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 	class WPHealthTracker_Translations {
 
 		/**
+		 *  This function will house all the strings needed for the Welcome Tab.
+		 */
+		public function welcome_tab_trans_strings() {
+
+			$this->welcome_trans_1  = __( 'Welcome to', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_2  = __( 'Create a User', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_3  = __( 'Settings', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_4  = __( 'Track Vitals Data', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_5  = __( 'Track Diet Data', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_6  = __( 'Track Exercise Data', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_7  = __( 'View Vitals Stats', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_8  = __( 'View Diet Stats', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_9  = __( 'View Exercise Stats', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_10 = __( 'The #1 WordPress Plugin for Achieving Health and Fitness Goals!', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_11 = __( 'WPHealthTracker', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_12 = __( 'Extensions & Add-ons', 'wphealthtracker-textdomain' );
+			$this->welcome_trans_13 = __( 'Guides & Tutorials', 'wphealthtracker-textdomain' );
+
+			
+
+			return $translation_array2 = array(
+				'welcometrans1'  => $this->welcome_trans_1,
+			);
+		}
+
+		/**
 		 *  This function will house all the strings that would need translations specifically in the wphealthtracker-admin-js.js JavaScript file.
 		 */
 		public function admin_js_trans_strings() {

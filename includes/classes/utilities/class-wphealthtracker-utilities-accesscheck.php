@@ -69,6 +69,49 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 		}
 
 		/**
+		 * The getting the WPHealthTracker user's role and permissions.
+		 *
+		 * @param int $wpuserid - The users ID we're checking access on.
+		 */
+		public function wphealthtracker_get_user_role_and_perms( $wpuserid ) {
+
+			global $wpdb;
+
+			// Get all saved Users from the WPHealthTracker Users table.
+			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+
+			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+			$transients       = new WPHealthTracker_Transients();
+			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $wpuserid );
+			$transient_exists = $transients->existing_transient_check( $transient_name );
+			if ( $transient_exists ) {
+				$this->user = $transient_exists;
+			} else {
+				$query      = 'SELECT * FROM ' . $users_table_name . '  WHERE wpuserid = ' . $wpuserid;
+				$this->user = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
+			}
+
+			// If we've retreived a user, continue on to permission check, otherwise return false.
+			if ( null !== $this->user ) {
+
+				// Get user's specific permissions.
+				$perms = $this->user->permissions;
+				$perms = explode( ',', $perms );
+
+				// Set user's permissions and role.
+				$this->userrole  = $this->user->role;
+				$this->userperms = $this->user->permissions;
+
+			} else {
+
+				// No registered WPHealthTracker user was found - set role and permissions to false.
+				$this->userrole  = false;
+				$this->userperms = false;
+			}
+		}
+
+		/**
 		 * Create the 'No Access' message.
 		 */
 		public function wphealthtracker_accesscheck_no_permission_message() {
@@ -156,7 +199,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 
 					);
 
-					$role_name    = wphealthtracker_basic_user;
+					$role_name    = 'wphealthtracker_basic_user';
 					$display_name = $this->translations->user_trans_91;
 
 					break;
