@@ -148,11 +148,12 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 
 			}
 
+			error_log( print_r( $this->users_save_array, true ) );
+
 			// If we don't have data saved for this user.
 			if ( 'insert' === $this->dbmode ) {
 
-				$this->db_result = $wpdb->insert( $this->users_table, $this->users_save_array, array( '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s', '%s', '%s', '%d', '%d', '%s', '%s', '%s', '%d', '%s' ) );
-
+				$this->db_result = $wpdb->insert( $this->users_table, $this->users_save_array, array( '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s' ) );
 			}
 
 			$this->last_query = $wpdb->last_query;

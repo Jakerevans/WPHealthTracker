@@ -26,7 +26,50 @@ jQuery( document ).ready( function( $ ) {
 	// Function to display the admin pointer message when entering the Question Mark image with mouse...
 	wphealthtrackerJreAdminPointersJavascript();
 
+	// Enables the Select2 library for selecting a user to edit.
+	wphealthtrackerEnableSelect2();
+
+	// Enables the Select This User button to edit the user;
+	wphealthtrackerEditUserEnableButton();
+
+	// Populates the Eidt User form area after a user has been selected.
+	wphealthtrackerEditUserPopulateForm();
+
 	/* ENDING SECTION TO CALL ALL FUNCTIONS IN FILE... */
+
+	// Enables the Select2 library for selecting a user to edit.
+	function wphealthtrackerEnableSelect2() {
+
+		// Activate the Select2 stuff WITHOUT the option of adding in custom dynamic Option
+		$( '.select2-input-userstoedit' ).select2({
+			tags: false
+		});
+	}
+
+	// Enables the Select This User button to edit the user.
+	function wphealthtrackerEditUserEnableButton() {
+		$( document ).on( 'change', '#wphealthtracker-edituser-name-search-input', function( event ) {
+
+			if ( 'defaultselection' !== $( this ).val() ) {
+				$( '#wphealthtracker-edituser-name-search-button' ).removeAttr( 'disabled' );
+			} else {
+				$( '#wphealthtracker-edituser-name-search-button' ).attr( 'disabled', 'true' );
+			}
+		});
+	}
+
+	// Populates the Eidt User form area after a user has been selected.
+	function wphealthtrackerEditUserPopulateForm() {
+
+
+		$( document ).on( 'click', '#wphealthtracker-edituser-name-search-button', function( event ) {
+
+			var wpuserid = $( this ).val();
+			$( '#wphealthtracker-spinner-select-user' ).animate({'opacity':'1'});
+			
+			
+		});
+	}
 
 
 	// A function that will allow the spinning of the yellow circular 'Expand' image when the container opens

@@ -89,6 +89,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Admin_Master_Ui', false ) ) :
 		private function setup_users_ui() {
 			$this->tabs = array(
 				'createuser' => $this->translations->tab_title_7,
+				'edituser'   => $this->translations->tab_title_16,
 			);
 
 			if ( has_filter( 'wphealthtracker_add_tab_users' ) ) {

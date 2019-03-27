@@ -73,7 +73,7 @@ if ( ! class_exists( 'WPHealthTracker_Users_Ajax_Functions', false ) ) :
 				if ( ! is_wp_error( $user_id ) ) {
 					$user = get_user_by( 'id', $user_id );
 					$user->set_role( 'wphealthtracker_basic_user' );
-					wp_die( '$user_id' );
+					wp_die( '$user_id---sep---' . $user_id );
 				}
 			}
 		}
@@ -250,6 +250,37 @@ if ( ! class_exists( 'WPHealthTracker_Users_Ajax_Functions', false ) ) :
 			$return_array = wp_json_encode( $return_array );
 			wp_die( $return_array );
 
+		}
+
+		/**
+		 * Callback function for populating the tab with the selected user's saved data and/or the blank form
+		 */
+		public function wphealthtracker_jre_selecteduser_edit_user_populate_action_callback() {
+			global $wpdb;
+			check_ajax_referer( 'wphealthtracker_jre_selecteduser_edit_user_populate_action_callback', 'security' );
+			$wpuserid = filter_var( $_POST['wpuserid'], FILTER_SANITIZE_NUMBER_INT );
+
+			// Get the User's info.
+			$userdata = $wpdb->get_row( 'SELECT * FROM ' . $wpdb->prefix . 'wphealthtracker_users WHERE wpuserid = ' . $wpuserid );
+
+			// Requiring & Calling the file/class that will get the User Form.
+			require_once WPHEALTHTRACKER_CLASSES_UI_DISPLAY_DIR . 'class-wphealthtracker-users-form.php';
+
+			// Instantiate the class.
+			$this->form = new WPHEALTHTRACKER_Users_Form();
+			$this->form->create_form_part_the_basics();
+			$this->form->create_form_part_contact_info();
+			$this->form->create_form_part_profile_info();
+			$this->form->create_form_part_save_response();
+
+			$formhtml = '';
+			$formhtml = $formhtml . $this->form->create_form_part_one;
+			$formhtml = $formhtml . $this->form->create_form_part_two;
+			$formhtml = $formhtml . $this->form->create_form_part_three;
+
+			// Serialize array.
+			$userdata = wp_json_encode( $userdata );
+			wp_die( $formhtml . '--sep--' . $userdata . '--sep--' . admin_url( 'user-edit.php?user_id=' . $wpuserid . '/#password' ) );
 		}
 	}
 

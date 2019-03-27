@@ -301,6 +301,7 @@ $menu-text-shadow: 1px 1px black;
 @import '_wphealthtracker-diet-tracker-tab';
 @import '_wphealthtracker-exercise-tracker-tab';
 @import '_wphealthtracker-animations';
+@import '_wphealthtracker-admin-editusers';
 
 /*
  *  END IMPORTS
@@ -984,6 +985,11 @@ $menu-text-shadow: 1px 1px black;
 
 .wphealthtracker-branded-text{
     @extend %wphealthtracker-branded-text;
+}
+
+#password th, #password button { 
+    margin-top: 49px;
+    display: block;
 }
 /*
  *  END NON-SASS CSS

@@ -12,7 +12,7 @@
  * Plugin URI: https://www.jakerevans.com
  * Description: The Ultimate Health, Fitness, Diet, and Goal-Tracking Plugin for WordPress!
  * Author: Jake Evans
- * Version: 0.0.1
+ * Version: 1.0.2
  * Author URI: https://www.jakerevans.com
  */
 
@@ -121,7 +121,7 @@ global $wpdb;
 
 // CONSTANT DEFINITIONS //
 	// Plugin Version Number.
-	define( 'WPHEALTHTRACKER_VERSION_NUM', '0.0.1' );
+	define( 'WPHEALTHTRACKER_VERSION_NUM', '1.0.2' );
 
 	// Root plugin folder URL of this plugin.
 	define( 'WPHEALTHTRACKER_ROOT_URL', plugins_url() . '/wphealthtracker/' );
@@ -239,6 +239,8 @@ global $wpdb;
 			'exercisenonce4'      => 'wphealthtracker_jre_selecteduser_exercise_filter_data_action_callback',
 			'statsexercisenonce1' => 'wphealthtracker_jre_grab_user_data_for_exercise_dashboard_action_callback',
 			'statsexercisenonce2' => 'wphealthtracker_jre_grab_user_data_for_exercise_d3_action_callback',
+			'editusersnonce1'     => 'wphealthtracker_jre_selecteduser_edit_user_populate_action_callback',
+			'editusersnonce2'     => 'wphealthtracker_jre_selecteduser_edit_user_action_callback',
 		))
 	);
 
@@ -320,6 +322,9 @@ global $wpdb;
 	// Adding the front-end Vitals Exercise shortcode.
 	add_shortcode( 'wphealthtracker_exercisestats', array( $wp_health_tracker_general_functions, 'wphealthtracker_exercisestats_frontend_shortcode_function' ) );
 
+	// Adding the front-end User Dashboard shortcode.
+	add_shortcode( 'wphealthtracker_user_dashboard', array( $wp_health_tracker_general_functions, 'wphealthtracker_user_dashboard_frontend_shortcode_function' ) );
+
 	// Adding the d3 js file to the backend.
 	add_action( 'admin_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_d3_js' ) );
 
@@ -395,6 +400,10 @@ global $wpdb;
 	// For populating the 'Enter' container on the Diet tab with the selected user's data and/or the blank form.
 	add_action( 'wp_ajax_wphealthtracker_jre_selecteduser_diet_enter_action', array( $wp_health_tracker_diet_ajax_functions, 'wphealthtracker_jre_selecteduser_diet_enter_action_callback' ) );
 	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_selecteduser_diet_enter_action', array( $wp_health_tracker_diet_ajax_functions, 'wphealthtracker_jre_selecteduser_diet_enter_action_callback' ) );
+
+	// Populates the Edit User form area after a user has been selected.
+	add_action( 'wp_ajax_wphealthtracker_jre_selecteduser_edit_user_populate_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_selecteduser_edit_user_populate_action_callback' ) );
+	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_selecteduser_edit_user_populate_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_selecteduser_edit_user_populate_action_callback' ) );
 
 	// For populating the 'View' container on the Diet tab with the selected user's data and/or the blank form.
 	add_action( 'wp_ajax_wphealthtracker_jre_selecteduser_diet_view_action', array( $wp_health_tracker_diet_ajax_functions, 'wphealthtracker_jre_selecteduser_diet_view_action_callback' ) );
@@ -490,3 +499,9 @@ global $wpdb;
 /* END OF AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-EXERCISE-AJAX.PHP THAT ARE SPECIFIC TO THE EXERCISE TAB */
 
 
+add_action( 'admin_enqueue_scripts', 'include_password_in_admin_page' );
+function include_password_in_admin_page($hook){
+	error_log('fdsfd');
+    //wp_enqueue_script( 'password-strength-meter' );
+    //wp_enqueue_script( 'user-profile' );
+}

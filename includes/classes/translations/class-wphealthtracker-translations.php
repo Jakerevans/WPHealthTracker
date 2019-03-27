@@ -21,6 +21,24 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 		/**
 		 *  This function will house all the strings needed for the Welcome Tab.
 		 */
+		public function edit_users_tab_trans_strings() {
+
+			$this->edituser_trans_1  = __( 'Select a User to Edit & Delete', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_2  = __( 'Edit & Delete Existing Users Below', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_3  = __( 'Select This User', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_4  = __( 'Save Changes to This User', 'wphealthtracker-textdomain' );
+			
+			return $translation_array = array(
+				'editusertrans1' => $this->edituser_trans_1,
+				'editusertrans2' => $this->edituser_trans_2,
+				'editusertrans3' => $this->edituser_trans_3,
+				'editusertrans4' => $this->edituser_trans_4,
+			);
+		}
+
+		/**
+		 *  This function will house all the strings needed for the Welcome Tab.
+		 */
 		public function welcome_tab_trans_strings() {
 
 			$this->welcome_trans_1  = __( 'Welcome to', 'wphealthtracker-textdomain' );
@@ -37,10 +55,24 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->welcome_trans_12 = __( 'Extensions & Add-ons', 'wphealthtracker-textdomain' );
 			$this->welcome_trans_13 = __( 'Guides & Tutorials', 'wphealthtracker-textdomain' );
 
-			
+			return $translation_array = array(
+				'welcometrans1' => $this->welcome_trans_1,
+			);
+		}
 
-			return $translation_array2 = array(
-				'welcometrans1'  => $this->welcome_trans_1,
+		/**
+		 *  This function will house all the strings needed for the Welcome Tab.
+		 */
+		public function front_dashboard_trans_strings() {
+
+			$this->frontdashboard_trans_1 = __( 'Welcome', 'wphealthtracker-textdomain' );
+			$this->frontdashboard_trans_2 = __( 'Last Login', 'wphealthtracker-textdomain' );
+			$this->frontdashboard_trans_3 = __( 'Favorite Motivational Quote', 'wphealthtracker-textdomain' );
+
+			return $translation_array = array(
+				'frontdashboard1' => $this->frontdashboard_trans_1,
+				'frontdashboard2' => $this->frontdashboard_trans_2,
+				'frontdashboard3' => $this->frontdashboard_trans_3,
 			);
 		}
 
@@ -428,6 +460,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->tab_title_13 = __( 'Med Stats', 'wphealthtracker-textdomain' );
 			$this->tab_title_14 = __( 'L & A Stats', 'wphealthtracker-textdomain' );
 			$this->tab_title_15 = __( 'Goal Stats', 'wphealthtracker-textdomain' );
+			$this->tab_title_16 = __( 'Edit & Delete Users', 'wphealthtracker-textdomain' );
 
 			return $translation_array1 = array(
 				'tabtitle1' => $this->tab_title_1,
@@ -656,7 +689,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->vitals_trans_23 = __( 'Beats Per Minute', 'wphealthtracker-textdomain' );
 			$this->vitals_trans_24 = __( 'Save Vitals', 'wphealthtracker-textdomain' );
 
-			return $translation_array2 = array(
+			return $translation_array = array(
 				'vitalstrans1'  => $this->vitals_trans_1,
 				'vitalstrans2'  => $this->vitals_trans_2,
 				'vitalstrans3'  => $this->vitals_trans_3,
@@ -840,7 +873,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->exercise_trans_50 = __( 'Last Exercised On', 'wphealthtracker-textdomain' );
 			$this->exercise_trans_51 = __( 'Used In These Exercises', 'wphealthtracker-textdomain' );
 
-			return $translation_array2 = array(
+			return $translation_array = array(
 				'exercisetrans1'  => $this->exercise_trans_1,
 				'exercisetrans2'  => $this->exercise_trans_2,
 				'exercisetrans3'  => $this->exercise_trans_3,
@@ -1272,7 +1305,7 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->ajax_return_13 = __( 'Try sending this error message to', 'wphealthtracker-textdomain' );
 			$this->ajax_return_14 = __( "Sorry about the trouble - WPHealthTracker Tech Support will do it's best to fix your issue", 'wphealthtracker-textdomain' );
 
-			return $translation_array2 = array(
+			return $translation_array = array(
 				'ajaxreturn1'  => $this->ajax_return_1,
 				'ajaxreturn2'  => $this->ajax_return_2,
 				'ajaxreturn3'  => $this->ajax_return_3,

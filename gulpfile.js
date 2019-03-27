@@ -140,7 +140,7 @@ gulp.task('watch', function() {
 });
 
 // Default gulp task
-gulp.task('default', ['sass', 'sassFrontend', 'd3-uglify', 'concat', 'concat1', 'concat2', 'concat3', 'watch']);
+//gulp.task('default', ['sass', 'sassFrontend', 'd3-uglify', 'concat', 'concat1', 'concat2', 'concat3', 'watch']);
 
 //gulp.task( 'default', [ 'cleanzip' ]);
 
@@ -148,4 +148,4 @@ gulp.task('default', ['sass', 'sassFrontend', 'd3-uglify', 'concat', 'concat1', 
 
 //gulp.task('default', ['zip']);
 
-//gulp.task('default', ['clean']);
+gulp.task('default', ['clean']);

@@ -1,5 +1,5 @@
 /**
- * JavaScript Functions - wphealthtracker-users-js.js
+ * JavaScript Functions - wphealthtracker-admin-js.js
  *
  * @author   Jake Evans
  * @category JavaScript
@@ -7,192 +7,32 @@
  * @version  0.0.1
  */
 
-jQuery( document ).ready( function( $ ) {
+console.log( 'This is the JavaScript Object that holds all PHP Variables for use in JavaScript' );
+console.log( wphealthtrackerPhpVariables );
 
+
+// All functions wrapped in jQuery(document).ready()...
+jQuery( document ).ready( function( $ ) {
 	'use strict';
 
 	/* BEGINNING SECTION TO CALL ALL FUNCTIONS IN FILE... */
 
-	// For checking for, and displaying error message, if emails don't match.
-	wphealthtrackerJreUsersEmailMatching();
+	// Enables the Select2 library for selecting a user to edit.
+	wphealthtrackerEnableSelect2();
 
-	// For checking for, and displaying error message, if passwords don't match.
-	wphealthtrackerJreUsersPasswordMatching();
+	// Enables the Select This User button to edit the user;
+	wphealthtrackerEditUserEnableButton();
 
-	// For revealing the Godmode message
-	wphealthtrackerJreUsersRevealGodmodeMessage();
+	// Populates the Eidt User form area after a user has been selected.
+	wphealthtrackerEditUserPopulateForm();
 
-	// For revealing the password text
-	wphealthtrackerJreUsersRevealPassword();
-
-	// For choosing a profile image
-	wphealthtrackerJreUsersProfileImageUpload();
-
-	// For dynamically suggesting username based off e-mail
-	wphealthtrackerJreUsersGenerateUsername();
-
-	// For saving the new user.
-	wphealthtrackerCreateWpUser();
-
-	// For resetting the missing data animation
-	wphealthrackerResetMissingDataAnim();
+	// Function to save edits to a WPHealthTracker User.
+	wphealthtrackerEditUser();
 
 	/* ENDING SECTION TO CALL ALL FUNCTIONS IN FILE... */
 
-	// For checking for, and displaying error message if, emails don't match.
-	function wphealthtrackerJreUsersEmailMatching() {
-
-		$( '#wphealthtracker-response-form-input-text-emailconfirm, #wphealthtracker-response-form-input-text-email' ).keyup( function() {
-
-			// Get the two E-Mail values
-			var email = $( '#wphealthtracker-response-form-input-text-email' ).val();
-			var emailConfirm = $( '#wphealthtracker-response-form-input-text-emailconfirm' ).val();
-			var message = $( '#wphealthracker-create-users-match-response-p-email' );
-
-			var happy = '<img class="wphealthtracker-stats-good-data-smile" id="wphealthtracker-stats-good-data-smile-emails-match" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg">';
-
-			var shocked = '<img class="wphealthtracker-stats-good-data-smile" id="wphealthtracker-stats-good-data-smile-emails-mismatch" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
-
-			setTimeout( function() {
-				if ( email !== emailConfirm ) {
-					message.html( wphealthtrackerPhpVariables.usertrans37 + '<br/>' + wphealthtrackerPhpVariables.usertrans40 + shocked );
-					message.css({'color': '#DE235A'});
-					message.animate({'opacity': '1'}, 300 );
-				} else {
-					message.html( wphealthtrackerPhpVariables.usertrans37 + '<br/>' + wphealthtrackerPhpVariables.usertrans38 + happy );
-					message.css({'color': '#54AD59'});
-					message.animate({'opacity': '1'}, 300 );
-				}
-			}, 1000 );
-		});
-	}
-
-	// For checking for, and displaying error message if, passwords don't match.
-	function wphealthtrackerJreUsersPasswordMatching() {
-
-		$( document ).on( 'keyup', '#wphealthtracker-response-form-input-text-passwordconfirm, #wphealthtracker-response-form-input-text-password', function( event ) {
-
-			// Get the two E-Mail values
-			var password = $( '#wphealthtracker-response-form-input-text-password' ).val();
-			var passwordConfirm = $( '#wphealthtracker-response-form-input-text-passwordconfirm' ).val();
-			var message = $( '#wphealthracker-create-users-match-response-p-password' );
-
-			var happy = '<img class="wphealthtracker-stats-good-data-smile" id="wphealthtracker-stats-good-data-smile-password-match" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg">';
-
-			var shocked = '<img class="wphealthtracker-stats-good-data-smile" id="wphealthtracker-stats-good-data-smile-password-mismatch" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
-
-			setTimeout( function() {
-				if ( password !== passwordConfirm ) {
-					message.html( wphealthtrackerPhpVariables.usertrans39 + '<br/>' + wphealthtrackerPhpVariables.usertrans40 + shocked );
-					message.css({'color': '#DE235A'});
-					message.animate({'opacity': '1'}, 300 );
-				} else {
-					message.html( wphealthtrackerPhpVariables.usertrans39 + '<br/>' + wphealthtrackerPhpVariables.usertrans38 + happy );
-					message.css({'color': '#54AD59'});
-					message.animate({'opacity': '1'}, 300 );
-				}
-			}, 1000 );
-		});
-	}
-
-	// For revealing the Godmode message.
-	function wphealthtrackerJreUsersRevealGodmodeMessage() {
-
-		$( '#wphealthtracker-response-form-select-create-user-role' ).change( function() {
-
-			var messageBlock = $( '#wphealthtracker-create-user-godmode-warning-message' );
-
-			if ( wphealthtrackerPhpVariables.usertrans45 === $( this ).val() ) {
-				messageBlock.css({'display': 'block'});
-				messageBlock.animate({'height': '175px', 'opacity': '1'}, 600 );
-
-			} else {
-				messageBlock.animate({'height': 0, 'opacity': 0}, 600 );
-			}
-		});
-	}
-
-	// For revealing the passwords.
-	function wphealthtrackerJreUsersRevealPassword() {
-
-		$( document ).on( 'click', '#wphealthtracker-create-user-show-password', function( event ) {
-
-			var passwordOne = document.getElementById( 'wphealthtracker-response-form-input-text-password' );
-			var passwordTwo = document.getElementById( 'wphealthtracker-response-form-input-text-passwordconfirm' );
-
-			if ( 'password' === passwordOne.type ) {
-				passwordOne.type = 'text';
-				$( '#wphealthtracker-create-user-show-password' ).html( wphealthtrackerPhpVariables.usertrans80 );
-			} else {
-				passwordOne.type = 'password';
-				$( '#wphealthtracker-create-user-show-password' ).html( wphealthtrackerPhpVariables.usertrans79 );
-			}
-
-			if ( 'password' === passwordTwo.type ) {
-				$( '#wphealthtracker-create-user-show-password' ).html( wphealthtrackerPhpVariables.usertrans80 );
-				passwordTwo.type = 'text';
-			} else {
-				passwordTwo.type = 'password';
-				$( '#wphealthtracker-create-user-show-password' ).html( wphealthtrackerPhpVariables.usertrans79 );
-			}
-		});
-	}
-
-	// For choosing a profile image.
-	function wphealthtrackerJreUsersProfileImageUpload() {
-
-
-		$( document ).on( 'click', '#wphealthtracker-response-form-input-text-profileimage-button', function( event ) {
-
-			var imageFrame;
-			e.preventDefault();
-
-			if ( imageFrame ) {
-				imageFrame.open();
-			}
-
-			// Define imageFrame as wp.media object
-			imageFrame = wp.media({
-				title: 'Select Media',
-				multiple: false,
-				library: {
-					type: 'image'
-				}
-			});
-
-			imageFrame.on( 'close', function() {
-				var selection =  imageFrame.state().get( 'selection' );
-				selection.each( function( attachment ) {
-					$( '#wphealthtracker-response-form-input-text-profileimage-url' ).val( attachment.attributes.url );
-					$( '#wphealthtracker-create-users-profile-img-div' ).html( '<img id="wphealthracker-create-user-profile-img-actual" src="' + attachment.attributes.url + '" />' );
-				});
-			});
-
-			imageFrame.on( 'open', function() {
-
-			});
-
-			imageFrame.open();
-		});
-	}
-
-	// For dynamically suggesting username based off e-mail
-	function wphealthtrackerJreUsersGenerateUsername() {
-
-		$( '#wphealthtracker-response-form-input-text-email, #wphealthtracker-response-form-input-text-emailconfirm' ).keyup( function() {
-			var email = $( this ).val();
-			var username = $( '#wphealthtracker-response-form-input-text-username' );
-			if ( -1 === email.indexOf( '@' ) ) {
-				username.val( email );
-			} else {
-				email = email.split( '@' );
-				username.val( email[0]);
-			}
-		});
-	}
-
 	// For making data checks before saving user
-	function wphealthtrackerDataChecksForSaving() {
+	function wphealthtrackerDataChecksForSavingUserEdits() {
 
 		var firstname = $( '#wphealthtracker-response-form-input-text-firstname' ).val();
 		var email = $( '#wphealthtracker-response-form-input-text-email' ).val();
@@ -284,11 +124,135 @@ jQuery( document ).ready( function( $ ) {
 		return true;
 	}
 
-	function wphealthtrackerCreateWpUser() {
+	// Enables the Select2 library for selecting a user to edit.
+	function wphealthtrackerEnableSelect2() {
 
-		$( document ).on( 'click', '#wphealthtracker-save-new-users', function( event ) {
+		// Activate the Select2 stuff WITHOUT the option of adding in custom dynamic Option
+		$( '.select2-input-userstoedit' ).select2({
+			tags: false
+		});
+	}
 
-			var proceed = wphealthtrackerDataChecksForSaving();
+	// Enables the Select This User button to edit the user.
+	function wphealthtrackerEditUserEnableButton() {
+		$( document ).on( 'change', '#wphealthtracker-edituser-name-search-input', function( event ) {
+
+			if ( 'defaultselection' !== $( this ).val() ) {
+				$( '#wphealthtracker-edituser-name-search-button' ).removeAttr( 'disabled' );
+			} else {
+				$( '#wphealthtracker-edituser-name-search-button' ).attr( 'disabled', 'true' );
+			}
+		});
+	}
+
+	// Populates the Edit User form area after a user has been selected.
+	function wphealthtrackerEditUserPopulateForm() {
+
+
+		$( document ).on( 'click', '#wphealthtracker-edituser-name-search-button', function( event ) {
+
+			var wpuserid = $( '#wphealthtracker-edituser-name-search-input' ).val();
+			var request = '';
+			var data = {
+				'action': 'wphealthtracker_jre_selecteduser_edit_user_populate_action',
+				'security': wphealthtrackerPhpVariables.editusersnonce1,
+				'wpuserid': wpuserid
+			};
+
+			// Hide the response div until we've fully populated it.
+			$( '.wphealthtracker-create-user-div' ).css({'opacity':'0'});
+
+			// Reset things.
+			$( '.wphealthtracker-create-user-div' ).html( '' );
+
+			$( '#wphealthtracker-spinner-select-user' ).animate({'opacity': '1'});
+
+			console.log( 'This is the data being sent to the server to retreive the user\'s data and the form for the "Edit & Delete Users" container on the "Edit & Delete Users" tab:' );
+			console.log( data );
+
+			request = $.ajax({
+				url: ajaxurl,
+				type: 'POST',
+				data: data,
+				timeout: 0,
+				success: function( response ) {
+
+					var response = response.split( '--sep--' );
+					var userData = JSON.parse( response[1] );
+					var height   = '';
+					var editButtonHtml = '<div class="wphealthtracker-save-spinner-response-div"><div class="wphealthtracker-spinner-primary" id="wphealthtracker-spinner-save-users"></div><div class="wphealthtracker-response-message-div" id="wphealthtracker-response-message-users-div"></div><button id="wphealthtracker-edit-existing-users">' + wphealthtrackerPhpVariables.editusertrans4 + '</button></div>';
+
+					$( '.wphealthtracker-create-user-div' ).html( response[0] + editButtonHtml );
+
+					// Now populate the form with the user's data
+					$( '#wphealthtracker-response-form-input-text-firstname' ).val( userData.firstname );
+					$( '#wphealthtracker-response-form-input-text-lastname' ).val( userData.lastname );
+					$( '#wphealthtracker-response-form-input-text-email' ).val( userData.email );
+					$( '#wphealthtracker-response-form-input-text-emailconfirm' ).val( userData.email );
+
+					// Hide the Username field, as Usernames cant be changed once created.
+					$( '#wphealthtracker-response-form-usernamerole-row-div' ).children(":first").css({'display':'none'});
+					$( '#wphealthtracker-response-form-input-text-username' ).val( userData.username );
+
+					$( '#wphealthtracker-response-form-password1-row-div' ).html( '<button onclick="window.open(\'' + response[2] + '\');" type="button" target="_blank"  class="button wp-generate-pw hide-if-no-js" id="wphealthtracker-password-edit-link">Reset User\'s Password</button>' );
+					$( '#wphealthtracker-response-form-password2-row-div' ).css({'display':'none'});
+
+
+
+
+					
+
+					if ( 'godmode' === userData.role ) {
+						$( '#wphealthtracker-response-form-select-create-user-role' ).val( 'SuperAdmin' );
+					} else {
+						$( '#wphealthtracker-response-form-select-create-user-role' ).val( userData.role );
+					}
+
+					$( '#wphealthtracker-response-form-input-text-password' ).val();
+
+					$( '#wphealthtracker-response-form-input-text-country' ).val( userData.country );
+					$( '#wphealthtracker-response-form-input-text-street1' ).val( userData.streetaddress1 );
+					$( '#wphealthtracker-response-form-input-text-street2' ).val( userData.streetaddress2 );
+					$( '#wphealthtracker-response-form-input-text-city' ).val( userData.city );
+					$( '#wphealthtracker-response-form-input-text-state' ).val( userData.state );
+					$( '#wphealthtracker-response-form-input-text-zip' ).val( userData.zip );
+					$( '#wphealthtracker-response-form-input-text-phone' ).val( userData.phone );
+					$( '#wphealthtracker-response-form-input-text-profileimage-url' ).val( userData.profileimage );
+					$( '#wphealthtracker-response-form-input-date-birthday' ).val( userData.birthday );
+					$( '#wphealthtracker-response-form-select-create-user-gender' ).val( userData.gender );
+
+					if ( '' !== userData.height && null !== userData.height ) {
+						height = userData.height.split( ' ' );
+						$( '#wphealthtracker-response-form-select-create-user-height-feet' ).val( height[0]);
+						$( '#wphealthtracker-response-form-select-create-user-height-inches' ).val( height[1]);
+					}
+
+					$( '#wphealthtracker-response-form-select-create-user-mainfocus' ).val( userData.mainexercisecategory );
+					$( '#wphealthtracker-response-form-input-textarea-motivational-quote' ).val( userData.favoritemotivationalquote );
+					$( '#wphealthtracker-response-form-input-textarea-bio' ).val( userData.bio );
+
+
+					$( '.wphealthtracker-create-user-div' ).animate({'opacity': '1'});
+					$( '#wphealthtracker-spinner-select-user' ).animate({'opacity': '0'});
+
+				},
+				error: function( jqXHR, textStatus, errorThrown ) {
+					console.log( errorThrown );
+					console.log( textStatus );
+					console.log( jqXHR );
+				}
+			});
+		});
+	}
+
+	// Function to save edits to a WPHealthTracker User.
+	function wphealthtrackerEditUser() {
+
+
+		$( document ).on( 'click', '#wphealthtracker-edit-existing-users', function( event ) {
+
+			var wpuserid = $( '#wphealthtracker-edituser-name-search-input' ).val();
+			var proceed = wphealthtrackerDataChecksForSavingUserEdits();
 			var firstname = $( '#wphealthtracker-response-form-input-text-firstname' ).val();
 			var lastname = $( '#wphealthtracker-response-form-input-text-lastname' ).val();
 			var email = $( '#wphealthtracker-response-form-input-text-email' ).val();
@@ -347,7 +311,8 @@ jQuery( document ).ready( function( $ ) {
 					'heightinches': heightinches,
 					'mainfocus': mainfocus,
 					'motivationalquote': motivationalquote,
-					'bio': bio
+					'bio': bio,
+					'wpuserid': wpuserid
 				};
 
 				$.ajax({
@@ -458,21 +423,9 @@ jQuery( document ).ready( function( $ ) {
 				});
 
 			} else {
+
 				$( '#wphealthtracker-spinner-save-users' ).animate({'opacity': 0}, 500 );
-			}
 
-		});
-
-	}
-
-	function wphealthrackerResetMissingDataAnim() {
-
-		$( document ).on( 'click', '#wphealthtracker-response-form-input-text-firstname, #wphealthtracker-response-form-input-text-email, #wphealthtracker-response-form-input-text-emailconfirm, #wphealthtracker-response-form-input-text-password, #wphealthtracker-response-form-input-text-passwordconfirm, #wphealthtracker-response-form-input-text-username', function( event ) {
-
-			if ( $( this ).attr('id') === 'wphealthtracker-response-form-input-text-password' ) {
-				$( this ).prev().prev().prev().removeClass( 'wphealthtracker-missing-data-animation' );
-			} else {
-				$( this ).prev().prev().removeClass( 'wphealthtracker-missing-data-animation' );
 			}
 		});
 	}
