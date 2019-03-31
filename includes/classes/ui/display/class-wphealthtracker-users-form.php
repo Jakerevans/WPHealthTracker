@@ -134,10 +134,26 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 			// Set the current WordPress user.
 			$currentwpuser = wp_get_current_user();
 
+			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+			$transients       = new WPHealthTracker_Transients();
+			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $currentwpuser->ID );
+			$transient_exists = $transients->existing_transient_check( $transient_name );
+			if ( $transient_exists ) {
+				$user = $transient_exists;
+			} else {
+				$query = 'SELECT * FROM ' . $users_table_name . '  WHERE wpuserid = ' . $currentwpuser->ID;
+				$user  = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
+			}
+
+			// Now get the user's permissions.
+			$user_perm = explode( ',', $user->permissions );
+
 			// Now we'll determine access, and stop all execution if user isn't allowed in.
 			require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
 			$this->access          = new WPHealthTracker_Utilities_Accesscheck();
-			$this->currentwphtuser = $this->access->wphealthtracker_accesscheck( $currentwpuser->ID );
+			$this->currentwphtuser = $this->access->wphealthtracker_accesscheck( $currentwpuser->ID, $user_perm[4] );
 
 			// If we received false from accesscheck class, display permissions message.
 			if ( false === $this->currentwphtuser ) {
@@ -244,7 +260,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 			$this->create_form_part_the_beginning = '
 			<div id="wphealthtracker-indiv-choice-create-user">
 				<div class="wphealthtracker-indiv-choice" id="wphealthtracker-indiv-choice-enter">
-					<div class="wphealthtracker-expansion-div-create-user" id="wphealthtracker-expansion-div-enter">
+					<div class="wphealthtracker-expansion-div-create-user">
 						<img src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'data-entry.svg" class="wphealthtracker-indiv-choice-img" />
 						<p class="wphealthtracker-indiv-choice-p">' . $this->trans->common_trans_74 . '</p>
 						<p class="wphealthtracker-indiv-choice-sub-p">' . $this->trans->user_trans_82 . '</p>

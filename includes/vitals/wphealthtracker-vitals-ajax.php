@@ -32,7 +32,7 @@ if ( ! class_exists( 'WPHealthTracker_Vitals_Ajax_Functions', false ) ) :
 			$this->date     = $utilities_date->wphealthtracker_get_date_via_current_time( 'mysql' );
 		}
 
-		// Callback function for populating the tab with the selected user's saved data and/or the blank form
+		// Callback function for populating the tab with the selected user's saved data and/or the blank form.
 		public function wphealthtracker_jre_selecteduser_vitals_enter_action_callback() {
 			global $wpdb;
 			check_ajax_referer( 'wphealthtracker_jre_selecteduser_vitals_enter_action_callback', 'security' );
@@ -101,7 +101,7 @@ if ( ! class_exists( 'WPHealthTracker_Vitals_Ajax_Functions', false ) ) :
 			// Require the file that contains the class that will output the forms needed for the Vitals tab
 			require_once WPHEALTHTRACKER_VITALS_DIR . 'class-wphealthtracker-vitals-forms-actual.php';
 
-			// Instantiate the class and get the final output for the current day's data
+			// Instantiate the class and get the final output for the current day's data.
 			$tabformclass_today = new WPHEALTHTRACKER_Vitals_Forms_Actual();
 			$tabformclass_today->output_today_data( $userdailydata );
 
@@ -130,10 +130,10 @@ if ( ! class_exists( 'WPHealthTracker_Vitals_Ajax_Functions', false ) ) :
 			$wpuserid = filter_var( $_POST['wpuserid'], FILTER_SANITIZE_NUMBER_INT );
 			$offset   = filter_var( $_POST['offset'], FILTER_SANITIZE_NUMBER_INT );
 
-			// Get the user's name for messaging
+			// Get the user's name for messaging.
 			$users_master_table = $wpdb->prefix . 'wphealthtracker_users';
 
-			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters
+			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
 			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
 			$transients       = new WPHealthTracker_Transients();
 			$transient_name   = 'wpht_' . $wpuserid . '_' . md5( 'SELECT * FROM ' . $users_master_table . ' WHERE wpuserid = ' . $wpuserid );
@@ -181,7 +181,7 @@ if ( ! class_exists( 'WPHealthTracker_Vitals_Ajax_Functions', false ) ) :
 
 			// Instantiate the class and get the final output for the current day's data
 			$tabformclass_previous = new WPHEALTHTRACKER_Vitals_Forms_Actual();
-			$tabformclass_previous->output_previous_data( $useralldata, $userfirst, $userlast );
+			$tabformclass_previous->output_previous_data( $useralldata, $userfirst, $userlast, $wpuserid );
 
 			// Build array of values to return to browser
 			$return_array = array(
@@ -317,7 +317,7 @@ if ( ! class_exists( 'WPHealthTracker_Vitals_Ajax_Functions', false ) ) :
 
 			// Instantiate the class and get the final output for the current day's data
 			$tabformclass_previous = new WPHEALTHTRACKER_Vitals_Forms_Actual();
-			$tabformclass_previous->output_previous_data( $useralldata, $userfirst, $userlast );
+			$tabformclass_previous->output_previous_data( $useralldata, $userfirst, $userlast, $wpuserid );
 
 			// Build array of values to return to browser
 			$return_array = array(

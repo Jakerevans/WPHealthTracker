@@ -1317,23 +1317,58 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 			$this->imgvitalsurl  = $userdailydata->vitalsimg;
 			$this->filevitalsurl = $userdailydata->vitalsfiles;
 
-			// Output the individual data items.
-			$piece_one   = $this->output_vitals_enter_config_weight( 0 );
-			$piece_two   = $this->output_vitals_enter_config_cholesterol( 0 );
-			$piece_three = $this->output_vitals_enter_config_blood_pressure( 0 );
-			$piece_four  = $this->output_vitals_enter_config_blood_sugar( 0 );
-			$piece_five  = $this->output_vitals_enter_config_blood_oxygen( 0 );
-			$piece_six   = $this->output_vitals_enter_config_body_temp( 0 );
-			$piece_seven = $this->output_vitals_enter_config_heart_rate( 0 );
-			$piece_eight = $this->output_vitals_enter_config_images( 0 );
-			$piece_nine  = $this->output_vitals_enter_config_files( 0 );
+			// Now make access check to see if user can access this part of WPHealthTRacker - get the users permissions
+			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+			global $wpdb;
+			$currentwpuser    = wp_get_current_user();
+			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+			$transients       = new WPHealthTracker_Transients();
+			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $currentwpuser->ID );
+			$transient_exists = $transients->existing_transient_check( $transient_name );
+			if ( $transient_exists ) {
+				$this->user_data = $transient_exists;
+			} else {
+				$query           = 'SELECT * FROM ' . $users_table_name . '  WHERE wpuserid = ' . $currentwpuser->ID;
+				$this->user_data = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
+			}
 
-			// Finish up with the Filter for the bottom of the Enter container, the Spinner, response message area, and the Save button.
-			$filter_piece = $this->output_vitals_enter_bottom_filter();
-			$end_piece    = $this->output_vitals_ending( 'today', 0 );
+			// Now get the user's permissions.
+			$user_perm = explode( ',', $this->user_data->permissions );
 
-			// Assemble the final output.
-			$this->final_complete_output = $piece_one . $piece_two . $piece_three . $piece_four . $piece_five . $piece_six . $piece_seven . $piece_eight . $piece_nine . $filter_piece . $end_piece;
+			// If the currently logged-in WordPress user is trying to access his own data, proceed, otherwise, check and see if this WordPress userhas the permissions to view or edit other's data.
+			$proceed_flag = false;
+			if ( $currentwpuser->ID === (int) $this->wpuserid || '1' === $user_perm[16] ) {
+				$proceed_flag = true;
+			}
+
+			if ( $proceed_flag ) {
+				// Output the individual data items.
+				$piece_one   = $this->output_vitals_enter_config_weight( 0 );
+				$piece_two   = $this->output_vitals_enter_config_cholesterol( 0 );
+				$piece_three = $this->output_vitals_enter_config_blood_pressure( 0 );
+				$piece_four  = $this->output_vitals_enter_config_blood_sugar( 0 );
+				$piece_five  = $this->output_vitals_enter_config_blood_oxygen( 0 );
+				$piece_six   = $this->output_vitals_enter_config_body_temp( 0 );
+				$piece_seven = $this->output_vitals_enter_config_heart_rate( 0 );
+				$piece_eight = $this->output_vitals_enter_config_images( 0 );
+				$piece_nine  = $this->output_vitals_enter_config_files( 0 );
+
+				// Finish up with the Filter for the bottom of the Enter container, the Spinner, response message area, and the Save button.
+				$filter_piece = $this->output_vitals_enter_bottom_filter();
+				$end_piece    = $this->output_vitals_ending( 'today', 0 );
+
+				// Assemble the final output.
+				$this->final_complete_output = $piece_one . $piece_two . $piece_three . $piece_four . $piece_five . $piece_six . $piece_seven . $piece_eight . $piece_nine . $filter_piece . $end_piece;
+
+			} else {
+
+				// Output the No Acess message.
+				require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
+				$this->access = new WPHealthTracker_Utilities_Accesscheck();
+				$this->final_complete_output = $this->access->wphealthtracker_accesscheck_no_permission_message();
+
+			}
 
 		}
 
@@ -1344,9 +1379,38 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 		 * @param string $userfirst - User's first name.
 		 * @param string $userlast - User's last name.
 		 */
-		public function output_previous_data( $useralldata, $userfirst, $userlast ) {
+		public function output_previous_data( $useralldata, $userfirst, $userlast, $wpuserid ) {
 
 			$this->final_complete_output = '';
+
+			// Now make access check to see if user can access this part of WPHealthTRacker - get the users permissions
+			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+			global $wpdb;
+			$currentwpuser = wp_get_current_user();
+			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+			$transients       = new WPHealthTracker_Transients();
+			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $currentwpuser->ID );
+			$transient_exists = $transients->existing_transient_check( $transient_name );
+			if ( $transient_exists ) {
+				$this->user_data = $transient_exists;
+			} else {
+				$query           = 'SELECT * FROM ' . $users_table_name . '  WHERE wpuserid = ' . $currentwpuser->ID;
+				$this->user_data = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
+			}
+
+			// Now get the user's permissions.
+			$user_perm = explode( ',', $this->user_data->permissions );
+
+			// If the currently logged-in WordPress user is trying to access his own data, proceed, otherwise, check and see if this WordPress userhas the permissions to view or edit other's data.
+			$proceed_flag = false;
+			if ( $currentwpuser->ID === (int) $wpuserid || ( '1' === $user_perm[13] && '1' === $user_perm[16] ) ) {
+				$proceed_flag = 'viewandedit';
+			} elseif ( '1' === $user_perm[13] && '0' === $user_perm[16] ) {
+				$proceed_flag = 'viewonly';
+			} else {
+				$proceed_flag = 'noaccess';
+			}
 
 			// The loop that will build each individual day's final full html entry.
 			foreach ( $useralldata as $key => $indiv_day ) {
@@ -1369,26 +1433,43 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Vitals_Forms_Actual', false ) ) :
 				// Increment the $key variable by one to not conflict with the data in the 'Enter' section.
 				$key++;
 
-				// Output the individual data items.
-				$piece_one   = $this->output_vitals_enter_config_weight( $key );
-				$piece_two   = $this->output_vitals_enter_config_cholesterol( $key );
-				$piece_three = $this->output_vitals_enter_config_blood_pressure( $key );
-				$piece_four  = $this->output_vitals_enter_config_blood_sugar( $key );
-				$piece_five  = $this->output_vitals_enter_config_blood_oxygen( $key );
-				$piece_six   = $this->output_vitals_enter_config_body_temp( $key );
-				$piece_seven = $this->output_vitals_enter_config_heart_rate( $key );
-				$piece_eight = $this->output_vitals_enter_config_images( $key );
-				$piece_nine  = $this->output_vitals_enter_config_files( $key );
+				if ( 'noaccess' !== $proceed_flag ) {
 
-				// Get the HTML that will wrap each day's data, providing the div that the user will click on to expand and view that day's data.
-				$piece_wrapper_html_open  = $this->output_vitals_enter_config_all_data_wrapper_html_open( $key );
-				$piece_wrapper_html_close = $this->output_vitals_enter_config_all_data_wrapper_html_close( $key );
+					// Output the individual data items.
+					$piece_one   = $this->output_vitals_enter_config_weight( $key );
+					$piece_two   = $this->output_vitals_enter_config_cholesterol( $key );
+					$piece_three = $this->output_vitals_enter_config_blood_pressure( $key );
+					$piece_four  = $this->output_vitals_enter_config_blood_sugar( $key );
+					$piece_five  = $this->output_vitals_enter_config_blood_oxygen( $key );
+					$piece_six   = $this->output_vitals_enter_config_body_temp( $key );
+					$piece_seven = $this->output_vitals_enter_config_heart_rate( $key );
+					$piece_eight = $this->output_vitals_enter_config_images( $key );
+					$piece_nine  = $this->output_vitals_enter_config_files( $key );
 
-				// Finish up with the Filter for the bottom of the Enter container, the Spinner, response message area, and the Save button.
-				$filter_piece = $this->output_vitals_enter_bottom_filter();
-				$end_piece    = $this->output_vitals_ending( 'previous', $key );
+					// Get the HTML that will wrap each day's data, providing the div that the user will click on to expand and view that day's data.
+					$piece_wrapper_html_open  = $this->output_vitals_enter_config_all_data_wrapper_html_open( $key );
+					$piece_wrapper_html_close = $this->output_vitals_enter_config_all_data_wrapper_html_close( $key );
 
-				$this->final_complete_output = $this->final_complete_output . $piece_wrapper_html_open . $piece_one . $piece_two . $piece_three . $piece_four . $piece_five . $piece_six . $piece_seven . $piece_eight . $piece_nine . $filter_piece . $end_piece . $piece_wrapper_html_close;
+					// Finish up with the Filter for the bottom of the Enter container, the Spinner, response message area, and the Save button.
+					$filter_piece = $this->output_vitals_enter_bottom_filter();
+
+
+					if ( 'viewandedit' === $proceed_flag ) {
+						$end_piece = $this->output_vitals_ending( 'previous', $key );
+					} else {
+						$end_piece = '';
+					}
+
+					$this->final_complete_output = $this->final_complete_output . $piece_wrapper_html_open . $piece_one . $piece_two . $piece_three . $piece_four . $piece_five . $piece_six . $piece_seven . $piece_eight . $piece_nine . $filter_piece . $end_piece . $piece_wrapper_html_close;
+
+				} else {
+
+					// Output the No Acess message.
+					require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
+					$this->access                = new WPHealthTracker_Utilities_Accesscheck();
+					$this->final_complete_output = $this->access->wphealthtracker_accesscheck_no_permission_message();
+
+				}
 			}
 
 			// If $this->final_complete_output !== '', indicating that previously-saved data WAS found for this user, add the data 'Filter' HTML.

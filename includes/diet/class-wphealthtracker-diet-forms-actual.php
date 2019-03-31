@@ -1417,14 +1417,48 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 			$this->imgdieturl  = $userdailydata->dietimg;
 			$this->filedieturl = $userdailydata->dietfiles;
 
-			// Output the individual data items.
-			$piece_one = $this->output_diet_enter_config_food_item( 0, 'today' );
+			// Now make access check to see if user can access this part of WPHealthTRacker - get the users permissions
+			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+			global $wpdb;
+			$currentwpuser    = wp_get_current_user();
+			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+			$transients       = new WPHealthTracker_Transients();
+			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $currentwpuser->ID );
+			$transient_exists = $transients->existing_transient_check( $transient_name );
+			if ( $transient_exists ) {
+				$this->user_data = $transient_exists;
+			} else {
+				$query           = 'SELECT * FROM ' . $users_table_name . '  WHERE wpuserid = ' . $currentwpuser->ID;
+				$this->user_data = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
+			}
 
-			// Finish up with the Spinner, response message area, and the Save button.
-			$end_piece = $this->output_diet_ending( 'today', 0 );
+			// Now get the user's permissions.
+			$user_perm = explode( ',', $this->user_data->permissions );
 
-			// Assemble the final output.
-			$this->final_complete_output = $piece_one . $end_piece;
+			// If the currently logged-in WordPress user is trying to access his own data, proceed, otherwise, check and see if this WordPress userhas the permissions to view or edit other's data.
+			$proceed_flag = false;
+			if ( $currentwpuser->ID === (int) $this->wpuserid || '1' === $user_perm[17] ) {
+				$proceed_flag = true;
+			}
+
+			if ( $proceed_flag ) {
+
+				// Output the individual data items.
+				$piece_one = $this->output_diet_enter_config_food_item( 0, 'today' );
+
+				// Finish up with the Spinner, response message area, and the Save button.
+				$end_piece = $this->output_diet_ending( 'today', 0 );
+
+				// Assemble the final output.
+				$this->final_complete_output = $piece_one . $end_piece;
+			} else {
+
+				// Output the No Acess message.
+				require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
+				$this->access = new WPHealthTracker_Utilities_Accesscheck();
+				$this->final_complete_output = $this->access->wphealthtracker_accesscheck_no_permission_message();
+			}
 
 		}
 
@@ -1435,9 +1469,38 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 		 * @param int   $userfirst - user first name.
 		 * @param int   $userlast - user last name.
 		 */
-		public function output_previous_data( $useralldata, $userfirst, $userlast ) {
+		public function output_previous_data( $useralldata, $userfirst, $userlast, $wpuserid ) {
 
 			$this->final_complete_output = '';
+
+			// Now make access check to see if user can access this part of WPHealthTRacker - get the users permissions
+			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+			global $wpdb;
+			$currentwpuser    = wp_get_current_user();
+			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+			$transients       = new WPHealthTracker_Transients();
+			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $currentwpuser->ID );
+			$transient_exists = $transients->existing_transient_check( $transient_name );
+			if ( $transient_exists ) {
+				$this->user_data = $transient_exists;
+			} else {
+				$query           = 'SELECT * FROM ' . $users_table_name . '  WHERE wpuserid = ' . $currentwpuser->ID;
+				$this->user_data = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
+			}
+
+			// Now get the user's permissions.
+			$user_perm = explode( ',', $this->user_data->permissions );
+
+			// If the currently logged-in WordPress user is trying to access his own data, proceed, otherwise, check and see if this WordPress userhas the permissions to view or edit other's data.
+			$proceed_flag = false;
+			if ( $currentwpuser->ID === (int) $wpuserid || ( '1' === $user_perm[14] && '1' === $user_perm[17] ) ) {
+				$proceed_flag = 'viewandedit';
+			} elseif ( '1' === $user_perm[14] && '0' === $user_perm[17] ) {
+				$proceed_flag = 'viewonly';
+			} else {
+				$proceed_flag = 'noaccess';
+			}
 
 			// The loop that will build each individual day's final full html entry.
 			foreach ( $useralldata as $key => $indiv_day ) {
@@ -1454,17 +1517,31 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Diet_Forms_Actual', false ) ) :
 				// Increment the $key variable by one to not conflict with the data in the 'Enter' section.
 				$key++;
 
-				// Output the individual data items.
-				$piece_one = $this->output_diet_enter_config_food_item( $key, 'previous' );
+				if ( 'noaccess' !== $proceed_flag ) {
 
-				// Get the HTML that will wrap each day's data, providing the div that the user will click on to expand and view that day's data.
-				$piece_wrapper_html_open  = $this->output_diet_enter_config_all_data_wrapper_html_open( $key, 'previous' );
-				$piece_wrapper_html_close = $this->output_diet_enter_config_all_data_wrapper_html_close( $key );
+					// Output the individual data items.
+					$piece_one = $this->output_diet_enter_config_food_item( $key, 'previous' );
 
-				// Finish up with the Spinner, response message area, and the Save button.
-				$end_piece = $this->output_diet_ending( 'previous', $key );
+					// Get the HTML that will wrap each day's data, providing the div that the user will click on to expand and view that day's data.
+					$piece_wrapper_html_open  = $this->output_diet_enter_config_all_data_wrapper_html_open( $key, 'previous' );
+					$piece_wrapper_html_close = $this->output_diet_enter_config_all_data_wrapper_html_close( $key );
 
-				$this->final_complete_output = $this->final_complete_output . $piece_wrapper_html_open . $piece_one . $end_piece . $piece_wrapper_html_close;
+					if ( 'viewandedit' === $proceed_flag ) {
+						$end_piece = $this->output_diet_ending( 'previous', $key );
+					} else {
+						$end_piece = '<div style="margin-top:-25px;"></div>';
+					}
+
+					$this->final_complete_output = $this->final_complete_output . $piece_wrapper_html_open . $piece_one . $end_piece . $piece_wrapper_html_close;
+
+				} else {
+
+					// Output the No Acess message.
+					require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
+					$this->access                = new WPHealthTracker_Utilities_Accesscheck();
+					$this->final_complete_output = $this->access->wphealthtracker_accesscheck_no_permission_message();
+
+				}
 			}
 
 			// If $this->final_complete_output != '', indicating that previously-saved data WAS found for this user, add the data 'Filter' HTML.

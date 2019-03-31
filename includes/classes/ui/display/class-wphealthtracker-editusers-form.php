@@ -141,10 +141,26 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Edit_Users_Form', false ) ) :
 			// Set the current WordPress user.
 			$currentwpuser = wp_get_current_user();
 
+			// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+			$transients       = new WPHealthTracker_Transients();
+			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $currentwpuser->ID );
+			$transient_exists = $transients->existing_transient_check( $transient_name );
+			if ( $transient_exists ) {
+				$user = $transient_exists;
+			} else {
+				$query = 'SELECT * FROM ' . $users_table_name . '  WHERE wpuserid = ' . $currentwpuser->ID;
+				$user  = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
+			}
+
+			// Now get the user's permissions.
+			$user_perm = explode( ',', $user->permissions );
+
 			// Now we'll determine access, and stop all execution if user isn't allowed in.
 			require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
 			$this->access          = new WPHealthTracker_Utilities_Accesscheck();
-			$this->currentwphtuser = $this->access->wphealthtracker_accesscheck( $currentwpuser->ID );
+			$this->currentwphtuser = $this->access->wphealthtracker_accesscheck( $currentwpuser->ID, $user_perm[5] );
 
 			// If we received false from accesscheck class, display permissions message.
 			if ( false === $this->currentwphtuser ) {

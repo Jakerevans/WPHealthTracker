@@ -23,16 +23,26 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 		 */
 		public function edit_users_tab_trans_strings() {
 
-			$this->edituser_trans_1  = __( 'Select a User to Edit & Delete', 'wphealthtracker-textdomain' );
-			$this->edituser_trans_2  = __( 'Edit & Delete Existing Users Below', 'wphealthtracker-textdomain' );
-			$this->edituser_trans_3  = __( 'Select This User', 'wphealthtracker-textdomain' );
-			$this->edituser_trans_4  = __( 'Save Changes to This User', 'wphealthtracker-textdomain' );
-			
+			$this->edituser_trans_1 = __( 'Select a User to Edit & Delete', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_2 = __( 'Edit & Delete Existing Users Below', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_3 = __( 'Select This User', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_4 = __( 'Save Changes to This User', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_5 = __( 'You\'ve just edited this WPHealthTracker User', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_6 = __( 'Delete This User', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_7 = __( 'Delete User', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_8 = __( 'Cancel', 'wphealthtracker-textdomain' );
+			$this->edituser_trans_9 = __( 'Are you sure? Once deleted, all associated data will be removed forever for this user!', 'wphealthtracker-textdomain' );
+
 			return $translation_array = array(
 				'editusertrans1' => $this->edituser_trans_1,
 				'editusertrans2' => $this->edituser_trans_2,
 				'editusertrans3' => $this->edituser_trans_3,
 				'editusertrans4' => $this->edituser_trans_4,
+				'editusertrans5' => $this->edituser_trans_5,
+				'editusertrans6' => $this->edituser_trans_6,
+				'editusertrans7' => $this->edituser_trans_7,
+				'editusertrans8' => $this->edituser_trans_8,
+				'editusertrans9' => $this->edituser_trans_9,
 			);
 		}
 

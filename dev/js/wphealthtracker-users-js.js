@@ -145,7 +145,7 @@ jQuery( document ).ready( function( $ ) {
 		$( document ).on( 'click', '#wphealthtracker-response-form-input-text-profileimage-button', function( event ) {
 
 			var imageFrame;
-			e.preventDefault();
+			event.preventDefault();
 
 			if ( imageFrame ) {
 				imageFrame.open();

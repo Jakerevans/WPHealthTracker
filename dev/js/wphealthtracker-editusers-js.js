@@ -29,7 +29,119 @@ jQuery( document ).ready( function( $ ) {
 	// Function to save edits to a WPHealthTracker User.
 	wphealthtrackerEditUser();
 
+	// For checking for, and displaying error message, if emails don't match.
+	wphealthtrackerJreUsersEmailMatching();
+
+	// For revealing the Godmode message
+	wphealthtrackerJreUsersRevealGodmodeMessage();
+
+	// For revealing the User Deletion message
+	wphealthtrackerJreUsersRevealDeletionMessage();
+
+	// For deleting a user and all their associated data
+	wphealthtrackerDeleteUserActual();
+
 	/* ENDING SECTION TO CALL ALL FUNCTIONS IN FILE... */
+
+	// Populates the Edit User form area after a user has been selected.
+	function wphealthtrackerDeleteUserActual() {
+
+
+		$( document ).on( 'click', '#wphealthtracker-delete-user-button-confirm', function( event ) {
+
+			var wpuserid = $( '#wphealthtracker-edituser-name-search-input' ).val();
+			var request = '';
+			var data = {
+				'action': 'wphealthtracker_jre_selecteduser_delete_user_actual_action',
+				'security': wphealthtrackerPhpVariables.editusersnonce3,
+				'wpuserid': wpuserid
+			};
+
+			$( '#wphealthtracker-spinner-delete-user' ).animate({'opacity': '1'});
+
+			console.log( 'This is the data being sent to the server to delete the user\'s data on the "Edit & Delete Users" tab:' );
+			console.log( data );
+
+			request = $.ajax({
+				url: ajaxurl,
+				type: 'POST',
+				data: data,
+				timeout: 0,
+				success: function( response ) {
+
+			console.log(response);
+
+				},
+				error: function( jqXHR, textStatus, errorThrown ) {
+					console.log( errorThrown );
+					console.log( textStatus );
+					console.log( jqXHR );
+				}
+			});
+		});
+	}
+
+	// For revealing the Godmode message.
+	function wphealthtrackerJreUsersRevealDeletionMessage() {
+
+		$( document ).on( 'click', '#wphealthtracker-delete-user-button-initial', function( event ) {
+			var messageBlock = $( '#wphealthtracker-delete-user-wrapper #wphealthtracker-create-user-godmode-warning-message' );
+			messageBlock.css({'display': 'block'});
+			messageBlock.animate({'height': '200px', 'opacity': '1'}, 600 );
+			$( this ).attr( 'disabled', true );
+		});
+
+		$( document ).on( 'click', '#wphealthtracker-delete-user-button-cancel', function( event ) {
+			var messageBlock = $( '#wphealthtracker-delete-user-wrapper #wphealthtracker-create-user-godmode-warning-message' );
+			messageBlock.animate({'height': 0, 'opacity': 0}, 600 );
+			$( '#wphealthtracker-delete-user-button-initial' ).removeAttr( 'disabled' );
+		});
+	}
+
+	// For revealing the Godmode message.
+	function wphealthtrackerJreUsersRevealGodmodeMessage() {
+
+		$( document ).on( 'change', '#wphealthtracker-response-form-select-create-user-role', function( event ) {
+
+			var messageBlock = $( '#wphealthtracker-create-user-godmode-warning-message' );
+
+			if ( wphealthtrackerPhpVariables.usertrans45 === $( this ).val() ) {
+				messageBlock.css({'display': 'block'});
+				messageBlock.animate({'height': '175px', 'opacity': '1'}, 600 );
+
+			} else {
+				messageBlock.animate({'height': 0, 'opacity': 0}, 600 );
+			}
+		});
+	}
+
+	// For checking for, and displaying error message if, emails don't match.
+	function wphealthtrackerJreUsersEmailMatching() {
+
+		$( document ).on( 'keyup', '#wphealthtracker-response-form-input-text-emailconfirm, #wphealthtracker-response-form-input-text-email', function( event ) {
+
+			// Get the two E-Mail values
+			var email = $( '#wphealthtracker-response-form-input-text-email' ).val();
+			var emailConfirm = $( '#wphealthtracker-response-form-input-text-emailconfirm' ).val();
+			var message = $( '#wphealthracker-create-users-match-response-p-email' );
+
+			var happy = '<img class="wphealthtracker-stats-good-data-smile" id="wphealthtracker-stats-good-data-smile-emails-match" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg">';
+
+			var shocked = '<img class="wphealthtracker-stats-good-data-smile" id="wphealthtracker-stats-good-data-smile-emails-mismatch" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg">';
+
+			setTimeout( function() {
+				if ( email !== emailConfirm ) {
+					message.html( wphealthtrackerPhpVariables.usertrans37 + '<br/>' + wphealthtrackerPhpVariables.usertrans40 + shocked );
+					message.css({'color': '#DE235A'});
+					message.animate({'opacity': '1'}, 300 );
+				} else {
+					message.html( wphealthtrackerPhpVariables.usertrans37 + '<br/>' + wphealthtrackerPhpVariables.usertrans38 + happy );
+					message.css({'color': '#54AD59'});
+					message.animate({'opacity': '1'}, 300 );
+				}
+			}, 1000 );
+		});
+	}
 
 	// For making data checks before saving user
 	function wphealthtrackerDataChecksForSavingUserEdits() {
@@ -37,8 +149,6 @@ jQuery( document ).ready( function( $ ) {
 		var firstname = $( '#wphealthtracker-response-form-input-text-firstname' ).val();
 		var email = $( '#wphealthtracker-response-form-input-text-email' ).val();
 		var emailconfirm = $( '#wphealthtracker-response-form-input-text-emailconfirm' ).val();
-		var password = $( '#wphealthtracker-response-form-input-text-password' ).val();
-		var passwordconfirm = $( '#wphealthtracker-response-form-input-text-passwordconfirm' ).val();
 		var username = $( '#wphealthtracker-response-form-input-text-username' ).val();
 		var role = $( '#wphealthtracker-response-form-select-create-user-role' ).val();
 
@@ -50,7 +160,7 @@ jQuery( document ).ready( function( $ ) {
 
 
 		// Checking for missing data
-		if ( '' === firstname || '' === email || '' === emailconfirm || '' === password || '' === passwordconfirm || '' === username ) {
+		if ( '' === firstname || '' === email || '' === emailconfirm || '' === username ) {
 
 			if ( '' === firstname ) {
 				$( '#wphealthtracker-response-form-input-text-firstname' ).prev().prev().addClass( 'wphealthtracker-missing-data-animation' );
@@ -73,20 +183,6 @@ jQuery( document ).ready( function( $ ) {
 				return false;
 			}
 
-			if ( '' === password ) {
-				$( '#wphealthtracker-response-form-input-text-password' ).prev().prev().prev().addClass( 'wphealthtracker-missing-data-animation' );
-				alert( wphealthtrackerPhpVariables.commontrans4 );
-				$( 'html, body' ).animate({ scrollTop: $( '#wphealthtracker-response-form-input-text-password' ).offset().top - 150 }, 1000 );
-				return false;
-			}
-
-			if ( '' === passwordconfirm ) {
-				$( '#wphealthtracker-response-form-input-text-passwordconfirm' ).prev().prev().addClass( 'wphealthtracker-missing-data-animation' );
-				alert( wphealthtrackerPhpVariables.commontrans4 );
-				$( 'html, body' ).animate({ scrollTop: $( '#wphealthtracker-response-form-input-text-passwordconfirm' ).offset().top - 150 }, 1000 );
-				return false;
-			}
-
 			if ( '' === username ) {
 				$( '#wphealthtracker-response-form-input-text-username' ).prev().prev().addClass( 'wphealthtracker-missing-data-animation' );
 				alert( wphealthtrackerPhpVariables.commontrans4 );
@@ -105,19 +201,6 @@ jQuery( document ).ready( function( $ ) {
 			alert( wphealthtrackerPhpVariables.usertrans84 );
 
 			$( 'html, body' ).animate({ scrollTop: $( '#wphealthtracker-response-form-input-text-email' ).offset().top - 150 }, 1000 );
-			return false;
-		}
-
-		// Now checking for matching Passwords.
-		if ( wphealthtrackerPhpVariables.usertrans39 + wphealthtrackerPhpVariables.usertrans40 === $( '#wphealthracker-create-users-match-response-p-password' ).text() ) {
-
-			$( '#wphealthtracker-response-form-input-text-passwordconfirm' ).prev().prev().addClass( 'wphealthtracker-missing-data-animation' );
-
-			$( '#wphealthtracker-response-form-input-text-password' ).prev().prev().prev().addClass( 'wphealthtracker-missing-data-animation' );
-
-			alert( wphealthtrackerPhpVariables.usertrans85 );
-
-			$( 'html, body' ).animate({ scrollTop: $( '#wphealthtracker-response-form-input-text-password' ).offset().top - 150 }, 1000 );
 			return false;
 		}
 
@@ -162,9 +245,6 @@ jQuery( document ).ready( function( $ ) {
 			// Hide the response div until we've fully populated it.
 			$( '.wphealthtracker-create-user-div' ).css({'opacity':'0'});
 
-			// Reset things.
-			$( '.wphealthtracker-create-user-div' ).html( '' );
-
 			$( '#wphealthtracker-spinner-select-user' ).animate({'opacity': '1'});
 
 			console.log( 'This is the data being sent to the server to retreive the user\'s data and the form for the "Edit & Delete Users" container on the "Edit & Delete Users" tab:' );
@@ -176,11 +256,19 @@ jQuery( document ).ready( function( $ ) {
 				data: data,
 				timeout: 0,
 				success: function( response ) {
+					console.log('fds');
+					console.log(response)
 
 					var response = response.split( '--sep--' );
 					var userData = JSON.parse( response[1] );
 					var height   = '';
-					var editButtonHtml = '<div class="wphealthtracker-save-spinner-response-div"><div class="wphealthtracker-spinner-primary" id="wphealthtracker-spinner-save-users"></div><div class="wphealthtracker-response-message-div" id="wphealthtracker-response-message-users-div"></div><button id="wphealthtracker-edit-existing-users">' + wphealthtrackerPhpVariables.editusertrans4 + '</button></div>';
+
+
+					if ( userData.wpuserid === response[3] || 'godmode' === userData.role ) {
+						var editButtonHtml = '<div class="wphealthtracker-save-spinner-response-div"><div class="wphealthtracker-spinner-primary" id="wphealthtracker-spinner-save-users"></div><div class="wphealthtracker-response-message-div" id="wphealthtracker-response-message-users-div"></div><button id="wphealthtracker-edit-existing-users">' + wphealthtrackerPhpVariables.editusertrans4 + '</button></div></div>';
+					} else {
+						var editButtonHtml = '<div class="wphealthtracker-save-spinner-response-div"><div class="wphealthtracker-spinner-primary" id="wphealthtracker-spinner-save-users"></div><div class="wphealthtracker-response-message-div" id="wphealthtracker-response-message-users-div"></div><button id="wphealthtracker-edit-existing-users">' + wphealthtrackerPhpVariables.editusertrans4 + '</button><div id="wphealthtracker-delete-user-wrapper"><button id="wphealthtracker-delete-user-button-initial">' + wphealthtrackerPhpVariables.editusertrans6 + '</button><div id="wphealthtracker-create-user-godmode-warning-message"><p id="wphealthtracker-create-user-godmode-warning-message-title">' + wphealthtrackerPhpVariables.usertrans46 + '</p><img id="wphealthtracker-create-user-godmode-warning-message-image" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'warning.svg"><p id="wphealthtracker-create-user-godmode-warning-message-body">' + wphealthtrackerPhpVariables.editusertrans9 + '</p><button id="wphealthtracker-delete-user-button-confirm">' + wphealthtrackerPhpVariables.editusertrans7 + '</button><button id="wphealthtracker-delete-user-button-cancel">' + wphealthtrackerPhpVariables.editusertrans8 + '</button><div class="wphealthtracker-spinner-primary" id="wphealthtracker-spinner-delete-user"></div></div></div></div>';
+					}
 
 					$( '.wphealthtracker-create-user-div' ).html( response[0] + editButtonHtml );
 
@@ -196,11 +284,6 @@ jQuery( document ).ready( function( $ ) {
 
 					$( '#wphealthtracker-response-form-password1-row-div' ).html( '<button onclick="window.open(\'' + response[2] + '\');" type="button" target="_blank"  class="button wp-generate-pw hide-if-no-js" id="wphealthtracker-password-edit-link">Reset User\'s Password</button>' );
 					$( '#wphealthtracker-response-form-password2-row-div' ).css({'display':'none'});
-
-
-
-
-					
 
 					if ( 'godmode' === userData.role ) {
 						$( '#wphealthtracker-response-form-select-create-user-role' ).val( 'SuperAdmin' );
@@ -257,8 +340,6 @@ jQuery( document ).ready( function( $ ) {
 			var lastname = $( '#wphealthtracker-response-form-input-text-lastname' ).val();
 			var email = $( '#wphealthtracker-response-form-input-text-email' ).val();
 			var emailconfirm = $( '#wphealthtracker-response-form-input-text-emailconfirm' ).val();
-			var password = $( '#wphealthtracker-response-form-input-text-password' ).val();
-			var passwordconfirm = $( '#wphealthtracker-response-form-input-text-passwordconfirm' ).val();
 			var username = $( '#wphealthtracker-response-form-input-text-username' ).val();
 			var role = $( '#wphealthtracker-response-form-select-create-user-role' ).val();
 			var country = $( '#wphealthtracker-response-form-input-text-country' ).val();
@@ -287,14 +368,12 @@ jQuery( document ).ready( function( $ ) {
 			if ( proceed ) {
 
 				data = {
-					'action': 'wphealthtracker_jre_create_wp_users_data_action',
-					'security': wphealthtrackerPhpVariables.usersnonce2,
+					'action': 'wphealthtracker_jre_edit_users_data_action',
+					'security': wphealthtrackerPhpVariables.editusersnonce2,
 					'firstname': firstname,
 					'lastname': lastname,
 					'email': email,
 					'emailconfirm': emailconfirm,
-					'password': password,
-					'passwordconfirm': passwordconfirm,
 					'username': username,
 					'role': role,
 					'country': country,
@@ -322,104 +401,47 @@ jQuery( document ).ready( function( $ ) {
 					timeout: 0,
 					success: function( response ) {
 
-						console.log('REsponse from checking for existing emails and usernames is:')
+						console.log('in success of call to actually edit user')
 						console.log(response)
 
-						if ( 'Username Exists' === response ) {
+						console.log( 'This is what we received back from the Server after trying to Insert/Update some daily data. Response[0] is either how many rows were modified, or the DB error message. Response[1] is the type of $wpdb function. Response[2] is Humandate. Response[3] is WP User ID. Response[4] is the $wpdb->prepared Query. Response[5] is the list of Transients that were deleted. Response[6] is the actual array of data we tried to insert/update with.' );
+						response = JSON.parse( response );
+						response[6] = JSON.parse( response[6]);
+						console.log( response );
 
-							console.log('in usernames exists')
-							console.log(response)
+						// Turn off spinner...
+						$( '#wphealthtracker-spinner-save-users' ).animate({'opacity': 0}, 100 );
 
-							$( '#wphealthtracker-spinner-save-users' ).animate({'opacity': 0}, 100 );
+						// We successfully executed our DB query - doesn't mean anything was actually changed though - we could have effected zero rows - still, no errors so we're calling it good.
+						responsetype = false;
+						responseHtml = '';
+						if ( 1 === response[0] || 0 === response[0]) {
+
+							// Flag to determine what height to animate reponse div to
+							responsetype = true;
+
+							// Modify the response based on type of query
+							if ( 'update' === response[1]) {
+								responseHtml = '<img class="wphealthtracker-ajax-return-img" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg" /><p class="wphealthtracker-success-title">' + wphealthtrackerPhpVariables.ajaxreturn1 + '</p><p class="wphealthtracker-success-description">' + wphealthtrackerPhpVariables.editusertrans5 + '!</p><p class="wphealthtracker-success-advert">' + wphealthtrackerPhpVariables.ajaxreturn4 + ' <a href="">' + wphealthtrackerPhpVariables.ajaxreturn5 + '</a> ' + wphealthtrackerPhpVariables.ajaxreturn6 + '</p><p class="wphealthtracker-success-reviews">' + wphealthtrackerPhpVariables.ajaxreturn7 + ' <a href="">' + wphealthtrackerPhpVariables.ajaxreturn8 + '</a> ' + wphealthtrackerPhpVariables.ajaxreturn9 + ' <a href="">' + wphealthtrackerPhpVariables.ajaxreturn10 + '</a>!</p>';
+							}
+
+						} else {
 
 							// Create the Error messaging here - print out the mysql error for user to report back with
-							responseHtml = '<img class="wphealthtracker-ajax-return-img" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg" /><p class="wphealthtracker-success-title">' + wphealthtrackerPhpVariables.ajaxreturn11 + '</p><p class="wphealthtracker-success-description">' + wphealthtrackerPhpVariables.usertrans86  +  ' '  +  username  +  '!</br>' + wphealthtrackerPhpVariables.usertrans87 + '</p>';
-
-							// Add the response HTML and animate the height...
-							responseDiv.html( responseHtml );
-							responseDiv.animate({'height': '150px', 'opacity': '1'}, 500 );
+							responseHtml = '<img class="wphealthtracker-ajax-return-img" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg" /><p class="wphealthtracker-success-title">' + wphealthtrackerPhpVariables.ajaxreturn11 + '</p><p class="wphealthtracker-success-description">' + wphealthtrackerPhpVariables.ajaxreturn12 + '...</p><p class="wphealthtracker-success-advert">' + wphealthtrackerPhpVariables.ajaxreturn13 + ' <a href="mailto:techsupport@wphealthtracker.com">TechSupport@WPHealthTracker.com</a>:  <textarea class="wphealthtracker-ajax-error-textarea">' + response[0] + '</textarea></p><p class="wphealthtracker-success-reviews">' + wphealthtrackerPhpVariables.ajaxreturn14 + '!</p>';
 						}
 
-						if ( 'E-Mail Exists' === response ) {
+						// Add the response HTML and animate the height...
+						responseDiv.html( responseHtml );
 
-							console.log('in emails exists')
-							console.log(response)
-
-							$( '#wphealthtracker-spinner-save-users' ).animate({'opacity': 0}, 100 );
-
-							// Create the Error messaging here - print out the mysql error for user to report back with
-							responseHtml = '<img class="wphealthtracker-ajax-return-img" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg" /><p class="wphealthtracker-success-title">' + wphealthtrackerPhpVariables.ajaxreturn11 + '</p><p class="wphealthtracker-success-description">' + wphealthtrackerPhpVariables.usertrans88  +  ' '  +  email  +  '!</br>' + wphealthtrackerPhpVariables.usertrans89 + '</p>';
-
-							// Add the response HTML and animate the height...
-							responseDiv.html( responseHtml );
-							responseDiv.animate({'height': '150px', 'opacity': '1'}, 500 );
+						// Animate to one height if db entry was successful, otherwise animate to different height.
+						if ( responsetype ) {
+							responseDiv.animate({'height': '175px', 'opacity': '1'}, 500 );
+						} else {
+							responseDiv.animate({'height': '290px', 'opacity': '1'}, 500 );
 						}
 
-						console.log('typeof response is:')
-						console.log(typeof response)
-						response = response.split('---sep---');
-
-						if ( '$user_id' === response[0]  ) {
-
-							console.log('in number typeof')
-							console.log(response)
-
-							data.action = 'wphealthtracker_jre_save_users_data_action';
-							data.security = wphealthtrackerPhpVariables.usersnonce1;
-							data.wpuserid = response[1];
-
-							$.ajax({
-								url: ajaxurl,
-								type: 'POST',
-								data: data,
-								timeout: 0,
-								success: function( response ) {
-
-									console.log('in success of call to actually create user')
-									console.log(response)
-
-									console.log( 'This is what we received back from the Server after trying to Insert/Update some daily data. Response[0] is either how many rows were modified, or the DB error message. Response[1] is the type of $wpdb function. Response[2] is Humandate. Response[3] is WP User ID. Response[4] is the $wpdb->prepared Query. Response[5] is the list of Transients that were deleted. Response[6] is the actual array of data we tried to insert/update with.' );
-									response = JSON.parse( response );
-									response[6] = JSON.parse( response[6]);
-									console.log( response );
-
-									// Turn off spinner...
-									$( '#wphealthtracker-spinner-save-users' ).animate({'opacity': 0}, 100 );
-
-									// We successfully executed our DB query - doesn't mean anything was actually changed though - we could have effected zero rows - still, no errors so we're calling it good.
-									responsetype = false;
-									responseHtml = '';
-									if ( 1 === response[0] || 0 === response[0]) {
-
-										// Flag to determine what height to animate reponse div to
-										responsetype = true;
-
-										// Modify the response based on type of query
-										if ( 'insert' === response[1]) {
-											responseHtml = '<img class="wphealthtracker-ajax-return-img" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'happy.svg" /><p class="wphealthtracker-success-title">' + wphealthtrackerPhpVariables.ajaxreturn1 + '</p><p class="wphealthtracker-success-description">' + wphealthtrackerPhpVariables.usertrans90 + '!</p><p class="wphealthtracker-success-advert">' + wphealthtrackerPhpVariables.ajaxreturn4 + ' <a href="">' + wphealthtrackerPhpVariables.ajaxreturn5 + '</a> ' + wphealthtrackerPhpVariables.ajaxreturn6 + '</p><p class="wphealthtracker-success-reviews">' + wphealthtrackerPhpVariables.ajaxreturn7 + ' <a href="">' + wphealthtrackerPhpVariables.ajaxreturn8 + '</a> ' + wphealthtrackerPhpVariables.ajaxreturn9 + ' <a href="">' + wphealthtrackerPhpVariables.ajaxreturn10 + '</a>!</p>';
-										}
-
-									} else {
-
-										// Create the Error messaging here - print out the mysql error for user to report back with
-										responseHtml = '<img class="wphealthtracker-ajax-return-img" src="' + wphealthtrackerPhpVariables.WPHEALTHTRACKER_ROOT_IMG_ICONS_URL + 'shocked.svg" /><p class="wphealthtracker-success-title">' + wphealthtrackerPhpVariables.ajaxreturn11 + '</p><p class="wphealthtracker-success-description">' + wphealthtrackerPhpVariables.ajaxreturn12 + '...</p><p class="wphealthtracker-success-advert">' + wphealthtrackerPhpVariables.ajaxreturn13 + ' <a href="mailto:techsupport@wphealthtracker.com">TechSupport@WPHealthTracker.com</a>:  <textarea class="wphealthtracker-ajax-error-textarea">' + response[0] + '</textarea></p><p class="wphealthtracker-success-reviews">' + wphealthtrackerPhpVariables.ajaxreturn14 + '!</p>';
-									}
-
-									// Add the response HTML and animate the height...
-									responseDiv.html( responseHtml );
-
-									// Animate to one height if db entry was successful, otherwise animate to different height.
-									if ( responsetype ) {
-										responseDiv.animate({'height': '175px', 'opacity': '1'}, 500 );
-									} else {
-										responseDiv.animate({'height': '290px', 'opacity': '1'}, 500 );
-									}
-
-								}
-							});
-						}
 					}
-
 				});
 
 			} else {

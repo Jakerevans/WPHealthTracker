@@ -240,7 +240,8 @@ global $wpdb;
 			'statsexercisenonce1' => 'wphealthtracker_jre_grab_user_data_for_exercise_dashboard_action_callback',
 			'statsexercisenonce2' => 'wphealthtracker_jre_grab_user_data_for_exercise_d3_action_callback',
 			'editusersnonce1'     => 'wphealthtracker_jre_selecteduser_edit_user_populate_action_callback',
-			'editusersnonce2'     => 'wphealthtracker_jre_selecteduser_edit_user_action_callback',
+			'editusersnonce2'     => 'wphealthtracker_jre_edit_users_data_action_callback',
+			'editusersnonce3'     => 'wphealthtracker_jre_selecteduser_delete_user_actual_action_callback',
 		))
 	);
 
@@ -405,6 +406,10 @@ global $wpdb;
 	add_action( 'wp_ajax_wphealthtracker_jre_selecteduser_edit_user_populate_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_selecteduser_edit_user_populate_action_callback' ) );
 	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_selecteduser_edit_user_populate_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_selecteduser_edit_user_populate_action_callback' ) );
 
+	// For deleting a user and all their associated data.
+	add_action( 'wp_ajax_wphealthtracker_jre_selecteduser_delete_user_actual_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_selecteduser_delete_user_actual_action_callback' ) );
+	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_selecteduser_delete_user_actual_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_selecteduser_delete_user_actual_action_callback' ) );
+
 	// For populating the 'View' container on the Diet tab with the selected user's data and/or the blank form.
 	add_action( 'wp_ajax_wphealthtracker_jre_selecteduser_diet_view_action', array( $wp_health_tracker_diet_ajax_functions, 'wphealthtracker_jre_selecteduser_diet_view_action_callback' ) );
 	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_selecteduser_diet_view_action', array( $wp_health_tracker_diet_ajax_functions, 'wphealthtracker_jre_selecteduser_diet_view_action_callback' ) );
@@ -425,9 +430,13 @@ global $wpdb;
 	add_action( 'wp_ajax_wphealthtracker_jre_create_wp_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_create_wp_users_data_action_callback' ) );
 	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_create_wp_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_create_wp_users_data_action_callback' ) );
 
-	// For saving and/or updating existing user data on the Users tab.
+	// For creating a new wphealthtracker user on the Users tab.
 	add_action( 'wp_ajax_wphealthtracker_jre_save_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_save_users_data_action_callback' ) );
 	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_save_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_save_users_data_action_callback' ) );
+
+	// For editing a new wphealthtracker user on the Users tab.
+	add_action( 'wp_ajax_wphealthtracker_jre_edit_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_edit_users_data_action_callback' ) );
+	add_action( 'wp_ajax_nopriv_wphealthtracker_jre_edit_users_data_action', array( $wp_health_tracker_users_ajax_functions, 'wphealthtracker_jre_edit_users_data_action_callback' ) );
 
 /* END OF AJAX FUNCTIONS FOUND IN WPHEALTHTRACKER-USERS-AJAX.PHP THAT ARE SPECIFIC TO THE USERS TAB */
 

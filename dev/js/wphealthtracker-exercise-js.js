@@ -581,6 +581,9 @@ jQuery(document).ready(function($) {
             // Get response div for the 'Enter' container and set the html
             responseEnterDiv.html(response[0]);
 
+            // Change styling of 'No Access' Message.
+            $( '.wphealthtracker-no-saved-data-stats-div p, .wphealthtracker-no-saved-span-stats-1' ).css({'color':'#fff'});
+
             // Activate the Select2 stuff
             $('.select2-input').select2();
 

@@ -177,7 +177,7 @@ if ( ! class_exists( 'WPHealthTracker_Diet_Ajax_Functions', false ) ) :
 
 			// Instantiate the class and get the final output for the current day's data.
 			$tabformclass_previous = new WPHEALTHTRACKER_Diet_Forms_Actual();
-			$tabformclass_previous->output_previous_data( $useralldata, $userfirst, $userlast );
+			$tabformclass_previous->output_previous_data( $useralldata, $userfirst, $userlast, $wpuserid );
 
 			// Build array of values to return to browser.
 			$return_array = array(
@@ -255,7 +255,7 @@ if ( ! class_exists( 'WPHealthTracker_Diet_Ajax_Functions', false ) ) :
 
 			// Instantiate the class and get the final output for the current day's data.
 			$tabformclass_previous = new WPHEALTHTRACKER_Diet_Forms_Actual();
-			$tabformclass_previous->output_previous_data( $useralldata, $userfirst, $userlast );
+			$tabformclass_previous->output_previous_data( $useralldata, $userfirst, $userlast, $wpuserid );
 
 			// Build array of values to return to browser.
 			$return_array = array(

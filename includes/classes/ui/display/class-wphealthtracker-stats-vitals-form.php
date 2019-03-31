@@ -134,13 +134,54 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Stats_Vitals_Form', false ) ) :
 
 				$this->userstring = '<select autocomplete="off" class="wphealthtracker-user-dropdown-select" id="wphealthtracker-user-dropdown-select-vital-stats" data-select-tab="vitals"><option selected default disabled>' . $this->trans->common_trans_16 . '</option>';
 
-				foreach ( $this->allusers as $key => $user ) {
+				// This entire if/else section deals with checking whether the user has permissions or not.
+				global $wpdb;
+				if ( null === $this->default_user ) {
+					// Set the current WordPress user.
+					$currentwpuser = wp_get_current_user();
 
-					if ( $this->default_user === $user->wpuserid ) {
-						$this->userstring = $this->userstring . '<option selected value="' . $user->wpuserid . '">' . $user->firstname . ' ' . $user->lastname . '</option>';
+					// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+					$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+					require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+					$transients       = new WPHealthTracker_Transients();
+					$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $currentwpuser->ID );
+					$transient_exists = $transients->existing_transient_check( $transient_name );
+					if ( $transient_exists ) {
+						$this->default_user_data = $transient_exists;
 					} else {
-						$this->userstring = $this->userstring . '<option value="' . $user->wpuserid . '">' . $user->firstname . ' ' . $user->lastname . '</option>';
+						$query                    = 'SELECT * FROM ' . $users_table_name . '  WHERE wpuserid = ' . $currentwpuser->ID;
+						$this->default_user_data  = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
 					}
+				} else {
+					// Make call to Transients class to see if Transient currently exists. If so, retrieve it, if not, make call to create_transient() with all required Parameters.
+					$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+					require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+					$transients       = new WPHealthTracker_Transients();
+					$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE wpuserid == ' . $this->default_user );
+					$transient_exists = $transients->existing_transient_check( $transient_name );
+					if ( $transient_exists ) {
+						$this->default_user_data = $transient_exists;
+					} else {
+						$query                    = 'SELECT * FROM ' . $users_table_name . '  WHERE wpuserid = ' . $this->default_user;
+						$this->default_user_data  = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
+					}
+				}
+
+				// Now get the user's permissions.
+				$user_perm = explode( ',', $this->default_user_data->permissions );
+
+				if ( '1' === $user_perm[13] ) {
+
+					foreach ( $this->allusers as $key => $user ) {
+
+						if ( $this->default_user === $user->wpuserid ) {
+							$this->userstring = $this->userstring . '<option selected value="' . $user->wpuserid . '">' . $user->firstname . ' ' . $user->lastname . '</option>';
+						} else {
+							$this->userstring = $this->userstring . '<option value="' . $user->wpuserid . '">' . $user->firstname . ' ' . $user->lastname . '</option>';
+						}
+					}
+				} else {
+					$this->userstring = $this->userstring . '<option selected value="' . $this->default_user_data->wpuserid . '">' . $this->default_user_data->firstname . ' ' . $this->default_user_data->lastname . '</option>';
 				}
 
 				$this->userstring = $this->userstring . '</select>';

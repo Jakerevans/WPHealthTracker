@@ -29,7 +29,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 		 *
 		 * @param int $wpuserid - The users ID we're checking access on.
 		 */
-		public function wphealthtracker_accesscheck( $wpuserid ) {
+		public function wphealthtracker_accesscheck( $wpuserid, $perm ) {
 
 			global $wpdb;
 
@@ -56,7 +56,7 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 				$perms = explode( ',', $perms );
 
 				// Now check permissions - if user is just a regular user or a reviewer, and they haven't been granted specific access to this page, then they have no access to this page.
-				if ( ( 'admin' !== $this->user->role && 'godmode' !== $this->user->role ) && '1' !== $perms[0] ) {
+				if ( ( 'admin' !== $this->user->role && 'godmode' !== $this->user->role ) && '1' !== $perm ) {
 					return false;
 				} else {
 					return $this->user;
@@ -135,6 +135,19 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 			$gmuser = $this->general_settings->gmuser;
 			$gmuser = explode( ',', $gmuser );
 
+			// Getting the current SuperAdmin.
+			$users_table_name = $wpdb->prefix . 'wphealthtracker_users';
+			require_once WPHEALTHTRACKER_CLASSES_TRANSIENTS_DIR . 'class-wphealthtracker-transients.php';
+			$transients       = new WPHealthTracker_Transients();
+			$transient_name   = 'wpht_' . md5( 'SELECT * FROM ' . $users_table_name . ' WHERE role = "godmode"' );
+			$transient_exists = $transients->existing_transient_check( $transient_name );
+			if ( $transient_exists ) {
+				$gmuser = $transient_exists;
+			} else {
+				$query = 'SELECT * FROM ' . $users_table_name . ' WHERE role = "godmode"';
+				$gmuser  = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
+			}
+
 			// First we'll get all the translations for this tab.
 			require_once WPHEALTHTRACKER_CLASSES_TRANSLATIONS_DIR . 'class-wphealthtracker-translations.php';
 			$this->trans = new WPHealthTracker_Translations();
@@ -147,9 +160,9 @@ if ( ! class_exists( 'WPHealthTracker_Utilities_Accesscheck', false ) ) :
 					<img class="wphealthtracker-shocked-image" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'shocked.svg">
 					<span class="wphealthtracker-no-saved-span-stats-1">' . $this->trans->dashboard_trans_21 . '</span>
 					<br>
-					' . $this->trans->trans_490 . '
+					' . $this->trans->common_trans_75 . '
 					<br>
-					' . $this->trans->common_trans_76 . ' ' . $gmuser[0] . ' ' . $gmuser[1] . ' ' . $this->trans->common_trans_78 . ' ' . $gmuser[2] . ' ' . $this->trans->common_trans_77 . '
+					' . $this->trans->common_trans_76 . ' ' . $gmuser->firstname . ' ' . $gmuser->lastname . ' ' . $this->trans->common_trans_78 . ' ' . $gmuser->email . ' ' . $this->trans->common_trans_77 . '
 					<br><br>
 				</p>
 			</div>';

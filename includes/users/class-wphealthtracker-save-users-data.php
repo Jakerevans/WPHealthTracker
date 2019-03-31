@@ -114,7 +114,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 		public function wphealthtracker_jre_determine_insert_or_update() {
 
 			global $wpdb;
-			$query = $wpdb->prepare( "SELECT * FROM $this->users_table WHERE (wpuserid = %d AND email = %s)", $this->wpuserid, $this->email );
+			$query = $wpdb->prepare( "SELECT * FROM $this->users_table WHERE (wpuserid = %d)", $this->wpuserid );
 			$wpdb->get_row( $query );
 
 			if ( $wpdb->num_rows > 0 ) {
@@ -138,7 +138,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 			$this->prev_god = '';
 			if ( 'SuperAdmin' === $this->users_save_array['role'] ) {
 				$godmode        = 'godmode';
-				$this->prev_god = $wpdb->get_row(  $wpdb->prepare( "SELECT * FROM $this->users_table WHERE role = %s", $godmode ) );
+				$this->prev_god = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $this->users_table WHERE role = %s", $godmode ) );
 
 				$this->users_save_array['role'] = 'godmode';
 			}
@@ -146,12 +146,34 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 			// If we already have a row of saved data for this user on humandate, just update.
 			if ( 'update' === $this->dbmode ) {
 
-			}
+				error_log( print_r( $this->users_save_array, true ) );
 
-			error_log( print_r( $this->users_save_array, true ) );
+				// Update the existing WPHealthtracker User.
+				$format          = array( '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s' );
+				$where           = array( 'wpuserid' => $this->users_save_array['wpuserid'] );
+				$where_format    = array( '%d' );
+				$this->db_result = $wpdb->update( $this->users_table, $this->users_save_array, $where, $format, $where_format );
+
+				// If we modified the DB in any way (if there were no errors and if more than 0 rows were affected), then update the actual WordPress User.
+				if ( $this->db_result > 0 ) {
+
+					$user_id = wp_update_user( array( 'ID' => $this->users_save_array['wpuserid'], 'user_email' => $this->users_save_array['email'], 'first_name' => $this->users_save_array['firstname'], 'last_name' => $this->users_save_array['lastname'] ) );
+				}
+			}
 
 			// If we don't have data saved for this user.
 			if ( 'insert' === $this->dbmode ) {
+
+				// Determine individual permissions based on role
+				if ( 'godmode' === $this->users_save_array['role'] ) {
+					$this->users_save_array['permissions'] = '1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1';
+				} else if ( 'Admin' === $this->users_save_array['role'] ) {
+					$this->users_save_array['permissions'] = '1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1';
+				} else if ( 'Reviewer' === $this->users_save_array['role'] ) {
+					$this->users_save_array['permissions'] = '1,1,1,1,0,0,1,1,1,1,1,1,0,1,1,1,0,0,0,1,1,1';
+				} else {
+					$this->users_save_array['permissions'] = '1,1,1,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0';
+				}
 
 				$this->db_result = $wpdb->insert( $this->users_table, $this->users_save_array, array( '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s' ) );
 			}
@@ -180,7 +202,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 					$this->transients_deleted = $this->transients_deleted . 'SELECT * FROM ' . $this->users_table . ' ORDER BY firstname';
 				}
 
-				if ( '' !== $this->prev_god ) {
+				if ( '' !== $this->prev_god && $this->prev_god->wpuserid !== $this->users_save_array['wpuserid'] ) {
 
 					// Resetting God.
 					$data_format           = array( '%s' );
@@ -188,7 +210,7 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Save_Users_Data', false ) ) :
 						'wpuserid' => $this->prev_god->wpuserid,
 					);
 					$where_format          = array( '%d' );
-					$this->prev_god_result = $wpdb->update( $this->users_table, array( 'role' => 'admin' ), $where, $data_format, $where_format );
+					$this->prev_god_result = $wpdb->update( $this->users_table, array( 'role' => 'Admin', 'permissions' => '1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1' ), $where, $data_format, $where_format );
 				}
 			}
 
