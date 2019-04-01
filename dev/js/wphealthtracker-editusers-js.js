@@ -69,7 +69,7 @@ jQuery( document ).ready( function( $ ) {
 				timeout: 0,
 				success: function( response ) {
 
-			console.log(response);
+					document.location.reload( true );
 
 				},
 				error: function( jqXHR, textStatus, errorThrown ) {

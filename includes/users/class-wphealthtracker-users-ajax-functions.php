@@ -294,8 +294,18 @@ if ( ! class_exists( 'WPHealthTracker_Users_Ajax_Functions', false ) ) :
 			check_ajax_referer( 'wphealthtracker_jre_selecteduser_delete_user_actual_action_callback', 'security' );
 			$wpuserid = filter_var( $_POST['wpuserid'], FILTER_SANITIZE_NUMBER_INT );
 
+			// First delete the user from the Users table.
+			$userdelete_result = $wpdb->delete( $wpdb->prefix . 'wphealthtracker_users', array( 'wpuserid' => $wpuserid ) );
 
-			wp_die( 'fffd' );
+			// Now delete any saved data from the 3 main tables.
+			$vitalsdelete_result   = $wpdb->delete( $wpdb->prefix . 'wphealthtracker_user_daily_data_vitals', array( 'wpuserid' => $wpuserid ) );
+			$dietdelete_result     = $wpdb->delete( $wpdb->prefix . 'wphealthtracker_user_daily_data_diet', array( 'wpuserid' => $wpuserid ) );
+			$exercisedelete_result = $wpdb->delete( $wpdb->prefix . 'wphealthtracker_user_daily_data_exercise', array( 'wpuserid' => $wpuserid ) );
+
+			// Now delete WordPress user.
+			$wpuser_delete = wp_delete_user( $wpuserid );
+
+			wp_die( $vitalsdelete_result . '---' . $dietdelete_result . '---' . $exercisedelete_result . '---' . $wpuser_delete );
 		}
 
 		/**
