@@ -378,6 +378,9 @@ jQuery(document).ready(function($) {
             // Change styling of ''No Access' Message.
             $( '.wphealthtracker-no-saved-data-stats-div p, .wphealthtracker-no-saved-span-stats-1' ).css({'color':'#fff'});
 
+            // The HTML that is used for the Food Calc Extension 
+            responseEnterDiv.append('<span style="display:none;" id="wpht-foodcalc-flag-for-go"></span>');
+
           },
           error: function(jqXHR, textStatus, errorThrown) {
             console.log(errorThrown);

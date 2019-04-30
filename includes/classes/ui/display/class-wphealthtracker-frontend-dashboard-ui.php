@@ -54,6 +54,55 @@ if ( ! class_exists( 'WPBookList_Frontend_Dashboard_UI', false ) ) :
 		 */
 		public function output_login_ui() {
 
+			// Requiring & Calling the file/class that will get the User Form.
+			require_once WPHEALTHTRACKER_CLASSES_UI_DISPLAY_DIR . 'class-wphealthtracker-users-form.php';
+
+			// Instantiate the class.
+			$this->form = new WPHEALTHTRACKER_Users_Form();
+			$this->form->create_form_part_the_basics();
+			$this->form->create_form_part_contact_info();
+			$this->form->create_form_part_profile_info();
+			$this->form->create_form_part_save_response();
+
+			$formhtml = '';
+			$formhtml = $formhtml . $this->form->create_form_part_one;
+			$formhtml = $formhtml . $this->form->create_form_part_two;
+			$formhtml = $formhtml . $this->form->create_form_part_three;
+
+			$string1 = '
+				<div id="wphealthtracker-dashboard-top-wrapper">
+					<div id="wphealthtracker-dashboard-login-wrapper">
+						<div>
+							<label>' . $this->translations->frontdashboard_trans_6 . '</label>
+							<input type="text" placeholder="' . $this->translations->frontdashboard_trans_6 . '"/>
+						</div>
+						<div>
+							<label>' . $this->translations->frontdashboard_trans_7 . '</label>
+							<input type="text" placeholder="' . $this->translations->frontdashboard_trans_7 . '"/>
+						</div>
+						<div id="wphealthtracker-dashboard-login-submit-wrapper">
+							<button>' . $this->translations->frontdashboard_trans_4 . '</button>
+							<div class="wphealthtracker-save-spinner-response-div">
+								<div class="wphealthtracker-spinner-primary" id="wphealthtracker-spinner-dashboard-login"></div>
+								<div class="wphealthtracker-response-message-div" id="wphealthtracker-response-message-dashboard-login"></div>
+							</div>
+						</div>
+					</div>
+					<div id="wphealthtracker-dashboard-register-wrapper">
+						<div id="wphealthtracker-dashboard-register-text-button-wrapper">
+							<p>' . $this->translations->frontdashboard_trans_8 . '</p>
+							<button id="wphealthtracker-dashboard-register-button">' . $this->translations->frontdashboard_trans_5 . '</button>
+							<div id="wphealthtracker-dashboard-register-form-wrapper">
+							' . $formhtml . '
+							</div>
+						</div>
+					</div>
+				</div>
+			';
+
+
+			echo $string1;
+
 		}
 
 		/**
@@ -77,15 +126,8 @@ if ( ! class_exists( 'WPBookList_Frontend_Dashboard_UI', false ) ) :
 								<div class="wphealthtracker-dashboard-profile-info-title">' . $this->translations->frontdashboard_trans_3 . '</div>
 								<div class="wphealthtracker-dashboard-profile-info-data">' . $this->user_wpht_data->favoritemotivationalquote . '</div>
 							</div>
-
-
 						</div>
-
-
 					</div>
-
-
-
 				</div>
 			';
 

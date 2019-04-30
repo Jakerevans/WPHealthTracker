@@ -126,7 +126,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		public function wphealthtracker_jre_frontend_d3_js( $hook ) {
 
 			global $post;
-			if( has_shortcode( $post->post_content, 'wphealthtracker_dietstats') || has_shortcode( $post->post_content, 'wphealthtracker_vitalstats') || has_shortcode( $post->post_content, 'wphealthtracker_exercisestats') ) {
+			if( has_shortcode( $post->post_content, 'wphealthtracker_dietstats') || has_shortcode( $post->post_content, 'wphealthtracker_vitalstats') || has_shortcode( $post->post_content, 'wphealthtracker_exercisestats') || has_shortcode( $post->post_content, 'wphealthtracker_user_dashboard') ) {
 				
 				// First just register the script.
 				wp_register_script( 'wphealthtracker-jre-frontend-d3core', WPHEALTHTRACKER_ROOT_JS_URL . 'd3.min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
@@ -144,7 +144,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		public function wphealthtracker_jre_frontend_dietstats_js( $hook ) {
 
 			global $post;
-			if( has_shortcode( $post->post_content, 'wphealthtracker_dietstats') ) {
+			if( has_shortcode( $post->post_content, 'wphealthtracker_dietstats') || has_shortcode( $post->post_content, 'wphealthtracker_user_dashboard') ) {
 				
 				// First just register the script.
 				wp_register_script( 'wphealthtracker-jre-frontend-dietstats', WPHEALTHTRACKER_ROOT_JS_FRONTEND_URL . 'wphealthtracker-jre-frontend-dietstats-min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
@@ -197,7 +197,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		public function wphealthtracker_jre_frontend_vitalsstats_js( $hook ) {
 
 			global $post;
-			if( has_shortcode( $post->post_content, 'wphealthtracker_vitalstats') ) {
+			if( has_shortcode( $post->post_content, 'wphealthtracker_vitalstats')  || has_shortcode( $post->post_content, 'wphealthtracker_user_dashboard') ) {
 				
 				// First just register the script.
 				wp_register_script( 'wphealthtracker-jre-frontend-vitalsstats', WPHEALTHTRACKER_ROOT_JS_FRONTEND_URL . 'wphealthtracker-jre-frontend-vitalsstats-min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
@@ -250,7 +250,7 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		public function wphealthtracker_jre_frontend_exercisestats_js( $hook ) {
 
 			global $post;
-			if( has_shortcode( $post->post_content, 'wphealthtracker_exercisestats') ) {
+			if( has_shortcode( $post->post_content, 'wphealthtracker_exercisestats')  || has_shortcode( $post->post_content, 'wphealthtracker_user_dashboard') ) {
 				
 				// First just register the script.
 				wp_register_script( 'wphealthtracker-jre-frontend-exercisestats', WPHEALTHTRACKER_ROOT_JS_FRONTEND_URL . 'wphealthtracker-jre-frontend-exercisestats-min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
@@ -529,6 +529,24 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 		}
 
 		/**
+		 * Code for adding the JavaScript file that contains all the functions for User Registration, User Login, and all the Dashboard Features. 
+		 *
+		 * @param int $hook - The menu page hook thing.
+		 */
+		public function wphealthtracker_jre_frontend_dashboard_account_js( $hook ) {
+
+			global $post;
+			if( has_shortcode( $post->post_content, 'wphealthtracker_user_dashboard') ) {
+				
+				// First just register the script.
+				wp_register_script( 'wphealthtracker_frontend', WPHEALTHTRACKER_ROOT_JS_URL . 'wphealthtracker_frontend.min.js', array( 'jquery' ), WPHEALTHTRACKER_VERSION_NUM, true );
+
+				// Enqueued script.
+				wp_enqueue_script( 'wphealthtracker_frontend' );
+			}
+		}
+
+		/**
 		 * Code for adding the  d3.js file
 		 *
 		 * @param int $hook - The menu page hook thing.
@@ -666,12 +684,13 @@ if ( ! class_exists( 'WPHealthTracker_General_Functions', false ) ) :
 
 					$wpdb->insert( $table_name,
 						array(
-							'role'      => 'godmode',
-							'username'  => $current_user->user_login,
-							'email'     => $current_user->user_email,
-							'firstname' => $firstname,
-							'lastname'  => $lastname,
-							'wpuserid'  => $current_user->ID,
+							'role'        => 'godmode',
+							'username'    => $current_user->user_login,
+							'email'       => $current_user->user_email,
+							'firstname'   => $firstname,
+							'lastname'    => $lastname,
+							'wpuserid'    => $current_user->ID,
+							'permissions' => '1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1',
 						)
 					);
 				}

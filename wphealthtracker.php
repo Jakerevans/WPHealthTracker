@@ -329,6 +329,9 @@ global $wpdb;
 	// Adding the d3 js file to the backend.
 	add_action( 'admin_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_d3_js' ) );
 
+	// Adding the d3 js file to the backend.
+	add_action( 'wp_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_frontend_dashboard_account_js' ) );
+
 	// Adding the d3 js file to the frontend, if needed.
 	add_action( 'wp_enqueue_scripts', array( $wp_health_tracker_general_functions, 'wphealthtracker_jre_frontend_d3_js' ) );
 

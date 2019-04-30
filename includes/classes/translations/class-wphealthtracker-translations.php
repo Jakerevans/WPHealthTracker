@@ -78,11 +78,21 @@ if ( ! class_exists( 'WPHealthTracker_Translations', false ) ) :
 			$this->frontdashboard_trans_1 = __( 'Welcome', 'wphealthtracker-textdomain' );
 			$this->frontdashboard_trans_2 = __( 'Last Login', 'wphealthtracker-textdomain' );
 			$this->frontdashboard_trans_3 = __( 'Favorite Motivational Quote', 'wphealthtracker-textdomain' );
+			$this->frontdashboard_trans_4 = __( 'Login', 'wphealthtracker-textdomain' );
+			$this->frontdashboard_trans_5 = __( 'Create an Account', 'wphealthtracker-textdomain' );
+			$this->frontdashboard_trans_6 = __( 'Email / Username', 'wphealthtracker-textdomain' );
+			$this->frontdashboard_trans_7 = __( 'Password', 'wphealthtracker-textdomain' );
+			$this->frontdashboard_trans_8 = __( 'Don\'t have an Account yet? Just click the \'Create an Account\' button below to get started! ', 'wphealthtracker-textdomain' );
 
 			return $translation_array = array(
 				'frontdashboard1' => $this->frontdashboard_trans_1,
 				'frontdashboard2' => $this->frontdashboard_trans_2,
 				'frontdashboard3' => $this->frontdashboard_trans_3,
+				'frontdashboard4' => $this->frontdashboard_trans_4,
+				'frontdashboard5' => $this->frontdashboard_trans_5,
+				'frontdashboard6' => $this->frontdashboard_trans_6,
+				'frontdashboard7' => $this->frontdashboard_trans_7,
+				'frontdashboard8' => $this->frontdashboard_trans_8,
 			);
 		}
 

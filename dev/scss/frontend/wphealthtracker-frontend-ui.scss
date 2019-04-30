@@ -310,11 +310,20 @@ $menu-text-shadow: 1px 1px black;
     cursor: pointer;
 }
 
+%wphealthtracker-spinner-animation{
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+}
+
 /*
  *  BEGIN IMPORTS
 */
 @import '_wphealthtracker-d3-charts';
 @import '_wphealthtracker-dashboards';
+@import '_wphealthtracker-dashboard-user-registration';
+
 /*
 @import '_wphealthtracker-admin-advert';
 @import '_wphealthtracker-filter-saved-data';
@@ -334,6 +343,13 @@ $menu-text-shadow: 1px 1px black;
 /*
  *  BEGIN SASS CSS
 */
+
+.wphealthtracker-spinner-primary{
+    @extend %wphealthtracker-spinner-dimensions;
+    @extend %wphealthtracker-spinner-color-primary;
+    @extend %wphealthtracker-spinner-animation;
+}
+
 #wphealthtracker-master-frontend-wrapper .wphealthtracker-spinner-primary{
     @extend %wphealthtracker-spinner-dimensions;
     @extend %wphealthtracker-spinner-color-primary;
@@ -983,6 +999,24 @@ $menu-text-shadow: 1px 1px black;
 #wphealthtracker-master-frontend-wrapper .wphealthtracker-admin-bold-tip{
     font-weight:bold;
 }
+
+#wphealthtracker-dashboard-login-wrapper{
+    text-align:center;
+    margin:20px;
+}
+
+#wphealthtracker-dashboard-login-wrapper div{
+    display:inline-block;
+    text-align: center;
+}
+
+#wphealthtracker-dashboard-login-wrapper #wphealthtracker-dashboard-login-submit-wrapper, #wphealthtracker-dashboard-login-submit-wrapper .wphealthtracker-save-spinner-response-div{
+    display: block;
+    margin-top:20px;
+}
+
+@keyframes rotation{0%{transform:rotate(0)}100%{transform:rotate(359deg)}}
+
 /*
  *  END NON-SASS CSS
  */

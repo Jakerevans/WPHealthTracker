@@ -1,151 +1,156 @@
-// Mostly derived from https://bitsofco.de/a-simple-gulp-workflow/
+/**
+Mostly derived from https://bitsofco.de/a-simple-gulp-workflow
+npm install gulp
+npm install --save-dev gulp-sass
+npm install --save-dev gulp-concat
+npm install --save-dev gulp-uglify
+npm install --save-dev gulp-util
+npm install --save-dev gulp-rename
+npm install --save-dev gulp-babel
+npm install --save-dev gulp-zip
+npm install --save-dev del
+ */
 
+// First require gulp.
+var gulp   = require( 'gulp' ),
+    sass   = require( 'gulp-sass' ),
+    concat = require( 'gulp-concat' ),
+    uglify = require( 'gulp-uglify' ),
+    gutil  = require( 'gulp-util' ),
+    rename = require( 'gulp-rename' ),
+    zip    = require( 'gulp-zip' ),
+    del    = require( 'del' );
 
-// First require gulp
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    gutil = require('gulp-util'),
-    rename = require('gulp-rename'),
-    babel = require('gulp-babel'),
-    zip = require('gulp-zip'),
-    del = require('del');
+var sassFrontendSource        = [ 'dev/scss/frontend/wphealthtracker-frontend-ui.scss' ];
+var sassBackendSource         = [ 'dev/scss/wphealthtracker-admin-ui.scss' ];
+var jsBackendSource           = [ 'dev/js/*.js' ];
+var jsFrontendSource          = [ 'dev/js/frontend/*.js' ];
+var watcherMainFrontEndScss = gulp.watch( sassFrontendSource );
+var watcherMainBackEndScss = gulp.watch( sassBackendSource );
+var watcherJsFrontendSource = gulp.watch( jsFrontendSource );
+var watcherJsBackendSource = gulp.watch( jsBackendSource );
 
-// Define file sources
-var sassMain = ['dev/scss/wphealthtracker-admin-ui.scss'];
-var sassFrontendMain = ['dev/scss/frontend/wphealthtracker-frontend-ui.scss'];
-var sassSources = ['dev/scss/*.scss'];
-//var sassSources = ['development/sass/**/*.scss']; // Any .scss file in any sub-directory
-var jsSources = ['dev/js/*.js', 'dev/js/D3/charts/*.js']; // Any .js file in scripts directory
-var d3Source = ['dev/js/D3/d3.js']; // Any .js file in scripts directory
+// Define default task.
+gulp.task( 'default', function( done ) {
+    return done();
+});
 
-var frontendDietJs = ['dev/js/frontend/wphealthtracker-jre-frontend-dietstats.js', 'dev/js/D3/charts/d3-diet-js.js'];
-var frontendVitalsJs = ['dev/js/frontend/wphealthtracker-jre-frontend-vitalsstats.js', 'dev/js/D3/charts/d3-vitals-js.js'];
-var frontendExerciseJs = ['dev/js/frontend/wphealthtracker-jre-frontend-exercisestats.js', 'dev/js/D3/charts/d3-exercise-js.js'];
-
-var babelSource = ['dev/js/D3/charts/d3-vitals-js.js']; // Any .js file in scripts directory
-gulp.task('babel', () =>
-    gulp.src(babelSource)
-        .pipe(babel({
-            presets: ['env']
-        }))
-        .pipe(gulp.dest('dist'))
-);
-
-
-// Task to compile SASS files
-gulp.task('sass', function() {
-    gulp.src(sassMain) // use sassMain file source
+// Task to compile Frontend SASS file.
+gulp.task( 'sassFrontendSource', function() {
+    return gulp.src( sassFrontendSource )
         .pipe(sass({
-            outputStyle: 'compressed' // Style of compiled CSS
+            outputStyle: 'compressed'
         })
-            .on('error', gutil.log)) // Log descriptive errors to the terminal
-        .pipe(gulp.dest('assets/css')); // The destination for the compiled file
+            .on( 'error', gutil.log ) )
+        .pipe(gulp.dest( 'assets/css' ) )
 });
 
-// Task to compile SASS files
-gulp.task('sassFrontend', function() {
-    gulp.src(sassFrontendMain) // use sassMain file source
+// Task to compile Backend SASS file
+gulp.task( 'sassBackendSource', function() {
+    return gulp.src( sassBackendSource )
         .pipe(sass({
-            outputStyle: 'compressed' // Style of compiled CSS
+            outputStyle: 'compressed'
         })
-            .on('error', gutil.log)) // Log descriptive errors to the terminal
-        .pipe(gulp.dest('assets/css')); // The destination for the compiled file
-});
-
-// Task to uglify d3 file
-gulp.task('d3-uglify', function() {
-    gulp.src(d3Source) // use jsSources
-        .pipe(uglify()) // Uglify concatenated file
-        .pipe(rename({ extname: '.min.js' }))
-        .pipe(gulp.dest('assets/js')); // The destination for the renamed and uglified file
+            .on( 'error', gutil.log) )
+        .pipe(gulp.dest( 'assets/css' ) );
 });
 
 // Task to concatenate and uglify js files
-gulp.task('concat', function() {
-    gulp.src(jsSources) // use jsSources
-        .pipe(concat('wphealthtracker-admin-min.js')) // Concat to a file named 'script.js'
-        //.pipe(babel({presets: ['es2015']}))
-        .pipe(uglify()) // Uglify concatenated file
-        .pipe(gulp.dest('assets/js')); // The destination for the concatenated and uglified file
+gulp.task( 'concatAdminJs', function() {
+    return gulp.src(jsBackendSource ) // use jsSources
+        .pipe(concat( 'wphealthtracker-admin-min.js' ) ) // Concat to a file named 'script.js'
+        .pipe(uglify() ) // Uglify concatenated file
+        .pipe(gulp.dest( 'assets/js' ) ); // The destination for the concatenated and uglified file
 });
+
 
 // Task to concatenate and uglify js files
-gulp.task('concat1', function() {
-    gulp.src(frontendDietJs) // use jsSources
-        .pipe(concat('wphealthtracker-jre-frontend-dietstats-min.js')) // Concat to a file named 'script.js'
-        //.pipe(babel({presets: ['es2015']}))
-        .pipe(uglify()) // Uglify concatenated file
-        .pipe(gulp.dest('assets/js/frontend')); // The destination for the concatenated and uglified file
+gulp.task( 'concatFrontendJs', function() {
+    return gulp.src(jsFrontendSource ) // use jsSources
+        .pipe(concat( 'wphealthtracker_frontend.min.js' ) ) // Concat to a file named 'script.js'
+        .pipe(uglify() ) // Uglify concatenated file
+        .pipe(gulp.dest( 'assets/js' ) ); // The destination for the concatenated and uglified file
 });
 
-// Task to concatenate and uglify js files
-gulp.task('concat2', function() {
-    gulp.src(frontendVitalsJs) // use jsSources
-        .pipe(concat('wphealthtracker-jre-frontend-vitalsstats-min.js')) // Concat to a file named 'script.js'
-        //.pipe(babel({presets: ['es2015']}))
-        .pipe(uglify()) // Uglify concatenated file
-        .pipe(gulp.dest('assets/js/frontend')); // The destination for the concatenated and uglified file
+gulp.task( 'copyassets', function () {
+    return gulp.src([ './assets/**/*' ], {base: './'}).pipe(gulp.dest( '../wphealthtracker_dist/WPHealthTracker-Distribution' ) );
 });
 
-// Task to concatenate and uglify js files
-gulp.task('concat3', function() {
-    gulp.src(frontendExerciseJs) // use jsSources
-        .pipe(concat('wphealthtracker-jre-frontend-exercisestats-min.js')) // Concat to a file named 'script.js'
-        //.pipe(babel({presets: ['es2015']}))
-        .pipe(uglify()) // Uglify concatenated file
-        .pipe(gulp.dest('assets/js/frontend')); // The destination for the concatenated and uglified file
-});
-
-gulp.task('copyassets', function () {
-    gulp.src(['./assets/**/*'], {base: './'}).pipe(gulp.dest('../wphealthtracker_dist/WPHealthTracker-Distribution'));
-});
-
-gulp.task('copyincludes', function () {
-    gulp.src(['./includes/**/*'], {base: './'}).pipe(gulp.dest('../wphealthtracker_dist/WPHealthTracker-Distribution'));
-});
-
-gulp.task('copymainfile', function () {
-    gulp.src(['./wphealthtracker.php'], {base: './'}).pipe(gulp.dest('../wphealthtracker_dist/WPHealthTracker-Distribution'));
+gulp.task( 'copyincludes', function () {
+    return gulp.src([ './includes/**/*' ], {base: './'}).pipe(gulp.dest( '../wphealthtracker_dist/WPHealthTracker-Distribution' ) );
 });
 
 gulp.task( 'copyreadme', function () {
-    gulp.src([ './readme.txt' ], {base: './'}).pipe(gulp.dest( '../wphealthtracker_dist/WPHealthTracker-Distribution' ) );
+    return gulp.src([ './readme.txt' ], {base: './'}).pipe(gulp.dest( '../wphealthtracker_dist/WPHealthTracker-Distribution' ) );
 });
 
-gulp.task('zip', function () {
-    return gulp.src('../wphealthtracker_dist/WPHealthTracker-Distribution/**')
-        .pipe(zip('wphealthtracker.zip'))
-        .pipe(gulp.dest('../wphealthtracker_dist/WPHealthTracker-Distribution'));
+gulp.task( 'copymainfile', function () {
+    return gulp.src([ './wphealthtracker.php' ], {base: './'}).pipe(gulp.dest( '../wphealthtracker_dist/WPHealthTracker-Distribution' ) );
 });
 
-gulp.task('clean', function(cb) {
-    del(['../wphealthtracker_dist/WPHealthTracker-Distribution/**/*', '!../wphealthtracker_dist/WPHealthTracker-Distribution/wphealthtracker.zip'], {force: true}, cb);
+gulp.task( 'zip', function () {
+    return gulp.src( '../wphealthtracker_dist/WPHealthTracker-Distribution/**' )
+        .pipe(zip( 'wphealthtracker.zip' ) )
+        .pipe(gulp.dest( '../wphealthtracker_dist/WPHealthTracker-Distribution' ) );
 });
 
 gulp.task( 'cleanzip', function(cb) {
-    del([ '../wphealthtracker_dist/WPHealthTracker-Distribution/**/*' ], {force: true}, cb);
+    return del([ '../wphealthtracker_dist/WPHealthTracker-Distribution/**/*' ], {force: true}, cb);
 });
 
-
-
-// Task to watch for changes in our file sources
-gulp.task('watch', function() {
-    gulp.watch(sassMain,['sass']); // If any changes in 'sassMain', perform 'sass' task
-    gulp.watch(sassFrontendMain,['sassFrontend']);
-    gulp.watch(sassSources,['sass']);
-    gulp.watch(jsSources,['concat']);
-    gulp.watch(d3Source,['d3-uglify']); 
+gulp.task( 'clean', function(cb) {
+    return del([ '../wphealthtracker_dist/WPHealthTracker-Distribution/**/*', '!../wphealthtracker_dist/WPHealthTracker-Distribution/wphealthtracker.zip' ], {force: true}, cb);
 });
 
-// Default gulp task
-gulp.task('default', ['sass', 'sassFrontend', 'd3-uglify', 'concat', 'concat1', 'concat2', 'concat3', 'watch']);
+// Cleanup/Zip/Deploy task
+gulp.task('default',gulp.series( 'cleanzip', 'sassFrontendSource', 'sassBackendSource', 'concatAdminJs', 'concatFrontendJs', gulp.parallel('copyassets','copyincludes','copyreadme','copymainfile'),'zip','clean',function(done) {done();}));
 
-//gulp.task( 'default', [ 'cleanzip' ]);
+/*
+ *  WATCH TASKS FOR SCSS/CSS
+ *
+*/
+watcherMainFrontEndScss.on('all', function(event, path, stats) {
 
-//gulp.task('default', ['copyassets', 'copyincludes', 'copymainfile', 'copyreadme']);
+    gulp.src( sassFrontendSource )
+        .pipe(sass({
+            outputStyle: 'compressed'
+        })
+            .on( 'error', gutil.log ) )
+        .pipe(gulp.dest( 'assets/css' ) )
+        .on('end', function(){ console.log('Finished!!!') });
 
-//gulp.task('default', ['zip']);
+  console.log('File ' + path + ' was ' + event + 'ed, running tasks...');
+});
+watcherMainBackEndScss.on('all', function(event, path, stats) {
 
-//gulp.task('default', ['clean']);
+    gulp.src( sassBackendSource )
+        .pipe(sass({
+            outputStyle: 'compressed'
+        })
+            .on( 'error', gutil.log) )
+        .pipe(gulp.dest( 'assets/css' ) )
+        .on('end', function(){ console.log('Finished!!!') });
+
+  console.log('File ' + path + ' was ' + event + 'ed, running tasks...');
+});
+watcherJsBackendSource.on('all', function(event, path, stats) {
+
+    gulp.src( jsBackendSource ) // use jsSources
+        .pipe(concat( 'wphealthtracker_admin.min.js' ) ) // Concat to a file named 'script.js'
+        .pipe(uglify() ) // Uglify concatenated file
+        .pipe(gulp.dest( 'assets/js' ) )
+        .on('end', function(){ console.log('Finished!!!') });
+
+
+  console.log('File ' + path + ' was ' + event + 'ed, running tasks...');
+});
+watcherJsFrontendSource.on('all', function(event, path, stats) {
+
+    gulp.src(jsFrontendSource ) // use jsSources
+        .pipe(concat( 'wphealthtracker_frontend.min.js' ) ) // Concat to a file named 'script.js'
+        .pipe(uglify() ) // Uglify concatenated file
+        .pipe(gulp.dest( 'assets/js' ) ) // The destination for the concatenated and uglified file
+        .on('end', function(){ console.log('Finished!!!') });
+
+  console.log('File ' + path + ' was ' + event + 'ed, running tasks...');
+});

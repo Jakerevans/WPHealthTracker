@@ -1,0 +1,182 @@
+
+%wphealthtracker-margin-centered{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%wphealthtracker-icon-image-question{
+    position: relative;
+    right:5px;
+    cursor: pointer;
+    width:16px;
+    padding-left: 20px;
+}
+
+%wphealthtracker-icon-h2-image{
+    @extend %wphealthtracker-margin-centered;
+    width: 26px;
+    margin-top: 9px;
+    display: block;
+    position: relative;
+    bottom: 10px;
+}
+
+.wphealthtracker-response-form-heading-black{
+    @extend %wphealthtracker-response-form-heading;
+    color:$pureblack;
+    margin-top:140px;
+}
+
+.wphealthtracker-icon-h2-image{
+    @extend %wphealthtracker-icon-h2-image;
+}
+
+#wphealthtracker-icon-image-question-d3-chart-title{
+    @extend %wphealthtracker-icon-image-question;
+    display:inline-block;
+}
+
+.wphealthtracker-icon-image-question-enter-view{
+    @extend %wphealthtracker-icon-image-question;
+}
+
+.wphealthtracker-response-form-div-row-create-users{
+    @extend %wphealthtracker-response-form-row;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+}
+
+#wphealthtracker-create-user-show-password{
+    margin: 0;
+    display: inline-block;
+    font-size: 10px;
+    right: 40px;
+    bottom: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+#wphealthtracker-create-user-show-password:hover{
+    -webkit-animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    -moz-animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    -o-animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    animation: wphealthtracker-back-forth-wiggle-animation2 1s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+.wphealthtracker-response-form-entry-row, #wphealthtracker-dashboard-register-wrapper{
+    text-align: center;
+}
+
+.wphealthtracker-response-form-div-row-create-users input[type="text"], .wphealthtracker-response-form-div-row-create-users input[type="number"], .wphealthtracker-response-form-div-row-create-users input[type="date"], .wphealthtracker-response-form-div-row-create-users input[type="password"]{
+    width:200px;
+}
+
+.wphealthtracker-response-form-div-row-create-users .wphealthtracker-response-form-users-label-row img{
+    width: 14px;
+    top: 1px;
+    margin-right:5px;
+}
+
+.wphealthtracker-response-form-div-row-create-users .wphealthtracker-response-form-users-label-row{
+    position: relative;
+    right: 13px;
+    margin-bottom: 0px;
+    text-align: left;
+    font-variant: all-petite-caps;
+    font-size: 17px;
+}
+
+#wphealthtracker-response-form-input-text-profileimage-button{
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.wphealthtracker-decorative-red-underline-create-users {
+    border: solid 1px #DE235A;
+    border-bottom: 0px;
+    width: 85%;
+    position: relative;
+    left: 2px;
+    bottom: 3px;
+}
+
+.wphealthtracker-response-form-select{
+    width: 200px;
+}
+
+#wphealthtracker-response-form-select-create-user-height-feet{
+    width: 100px;
+}
+
+#wphealthtracker-dashboard-register-form-wrapper{
+    opacity: 0;
+    height: 0;
+}
+
+@-webkit-keyframes wphealthtracker-back-forth-wiggle-animation {
+    0%{margin-left:0px;}
+    25%{margin-left:-3px}
+    50%{margin-left:0px;}
+    75%{margin-left:-3px;}
+    100%{margin-left:0px;}
+}
+
+@-moz-keyframes wphealthtracker-back-forth-wiggle-animation {
+    0%{margin-left:0px;}
+    25%{margin-left:-3px}
+    50%{margin-left:0px;}
+    75%{margin-left:3px;}
+    100%{margin-left:0px;}
+}
+
+@-o-keyframes wphealthtracker-back-forth-wiggle-animation {
+    0%{margin-left:0px;}
+    25%{margin-left:-3px}
+    50%{margin-left:0px;}
+    75%{margin-left:3px;}
+    100%{margin-left:0px;}
+}
+
+@keyframes wphealthtracker-back-forth-wiggle-animation {
+    0%{margin-left:0px;}
+    25%{margin-left:-3px}
+    50%{margin-left:0px;}
+    75%{margin-left:3px;}
+    100%{margin-left:0px;}
+}
+
+@-webkit-keyframes wphealthtracker-back-forth-wiggle-animation2 {
+    0%{right:43px;}
+    25%{right:37px}
+    50%{right:43px;}
+    75%{right:37px;}
+    100%{right:43px;}
+}
+
+@-moz-keyframes wphealthtracker-back-forth-wiggle-animation2 {
+    0%{right:43px;}
+    25%{right:37px}
+    50%{right:43px;}
+    75%{right:37px;}
+    100%{right:43px;}
+}
+
+@-o-keyframes wphealthtracker-back-forth-wiggle-animation2 {
+    0%{right:43px;}
+    25%{right:37px}
+    50%{right:43px;}
+    75%{right:37px;}
+    100%{right:43px;}
+}
+
+@keyframes wphealthtracker-back-forth-wiggle-animation2 {
+    0%{right:43px;}
+    25%{right:37px}
+    50%{right:43px;}
+    75%{right:37px;}
+    100%{right:43px;}
+}

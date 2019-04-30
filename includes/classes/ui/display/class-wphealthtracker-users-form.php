@@ -115,6 +115,12 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 		 */
 		public $create_form_part_save = '';
 
+		/** Common member variable
+		 *
+		 *  @var boolean user_logged_in
+		 */
+		public $user_logged_in = false;
+
 
 		/**
 		 * Class Constructor
@@ -147,20 +153,30 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 				$user  = $transients->create_transient( $transient_name, 'wpdb->get_row', $query, MONTH_IN_SECONDS );
 			}
 
-			// Now get the user's permissions.
-			$user_perm = explode( ',', $user->permissions );
+			// if user is logged in and we're not outputing to the frontend.
+			if ( null !== $user ) {
+				$this->user_logged_in = true;
+			}
 
-			// Now we'll determine access, and stop all execution if user isn't allowed in.
-			require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
-			$this->access          = new WPHealthTracker_Utilities_Accesscheck();
-			$this->currentwphtuser = $this->access->wphealthtracker_accesscheck( $currentwpuser->ID, $user_perm[4] );
+			// if user is logged in and we're not outputing to the frontend.
+			if ( true === $this->user_logged_in ) {
 
-			// If we received false from accesscheck class, display permissions message.
-			if ( false === $this->currentwphtuser ) {
+				// Now get the user's permissions.
+				$user_perm = explode( ',', $user->permissions );
 
-				// Outputs the 'No Permission!' message.
-				$this->initial_output = $this->access->wphealthtracker_accesscheck_no_permission_message();
-				return false;
+				// Now we'll determine access, and stop all execution if user isn't allowed in.
+				require_once WPHEALTHTRACKER_CLASSES_UTILITIES_DIR . 'class-wphealthtracker-utilities-accesscheck.php';
+				$this->access          = new WPHealthTracker_Utilities_Accesscheck();
+				$this->currentwphtuser = $this->access->wphealthtracker_accesscheck( $currentwpuser->ID, $user_perm[4] );
+
+				// If we received false from accesscheck class, display permissions message.
+				if ( false === $this->currentwphtuser ) {
+
+					// Outputs the 'No Permission!' message.
+					$this->initial_output = $this->access->wphealthtracker_accesscheck_no_permission_message();
+					return false;
+				}
+
 			}
 
 			// Enqueue WordPress media scripts.
@@ -174,8 +190,13 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 			// Grabs all user info from DB to make checks for usernames already taken, autofills, etc.
 			$this->wphealthtracker_get_all_saved_users();
 
-			// Creates the User Roles Drop-down (makes superadmin check).
-			$this->wphealthtracker_create_role_dropdown_and_warning();
+			// if user is logged in and we're not outputing to the frontend.
+			if ( true === $this->user_logged_in ) {
+
+				// Creates the User Roles Drop-down (makes superadmin check).
+				$this->wphealthtracker_create_role_dropdown_and_warning();
+
+			}
 
 			// Creating the beginning HTML.
 			$this->create_form_part_the_beginning();
@@ -335,14 +356,19 @@ if ( ! class_exists( 'WPHEALTHTRACKER_Users_Form', false ) ) :
 						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-username" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_8 . '</p>
 						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
 						<input class="wphealthtracker-response-form-input-text" id="wphealthtracker-response-form-input-text-username" type="text" placeholder="' . $this->trans->user_trans_36 . '">
-					</div>
-					<div class="wphealthtracker-response-form-div-row-create-users">
-						<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-role" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_9 . '</p>
-						<div class="wphealthtracker-decorative-red-underline-create-users"></div>
-						 ' . $this->role_select_string . '
-						</div>
-					</div>
-				</div>
+					</div>';
+
+					// if user is logged in and we're not outputing to the frontend.
+					if ( true === $this->user_logged_in ) {
+						$this->create_form_part_one = $this->create_form_part_one . '<div class="wphealthtracker-response-form-div-row-create-users">
+							<p class="wphealthtracker-response-form-users-label-row"><img id="wphealthtracker-icon-image-question-id-3" class="wphealthtracker-icon-image-question-enter-view-food" data-label="user-role" src="' . WPHEALTHTRACKER_ROOT_IMG_ICONS_URL . 'question-black.svg">' . $this->trans->user_trans_9 . '</p>
+							<div class="wphealthtracker-decorative-red-underline-create-users"></div>
+							 ' . $this->role_select_string . '
+							</div>
+						</div>';
+					}
+
+				$this->create_form_part_one = $this->create_form_part_one . '</div>
 				' . $this->role_warning . '
 			</div>';
 
