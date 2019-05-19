@@ -117,6 +117,42 @@
     height: 0;
 }
 
+.wphealthracker-create-users-match-response-div {
+    position: absolute;
+    right: -95px;
+    bottom: 2px;
+    text-align: left;
+    width: 90px;
+}
+
+.wphealthracker-create-users-match-response-div p {
+    margin: 0;
+    margin-left: 5px;
+    font-size: 11px;
+    line-height: 1;
+}
+
+.wphealthtracker-stats-good-data-smile {
+    width: 16px;
+    position: absolute;
+    right: -20px;
+    top: 0;
+}
+
+#wphealthracker-create-users-match-response-p-email, .wphealthracker-create-users-match-response-p-password{
+    opacity:0;
+}
+
+#wphealthracker-create-users-match-response-p-email #wphealthtracker-stats-good-data-smile-emails-match, #wphealthracker-create-users-match-response-p-password #wphealthtracker-stats-good-data-smile-password-match{
+    left: 16px;
+    top: -18px;
+}
+
+#wphealthracker-create-users-match-response-p-email #wphealthtracker-stats-good-data-smile-emails-mismatch, #wphealthracker-create-users-match-response-p-password #wphealthtracker-stats-good-data-smile-password-mismatch{
+    left: 16px;
+    top: -18px;
+}
+
 @-webkit-keyframes wphealthtracker-back-forth-wiggle-animation {
     0%{margin-left:0px;}
     25%{margin-left:-3px}

@@ -3,8 +3,8 @@ Contributors: forwardcreation
 Donate link: https://ko-fi.com/A8385C9
 Tags: health, fitness, exercise, diet, nutrition  
 Requires at least: 3.0.1
-Tested up to: 5.0
-Stable tag: 1.0.2
+Tested up to: 5.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ For Nutritionists, Personal Trainers, Gym Owners and Health-Conscious individual
 
 == Description ==
 
-**Track your Exercise, Diet, and Vitals data to see beafutiful, interactive charts about your health!! Are you an individual with a health-related business? Then use WPHealthTracker to track your Client's health too!** 
+**Track your Exercise, Diet, and Vitals data to see beautiful, interactive charts about your health!! Are you an individual with a health-related business? Then use WPHealthTracker to track your Client's health too!** 
 
 **How does WPHealthTracker work?**
 
@@ -64,3 +64,6 @@ Try out **WordPress** **Health** **Tracker** right now!
 
 = 1.0.0 =
 Initial Release of WordPress Health Tracker!
+
+= 1.0.3 =
+WordPress 5.2 Compat. Update

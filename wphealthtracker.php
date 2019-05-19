@@ -12,7 +12,7 @@
  * Plugin URI: https://www.jakerevans.com
  * Description: The Ultimate Health, Fitness, Diet, and Goal-Tracking Plugin for WordPress!
  * Author: Jake Evans
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author URI: https://www.jakerevans.com
  */
 
@@ -121,7 +121,7 @@ global $wpdb;
 
 // CONSTANT DEFINITIONS //
 	// Plugin Version Number.
-	define( 'WPHEALTHTRACKER_VERSION_NUM', '1.0.2' );
+	define( 'WPHEALTHTRACKER_VERSION_NUM', '1.0.3' );
 
 	// Root plugin folder URL of this plugin.
 	define( 'WPHEALTHTRACKER_ROOT_URL', plugins_url() . '/wphealthtracker/' );
